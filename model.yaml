@@ -1,0 +1,34 @@
+path: dataset/
+train: train_subset_png/
+val: #todo (need to split)
+test: test_subset_png/
+
+nc: 28
+names: ['Aortic enlargement',
+'Atelectasis',
+'Calcification',
+'Cardiomegaly',
+'Clavicle fracture',
+'Consolidation',
+'Edema',
+'Emphysema',
+'Enlarged PA',
+'ILD',
+'Infiltration',
+'Lung Opacity',
+'Lung cavity',
+'Lung cyst',
+'Mediastinal shift',
+'Nodule/Mass',
+'Pleural effusion',
+'Pleural thickening',
+'Pneumothorax',
+'Pulmonary fibrosis',
+'Rib fracture',
+'Other lesion',
+'COPD',
+'Lung tumor',
+'Pneumonia',
+'Tuberculosis',
+'Other disease',
+'No finding']
