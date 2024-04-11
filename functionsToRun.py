@@ -2,6 +2,7 @@ import pydicom
 from PIL import Image
 import os
 import numpy as np
+import pandas as pd
 
 #directory to images to be converted
 
@@ -34,6 +35,7 @@ classesDict = {'Aortic enlargement': 0,
 'Other disease': 26,
 'No finding': 27}
 
+#converts images from dicom format to png
 def convertDicom(inputDir, outputDir):
     filenames = os.listdir(inputDir)    
     for filename in filenames:
@@ -44,26 +46,28 @@ def convertDicom(inputDir, outputDir):
             img_8bit = ((image / image.max()) * 255).astype('uint8')
             img_pil = Image.fromarray(img_8bit)
             img_pil.save(os.path.join(outputDir, filename.replace('.dicom', '.png')))
-            
+    print("Finished!!")
+
+#Gets dimensions of .png fiiles from a directory and returns it as a dictionary
 def getDim(inputDir):
     fileDict = {}
     filenames = os.listdir(inputDir)    
     for filename in filenames:
-        if filename.endswith(".dicom"):
+        if filename.endswith(".png"):
             fullpath = os.path.join(inputDir, filename)
-            dicom = pydicom.dcmread(fullpath)
-            image = dicom.pixel_array
-            filenameStripped = filename.with_suffix("")
-            dim = image.shape
+            image = Image.open(fullpath)
+            filenameStripped = os.path.splitext(filename)[0]
+            dim = image.size
             fileDict[filenameStripped] = dim
     return fileDict
 
-def makeLabels(labelsDir, dimDict = None, classDict):
-    print(labelsDir)
-    fileArray = np.genfromtxt(labelsDir, delimiter=',', skip_header=1, dtype=str)
-    print(fileArray)
+#Need to make labels by grouping based on 
+def makeLabels(labelsDir, dimDict = None, classDict = None):
+    fileDf = pd.read_csv(labelsDir)
+    fileDf['class_name'] = fileDf['class_name'].map(classDict)
 
 if __name__ == "__main__":
-    #convertDicom("dataset/test_subset", "images/train")
-    #dimDict = getDim("dataset/test_subset")
-    makeLabels("dataset/annotations/annotations_train.csv")
+    #convertDicom("dataset/train_subset", "images/train") #as already been up
+    #dimDict = getDim("dataset/train_subset")
+    dimDict = getDim("images/train")
+    #makeLabels("labels/train", dimDict, classesDict)
