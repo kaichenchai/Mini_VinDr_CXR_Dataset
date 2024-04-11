@@ -1,7 +1,6 @@
 path: dataset/
 train: train_subset_png/
-val: #todo (need to split)
-test: test_subset_png/
+val: test_subset_png/
 
 nc: 28
 names: ['Aortic enlargement',

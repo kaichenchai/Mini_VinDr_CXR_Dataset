@@ -34,9 +34,8 @@ classesDict = {'Aortic enlargement': 0,
 'Other disease': 26,
 'No finding': 27}
 
-def convertDicomAndBB(inputDir, outputDir):
-    fileDict = {}
-    filenames = os.listdir(inputDir)
+def convertDicom(inputDir, outputDir):
+    filenames = os.listdir(inputDir)    
     for filename in filenames:
         if filename.endswith(".dicom"):
             fullpath = os.path.join(inputDir, filename)
@@ -45,11 +44,26 @@ def convertDicomAndBB(inputDir, outputDir):
             img_8bit = ((image / image.max()) * 255).astype('uint8')
             img_pil = Image.fromarray(img_8bit)
             img_pil.save(os.path.join(outputDir, filename.replace('.dicom', '.png')))
+            
+def getDim(inputDir):
+    fileDict = {}
+    filenames = os.listdir(inputDir)    
+    for filename in filenames:
+        if filename.endswith(".dicom"):
+            fullpath = os.path.join(inputDir, filename)
+            dicom = pydicom.dcmread(fullpath)
+            image = dicom.pixel_array
             filenameStripped = filename.with_suffix("")
             dim = image.shape
             fileDict[filenameStripped] = dim
-    print(fileDict)
-            
+    return fileDict
+
+def makeLabels(labelsDir, dimDict = None, classDict):
+    print(labelsDir)
+    fileArray = np.genfromtxt(labelsDir, delimiter=',', skip_header=1, dtype=str)
+    print(fileArray)
 
 if __name__ == "__main__":
-    convertDicomAndBB("dataset/test_subset", "images/train")
+    #convertDicom("dataset/test_subset", "images/train")
+    #dimDict = getDim("dataset/test_subset")
+    makeLabels("dataset/annotations/annotations_train.csv")
