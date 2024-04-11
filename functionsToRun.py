@@ -4,8 +4,7 @@ import os
 import numpy as np
 import pandas as pd
 
-#directory to images to be converted
-
+#classes and corresponding labels for dataset
 classesDict = {'Aortic enlargement': 0,
 'Atelectasis': 1,
 'Calcification': 2,
@@ -62,12 +61,85 @@ def getDim(inputDir):
     return fileDict
 
 #Need to make labels by grouping based on 
-def makeLabels(labelsDir, dimDict = None, classDict = None):
+def makeLabels(labelsDir, outputDir, dimDict, classDict):
     fileDf = pd.read_csv(labelsDir)
     fileDf['class_name'] = fileDf['class_name'].map(classDict)
+    for row in fileDf.itertuples():
+        scanID = row[1] 
+        #need to put inside of try except block because annotations_train.csv is full dataset annotations
+        try:
+            x_dim = dimDict[scanID][0]
+            y_dim = dimDict[scanID][1]
+        except KeyError as e:
+            print(f"{e} not in the dictionary")
+        else:
+            classNum = row[3]
+            x_min = row[4]
+            y_max = row[5] #in this case, we swap y_min and y_max as yolov8 counts the y axis from the top of the image
+            x_max = row[6]
+            y_min = row[7]
+            
+            #converting into x_center, y_center, x_width, y_height
+            x_center = (x_min+x_max)/2
+            y_center = (y_min+x_max)/2
+            x_width = x_max-x_min
+            y_height = y_min-y_max
+            
+            #normalising to proportion of overall size
+            x_center_norm = x_center/x_dim
+            y_center_norm = y_center/y_dim
+            x_width_norm = x_width/x_dim
+            y_height_norm = y_height/y_dim
+            
+            if classNum != 27: #as do not need a .txt annotation for for no findings
+                txtFilename = scanID + ".txt"
+                txtFilePath = os.path.join(outputDir, txtFilename)
+                with open(txtFilePath, "a") as file:
+                    file.write(f"{classNum} {x_center_norm} {y_center_norm} {x_width_norm} {y_height_norm}\n")
+                    
+#as validation dataset is missing a column                
+def makeLabelsVal(labelsDir, outputDir, dimDict, classDict):
+    fileDf = pd.read_csv(labelsDir)
+    fileDf['class_name'] = fileDf['class_name'].map(classDict)
+    for row in fileDf.itertuples():
+        scanID = row[1] 
+        #need to put inside of try except block because annotations_train.csv is full dataset annotations
+        try:
+            x_dim = dimDict[scanID][0]
+            y_dim = dimDict[scanID][1]
+        except KeyError as e:
+            print(f"{e} not in the dictionary")
+        else:
+            classNum = row[2]
+            x_min = row[3]
+            y_max = row[4] #in this case, we swap y_min and y_max as yolov8 counts the y axis from the top of the image
+            x_max = row[5]
+            y_min = row[6]
+            
+            #converting into x_center, y_center, x_width, y_height
+            x_center = (x_min+x_max)/2
+            y_center = (y_min+x_max)/2
+            x_width = x_max-x_min
+            y_height = y_min-y_max
+            
+            #normalising to proportion of overall size
+            x_center_norm = x_center/x_dim
+            y_center_norm = y_center/y_dim
+            x_width_norm = x_width/x_dim
+            y_height_norm = y_height/y_dim
+            
+            if classNum != 27: #as do not need a .txt annotation for for no findings
+                txtFilename = scanID + ".txt"
+                txtFilePath = os.path.join(outputDir, txtFilename)
+                with open(txtFilePath, "a") as file:
+                    file.write(f"{classNum} {x_center_norm} {y_center_norm} {x_width_norm} {y_height_norm}\n")
 
 if __name__ == "__main__":
-    #convertDicom("dataset/train_subset", "images/train") #as already been up
-    #dimDict = getDim("dataset/train_subset")
-    dimDict = getDim("images/train")
-    #makeLabels("labels/train", dimDict, classesDict)
+    #convertDicom("original_dataset/train_subset", "dataset/images/train") #as already been up
+    #dimDict = getDim("dataset/images/train")
+    #makeLabels("original_dataset/annotations/annotations_train.csv", "dataset/labels/train", dimDict, classesDict) #as done
+    
+    #convertDicom("original_dataset/test_subset", "dataset/images/val")
+    #valDimDict = getDim("dataset/images/val")
+    #makeLabelsVal("original_dataset/annotations/annotations_test.csv", "dataset/labels/val", valDimDict, classesDict)
+    pass
