@@ -1,6 +1,6 @@
 path: dataset/
-train: train_subset_png/
-val: test_subset_png/
+train: images/train
+val: images/val
 
 nc: 28
 names: ['Aortic enlargement',
