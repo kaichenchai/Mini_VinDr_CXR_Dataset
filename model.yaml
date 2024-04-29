@@ -1,4 +1,4 @@
-path: dataset/
+path: ../Mini_VinDr_CXR_Dataset/
 train: images/train
 val: images/val
 
