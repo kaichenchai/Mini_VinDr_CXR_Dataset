@@ -1,8 +1,9 @@
-path: ../Mini_VinDr_CXR_Dataset/
+path: ../Mini_VinDr_CXR_Dataset/dataset
 train: images/train
 val: images/val
 
-nc: 28
+#all 22 local labels
+nc: 22
 names: ['Aortic enlargement',
 'Atelectasis',
 'Calcification',
@@ -23,11 +24,4 @@ names: ['Aortic enlargement',
 'Pleural thickening',
 'Pneumothorax',
 'Pulmonary fibrosis',
-'Rib fracture',
-'Other lesion',
-'COPD',
-'Lung tumor',
-'Pneumonia',
-'Tuberculosis',
-'Other disease',
-'No finding']
+'Rib fracture',]
