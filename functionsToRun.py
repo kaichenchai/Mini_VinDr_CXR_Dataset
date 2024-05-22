@@ -1,4 +1,5 @@
 import pydicom
+from pydicom.pixel_data_handlers.util import apply_voi_lut
 from PIL import Image
 import os
 import numpy as np
@@ -40,10 +41,14 @@ def convertDicom(inputDir, outputDir):
     for filename in filenames:
         if filename.endswith(".dicom"):
             fullpath = os.path.join(inputDir, filename)
-            dicom = pydicom.dcmread(fullpath)
-            image = dicom.pixel_array
-            img_8bit = ((image / image.max()) * 255).astype('uint8')
-            img_pil = Image.fromarray(img_8bit)
+            dicom = pydicom.read_file(fullpath)
+            data = apply_voi_lut(dicom.pixel_array, dicom)
+            if dicom.PhotometricInterpretation == "MONOCHROME1":
+                data = np.amax(data) - data
+            data = data - np.min(data)
+            data = data / np.max(data)
+            data = (data * 255).astype(np.uint8)
+            img_pil = Image.fromarray(data)
             img_pil.save(os.path.join(outputDir, filename.replace('.dicom', '.png')))
     print("Finished!!")
 
@@ -135,11 +140,11 @@ def makeLabelsVal(labelsDir, outputDir, dimDict, classDict):
                     file.write(f"{classNum} {x_center_norm} {y_center_norm} {x_width_norm} {y_height_norm}\n")
 
 if __name__ == "__main__":
-    #convertDicom("original_dataset/train_subset", "dataset/images/train") #as already been up
-    #dimDict = getDim("dataset/images/train")
-    #makeLabels("original_dataset/annotations/annotations_train.csv", "dataset/labels/train", dimDict, classesDict) #as done
+    convertDicom("original_dataset/train_subset", "new_dataset/images/train")
+    dimDict = getDim("new_dataset/images/train")
+    makeLabels("original_dataset/annotations/annotations_train.csv", "new_dataset/labels/train", dimDict, classesDict) #as done
     
-    #convertDicom("original_dataset/test_subset", "dataset/images/val")
-    #valDimDict = getDim("dataset/images/val")
-    #makeLabelsVal("original_dataset/annotations/annotations_test.csv", "dataset/labels/val", valDimDict, classesDict)
+    convertDicom("original_dataset/test_subset", "new_dataset/images/val")
+    valDimDict = getDim("new_dataset/images/val")
+    makeLabelsVal("original_dataset/annotations/annotations_test.csv", "new_dataset/labels/val", valDimDict, classesDict)
     pass
