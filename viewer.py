@@ -15,7 +15,7 @@ print(labelDir)
 choice = None
 
 while choice != "x":
-    choice = input("Image filename (x to close): ")
+    choice = input("Image filename (x to close): ").lower()
     match choice:
         case "x":
             print("Closing")
@@ -25,8 +25,9 @@ while choice != "x":
                 print(dir)
                 image = Image.open(dir)
                 fig, ax = plt.subplots()
+                print(image)
                 print(image.size)
-                ax.imshow(image)
+                ax.imshow(image, cmap='gray', vmin=0, vmax=255)
                 plt.show()
             except FileNotFoundError:
                 print("Image not found in folder")
