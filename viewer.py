@@ -21,13 +21,17 @@ while choice != "x":
             print("Closing")
         case _:
             try:
-                dir = imgDir + choice
+                dir = imgDir + choice #getting the directory of image
                 print(dir)
-                image = Image.open(dir)
-                fig, ax = plt.subplots()
+                image = Image.open(dir) #opening directory
+                fig, ax = plt.subplots() #making the subplots
                 print(image)
                 print(image.size)
-                ax.imshow(image, cmap='gray', vmin=0, vmax=255)
+                ax.imshow(image, cmap='gray', vmin=0, vmax=255) #adding image to ax
+                
+                #Plotting bb
+                
+                
                 plt.show()
             except FileNotFoundError:
                 print("Image not found in folder")
