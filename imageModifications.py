@@ -11,7 +11,7 @@ import matplotlib.patches as patches
 import cv2
 
 #from https://www.kaggle.com/code/raddar/convert-dicom-to-np-array-the-correct-way/notebook
-def read_xray(path, voi_lut = True, fix_monochrome = True):
+def dicomToData(path, voi_lut = True, fix_monochrome = True):
     dicom = pydicom.read_file(path)
     
     # VOI LUT (if available by DICOM device) is used to transform raw DICOM data to "human-friendly" view
@@ -30,6 +30,8 @@ def read_xray(path, voi_lut = True, fix_monochrome = True):
     data = (data * 255).astype(np.uint8)
         
     return data
+    
+
 
 #from https://stackoverflow.com/questions/43391205/add-padding-to-images-to-get-them-into-the-same-shape
 def resizeWithPadding(image, newDim):
@@ -55,14 +57,42 @@ def resizeWithPadding(image, newDim):
     
     return newImg
 
+def getAnnotations(name, csvFile, train = True):
+    pass
+
+#https://blog.roboflow.com/how-to-draw-a-bounding-box-label-python/
+#https://docs.opencv.org/4.x/dc/da5/tutorial_py_drawing_functions.html
+#for cv2 rectangle, (top-left), (bottom-right)
+def drawBoundingBox(data, annotations):
+    pass
+    
+
 if __name__ == "__main__":
-    img = read_xray('original_dataset/train_subset/01a3c3d994d85ce5634d2d13c03fd4b0.dicom')
+    img = dicomToData('original_dataset/train_subset/01a3c3d994d85ce5634d2d13c03fd4b0.dicom')
     print(img.shape)
     imgPadding = resizeWithPadding(img, (640,640))
     img = cv2.resize(img, (640, 640))
 
+    #brightness normalisation, but has already been done
     #norm_img = cv2.normalize(img, None, alpha = 0, beta = 255, norm_type = cv2.NORM_MINMAX)
-    cv2.imshow("original", img)
-    cv2.imshow("padding", imgPadding)
+    
+    #https://www.geeksforgeeks.org/histograms-equalization-opencv/?ref=lbp
+    #brightness equalisation, helps to bring out some more detail
+    imgEq = cv2.equalizeHist(imgPadding)
+    
+    #https://www.geeksforgeeks.org/python-image-blurring-using-opencv/
+    #https://docs.opencv.org/4.x/d4/d13/tutorial_py_filtering.html
+    imgGaussian = cv2.GaussianBlur(imgEq, (3,3), sigmaX=0)
+    imgMedianBlurring = cv2.medianBlur(imgEq, 3)
+    #generally maintains edges better than other blurring algorithms
+    imgBilateralFiltering = cv2.bilateralFilter(imgEq, d = 7, sigmaColor=20, sigmaSpace=20)
+    
+    res = np.hstack((imgPadding, imgEq))
+    
+    cv2.imshow("comparison", res)
+    cv2.imshow("gaussian", imgGaussian)
+    cv2.imshow("median blurring", imgMedianBlurring)
+    cv2.imshow("bilateral filtering", imgBilateralFiltering)
+
     cv2.waitKey(0)
     cv2.destroyAllWindows()
