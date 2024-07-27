@@ -55,15 +55,24 @@ def resizeWithPadding(image, newDim):
     
     return newImg
 
+#conversion to PNG from a directory of dicom files
+#does not apply filters
 def dirToPNG(inputDir, outputDir, resolution):
     filenames = os.listdir(inputDir)    
     for filename in filenames:
         if filename.endswith(".dicom"):
             fullpath = os.path.join(inputDir, filename)
+            #converts images to np array
             data = dicomToData(fullpath)
+            #resizes to uniform size and adding padding
             data = resizeWithPadding(data, resolution)
+            #equalising brightness histogram
+            data = cv2.equalizeHist(data)
+            #convert to image and then saves as png
             image = Image.fromarray(data)
             image.save(os.path.join(outputDir, filename.replace('.dicom', '.png')))
+            print(f"{filename} has been converted")
+    print("All images have been converted")
 
 def getAnnotations(name, csvFile, train = True):
     pass
@@ -76,7 +85,7 @@ def drawBoundingBox(data, annotations):
     
 
 if __name__ == "__main__":
-    img = dicomToData('original_dataset/train_subset/01a3c3d994d85ce5634d2d13c03fd4b0.dicom')
+    """img = dicomToData('original_dataset/train_subset/01a3c3d994d85ce5634d2d13c03fd4b0.dicom')
     print(img.shape)
     imgPadding = resizeWithPadding(img, (640,640))
     #this method stretches, doesn't pad
@@ -104,4 +113,6 @@ if __name__ == "__main__":
     cv2.imshow("bilateral filtering", imgBilateralFiltering)
 
     cv2.waitKey(0)
-    cv2.destroyAllWindows()
+    cv2.destroyAllWindows()"""
+
+    dirToPNG("original_dataset/train_subset/","1024_brightnessEQ_dataset/images/train/", (1024, 1024))
