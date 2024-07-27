@@ -30,8 +30,6 @@ def dicomToData(path, voi_lut = True, fix_monochrome = True):
     data = (data * 255).astype(np.uint8)
         
     return data
-    
-
 
 #from https://stackoverflow.com/questions/43391205/add-padding-to-images-to-get-them-into-the-same-shape
 def resizeWithPadding(image, newDim):
@@ -57,6 +55,16 @@ def resizeWithPadding(image, newDim):
     
     return newImg
 
+def dirToPNG(inputDir, outputDir, resolution):
+    filenames = os.listdir(inputDir)    
+    for filename in filenames:
+        if filename.endswith(".dicom"):
+            fullpath = os.path.join(inputDir, filename)
+            data = dicomToData(fullpath)
+            data = resizeWithPadding(data, resolution)
+            image = Image.fromarray(data)
+            image.save(os.path.join(outputDir, filename.replace('.dicom', '.png')))
+
 def getAnnotations(name, csvFile, train = True):
     pass
 
@@ -71,7 +79,8 @@ if __name__ == "__main__":
     img = dicomToData('original_dataset/train_subset/01a3c3d994d85ce5634d2d13c03fd4b0.dicom')
     print(img.shape)
     imgPadding = resizeWithPadding(img, (640,640))
-    img = cv2.resize(img, (640, 640))
+    #this method stretches, doesn't pad
+    #img = cv2.resize(img, (640, 640))
 
     #brightness normalisation, but has already been done
     #norm_img = cv2.normalize(img, None, alpha = 0, beta = 255, norm_type = cv2.NORM_MINMAX)
