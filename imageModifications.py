@@ -57,7 +57,7 @@ def resizeWithPadding(image, newDim):
 
 #conversion to PNG from a directory of dicom files
 #does not apply filters
-def dirToPNG(inputDir, outputDir, resolution):
+def dirToPNG(inputDir, outputDir, resolution, equalise = True):
     filenames = os.listdir(inputDir)    
     for filename in filenames:
         if filename.endswith(".dicom"):
@@ -67,7 +67,11 @@ def dirToPNG(inputDir, outputDir, resolution):
             #resizes to uniform size and adding padding
             data = resizeWithPadding(data, resolution)
             #equalising brightness histogram
-            data = cv2.equalizeHist(data)
+            if equalise == True:
+                data = cv2.equalizeHist(data)
+                print("Brightness equalised")
+            else:
+                print("Brightness not equalised")
             #convert to image and then saves as png
             image = Image.fromarray(data)
             image.save(os.path.join(outputDir, filename.replace('.dicom', '.png')))
