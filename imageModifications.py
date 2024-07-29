@@ -78,6 +78,14 @@ def dirToPNG(inputDir, outputDir, resolution, equalise = True):
             print(f"{filename} has been converted")
     print("All images have been converted")
 
+def getOldNewDimensionsCSV(inputDir, annotationsDir, resolution): #directory of files and desired resolution
+    filenames = os.listdir(inputDir)    
+    for filename in filenames:
+        if filename.endswith(".dicom"):
+            fullpath = os.path.join(inputDir, filename)
+            dicom = pydicom.dcmread("/path/to/dcm_file.dcm")
+            
+
 def getAnnotations(name, csvFile, train = True):
     pass
 
