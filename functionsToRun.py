@@ -52,7 +52,7 @@ def convertDicom(inputDir, outputDir):
             img_pil.save(os.path.join(outputDir, filename.replace('.dicom', '.png')))
     print("Finished!!")
 
-#Gets dimensions of .png fiiles from a directory and returns it as a dictionary
+#Gets dimensions of .png files from a directory and returns it as a dictionary
 def getDim(inputDir):
     fileDict = {}
     filenames = os.listdir(inputDir)    

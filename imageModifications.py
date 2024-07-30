@@ -32,16 +32,22 @@ def dicomToData(path, voi_lut = True, fix_monochrome = True):
     return data
 
 #from https://stackoverflow.com/questions/43391205/add-padding-to-images-to-get-them-into-the-same-shape
+def resizeNoPadding(image, newDim):
+    #image: np.array
+    #newDim: tuple of (newx, newy) dimensions
+    
+    newImg = cv2.resize(image, newDim)
+    
+    return newImg
+
+#from https://stackoverflow.com/questions/43391205/add-padding-to-images-to-get-them-into-the-same-shape
 def resizeWithPadding(image, newDim):
     #image: np.array
     #newDim: tuple of (newx, newy) dimensions
     
     oldDim = (image.shape[0], image.shape[1]) #gets the dimensions of original img (y, x)
-    print(oldDim)
     ratio = float(max(newDim)/max(oldDim)) #finds the tightest ratio
-    print(ratio)
     convertedDim = tuple([int(x*ratio) for x in oldDim]) #makes a tuple of dim
-    print(convertedDim)
     newImg = cv2.resize(image, (convertedDim[1], convertedDim[0])) #converts image to size, need to swap to (x, y)
     
     delta_w = newDim[1] - convertedDim[1] #as newDim and convertedDim in (y, x) format
@@ -55,9 +61,31 @@ def resizeWithPadding(image, newDim):
     
     return newImg
 
+"""#from https://stackoverflow.com/questions/43391205/add-padding-to-images-to-get-them-into-the-same-shape
+def resizeWithPaddingUpdateAnno(image, newDim):
+    #image: np.array
+    #newDim: tuple of (newx, newy) dimensions
+    #annotationDir: reads in the file of bounding box annotations and then 
+    
+    oldDim = (image.shape[0], image.shape[1]) #gets the dimensions of original img (y, x)
+    ratio = float(max(newDim)/max(oldDim)) #finds the tightest ratio
+    convertedDim = tuple([int(x*ratio) for x in oldDim]) #makes a tuple of dim
+    newImg = cv2.resize(image, (convertedDim[1], convertedDim[0])) #converts image to size, need to swap to (x, y)
+    
+    delta_w = newDim[1] - convertedDim[1] #as newDim and convertedDim in (y, x) format
+    delta_h = newDim[0] - convertedDim[0]
+    top, bottom = delta_h//2, delta_h-(delta_h//2)
+    left, right = delta_w//2, delta_w-(delta_w//2)
+
+    color = [0, 0, 0] #fills with black
+    newImg = cv2.copyMakeBorder(newImg, top, bottom, left, right, cv2.BORDER_CONSTANT,
+        value=color)
+    
+    return newImg"""
+
 #conversion to PNG from a directory of dicom files
 #does not apply filters
-def dirToPNG(inputDir, outputDir, resolution, equalise = True):
+def dirToPNG(inputDir, outputDir, resolution, equalise = True, padding = True):
     filenames = os.listdir(inputDir)    
     for filename in filenames:
         if filename.endswith(".dicom"):
@@ -65,7 +93,12 @@ def dirToPNG(inputDir, outputDir, resolution, equalise = True):
             #converts images to np array
             data = dicomToData(fullpath)
             #resizes to uniform size and adding padding
-            data = resizeWithPadding(data, resolution)
+            if padding == True:
+                data = resizeWithPadding(data, resolution)
+                print("Resized with padding")
+            else:
+                data = resizeNoPadding(data, resolution)
+                print("Resized no padding")
             #equalising brightness histogram
             if equalise == True:
                 data = cv2.equalizeHist(data)
@@ -78,15 +111,44 @@ def dirToPNG(inputDir, outputDir, resolution, equalise = True):
             print(f"{filename} has been converted")
     print("All images have been converted")
 
-def getOldNewDimensionsCSV(inputDir, annotationsDir, resolution): #directory of files and desired resolution
-    filenames = os.listdir(inputDir)    
-    for filename in filenames:
-        if filename.endswith(".dicom"):
-            fullpath = os.path.join(inputDir, filename)
-            dicom = pydicom.dcmread("/path/to/dcm_file.dcm")
+def convertAnnotationsTrain(inputDir, annotationsDir = None, newDim = None): #directory of files and desired resolution
+    #gets the dimensions of all the dicom files in a directory
+    #then converts annotations file to account for buffer
+    try:
+        annotations = pd.read_csv(annotationsDir)
+    except FileNotFoundError:
+        print("File not found, try again")
+    else:
+        filenames = os.listdir(inputDir)    
+        for filename in filenames:
+            if filename.endswith(".dicom"):
+                fullpath = os.path.join(inputDir, filename)
+                dicom = pydicom.dcmread(fullpath)
+    
+                oldDim = (dicom[0x28, 0x10].value, dicom[0x28, 0x11].value) #gets the dimensions of original img (y, x)
+                print(oldDim)
+                ratio = float(max(newDim)/max(oldDim)) #finds the tightest ratio
+                print(ratio)
+                convertedDim = tuple([int(x*ratio) for x in oldDim]) #makes a tuple of dim
+                print(convertedDim)
+                
+                delta_w = newDim[1] - convertedDim[1] #as newDim and convertedDim in (y, x) format
+                delta_h = newDim[0] - convertedDim[0]
+                top, bottom = delta_h//2, delta_h-(delta_h//2)
+                left, right = delta_w//2, delta_w-(delta_w//2)
+                                
+                imageID = filename[:-6]
+                #modifying x_min
+                #need to get this working
+                #annotations.loc[annotations["image_id"] == imageID & annotations["class_name"] != "No finding", "x_min"] = annotations.loc[annotations["image_id"] == imageID, "x_min"]*10000
+                
+                
+            
             
 
-def getAnnotations(name, csvFile, train = True):
+            
+
+def getAnnotations(name, csvFile, training = True):
     pass
 
 #https://blog.roboflow.com/how-to-draw-a-bounding-box-label-python/
@@ -127,4 +189,6 @@ if __name__ == "__main__":
     cv2.waitKey(0)
     cv2.destroyAllWindows()"""
 
-    dirToPNG("original_dataset/train_subset/","1024_brightnessEQ_dataset/images/train/", (1024, 1024))
+    #dirToPNG("original_dataset/test_subset/","1024_brightnessEQ_dataset/images/val/", (1024, 1024), equalise=True, padding = True)
+    
+    convertAnnotationsTrain("original_dataset/train_subset/","original_dataset/annotations/annotations_train.csv", (1024, 1024))
