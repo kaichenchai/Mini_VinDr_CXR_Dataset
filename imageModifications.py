@@ -111,9 +111,10 @@ def dirToPNG(inputDir, outputDir, resolution, equalise = True, padding = True):
             print(f"{filename} has been converted")
     print("All images have been converted")
 
-def convertAnnotationsTrain(inputDir, annotationsDir = None, newDim = None): #directory of files and desired resolution
-    #gets the dimensions of all the dicom files in a directory
-    #then converts annotations file to account for buffer
+#gets the dimensions of all the dicom files in a directory
+#then converts annotations file to account for buffer
+#the process can definitely be optimised to say the least
+def convertAnnotationsTrain(inputDir, annotationsDir = None, newDim = None, csvName = "annotations.csv"): #directory of files and desired resolution
     try:
         annotations = pd.read_csv(annotationsDir)
     except FileNotFoundError:
@@ -126,26 +127,32 @@ def convertAnnotationsTrain(inputDir, annotationsDir = None, newDim = None): #di
                 dicom = pydicom.dcmread(fullpath)
     
                 oldDim = (dicom[0x28, 0x10].value, dicom[0x28, 0x11].value) #gets the dimensions of original img (y, x)
-                print(oldDim)
+                #print(oldDim)
                 ratio = float(max(newDim)/max(oldDim)) #finds the tightest ratio
-                print(ratio)
+                #print(ratio)
                 convertedDim = tuple([int(x*ratio) for x in oldDim]) #makes a tuple of dim
-                print(convertedDim)
-                
+                #print(convertedDim)
+               
                 delta_w = newDim[1] - convertedDim[1] #as newDim and convertedDim in (y, x) format
                 delta_h = newDim[0] - convertedDim[0]
                 top, bottom = delta_h//2, delta_h-(delta_h//2)
                 left, right = delta_w//2, delta_w-(delta_w//2)
-                                
+                
+                #print(left, right, top, bottom)
+                
+                #getting imageid from the original filename, slicing off the .dicom bit
                 imageID = filename[:-6]
-                #modifying x_min
-                #need to get this working
-                #annotations.loc[annotations["image_id"] == imageID & annotations["class_name"] != "No finding", "x_min"] = annotations.loc[annotations["image_id"] == imageID, "x_min"]*10000
-                
-                
-            
-            
 
+                #scaling bounding box coordinates
+                #need to convert original bb coordinates to equivalent in smaller version
+                annotations.loc[annotations["image_id"] == imageID, ("x_min", "y_min", "x_max", "y_max")] = annotations.loc[annotations["image_id"] == imageID, ("x_min", "y_min", "x_max", "y_max")]*ratio
+                                            
+                #modifying coordinates by shifting them left and up if there is a need to (for padding)
+                #seems that NaN values are not affected by operations such as + - * /
+                annotations.loc[annotations["image_id"] == imageID, ("x_min","x_max")] = annotations.loc[annotations["image_id"] == imageID, ("x_min","x_max")]+left
+                annotations.loc[annotations["image_id"] == imageID, ("y_min","y_max")] = annotations.loc[annotations["image_id"] == imageID, ("y_min","y_max")]+bottom
+                
+        annotations.to_csv(csvName, sep = ",", header=True)
             
 
 def getAnnotations(name, csvFile, training = True):
