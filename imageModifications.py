@@ -62,8 +62,7 @@ def resizeWithPadding(image, newDim):
     return newImg
 
 #not doing this in one go, may try and revisit the idea eventually when cleaning up the code
-"""#from https://stackoverflow.com/questions/43391205/add-padding-to-images-to-get-them-into-the-same-shape
-def resizeWithPaddingUpdateAnno(image, newDim):
+def resizeWithPaddingTEST(image, newDim):
     #image: np.array
     #newDim: tuple of (newx, newy) dimensions
     #annotationDir: reads in the file of bounding box annotations and then 
@@ -73,16 +72,12 @@ def resizeWithPaddingUpdateAnno(image, newDim):
     convertedDim = tuple([int(x*ratio) for x in oldDim]) #makes a tuple of dim
     newImg = cv2.resize(image, (convertedDim[1], convertedDim[0])) #converts image to size, need to swap to (x, y)
     
-    delta_w = newDim[1] - convertedDim[1] #as newDim and convertedDim in (y, x) format
-    delta_h = newDim[0] - convertedDim[0]
-    top, bottom = delta_h//2, delta_h-(delta_h//2)
-    left, right = delta_w//2, delta_w-(delta_w//2)
 
     color = [0, 0, 0] #fills with black
-    newImg = cv2.copyMakeBorder(newImg, top, bottom, left, right, cv2.BORDER_CONSTANT,
+    newImg = cv2.copyMakeBorder(newImg, 200, 50, 100, 50, cv2.BORDER_CONSTANT,
         value=color)
     
-    return newImg"""
+    return newImg
 
 #conversion to PNG from a directory of dicom files
 #does not apply filters
@@ -115,7 +110,7 @@ def dirToPNG(inputDir, outputDir, resolution, equalise = True, padding = True):
 #gets the dimensions of all the dicom files in a directory
 #then converts annotations file to account for buffer
 #the process can definitely be optimised to say the least
-def convertAnnotationsTrain(inputDir, annotationsDir = None, newDim = None, csvName = "annotations.csv"): #directory of files and desired resolution
+def convertAnnotations(inputDir, annotationsDir = None, newDim = None, csvName = "annotations.csv"): #directory of files and desired resolution
     try:
         annotations = pd.read_csv(annotationsDir)
     except FileNotFoundError:
@@ -150,10 +145,11 @@ def convertAnnotationsTrain(inputDir, annotationsDir = None, newDim = None, csvN
                                             
                 #modifying coordinates by shifting them left and up if there is a need to (for padding)
                 #seems that NaN values are not affected by operations such as + - * /
+                #padding is added from the top and from the left, so need to make appropriate changes for that
                 annotations.loc[annotations["image_id"] == imageID, ("x_min","x_max")] = annotations.loc[annotations["image_id"] == imageID, ("x_min","x_max")]+left
-                annotations.loc[annotations["image_id"] == imageID, ("y_min","y_max")] = annotations.loc[annotations["image_id"] == imageID, ("y_min","y_max")]+bottom
+                annotations.loc[annotations["image_id"] == imageID, ("y_min","y_max")] = annotations.loc[annotations["image_id"] == imageID, ("y_min","y_max")]+top
                 
-        annotations.to_csv(csvName, sep = ",", header=True)
+        annotations.to_csv(csvName, sep = ",", header=True, index = False)
 
 #grab the original dimensions of a directory of dicom files and puts it in a csv
 def getDimensions(inputDir, csvName = "dimensions.csv"):
@@ -173,7 +169,7 @@ def getDimensions(inputDir, csvName = "dimensions.csv"):
                 xDims.append(dicom[0x28, 0x11].value) #number of columns (x)
                 yDims.append(dicom[0x28, 0x10].value) #number of rows (y)
         dimensions = pd.DataFrame(zip(imageIDs, xDims, yDims), columns = ("image_id", "x_dim", "y_dim"))
-        dimensions.to_csv(csvName, sep = ",", index = False)
+        dimensions.to_csv(csvName, sep = ",", header = True, index = False)
 
 #https://blog.roboflow.com/how-to-draw-a-bounding-box-label-python/
 #https://docs.opencv.org/4.x/dc/da5/tutorial_py_drawing_functions.html
@@ -215,5 +211,7 @@ if __name__ == "__main__":
 
     #dirToPNG("original_dataset/test_subset/","1024_brightnessEQ_dataset/images/val/", (1024, 1024), equalise=True, padding = True)
     
-    #convertAnnotationsTrain("original_dataset/train_subset/","original_dataset/annotations/annotations_train.csv", (1024, 1024))
-    getDimensions("original_dataset/train_subset/")
+    convertAnnotations("original_dataset/train_subset/","original_dataset/annotations/annotations_train.csv", (1024, 1024), "annotationsTrain.csv")
+    convertAnnotations("original_dataset/test_subset/","original_dataset/annotations/annotations_test.csv", (1024, 1024), "annotationsTest.csv")
+    
+    #getDimensions("original_dataset/test_subset/", "dimensionsTest.csv")
