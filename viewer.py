@@ -5,12 +5,45 @@ import os
 import pandas as pd
 import matplotlib.pyplot as plt
 import matplotlib.patches as patches
+import cv2
 
-imgDir = "C:/Users/engli/Documents/Y2S1/NSPC2001/Mini_VinDr_CXR_Dataset/new_dataset/images/train/"
-labelDir = "C:/Users/engli/Documents/Y2S1/NSPC2001/Mini_VinDr_CXR_Dataset/new_dataset/labels/train/"
+imgDir = "C:/Users/engli/Documents/Y2S1/NSPC2001/Mini_VinDr_CXR_Dataset/1024_brightnessEQ_dataset/images/train/"
+labelDir = "C:/Users/engli/Documents/Y2S1/NSPC2001/Mini_VinDr_CXR_Dataset/1024_brightnessEQ_dataset/labels/train/"
 
 print(imgDir)
 print(labelDir)
+
+#reading in csv of annotations
+annoPath = "C:/Users/engli/Documents/Y2S1/NSPC2001/Mini_VinDr_CXR_Dataset/annotationsTrain.csv"
+
+annotations = pd.read_csv(annoPath, sep=",")
+
+#bounding box and text colour dictionary
+color_dict = {
+    "Aortic enlargement": (255, 0, 0),    # Red
+    "Atelectasis": (0, 255, 0),    # Green
+    "Calcification": (0, 0, 255),    # Blue
+    "Cardiomegaly": (255, 255, 0),  # Yellow
+    "Clavicle fracture": (255, 0, 255),  # Magenta
+    "Consolidation": (0, 255, 255),  # Cyan
+    "Edema": (128, 0, 0),    # Maroon
+    "Emphysema": (0, 128, 0),    # Dark Green
+    "Enlarged PA": (0, 0, 128),    # Navy
+    "ILD": (128, 128, 0), # Olive
+    "Infiltration": (128, 0, 128), # Purple
+    "Lung Opacity": (0, 128, 128), # Teal
+    "Lung cavity": (192, 192, 192), # Silver
+    "Lung cyst": (128, 128, 128), # Gray
+    "Mediastinal shift": (255, 165, 0),   # Orange
+    "Nodule/Mass": (255, 20, 147),  # Deep Pink
+    "Pleural effusion": (75, 0, 130),    # Indigo
+    "Pleural thickening": (173, 255, 47),  # Green Yellow
+    "Pneumothorax": (255, 105, 180), # Hot Pink
+    "Pulmonary fibrosis": (0, 191, 255),   # Deep Sky Blue
+    "Rib fracture": (139, 69, 19),   # Saddle Brown
+    "Other lesion": (255, 228, 181)  # Moccasin
+}
+
 
 choice = None
 
@@ -21,17 +54,28 @@ while choice != "x":
             print("Closing")
         case _:
             try:
+                if choice[-4:] != ".png":
+                    choice = choice + ".png"
                 dir = imgDir + choice #getting the directory of image
                 print(dir)
-                image = Image.open(dir) #opening directory
-                fig, ax = plt.subplots() #making the subplots
-                print(image)
-                print(image.size)
-                ax.imshow(image, cmap='gray', vmin=0, vmax=255) #adding image to ax
-                
-                #Plotting bb
-                
-                
-                plt.show()
+                data = cv2.imread(dir) #reading in the image
+                if data is None:
+                    raise FileNotFoundError
             except FileNotFoundError:
                 print("Image not found in folder")
+            else:
+                print("Read in image!")
+                imgAnno = annotations.loc[annotations["image_id"] == choice[:-4]] #getting all annotations that match image_id
+                imgAnno.dropna(axis = 0) #dropping all no findings
+                for row in imgAnno.itertuples(index = False):
+                    #drawing rectanges
+                    color = color_dict.get(str(row.class_name), (0, 255, 0))
+                    cv2.rectangle(img = data, pt1 = (int(row.x_min), int(row.y_min)), pt2 = (int(row.x_max), int(row.y_max)), color = color, thickness = 2)
+                    text = str(row.class_name)
+                    font = cv2.FONT_HERSHEY_SIMPLEX
+                    font_scale = 0.5
+                    thickness = 2
+                    cv2.putText(data, text, (int(row.x_min), int(row.y_min)), font, font_scale, color, thickness)
+                cv2.imshow(choice, data)
+                cv2.waitKey(0)
+                cv2.destroyAllWindows()

@@ -179,7 +179,7 @@ def drawBoundingBox(data, annotations):
     
 
 if __name__ == "__main__":
-    img = dicomToData('original_dataset/train_subset/01a3c3d994d85ce5634d2d13c03fd4b0.dicom')
+    """img = dicomToData('original_dataset/train_subset/01a3c3d994d85ce5634d2d13c03fd4b0.dicom')
     print(img.shape)
     imgPadding = resizeWithPadding(img, (640,640))
     #this method stretches, doesn't pad
@@ -207,11 +207,11 @@ if __name__ == "__main__":
     cv2.imshow("bilateral filtering", imgBilateralFiltering)
 
     cv2.waitKey(0)
-    cv2.destroyAllWindows()
+    cv2.destroyAllWindows()"""
 
     #dirToPNG("original_dataset/test_subset/","1024_brightnessEQ_dataset/images/val/", (1024, 1024), equalise=True, padding = True)
     
-    #convertAnnotations("original_dataset/train_subset/","original_dataset/annotations/annotations_train.csv", (1024, 1024), "annotationsTrain.csv")
+    convertAnnotations("original_dataset/train_subset/","original_dataset/annotations/annotations_train.csv", (1024, 1024), "annotationsTrain.csv")
     #convertAnnotations("original_dataset/test_subset/","original_dataset/annotations/annotations_test.csv", (1024, 1024), "annotationsTest.csv")
     
     #getDimensions("original_dataset/test_subset/", "dimensionsTest.csv")
