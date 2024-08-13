@@ -110,6 +110,7 @@ def dirToPNG(inputDir, outputDir, resolution, equalise = True, padding = True):
 #gets the dimensions of all the dicom files in a directory
 #then converts annotations file to account for buffer
 #the process can definitely be optimised to say the least
+#NOTE if not all of the images from the CSV file are within the input folder then the CSV will output with some of the original annos still
 def convertAnnotations(inputDir, annotationsDir = None, newDim = None, csvName = "annotations.csv"): #directory of files and desired resolution
     try:
         annotations = pd.read_csv(annotationsDir)

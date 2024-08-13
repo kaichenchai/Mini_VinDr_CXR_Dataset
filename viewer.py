@@ -66,9 +66,10 @@ while choice != "x":
             else:
                 print("Read in image!")
                 imgAnno = annotations.loc[annotations["image_id"] == choice[:-4]] #getting all annotations that match image_id
-                imgAnno.dropna(axis = 0) #dropping all no findings
+                imgAnno = imgAnno.dropna(axis = 0)
                 for row in imgAnno.itertuples(index = False):
                     #drawing rectanges
+                    print(row)
                     color = color_dict.get(str(row.class_name), (0, 255, 0))
                     cv2.rectangle(img = data, pt1 = (int(row.x_min), int(row.y_min)), pt2 = (int(row.x_max), int(row.y_max)), color = color, thickness = 2)
                     text = str(row.class_name)
