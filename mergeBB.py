@@ -9,7 +9,8 @@ from torchvision import ops
 
 
 #https://learnopencv.com/intersection-over-union-iou-in-object-detection-and-segmentation/
-def mergeIOUEncompass(annoCSV, threshold = 0.5, csvName = "mergedIOUAverage.csv"):
+#https://doi.org/10.1016/j.imavis.2021.104117 #implementation of WBF without the weights from the original paper
+def mergeIOUAverage(annoCSV, threshold = 0.5, csvName = "mergedIOUAverage.csv"):
     try:
         #read in csv
         oldAnno = pd.read_csv(annoCSV, sep = ",")
@@ -20,16 +21,6 @@ def mergeIOUEncompass(annoCSV, threshold = 0.5, csvName = "mergedIOUAverage.csv"
         if "rad_id" in oldAnno.columns:
             oldAnno = oldAnno.drop("rad_id", axis = 1)
         oldAnno = oldAnno.dropna(axis = 0) #drop all rows with no findings
-        imageIDList = oldAnno["image_id"].unique() #gets unique image_id -> should be 15,000
-        """for ID in imageIDList:
-            subset = oldAnno.loc[oldAnno["image_id"] == ID] #gets subset of annotations based on image_id
-            #for each disease, we need to check the instances to see if they overlap
-            conditions = subset["class_name"].unique() 
-            for condition in conditions: #splits subset by disease
-                conditionSubset = subset.loc[subset["class_name"] == condition]
-                conditionSubset = conditionSubset.drop(labels = ["image_id", "class_name"], axis = 1)
-                conditionSubset = conditionSubset.values.tolist()
-                for condition in conditionSubset"""
         #groupby both image id and class
         #all the other stuff is for performance
         groups = oldAnno.groupby(["image_id", "class_name"], group_keys = False, as_index = False, sort = False)
@@ -38,24 +29,31 @@ def mergeIOUEncompass(annoCSV, threshold = 0.5, csvName = "mergedIOUAverage.csv"
             class_name = group[0][1]
             group = group[1].drop(["image_id", "class_name"], axis = 1) #drop these cols
             group = group.values.tolist() #getting the actual list of rows (as lists)
-            canMerge = True #assume that you can always merge
-            while canMerge == True: #while there are still obs in the group
-                canMerge = False
-                """obs1 = group.pop() #pop the last guy
+            print(group)
+            newGroup = []
+            while group: #while there are still obs in the group
+                obs1 = group.pop() #pop the last guy
+                #print(obs1)
                 obs1 = torch.tensor([obs1], dtype = torch.float) #turn him into a tensor
-                for i in range(len(group)-1): #for every other observation
-                    obs2 = torch.tensor([group[i]], dtype = torch.float) #turn him into a tensor
-                    iou = ops.box_iou(obs1, obs2) #check the IOU
-                    if iou.numpy()[0][0] > threshold: #if it's over the threshold set, then merge
-                        newcoords = torch.div(torch.add(obs1, obs2), 2) #takes average of bounding box coordinates
-                        group.append(newcoords.tolist()[0])
-                        print(f"APPENDED | 1: {obs1}, 2: {obs2}, iou: {iou}, new: {newcoords}")
-                        canMerge = True
-                    else:
-                        group.append(obs1.tolist()[0])"""
-                for 
-
-#currently not working
+                #print(obs1)
+                if not newGroup:
+                    #print(obs1.tolist()[0])
+                    #newGroup.append(obs1.tolist()[0])
+                    newGroup.append(obs1)
+                else:
+                    merged = False #assume no merging happens
+                    for obs2 in newGroup:
+                        #print(obs2)
+                        #obs2 = torch.tensor([obs2], dtype = torch.float) #turn him into a tensor
+                        iou = ops.box_iou(obs1, obs2) #check the IOU
+                        if iou.numpy()[0][0] > threshold: #if it's over the threshold set, then merge
+                            obs2 = torch.div(torch.add(obs1, obs2), 2) #takes average of bounding box coordinates
+                            obs2 = obs2.tolist()[0]
+                            merged = True #if we end up merging
+                    if merged == False: #if we don't end up merging
+                        #newGroup.append(obs1.tolist()[0])
+                        newGroup.append(obs1) #then add it to the newgroup
+            print(newGroup)
                         
 
 if __name__ == "__main__":
