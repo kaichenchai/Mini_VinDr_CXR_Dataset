@@ -60,7 +60,7 @@ def mergeIOUAverage(annoCSV, threshold = 0.5, csvName = "mergedIOUAverage.csv"):
 #if IOU higher than threshold, then draw bounding box that encompasses both observations
 #https://learnopencv.com/intersection-over-union-iou-in-object-detection-and-segmentation/
 #https://doi.org/10.1016/j.imavis.2021.104117 #implementation of WBF without the weights from the original paper
-def mergeIOUAverage(annoCSV, threshold = 0.5, csvName = "mergedIOUAverage.csv"):
+def mergeIOUEncompass(annoCSV, threshold = 0.5, csvName = "mergedIOUEncompass.csv"):
     try:
         #read in csv
         oldAnno = pd.read_csv(annoCSV, sep = ",")
@@ -97,7 +97,9 @@ def mergeIOUAverage(annoCSV, threshold = 0.5, csvName = "mergedIOUAverage.csv"):
                         #obs2 = torch.tensor([obs2], dtype = torch.float) #turn him into a tensor
                         iou = ops.box_iou(obs1, obs2) #check the IOU
                         if iou.numpy()[0][0] >= threshold: #if it's over the threshold set, then merge
-                            obs2 = torch.div(torch.add(obs1, obs2), 2) #takes elementwise average of bounding box coordinates
+                            minTensor = torch.min(obs1, obs2) #we want x_min and y_min
+                            maxTensor = torch.max(obs1, obs2) #we want x_max and y_max
+                            obs2 = torch.cat((minTensor[0][0:2], maxTensor[0][2:])) #takes elementwise average of bounding box coordinates
                             #obs2 = obs2.tolist()[0]
                             merged = True #if we end up merging
                     if merged == False: #if we don't end up merging to anything in newgroup
@@ -111,4 +113,17 @@ def mergeIOUAverage(annoCSV, threshold = 0.5, csvName = "mergedIOUAverage.csv"):
 
 if __name__ == "__main__":
     #mergeIOUAverage("annotationsTrain.csv", 0.5)
-    mergeIOUAverage("annotationsTrain.csv", 0.3)
+    #mergeIOUAverage("annotationsTrain.csv", 0.3)
+    
+    mergeIOUEncompass("annotationsTrain.csv", 0.3)
+
+    
+    """box1 = torch.tensor([[387.86810302734375,254.7804412841797,406.8974304199219,327.2384033203125]], dtype = torch.float)
+    box2 = torch.tensor([[393.08123779296875,240.74595642089844,453.1715393066406,333.98931884765625]], dtype = torch.float)
+    
+    print(ops.box_iou(box1, box2))
+    
+    print(box1[0][0:2])
+    print(box1[0][2:])
+    
+    print(torch.concat((box1[0][0:2], box1[0][2:])))"""

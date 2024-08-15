@@ -14,8 +14,8 @@ print(imgDir)
 print(labelDir)
 
 #reading in csv of annotations
-annoPath = "C:/Users/engli/Documents/Y2S1/NSPC2001/Mini_VinDr_CXR_Dataset/annotationsTrain.csv"
-#annoPath = "C:/Users/engli/Documents/Y2S1/NSPC2001/Mini_VinDr_CXR_Dataset/mergedIOUAverage.csv"
+#annoPath = "C:/Users/engli/Documents/Y2S1/NSPC2001/Mini_VinDr_CXR_Dataset/annotationsTrain.csv"
+annoPath = "C:/Users/engli/Documents/Y2S1/NSPC2001/Mini_VinDr_CXR_Dataset/mergedIOUAverage.csv"
 annotations = pd.read_csv(annoPath, sep=",")
 
 #bounding box and text colour dictionary
