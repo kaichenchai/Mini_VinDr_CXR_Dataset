@@ -110,6 +110,9 @@ def mergeIOUEncompass(annoCSV, threshold = 0.5, csvName = "mergedIOUEncompass.cs
         newAnnos.to_csv(csvName, sep = ",", header=True, index = False)
 
 
+#if the bounding boxes exceed the resolution of the image, then reset to boundary (e.g -2.2312 -> 0)
+def checkBBs(csvFile, resolution):
+    
 
 if __name__ == "__main__":
     #mergeIOUAverage("annotationsTrain.csv", 0.5)
