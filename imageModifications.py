@@ -111,7 +111,7 @@ def dirToPNG(inputDir, outputDir, resolution, equalise = True, padding = True):
 #then converts annotations file to account for buffer
 #the process can definitely be optimised to say the least
 #NOTE if not all of the images from the CSV file are within the input folder then the CSV will output with some of the original annos still
-def convertAnnotations(inputDir, annotationsDir = None, newDim = None, csvName = "annotations.csv"): #directory of files and desired resolution
+def convertAnnotations(inputDir, annotationsDir = None, newDim = (1024, 1024), csvName = "annotations.csv"): #directory of files and desired resolution
     try:
         annotations = pd.read_csv(annotationsDir)
     except FileNotFoundError:
@@ -177,9 +177,40 @@ def getDimensions(inputDir, csvName = "dimensions.csv"):
 #for cv2 rectangle, (top-left), (bottom-right)
 def drawBoundingBox(data, annotations):
     pass
-    
 
+#converting annotations from a CSV that contains image name, x_min/max, y_min/max and x/ydim as columns
+#if we feed in dimensionsDir, then we assume that we don't have x/ydim in the annotations CSV
+def convertAnnotationsFromCSV(annotationsDir = None, dimensionsDir = None, newDim = (1024, 1024), csvName = "annotations.csv"):
+    try:
+        annotations = pd.read_csv(annotationsDir)
+        if dimensionsDir is not None:
+            dimensions = pd.read_csv(dimensionsDir)
+            annotations = pd.merge(annotations, dimensions, on = ["image_id", "image_id"])
+    except FileNotFoundError as e:
+        print(FileNotFoundError)
+    else:
+        groups = annotations.groupby(["image_id"], group_keys = False, as_index = False, sort = False)
+        for group in groups:
+            oldDimX = group[1].x_dim.values[0] #gets x dim for each group
+            oldDimY = group[1].y_dim.values[0] #gets y dim for each group
+            oldDim = (oldDimX, oldDimY)
+            ratio = float(max(newDim)/max(oldDim))
+            print(ratio)
+            convertedDim = tuple([int(x*ratio) for x in oldDim])
+            delta_w = newDim[0] - convertedDim[0]
+            delta_h = newDim[1] - convertedDim[1]
+            top, bottom = delta_h//2, delta_h-(delta_h//2)
+            left, right = delta_w//2, delta_w-(delta_w//2)
+            print(group[1])
+            group[1].x_min = group[1].x_min*ratio + left
+            group[1].x_max = group[1].x_max*ratio + left
+            group[1].y_min = group[1].y_min*ratio + top
+            group[1].y_max = group[1].y_max*ratio + top
+            print(group[1])
+        annotations.to_csv(csvName, index = None)
+        
 if __name__ == "__main__":
+    
     """img = dicomToData('original_dataset/train_subset/01a3c3d994d85ce5634d2d13c03fd4b0.dicom')
     print(img.shape)
     imgPadding = resizeWithPadding(img, (640,640))
@@ -216,3 +247,5 @@ if __name__ == "__main__":
     #convertAnnotations("original_dataset/test_subset/","original_dataset/annotations/annotations_test.csv", (1024, 1024), "annotationsTest.csv")
     
     #getDimensions("original_dataset/test_subset/", "dimensionsTest.csv")
+    
+    #convertAnnotationsFromCSV("fixedOriginalBB.csv", newDim = (1024, 1024))
