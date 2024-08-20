@@ -120,7 +120,7 @@ def makeLabelsSetDim(labelsDir, outputDir, dim, classDict):
             
             #converting into x_center, y_center, x_width, y_height
             x_center = (x_min+x_max)/2
-            y_center = (y_min+x_max)/2
+            y_center = (y_min+y_max)/2
             x_width = x_max-x_min
             y_height = y_max-y_min
             
