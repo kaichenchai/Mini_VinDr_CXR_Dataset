@@ -13,15 +13,15 @@ try:
 except FileNotFoundError as e:
     print(e)
 #combining them
-combined_dim = pd.concat((train_dim, test_dim))
+#combined_dim = pd.concat((train_dim, test_dim))
 
 try:
-    anno_train = pd.read_csv("C:/Users/engli/Documents/Y2S1/NSPC2001/Mini_VinDr_CXR_Dataset/original_dataset/annotations/annotations_train.csv")
-    anno_test = pd.read_csv("C:/Users/engli/Documents/Y2S1/NSPC2001/Mini_VinDr_CXR_Dataset/original_dataset/annotations/annotations_test.csv")
+    train_anno = pd.read_csv("C:/Users/engli/Documents/Y2S1/NSPC2001/Mini_VinDr_CXR_Dataset/original_dataset/annotations/annotations_train.csv")
+    test_anno = pd.read_csv("C:/Users/engli/Documents/Y2S1/NSPC2001/Mini_VinDr_CXR_Dataset/original_dataset/annotations/annotations_test.csv")
 except FileNotFoundError as e:
     print(e)
 
-combined_anno = pd.concat((anno_train, anno_test))
+#combined_anno = pd.concat((anno_train, anno_test))
 
 """for i, row in combined_anno.iterrows():
     print(row.image_id)
@@ -43,9 +43,11 @@ combined_anno = pd.concat((anno_train, anno_test))
     if row.y_max > imgYMax:
         print(f"{row.y_max} -> {imgYMax}")
         combined_anno.at[i, "y_max"] = imgYMax"""
+
+#combined_anno = pd.merge(combined_anno, combined_dim, on = ["image_id", "image_id"])
+
         
-        
-combined_anno = pd.merge(combined_anno, combined_dim, on = ["image_id", "image_id"])
+combined_anno = pd.merge(train_anno, train_dim, on = ["image_id", "image_id"])
 combined_anno.loc[combined_anno["x_min"] < 0, "x_min"] = 0
 combined_anno.loc[combined_anno["y_min"] < 0, "y_min"] = 0
 
@@ -53,4 +55,14 @@ combined_anno.loc[combined_anno["x_max"] > combined_anno["x_dim"], "x_max"] = co
 combined_anno.loc[combined_anno["y_max"] > combined_anno["y_dim"], "y_max"] = combined_anno.loc[combined_anno["y_max"] > combined_anno["y_dim"], "y_dim"]
 
 
-combined_anno.to_csv("fixedBB.csv", index = None)
+combined_anno.to_csv("fixedBBtrain.csv", index = None)
+
+combined_anno = pd.merge(test_anno, test_dim, on = ["image_id", "image_id"])
+combined_anno.loc[combined_anno["x_min"] < 0, "x_min"] = 0
+combined_anno.loc[combined_anno["y_min"] < 0, "y_min"] = 0
+
+combined_anno.loc[combined_anno["x_max"] > combined_anno["x_dim"], "x_max"] = combined_anno.loc[combined_anno["x_max"] > combined_anno["x_dim"], "x_dim"]
+combined_anno.loc[combined_anno["y_max"] > combined_anno["y_dim"], "y_max"] = combined_anno.loc[combined_anno["y_max"] > combined_anno["y_dim"], "y_dim"]
+
+
+combined_anno.to_csv("fixedBBtest.csv", index = None)

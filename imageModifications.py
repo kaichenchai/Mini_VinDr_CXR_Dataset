@@ -248,4 +248,6 @@ if __name__ == "__main__":
     
     #getDimensions("original_dataset/test_subset/", "dimensionsTest.csv")
     
-    #convertAnnotationsFromCSV("fixedOriginalBB.csv", newDim = (1024, 1024))
+    convertAnnotationsFromCSV("fixedBBtrain.csv", newDim = (1024, 1024), csvName = "anno_train.csv")
+    
+    convertAnnotationsFromCSV("fixedBBtest.csv", newDim = (1024, 1024), csvName = "anno_test.csv")
