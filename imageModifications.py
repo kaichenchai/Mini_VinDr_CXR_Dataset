@@ -189,25 +189,26 @@ def convertAnnotationsFromCSV(annotationsDir = None, dimensionsDir = None, newDi
     except FileNotFoundError as e:
         print(FileNotFoundError)
     else:
+        annotations = annotations.dropna(axis = 0)
         groups = annotations.groupby(["image_id"], group_keys = False, as_index = False, sort = False)
+        groupsList = []
         for group in groups:
             oldDimX = group[1].x_dim.values[0] #gets x dim for each group
             oldDimY = group[1].y_dim.values[0] #gets y dim for each group
             oldDim = (oldDimX, oldDimY)
             ratio = float(max(newDim)/max(oldDim))
-            print(ratio)
             convertedDim = tuple([int(x*ratio) for x in oldDim])
             delta_w = newDim[0] - convertedDim[0]
             delta_h = newDim[1] - convertedDim[1]
             top, bottom = delta_h//2, delta_h-(delta_h//2)
             left, right = delta_w//2, delta_w-(delta_w//2)
-            print(group[1])
             group[1].x_min = group[1].x_min*ratio + left
             group[1].x_max = group[1].x_max*ratio + left
             group[1].y_min = group[1].y_min*ratio + top
             group[1].y_max = group[1].y_max*ratio + top
-            print(group[1])
-        annotations.to_csv(csvName, index = None)
+            groupsList.append(group[1])
+        output = pd.concat(groupsList, ignore_index=True)
+        output.to_csv(csvName, index = None)
         
 if __name__ == "__main__":
     
