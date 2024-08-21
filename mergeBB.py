@@ -7,6 +7,8 @@ import cv2
 import torch
 from torchvision import ops
 
+import time
+
 #if over iou, then take average of observations
 #https://learnopencv.com/intersection-over-union-iou-in-object-detection-and-segmentation/
 #https://doi.org/10.1016/j.imavis.2021.104117 #implementation of WBF without the weights from the original paper
@@ -32,22 +34,30 @@ def mergeIOUAverage(annoCSV, threshold = 0.5, csvName = "mergedIOUAverage.csv"):
             group = group[1].drop(["image_id", "class_name"], axis = 1) #drop these cols
             group = group.values.tolist() #getting the actual list of rows (as lists)
             newGroup = []
+            #print(image_id, class_name, group)
             while group: #while there are still obs in the group
                 obs1 = group.pop() #pop the last guy
-                obs1 = torch.tensor([obs1], dtype = torch.float) #turn him into a tensor
+                #print(obs1)
+                obs1 = torch.tensor([obs1], dtype = torch.float) #turn it into a tensor
+                #print(obs1)
                 if not newGroup:
                     newGroup.append(obs1)
+                    #print(newGroup)
                 else:
                     merged = False #assume no merging happens
-                    for obs2 in newGroup:
+                    for i, obs2 in enumerate(newGroup):
+                        #print(obs2)
                         iou = ops.box_iou(obs1, obs2) #check the IOU
                         if iou.numpy()[0][0] >= threshold: #if it's over the threshold set, then merge
-                            obs2 = torch.div(torch.add(obs1, obs2), 2) #takes elementwise average of bounding box coordinates
+                            newGroup[i] = torch.div(torch.add(obs1, obs2), 2) #takes elementwise average of bounding box coordinates
+                            #print(obs2)
                             merged = True #if we end up merging
                     if merged == False: #if we don't end up merging to anything in newgroup
                         newGroup.append(obs1) #then add it to the newgroup
+            #print(newGroup)
             for obs in newGroup:
                 newAnnos.append([image_id]+[class_name]+obs.tolist()[0])
+                #print(line)
         newAnnos = pd.DataFrame(newAnnos, columns = ["image_id","class_name","x_min","y_min","x_max","y_max"])
         newAnnos.to_csv(csvName, sep = ",", header=True, index = False)
         newLength = len(newAnnos)
@@ -87,14 +97,14 @@ def mergeIOUEncompass(annoCSV, threshold = 0.5, csvName = "mergedIOUEncompass.cs
                     newGroup.append(obs1)
                 else:
                     merged = False #assume no merging happens
-                    for obs2 in newGroup:
+                    for i, obs2 in enumerate(newGroup):
                         #print(obs2)
-                        print(obs1, obs2)
+                        #print(obs1, obs2)
                         iou = ops.box_iou(obs1, obs2) #check the IOU
                         if iou.numpy()[0][0] >= threshold: #if it's over the threshold set, then merge
                             minTensor = torch.min(obs1, obs2) #we want x_min and y_min
                             maxTensor = torch.max(obs1, obs2) #we want x_max and y_max
-                            obs2 = torch.cat((minTensor[0][0:2], maxTensor[0][2:])) #merge x_min, y_min, x_max and y_max 
+                            newGroup[i] = torch.cat((minTensor[0][0:2], maxTensor[0][2:])).view(1, -1) #merge x_min, y_min, x_max and y_max 
                             merged = True #if we end up merging
                     if merged == False: #if we don't end up merging to anything in newgroup
                         newGroup.append(obs1) #then add it to the newgroup
@@ -111,19 +121,26 @@ def checkBBs(csvFile, resolution):
     pass
 
 if __name__ == "__main__":
+    
     #mergeIOUAverage("FULL_1024_PAD_annotations/anno_train.csv", 0.3, "mergedAnnoTrainAverage_03.csv")
     #mergeIOUAverage("FULL_1024_PAD_annotations/anno_test.csv", 0.3, "mergedAnnoTestAverage_03.csv")
     
-    #mergeIOUEncompass("FULL_1024_PAD_annotations/anno_train.csv", 0.3, "mergedAnnoTrain")
-    #mergeIOUEncompass("FULL_1024_PAD_annotations/anno_test.csv", 0.3, "mergedAnnoTestEncompass_0.3.csv")
+    #mergeIOUEncompass("FULL_1024_PAD_annotations/anno_train.csv", 0.3, "mergedAnnoTrainEncompass_03.csv")
+    #mergeIOUEncompass("FULL_1024_PAD_annotations/anno_test.csv", 0.3, "mergedAnnoTestEncompass_03.csv")
 
     
     """box1 = torch.tensor([[0,0,10,0]], dtype = torch.float)
     box2 = torch.tensor([[10,10,0,10]], dtype = torch.float)
     
-    print(ops.box_iou(box1, box2))
+    #print(ops.box_iou(box1, box2))
     
     minTensor = torch.min(box1, box2) #we want x_min and y_min
+    print(minTensor)
     maxTensor = torch.max(box1, box2) #we want x_max and y_max
-    obs2 = torch.cat((minTensor[0][0:2], maxTensor[0][2:]))
-    print(obs2)"""
+    print(maxTensor)
+    obs2 = torch.cat((minTensor[0][0:2], maxTensor[0][2:])).view(1, -1)
+    print(obs2)
+    #obs2 = torch.div(torch.add(box1, box2), 2)
+    #print(obs2)"""
+    
+    pass
