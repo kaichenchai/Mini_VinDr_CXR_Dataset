@@ -2,7 +2,7 @@ path: ../
 train: images/train
 val: images/val
 
-#all 22 local labels
+#all 14 local labels
 nc: 14
 names: [
     "Aortic enlargement",
