@@ -20,4 +20,13 @@ diseasesList = [
     "Pulmonary fibrosis"
 ]
 
-trainingCSV = pd.read_csv("")
+trainDir = "FULL_1024_PAD_annotations/anno_train.csv"
+trainCSV = pd.read_csv(trainDir)
+testDir = "FULL_1024_PAD_annotations/anno_test.csv"
+testCSV = pd.read_csv(testDir)
+
+trainCSV = trainCSV[trainCSV["class_name"].isin(diseasesList)]
+testCSV = testCSV[testCSV["class_name"].isin(diseasesList)]
+
+trainCSV.to_csv("kaggleTrain.csv", sep = ",", header=True, index=None)
+testCSV.to_csv("kaggleTest.csv", sep = ",", header=True, index=None)
