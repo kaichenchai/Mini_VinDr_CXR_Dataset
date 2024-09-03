@@ -7,15 +7,11 @@ import matplotlib.pyplot as plt
 import matplotlib.patches as patches
 import cv2
 
-imgDir = "C:/Users/engli/Documents/Y2S1/NSPC2001/Mini_VinDr_CXR_Dataset/1024_brightnessEQ_dataset/images/train/"
-labelDir = "C:/Users/engli/Documents/Y2S1/NSPC2001/Mini_VinDr_CXR_Dataset/1024_brightnessEQ_dataset/labels/train/"
-
+imgDir = "C:/Users/engli/Documents/Y2S1/NSPC2001/FULL_1024_brightnessEQ_FIXED/train/"
 print(imgDir)
-print(labelDir)
 
 #reading in csv of annotations
-#annoPath = "C:/Users/engli/Documents/Y2S1/NSPC2001/Mini_VinDr_CXR_Dataset/annotationsTrain.csv"
-annoPath = "C:/Users/engli/Documents/Y2S1/NSPC2001/Mini_VinDr_CXR_Dataset/mergedIOUAverage.csv"
+annoPath = "C:/Users/engli/Documents/Y2S1/NSPC2001/Mini_VinDr_CXR_Dataset/FULL_1024_PAD_annotations/anno_train.csv"
 annotations = pd.read_csv(annoPath, sep=",")
 
 #bounding box and text colour dictionary
