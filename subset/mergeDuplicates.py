@@ -15,16 +15,17 @@ def mergeObs(csvDir, outputName = "mergedOutput.csv"):
     df = df.dropna(axis = 1) #drop all empty rows
     groups = df.groupby(["image_id", "class_name"], group_keys = False, as_index = False, sort = False)
     newAnnos = []
-    for key, obs in groups:
-        if len(obs) > 1:
-            xMinAvg = obs["x_min"].mean()
-            xMaxAvg = obs["x_max"].mean()
-            yMinAvg = obs["y_min"].mean()
-            yMaxAvg = obs["y_max"].mean()
-            line = [key[0][0]]+[key[0][1]]+[xMinAvg, yMinAvg, xMaxAvg, yMaxAvg]
-            print(line)
-            newAnnos.append(line)
+    for key, obs in groups: #for all groups, if 1 obs, then getting mean of it will equal the same value anyway
+        xMinAvg = obs["x_min"].mean() #get mean of all values
+        xMaxAvg = obs["x_max"].mean()
+        yMinAvg = obs["y_min"].mean()
+        yMaxAvg = obs["y_max"].mean()
+        line = [key[0], key[1], xMinAvg, yMinAvg, xMaxAvg, yMaxAvg] #making a new line of observations
+        print(line)
+        newAnnos.append(line) #appending line to list of new annotations
+    newAnnos = pd.DataFrame(newAnnos, columns = ["image_id","class_name","x_min","y_min","x_max","y_max"]) #converting to dataframe
     newAnnos.to_csv(outputName, sep = ",", header = True, index = False)
             
 if __name__ == "__main__":
-    mergeObs("train.csv", "mergedTrain.csv")
+    #mergeObs("train.csv", "mergedTrain.csv")
+    mergeObs("test.csv", "mergedTest.csv")

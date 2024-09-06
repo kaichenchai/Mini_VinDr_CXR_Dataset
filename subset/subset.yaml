@@ -1,0 +1,10 @@
+path: ../
+train: images/train
+val: images/val
+
+#all 14 local labels
+nc: 2
+names: [
+    "Aortic enlargement",
+    "Cardiomegaly",
+]s
