@@ -19,5 +19,7 @@ def splitTrainingCSV(newLabels, oldCSV, newName):
         
 
 if __name__ == "__main__":
-    splitTrainingCSV("stratifiedSplit/image_labels_trainNEW.csv", "FULL_1024_PAD_annotations/anno_train.csv", "anno_trainNEW.csv")
-    splitTrainingCSV("stratifiedSplit/image_labels_valNEW.csv", "FULL_1024_PAD_annotations/anno_train.csv", "anno_valNEW.csv")
+    splitTrainingCSV("stratifiedSplit/image_labels_trainNEW.csv", "FULL_1024_PAD_annotations/anno_train.csv", "FULL_1024_PAD_annotations/anno_trainNEW.csv")
+    splitTrainingCSV("stratifiedSplit/image_labels_valNEW.csv", "FULL_1024_PAD_annotations/anno_train.csv", "FULL_1024_PAD_annotations/anno_valNEW.csv")
+    splitTrainingCSV("stratifiedSplit/image_labels_trainNEW.csv", "FULL_1024_PAD_annotations/kaggleTrain.csv", "FULL_1024_PAD_annotations/kaggleTrainNEW.csv")
+    splitTrainingCSV("stratifiedSplit/image_labels_valNEW.csv", "FULL_1024_PAD_annotations/kaggleTrain.csv", "FULL_1024_PAD_annotations/kaggleValNEW.csv")
