@@ -12,7 +12,7 @@ def mergeObs(csvDir, outputName = "mergedOutput.csv"):
     except FileNotFoundError as e:
         print("File not found!")
         
-    df = df.dropna(axis = 1) #drop all empty rows
+    df = df.dropna(axis = 0) #drop all empty rows
     groups = df.groupby(["image_id", "class_name"], group_keys = False, as_index = False, sort = False)
     newAnnos = []
     for key, obs in groups: #for all groups, if 1 obs, then getting mean of it will equal the same value anyway
