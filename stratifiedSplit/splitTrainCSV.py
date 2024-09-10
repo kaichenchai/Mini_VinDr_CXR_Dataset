@@ -17,6 +17,8 @@ def splitTrainingCSV(newLabels, oldCSV, newName):
         print(len(newCSV))
         newCSV.to_csv(newName, index = None)
         
+def combineAndSplitCSV(newLabels: str, oldCSV: list[str], newName: str):
+    pass
 
 if __name__ == "__main__":
     splitTrainingCSV("stratifiedSplit/image_labels_trainNEW.csv", "FULL_1024_PAD_annotations/anno_train.csv", "FULL_1024_PAD_annotations/anno_trainNEW.csv")
