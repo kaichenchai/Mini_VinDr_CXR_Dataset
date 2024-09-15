@@ -47,10 +47,9 @@ def makeLabelsSetDim(labelsDir, outputDir, dim, classDict):
 
 if __name__ == "__main__":
     classesDict = {
-    "Aortic enlargement":0,
-    "Cardiomegaly":1,
+    "Cardiomegaly":0,
     }
     
-    #removeObs("FULL_1024_PAD_annotations/anno_train.csv", classesDict, "train.csv")
-    #removeObs("FULL_1024_PAD_annotations/anno_test.csv", classesDict, "test.csv")
-    
+    removeObs("FULL_1024_PAD_annotations/15-3-3_split/anno_trainNEW.csv", classesDict, "train.csv")
+    removeObs("FULL_1024_PAD_annotations/15-3-3_split/anno_valNEW.csv", classesDict, "val.csv")
+    removeObs("FULL_1024_PAD_annotations/15-3-3_split/anno_test.csv", classesDict, "test.csv")
