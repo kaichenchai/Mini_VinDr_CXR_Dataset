@@ -1,1 +1,3 @@
 csv of observations from the fixed bb's that contain just cardiomegaly
+
+workflow is getting csvs of obs -> removing everything that's not x observation and then merging down bounding boxes

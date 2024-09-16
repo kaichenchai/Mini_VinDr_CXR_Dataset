@@ -58,4 +58,6 @@ if __name__ == "__main__":
     #mergeObsEncompass("train.csv", "mergedTrain.csv")
     #mergeObsEncompass("val.csv", "mergedVal.csv")
     #mergeObsEncompass("test.csv", "mergedTest.csv")
-    pass
+    mergeObsEncompass("train.csv", "mergedTrain.csv")
+    mergeObsEncompass("val.csv", "mergedVal.csv")
+    mergeObsEncompass("test.csv", "mergedTest.csv")
