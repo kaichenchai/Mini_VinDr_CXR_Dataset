@@ -55,9 +55,9 @@ if __name__ == "__main__":
     removeObs("FULL_1024_PAD_annotations/15-3-3_split/anno_test.csv", classesDict, "test.csv")"""
 
     classesDict = {
-    "Aortic enlargement": 0,
+    "Aortic enlargement":0,
     }
     
-    removeObs("FULL_1024_PAD_annotations/15-3-3_split/anno_trainNEW.csv", classesDict, "train.csv")
-    removeObs("FULL_1024_PAD_annotations/15-3-3_split/anno_valNEW.csv", classesDict, "val.csv")
-    removeObs("FULL_1024_PAD_annotations/15-3-3_split/anno_test.csv", classesDict, "test.csv")
+    removeObs("../FULL_1024_PAD_annotations/15-3-3_split/anno_trainNEW.csv", classesDict, "train-AO.csv")
+    removeObs("../FULL_1024_PAD_annotations/15-3-3_split/anno_valNEW.csv", classesDict, "val-AO.csv")
+    removeObs("../FULL_1024_PAD_annotations/15-3-3_split/anno_test.csv", classesDict, "test-AO.csv")
