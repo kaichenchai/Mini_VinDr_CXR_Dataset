@@ -1,16 +1,34 @@
 from ultralytics import YOLO
+import os
+import pandas as pd
 
 modelDir = ""
-sourceDir = ""
+sourceImgDir = ""
 saveDir = ""
 
-model = YOLO(modelDir)
-results = model.predict(
-    source = sourceDir,
-    imgsz = 1024,
-    conf = 0.0001,
-    iou = 0.6,
-    max_det = 1,
-)
+resultsList = []
 
-print(results)
+try:
+    images = os.listdir(sourceImgDir)
+except FileNotFoundError as e:
+    print(e)
+
+model = YOLO(modelDir)
+
+for image in images:
+    imgDir = os.path.join(sourceImgDir, image)
+    results = model.predict(
+        source = imgDir,
+        imgsz = 1024,
+        conf = 0.0001,
+        iou = 0.6,
+        max_det = 1,
+    )
+    image_id = [image[:-4]]
+    for r in results:
+        conf = r.boxes.conf.tolist()
+        box = r.boxes.xyxy.tolist()
+        resultsList.append(image_id + box + conf)
+
+df = pd.DataFrame(resultsList, columns = ["image_id", "x_min", "y_min", "x_max", "y_max", "conf"])
+df.to_csv(saveDir, sep = ",", index = None)
