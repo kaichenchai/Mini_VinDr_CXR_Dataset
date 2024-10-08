@@ -1,10 +1,11 @@
 from ultralytics import YOLO
 import os
 import pandas as pd
+from sklearn.metrics import confusion_matrix, classification_report, recall_score, precision_score
 
-modelDir = ""
-sourceImgDir = ""
-saveDir = ""
+modelDir = "best.pt"
+sourceImgDir = "./images"
+saveDir = "./output"
 
 resultsList = []
 
