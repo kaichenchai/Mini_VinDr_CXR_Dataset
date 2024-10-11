@@ -7,12 +7,18 @@ import matplotlib.pyplot as plt
 import matplotlib.patches as patches
 import cv2
 
-imgDir = "C:/Users/engli/Documents/Y2S1/NSPC2001/FULL_1024_brightnessEQ_FIXED/train/"
+"""img = cv2.imread("/Users/kaichenchai/Documents/Y2S1/NPSC2001/images/train/0b5d222662dfa80d7ba8b101bb88e20c.png")
+cv2.imshow("hello world", img)
+cv2.waitKey(0)
+cv2.destroyAllWindows()"""
+
+imgDir = "/Users/kaichenchai/Documents/Y2S1/NPSC2001/images/train"
 print(imgDir)
 
 #reading in csv of annotations
-annoPath = "C:/Users/engli/Documents/Y2S1/NSPC2001/Mini_VinDr_CXR_Dataset/FULL_1024_PAD_annotations/anno_train.csv"
+annoPath = "/Users/kaichenchai/Documents/Y2S1/NPSC2001/Mini_VinDr_CXR_Dataset/FULL_1024_PAD_annotations/15-3-3_split/anno_trainNEW.csv"
 annotations = pd.read_csv(annoPath, sep=",")
+print(annotations.shape)
 
 #bounding box and text colour dictionary
 color_dict = {
@@ -52,7 +58,7 @@ while choice != "x":
             try:
                 if choice[-4:] != ".png":
                     choice = choice + ".png"
-                dir = imgDir + choice #getting the directory of image
+                dir = os.path.join(imgDir, choice) #getting the directory of image
                 print(dir)
                 data = cv2.imread(dir) #reading in the image
                 if data is None:
@@ -76,3 +82,7 @@ while choice != "x":
                 cv2.imshow(choice, data)
                 cv2.waitKey(0)
                 cv2.destroyAllWindows()
+                
+
+if __name__ == "main":
+    pass
