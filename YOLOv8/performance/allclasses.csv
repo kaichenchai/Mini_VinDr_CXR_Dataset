@@ -1,0 +1,23 @@
+Class     Images  Instances      Precision          Recall      mAP50  mAP50-95
+                   all       3000       2697      0.427      0.112     0.0675     0.0266
+    Aortic enlargement        220        221     0.0944      0.466     0.0951      0.031
+           Atelectasis         86         96      0.101     0.0104    0.00543    0.00184
+         Calcification        194        232          1          0    0.00655    0.00195
+          Cardiomegaly        309        310      0.332      0.803       0.65      0.294
+     Clavicle fracture          2          2          1          0          0          0
+         Consolidation         96        126        0.2     0.0397     0.0756     0.0315
+             Emphysema          3          4          1          0    0.00988    0.00855
+           Enlarged PA          8          9          1          0    0.00084   0.000222
+                   ILD        221        316      0.285      0.107      0.104     0.0387
+          Infiltration         58         79      0.127      0.241     0.0839     0.0329
+          Lung Opacity         84         95     0.0585     0.0737     0.0201    0.00606
+           Lung cavity          9         10          1          0    0.00138   0.000277
+             Lung cyst          2          3          1          0          0          0
+     Mediastinal shift         20         20     0.0601       0.15      0.106     0.0346
+           Nodule/Mass        176        286      0.252     0.0874     0.0654     0.0164
+      Pleural effusion        111        136      0.118      0.221      0.104     0.0292
+    Pleural thickening        169        240      0.084      0.025     0.0122    0.00375
+          Pneumothorax         18         25          0          0    0.00685    0.00362
+    Pulmonary fibrosis        217        358      0.167      0.101      0.044     0.0141
+          Rib fracture         11         17          1          0          0          0
+          Other lesion         94        112     0.0821     0.0357     0.0252     0.0097
