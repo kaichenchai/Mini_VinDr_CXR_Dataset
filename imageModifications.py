@@ -81,30 +81,29 @@ def resizeWithPaddingTEST(image, newDim):
 
 #conversion to PNG from a directory of dicom files
 #does not apply filters
-def dirToPNG(inputDir, outputDir, resolution, equalise = True, padding = True):
+def dirToPNG(inputDir, outputDir, resolution, equalise = False, CLAHE = False, padding = True):
     filenames = os.listdir(inputDir)    
     for filename in filenames:
         if filename.endswith(".dicom"):
             fullpath = os.path.join(inputDir, filename)
             #converts images to np array
             data = dicomToData(fullpath)
-            #equalising brightness histogram #make sure to do first as otherwise padding affects the equalisation
+            #equalising brightness histogram make sure to do first as otherwise padding affects the equalisation
             if equalise == True:
                 data = cv2.equalizeHist(data)
-                print("Brightness equalised")
-            else:
-                print("Brightness not equalised")
+            #uses CLAHE to perform histogram equalisation, better way to do as does it with a moving kernel
+            if CLAHE == True:
+                clahe = cv2.createCLAHE(clipLimit=2.0, tileGridSize=(8,8))
+                data = clahe.apply(data)
             #resizes to uniform size and adding padding
             if padding == True:
                 data = resizeWithPadding(data, resolution)
-                print("Resized with padding")
             else:
                 data = resizeNoPadding(data, resolution)
-                print("Resized no padding")
             #convert to image and then saves as png
             image = Image.fromarray(data)
             image.save(os.path.join(outputDir, filename.replace('.dicom', '.png')))
-            print(f"{filename} has been converted")
+            print(f"{filename} has been converted with settings: equalise: {equalise}, CLAHE: {CLAHE}, padding: {padding}")
     print("All images have been converted")
 
 #gets the dimensions of all the dicom files in a directory
