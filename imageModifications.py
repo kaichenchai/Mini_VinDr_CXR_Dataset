@@ -12,7 +12,8 @@ import cv2
 
 #from https://www.kaggle.com/code/raddar/convert-dicom-to-np-array-the-correct-way/notebook
 def dicomToData(path, voi_lut = True, fix_monochrome = True):
-    dicom = pydicom.read_file(path)
+    #dicom = pydicom.read_file(path) read_file has been repreciated
+    dicom = pydicom.dcmread(path)
     
     # VOI LUT (if available by DICOM device) is used to transform raw DICOM data to "human-friendly" view
     if voi_lut:
@@ -82,6 +83,8 @@ def resizeWithPaddingTEST(image, newDim):
 #conversion to PNG from a directory of dicom files
 #does not apply filters
 def dirToPNG(inputDir, outputDir, resolution, equalise = False, CLAHE = False, padding = True):
+    #check if the outputDir exists, if not make it
+    os.makedirs(outputDir, exist_ok=True)
     filenames = os.listdir(inputDir)    
     for filename in filenames:
         if filename.endswith(".dicom"):
@@ -240,14 +243,21 @@ if __name__ == "__main__":
 
     cv2.waitKey(0)
     cv2.destroyAllWindows()"""
+    #testing out clahe - we pretty much always want to use this
+    #dirToPNG("original_dataset/test_subset/","1024_CLAHE_pad/images/val/", (1024, 1024), CLAHE=True, padding = True)
 
     #dirToPNG("original_dataset/test_subset/","1024_brightnessEQ_dataset/images/val/", (1024, 1024), equalise=True, padding = True)
+    
+    #
+    dirToPNG("original_dataset/test_subset/","1024_original_noclahe_nopad/images/val/", (1024, 1024), CLAHE=False, padding = False)
     
     #convertAnnotations("original_dataset/train_subset/","original_dataset/annotations/annotations_train.csv", (1024, 1024), "annotationsTrain.csv")
     #convertAnnotations("original_dataset/test_subset/","original_dataset/annotations/annotations_test.csv", (1024, 1024), "annotationsTest.csv")
     
     #getDimensions("original_dataset/test_subset/", "dimensionsTest.csv")
     
-    convertAnnotationsFromCSV("fixedBBtrain.csv", newDim = (1024, 1024), csvName = "anno_train.csv")
+    #convertAnnotationsFromCSV("fixedBBtrain.csv", newDim = (1024, 1024), csvName = "anno_train.csv")
     
-    convertAnnotationsFromCSV("fixedBBtest.csv", newDim = (1024, 1024), csvName = "anno_test.csv")
+    #convertAnnotationsFromCSV("fixedBBtest.csv", newDim = (1024, 1024), csvName = "anno_test.csv")
+    
+    pass
