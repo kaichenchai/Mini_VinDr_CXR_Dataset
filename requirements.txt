@@ -1,6 +1,7 @@
 pandas
 numpy
 matplotlib
+scikit-learn
 scikit-multilearn
 pydicom
 opencv-python
