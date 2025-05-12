@@ -40,7 +40,7 @@ def checkFolder(csv: str, dir: str):
     print(f"Files that should not be in folder {[x for x in filesInDir if x not in idList]}")
 
 if __name__ == "__main__":
-    moveFiles("./15-3-3_split/image_labels_valNEW.csv", "/mnt/data/kai/VinDr_Subsets/FULL_1024_CLAHE_padding/train", "/mnt/data/kai/VinDr_Subsets/FULL_1024_CLAHE_padding/val")
+    #moveFiles("./15-3-3_split/image_labels_valNEW.csv", "/mnt/data/kai/VinDr_Subsets/FULL_1024_CLAHE_padding/train", "/mnt/data/kai/VinDr_Subsets/FULL_1024_CLAHE_padding/val")
     #moveFiles("stratifiedSplit/image_labels_valNEW.csv", "1024_brightnessEQ_dataset/images/train", "1024_brightnessEQ_dataset/images/val")
-    checkFolder("./15-3-3_split/image_labels_valNEW.csv", "/mnt/data/kai/VinDr_Subsets/FULL_1024_CLAHE_padding/val")
-    checkFolder("./15-3-3_split/image_labels_trainNEW.csv", "/mnt/data/kai/VinDr_Subsets/FULL_1024_CLAHE_padding/train")
+    checkFolder("./15-3-3_split/image_labels_valNEW.csv", "/mnt/data/kai/VinDr_Subsets/YOLOv8_format_datasets/FULL_1024_CLAHE_padding/images/train")
+    checkFolder("./15-3-3_split/image_labels_trainNEW.csv", "/mnt/data/kai/VinDr_Subsets/YOLOv8_format_datasets/FULL_1024_CLAHE_padding/images/train")
