@@ -244,12 +244,13 @@ if __name__ == "__main__":
     cv2.waitKey(0)
     cv2.destroyAllWindows()"""
     #testing out clahe - we pretty much always want to use this
-    #dirToPNG("original_dataset/test_subset/","1024_CLAHE_pad/images/val/", (1024, 1024), CLAHE=True, padding = True)
+    dirToPNG("/mnt/data/datasets/vindr-cxr/1.0.0/train","/mnt/data/kai/VinDr_Subsets/FULL_1024_CLAHE_padding/train", (1024, 1024), CLAHE=True, padding = True)
+
+    dirToPNG("/mnt/data/datasets/vindr-cxr/1.0.0/test","/mnt/data/kai/VinDr_Subsets/FULL_1024_CLAHE_padding/test", (1024, 1024), CLAHE=True, padding = True)
 
     #dirToPNG("original_dataset/test_subset/","1024_brightnessEQ_dataset/images/val/", (1024, 1024), equalise=True, padding = True)
     
-    #
-    dirToPNG("original_dataset/test_subset/","1024_original_noclahe_nopad/images/val/", (1024, 1024), CLAHE=False, padding = False)
+    #dirToPNG("original_dataset/test_subset/","1024_original_noclahe_nopad/images/val/", (1024, 1024), CLAHE=False, padding = False)
     
     #convertAnnotations("original_dataset/train_subset/","original_dataset/annotations/annotations_train.csv", (1024, 1024), "annotationsTrain.csv")
     #convertAnnotations("original_dataset/test_subset/","original_dataset/annotations/annotations_test.csv", (1024, 1024), "annotationsTest.csv")
