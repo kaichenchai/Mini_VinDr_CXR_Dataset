@@ -1,0 +1,2 @@
+These bounding boxes are the original, with out of bounds/impossible removed
+Additionally, these BBs have been converted to fit 1024x1024 with padding
