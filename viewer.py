@@ -12,11 +12,11 @@ cv2.imshow("hello world", img)
 cv2.waitKey(0)
 cv2.destroyAllWindows()"""
 
-imgDir = "/Users/kaichenchai/Documents/Y2S1/NPSC2001/images/train"
+imgDir = "./image_aura_demo/"
 print(imgDir)
 
 #reading in csv of annotations
-annoPath = "/Users/kaichenchai/Documents/Y2S1/NPSC2001/Mini_VinDr_CXR_Dataset/FULL_1024_PAD_annotations/15-3-3_split/anno_trainNEW.csv"
+annoPath = "./FULL_1024_PAD_annotations/15-3-3_split/anno_test.csv"
 annotations = pd.read_csv(annoPath, sep=",")
 print(annotations.shape)
 
@@ -78,8 +78,9 @@ while choice != "x":
                     font = cv2.FONT_HERSHEY_SIMPLEX
                     font_scale = 0.5
                     thickness = 2
-                    cv2.putText(data, text, (int(row.x_min), int(row.y_min)), font, font_scale, color, thickness)
+                    cv2.putText(data, text, (int(row.x_min), int(row.y_min)-10), font, font_scale, color, thickness)
                 cv2.imshow(choice, data)
+                cv2.imwrite("temp.png", data)
                 cv2.waitKey(0)
                 cv2.destroyAllWindows()
                 
