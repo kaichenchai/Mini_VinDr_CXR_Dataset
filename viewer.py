@@ -16,7 +16,7 @@ imgDir = "./image_aura_demo/"
 print(imgDir)
 
 #reading in csv of annotations
-annoPath = "./FULL_1024_PAD_annotations/15-3-3_split/anno_test.csv"
+annoPath = "image_aura_demo/chayan_cardiomegaly.csv"
 annotations = pd.read_csv(annoPath, sep=",")
 print(annotations.shape)
 
@@ -56,8 +56,8 @@ while choice != "x":
             print("Closing")
         case _:
             try:
-                if choice[-4:] != ".png":
-                    choice = choice + ".png"
+                # if choice[-4:] != ".png":
+                    # choice = choice + ".png"
                 dir = os.path.join(imgDir, choice) #getting the directory of image
                 print(dir)
                 data = cv2.imread(dir) #reading in the image

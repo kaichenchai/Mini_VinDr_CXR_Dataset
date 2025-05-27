@@ -1,0 +1,2 @@
+image_id,heart_width,lungs_width,diaphragm_width,cardiomegaly,x_min,y_min,x_max,y_max,class_name
+chayan-cardiomegaly,252,402,427,True,482.6171875,698.666015625,1351.328125,1322.333984375,Cardiomegaly
