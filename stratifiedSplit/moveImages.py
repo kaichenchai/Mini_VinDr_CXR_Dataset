@@ -26,7 +26,7 @@ def moveFiles(csv: str, oldDir: str, newDir: str):
     print(f"Started with {len(idList)}, didn't manage to move {notMoved}")
     
 #checks folder against csv to see if there are any files that should not be there
-#also says if there are files htat should be there, but are not
+#also says if there are files that should be there, but are not
 def checkFolder(csv: str, dir: str):
     try:
         csv = pd.read_csv(csv)
