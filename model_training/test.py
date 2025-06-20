@@ -17,5 +17,11 @@ def model_loader(device="cpu", num_classes:int=3):
     model.roi_heads.box_predictor = FastRCNNPredictor(in_features, num_classes=3)
     return model
 
+def read_coco_dataset(images_root: str, annotations_path:str, transformations):
+    dataset = torchvision.datasets.CocoDetection(root=images_root, annFile=annotations_path, transforms=transformations)
+    return dataset
+
+def 
+
 if __name__ == "__main__":
     print(model_loader())
