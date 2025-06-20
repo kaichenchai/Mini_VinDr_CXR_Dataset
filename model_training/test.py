@@ -21,7 +21,7 @@ def read_coco_dataset(images_root: str, annotations_path:str, transformations):
     dataset = torchvision.datasets.CocoDetection(root=images_root, annFile=annotations_path, transforms=transformations)
     return dataset
 
-def 
+create_subset = 
 
 if __name__ == "__main__":
     print(model_loader())
