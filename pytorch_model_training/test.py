@@ -82,15 +82,21 @@ if __name__ == "__main__":
     # if greyscale = False, then we need to convert the greyscale images to not have 3 channels
     transforms = generate_transformations(no_img_channels=1)
     print(transforms) 
-    train_dataset = read_coco_dataset(images_root="/Users/kaichenchai/Documents/Projects/cardiomegaly_subset/train",
+    """train_dataset = read_coco_dataset(images_root="/Users/kaichenchai/Documents/Projects/cardiomegaly_subset/train",
                                       annotations_path="subset/c-subset/explainability/cardiomegaly_400_subset_coco_labels.json",
                                       transforms=transforms)
     val_dataset = read_coco_dataset(images_root="/Users/kaichenchai/Documents/Projects/cardiomegaly_subset/val",
                                    annotations_path="subset/c-subset/explainability/cardiomegaly_100_subset_coco_labels_val.json",
+                                   transforms=transforms)"""
+    train_dataset = read_coco_dataset(images_root="/mnt/data/kai/VinDr_Subsets/cardiomegaly_subset/train",
+                                      annotations_path="../subset/c-subset/explainability/cardiomegaly_400_subset_coco_labels.json",
+                                      transforms=transforms)
+    val_dataset = read_coco_dataset(images_root="/mnt/data/kai/VinDr_Subsets/cardiomegaly_subset/val",
+                                   annotations_path="../subset/c-subset/explainability/cardiomegaly_100_subset_coco_labels_val.json",
                                    transforms=transforms)
-    train_loader = DataLoader(train_dataset, batch_size=16, shuffle=True, 
+    train_loader = DataLoader(train_dataset, batch_size=32, shuffle=True, 
                                    collate_fn=lambda x: tuple(zip(*x)))
-    val_loader = DataLoader(val_dataset, batch_size=16, shuffle=True, 
+    val_loader = DataLoader(val_dataset, batch_size=32, shuffle=True, 
                                    collate_fn=lambda x: tuple(zip(*x)))
     
     learnable_params = [p for p in model.parameters() if p.requires_grad]
