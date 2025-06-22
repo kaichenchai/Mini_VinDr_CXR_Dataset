@@ -4,6 +4,8 @@ import time
 import random
 import tqdm
 
+from engine import evaluate
+
 import wandb
 import numpy as np
 import torch
@@ -55,7 +57,7 @@ def generate_transformations(extra_transforms:List=None, no_img_channels:int=1):
 
 def read_coco_dataset(images_root: str, annotations_path:str, transforms=None):
     dataset = torchvision.datasets.CocoDetection(root=images_root, annFile=annotations_path, transforms=transforms)
-    dataset = torchvision.datasets.wrap_dataset_for_transforms_v2(dataset, target_keys=("boxes", "labels"))
+    dataset = torchvision.datasets.wrap_dataset_for_transforms_v2(dataset, target_keys=("image_id", "boxes", "labels"))
     return dataset
 
 def fix_seed(seed):
@@ -80,7 +82,7 @@ def fix_seed(seed):
 if __name__ == "__main__":
     
     model = model_loader(feature_extracting=True, num_classes=3, greyscale_single_channel=True, imgsize=(1024,1024))
-    device = torch.device("cuda" if torch.cuda.is_available() else "mps")
+    device = torch.device("cuda" if torch.cuda.is_available() else "cpu")
     model.to(device)
     # if greyscale = False, then we need to convert the greyscale images to not have 3 channels
     transforms = generate_transformations(no_img_channels=1)
@@ -128,22 +130,23 @@ if __name__ == "__main__":
         for imgs, annotations in tqdm.tqdm(train_loader):
             i += 1
             imgs = list(img.to(device) for img in imgs)
-            annotations = [{k: v.to(device) for k, v in t.items()} for t in annotations]
+            annotations = [{k: v.to(device) for k, v in t.items() if k != "image_id"} for t in annotations]
             train_loss_dict = model(imgs, annotations) 
             losses = sum(loss for loss in train_loss_dict.values())
             optimizer.zero_grad()
             losses.backward()
             optimizer.step() 
             train_loss += losses
-        print(f'(Train) epoch : {epoch+1}, Loss : {train_loss}, time : {time.time() - start}')
-        model.eval()
+        print(f'(Train) epoch : {epoch+1}, Avg Loss : {train_loss/len(train_loader)}, time : {time.time() - start}')
         validation_loss = 0
         with torch.no_grad():
             for imgs, annotations in tqdm.tqdm(val_loader):
                 imgs = list(img.to(device) for img in imgs)
-                annotations = [{k: v.to(device) for k, v in t.items()} for t in annotations]
+                annotations = [{k: v.to(device) for k, v in t.items() if k != "image_id"} for t in annotations]
                 val_loss_dict = model(imgs, annotations)
-                print(val_loss_dict)
                 losses = sum(loss for loss in val_loss_dict.values())
                 validation_loss += losses
-        print(f'(Train) epoch : {epoch+1}, Loss : {validation_loss}')
+        print(f'(Val) epoch : {epoch+1}, Avg Loss : {validation_loss/len(val_loader)}')
+        model.eval()
+        val_metrics = evaluate(model, val_loader, device=device)
+        print(val_metrics)
