@@ -74,6 +74,7 @@ def fix_seed(seed):
     torch.use_deterministic_algorithms(True)
     os.environ['OMP_NUM_THREADS'] = '1'
     os.environ['MKL_NUM_THREADS'] = '1'
+    os.environ["CUBLAS_WORKSPACE_CONFIG"] = "4096:8"
     torch.set_num_threads(1)
 
 if __name__ == "__main__":
@@ -96,9 +97,9 @@ if __name__ == "__main__":
     val_dataset = read_coco_dataset(images_root="/mnt/data/kai/VinDr_Subsets/cardiomegaly_subset/val",
                                    annotations_path="../subset/c-subset/explainability/cardiomegaly_100_subset_coco_labels_val.json",
                                    transforms=transforms)
-    train_loader = DataLoader(train_dataset, batch_size=32, shuffle=True, 
+    train_loader = DataLoader(train_dataset, batch_size=16, shuffle=True, 
                                    collate_fn=lambda x: tuple(zip(*x)))
-    val_loader = DataLoader(val_dataset, batch_size=32, shuffle=True, 
+    val_loader = DataLoader(val_dataset, batch_size=16, shuffle=True, 
                                    collate_fn=lambda x: tuple(zip(*x)))
     
     learnable_params = [p for p in model.parameters() if p.requires_grad]
@@ -106,7 +107,7 @@ if __name__ == "__main__":
                                 weight_decay=0.0005)
     
     num_epochs = 5
-    fix_seed(12451)
+    #fix_seed(12451)
     
     """wandb.init(project="cardiomegaly_explainability",  # Change this to your desired project name
         name=f"fasterrcnn_{time.strftime('%Y%m%d_%H%M%S')}",  # Optional: unique run name
@@ -142,6 +143,7 @@ if __name__ == "__main__":
                 imgs = list(img.to(device) for img in imgs)
                 annotations = [{k: v.to(device) for k, v in t.items()} for t in annotations]
                 val_loss_dict = model(imgs, annotations)
+                print(val_loss_dict)
                 losses = sum(loss for loss in val_loss_dict.values())
                 validation_loss += losses
         print(f'(Train) epoch : {epoch+1}, Loss : {validation_loss}')
