@@ -4,6 +4,7 @@ import time
 import random
 import tqdm
 
+import wandb
 import numpy as np
 import torch
 from torch.utils.data import DataLoader
@@ -76,6 +77,7 @@ def fix_seed(seed):
     torch.set_num_threads(1)
 
 if __name__ == "__main__":
+    
     model = model_loader(feature_extracting=True, num_classes=3, greyscale_single_channel=True, imgsize=(1024,1024))
     device = torch.device("cuda" if torch.cuda.is_available() else "mps")
     model.to(device)
@@ -100,27 +102,46 @@ if __name__ == "__main__":
                                    collate_fn=lambda x: tuple(zip(*x)))
     
     learnable_params = [p for p in model.parameters() if p.requires_grad]
-    optimizer = torch.optim.AdamW(learnable_params, lr=0.005,
+    optimizer = torch.optim.AdamW(learnable_params, lr=0.0001,
                                 weight_decay=0.0005)
     
     num_epochs = 5
+    fix_seed(12451)
+    
+    """wandb.init(project="cardiomegaly_explainability",  # Change this to your desired project name
+        name=f"fasterrcnn_{time.strftime('%Y%m%d_%H%M%S')}",  # Optional: unique run name
+        config={
+            "model": "fasterrcnn_resnet50_fpn_v2",
+            "epochs": num_epochs,
+            "batch_size": train_loader.batch_size,
+            "optimizer": "AdamW",
+            "learning_rate": optimizer.param_groups[0]["lr"]
+    })"""
     
     print('----------------------train start--------------------------')
     for epoch in range(num_epochs):
         start = time.time()
         model.train()
         i = 0    
-        epoch_loss = 0
+        train_loss = 0
         for imgs, annotations in tqdm.tqdm(train_loader):
             i += 1
             imgs = list(img.to(device) for img in imgs)
             annotations = [{k: v.to(device) for k, v in t.items()} for t in annotations]
-            loss_dict = model(imgs, annotations) 
-            print(loss_dict)
-            losses = sum(loss for loss in loss_dict.values())        
-
+            train_loss_dict = model(imgs, annotations) 
+            losses = sum(loss for loss in train_loss_dict.values())
             optimizer.zero_grad()
             losses.backward()
             optimizer.step() 
-            epoch_loss += losses
-        print(f'epoch : {epoch+1}, Loss : {epoch_loss}, time : {time.time() - start}')
+            train_loss += losses
+        print(f'(Train) epoch : {epoch+1}, Loss : {train_loss}, time : {time.time() - start}')
+        model.eval()
+        validation_loss = 0
+        with torch.no_grad():
+            for imgs, annotations in tqdm.tqdm(val_loader):
+                imgs = list(img.to(device) for img in imgs)
+                annotations = [{k: v.to(device) for k, v in t.items()} for t in annotations]
+                val_loss_dict = model(imgs, annotations)
+                losses = sum(loss for loss in val_loss_dict.values())
+                validation_loss += losses
+        print(f'(Train) epoch : {epoch+1}, Loss : {validation_loss}')
