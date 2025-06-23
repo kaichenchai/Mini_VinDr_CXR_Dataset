@@ -1,4 +1,4 @@
-from typing import List
+from typing import List, Union
 import os
 import time
 import random
@@ -60,6 +60,7 @@ def read_coco_dataset(images_root: str, annotations_path:str, transforms=None):
     dataset = torchvision.datasets.wrap_dataset_for_transforms_v2(dataset, target_keys=("image_id", "boxes", "labels"))
     return dataset
 
+
 def fix_seed(seed):
     '''
     Args : 
@@ -111,7 +112,7 @@ if __name__ == "__main__":
     num_epochs = 5
     #fix_seed(12451)
     
-    """wandb.init(project="cardiomegaly_explainability",  # Change this to your desired project name
+    run = wandb.init(project="cardiomegaly_explainability",  # Change this to your desired project name
         name=f"fasterrcnn_{time.strftime('%Y%m%d_%H%M%S')}",  # Optional: unique run name
         config={
             "model": "fasterrcnn_resnet50_fpn_v2",
@@ -119,7 +120,7 @@ if __name__ == "__main__":
             "batch_size": train_loader.batch_size,
             "optimizer": "AdamW",
             "learning_rate": optimizer.param_groups[0]["lr"]
-    })"""
+    })
     
     print('----------------------train start--------------------------')
     for epoch in range(num_epochs):
@@ -137,7 +138,7 @@ if __name__ == "__main__":
             losses.backward()
             optimizer.step() 
             train_loss += losses
-        print(f'(Train) epoch : {epoch+1}, Avg Loss : {train_loss/len(train_loader)}, time : {time.time() - start}')
+        print(f'(Train) epoch : {epoch}, Avg Loss : {train_loss/len(train_loader)}, time : {time.time() - start}')
         validation_loss = 0
         with torch.no_grad():
             for imgs, annotations in tqdm.tqdm(val_loader):
@@ -146,7 +147,15 @@ if __name__ == "__main__":
                 val_loss_dict = model(imgs, annotations)
                 losses = sum(loss for loss in val_loss_dict.values())
                 validation_loss += losses
-        print(f'(Val) epoch : {epoch+1}, Avg Loss : {validation_loss/len(val_loader)}')
+        print(f'(Val) epoch : {epoch}, Avg Loss : {validation_loss/len(val_loader)}')
         model.eval()
         val_metrics = evaluate(model, val_loader, device=device)
-        print(val_metrics)
+        # loss logging
+        dict_to_log = {}
+        for key, value in train_loss_dict.items():
+            dict_to_log[f"train/{value}"] = value
+        for key, value in val_loss_dict.items():
+            dict_to_log[f"validate/{value}"] = value
+        run.log(data=dict_to_log,
+                step=epoch,
+                commit=True)
