@@ -87,9 +87,9 @@ if __name__ == "__main__":
     
     learnable_params = [p for p in model.parameters() if p.requires_grad]
     optimizer = torch.optim.AdamW(learnable_params, lr=0.0001,
-                                weight_decay=0.0005)
+                                weight_decay=0.005)
     
-    num_epochs = 5
+    num_epochs = 1000
     #fix_seed(12451)
     
     run = wandb.init(project="cardiomegaly_explainability",  # Change this to your desired project name
