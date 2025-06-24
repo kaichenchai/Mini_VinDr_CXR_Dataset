@@ -4,10 +4,10 @@ import time
 import random
 import tqdm
 
-from engine import evaluate
 
 import wandb
 import numpy as np
+from torchmetrics.detection.mean_ap import MeanAveragePrecision
 import torch
 from torch.utils.data import DataLoader
 import torchvision
@@ -61,27 +61,7 @@ def read_coco_dataset(images_root: str, annotations_path:str, transforms=None):
     return dataset
 
 
-def fix_seed(seed):
-    '''
-    Args : 
-        seed : fix the seed
-    Function which allows to fix all the seed and get reproducible results
-    '''
-    torch.manual_seed(seed)
-    np.random.seed(seed)
-    random.seed(seed)
-    os.environ['PYTHONHASHSEED'] = str(seed)
-    torch.cuda.manual_seed(seed)
-    torch.cuda.manual_seed_all(seed)
-    torch.backends.cudnn.benchmark = False
-    torch.use_deterministic_algorithms(True)
-    os.environ['OMP_NUM_THREADS'] = '1'
-    os.environ['MKL_NUM_THREADS'] = '1'
-    os.environ["CUBLAS_WORKSPACE_CONFIG"] = "4096:8"
-    torch.set_num_threads(1)
-
 if __name__ == "__main__":
-    
     model = model_loader(feature_extracting=True, num_classes=3, greyscale_single_channel=True, imgsize=(1024,1024))
     device = torch.device("cuda" if torch.cuda.is_available() else "cpu")
     model.to(device)
@@ -122,7 +102,10 @@ if __name__ == "__main__":
             "learning_rate": optimizer.param_groups[0]["lr"]
     })
     
+    metrics = MeanAveragePrecision(iou_type="bbox", extended_summary=True)
+    
     print('----------------------train start--------------------------')
+    torch.manual_seed(123)
     for epoch in range(num_epochs):
         start = time.time()
         model.train()
@@ -149,13 +132,21 @@ if __name__ == "__main__":
                 validation_loss += losses
         print(f'(Val) epoch : {epoch}, Avg Loss : {validation_loss/len(val_loader)}')
         model.eval()
-        val_metrics = evaluate(model, val_loader, device=device)
+        with torch.no_grad():
+            for imgs, annotations in val_loader:
+                imgs = list(img.to(device) for img in imgs)
+                annotations = [{k: v.to(device) for k, v in t.items() if k != "image_id"} for t in annotations]
+                val_predictions = model(imgs, annotations)
+                metrics.update(preds=val_predictions, target=annotations)
+        validation_results_dict = metrics.compute()
         # loss logging
         dict_to_log = {}
         for key, value in train_loss_dict.items():
-            dict_to_log[f"train/{value}"] = value
+            dict_to_log[f"train/{key}"] = value
         for key, value in val_loss_dict.items():
-            dict_to_log[f"validate/{value}"] = value
+            dict_to_log[f"validate/{key}"] = value
+        dict_to_log["metrics/mAP50-95"] = validation_results_dict["map"]
+        dict_to_log["metrics/mAP_50"] = validation_results_dict["map_50"]
         run.log(data=dict_to_log,
                 step=epoch,
                 commit=True)
