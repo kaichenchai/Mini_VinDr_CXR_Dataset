@@ -1,9 +1,8 @@
-from typing import List, Union
-import os
+from typing import List
 import time
-import random
 import tqdm
-
+from copy import deepcopy
+import os
 
 import wandb
 import numpy as np
@@ -16,8 +15,8 @@ from torchvision.models.detection.transform import GeneralizedRCNNTransform
 import torchvision.transforms.v2 as v2
 from torchvision.models.detection.faster_rcnn import FastRCNNPredictor
 
-def model_loader(feature_extracting:bool=True, num_classes:int=3, greyscale_single_channel:bool=True, imgsize = (1024,1024)):
-    weights = FasterRCNN_ResNet50_FPN_V2_Weights.DEFAULT
+def model_loader(feature_extracting:bool=True, num_classes:int=3, greyscale_single_channel:bool=True, imgsize = (1024,1024), weights=None):
+    weights = FasterRCNN_ResNet50_FPN_V2_Weights.DEFAULT if weights is None else weights
     model = fasterrcnn_resnet50_fpn_v2(weights=weights)
     if greyscale_single_channel:
         # update transformations
@@ -60,6 +59,24 @@ def read_coco_dataset(images_root: str, annotations_path:str, transforms=None):
     dataset = torchvision.datasets.wrap_dataset_for_transforms_v2(dataset, target_keys=("image_id", "boxes", "labels"))
     return dataset
 
+class ValidationLossEarlyStopping:
+    def __init__(self, patience=1, min_delta=0.0):
+        self.patience = patience  # number of times to allow for no improvement before stopping the execution
+        self.min_delta = min_delta  # the minimum change to be counted as improvement
+        self.counter = 0  # count the number of times the validation accuracy not improving
+        self.min_validation_loss = np.inf
+
+    # return True when validation loss is not decreased by the `min_delta` for `patience` times 
+    def early_stop_check(self, validation_loss):
+        if ((validation_loss+self.min_delta) < self.min_validation_loss):
+            self.min_validation_loss = validation_loss
+            self.counter = 0  # reset the counter if validation loss decreased at least by min_delta
+        elif ((validation_loss+self.min_delta) > self.min_validation_loss):
+            self.counter += 1 # increase the counter if validation loss is not decreased by the min_delta
+            if self.counter >= self.patience:
+                return True
+        return False
+
 
 if __name__ == "__main__":
     model = model_loader(feature_extracting=True, num_classes=3, greyscale_single_channel=True, imgsize=(1024,1024))
@@ -89,8 +106,9 @@ if __name__ == "__main__":
     optimizer = torch.optim.AdamW(learnable_params, lr=0.0001,
                                 weight_decay=0.005)
     
-    num_epochs = 500
     torch.manual_seed(42069)
+    num_epochs = 500
+    current_min_loss = np.inf
     
     run = wandb.init(project="cardiomegaly_explainability",  # Change this to your desired project name
         name=f"fasterrcnn_{time.strftime('%Y%m%d_%H%M%S')}",  # Optional: unique run name
@@ -103,6 +121,7 @@ if __name__ == "__main__":
     })
     
     metrics = MeanAveragePrecision(iou_type="bbox", extended_summary=True)
+    early_stopper = ValidationLossEarlyStopping(patience=50, min_delta=0.01)
     
     print('----------------------train start--------------------------')
 
@@ -130,6 +149,8 @@ if __name__ == "__main__":
                 val_loss_dict = model(imgs, annotations)
                 losses = sum(loss for loss in val_loss_dict.values())
                 validation_loss += losses
+        if validation_loss < current_min_loss:
+            best_model_state = deepcopy(model.state_dict())
         print(f'(Val) epoch : {epoch}, Avg Loss : {validation_loss/len(val_loader)}')
         model.eval()
         with torch.no_grad():
@@ -147,7 +168,20 @@ if __name__ == "__main__":
             dict_to_log[f"validate/{key}"] = value
         dict_to_log["metrics/mAP50-95"] = validation_results_dict["map"]
         dict_to_log["metrics/mAP_50"] = validation_results_dict["map_50"]
+        dict_to_log["train/avg_loss"] = train_loss
+        dict_to_log["validate/avg_loss"] = validation_loss
         run.log(data=dict_to_log,
                 step=epoch,
                 commit=True)
-    torch.save(model.state_dict(), f"./{num_epochs}e_model.pt")
+        if early_stopper.early_stop(validation_loss):             
+            break
+    
+    file_path_base = f"./outputs/{time.strftime('%Y%m%d_%H%M%S')}"
+    if not(os.path.isdir(file_path_base)):
+        os.mkdir(file_path_base)
+    file_path = f"{file_path_base}/{num_epochs}e_model.pt"
+    file_path_lowest_loss = f"{file_path_base}/{num_epochs}e_model_min_val_loss.pt"
+    torch.save(model.state_dict(), file_path)
+    torch.save(best_model_state, file_path_lowest_loss)
+    run.save(file_path, base_path=file_path_base)
+    run.save(file_path_lowest_loss, base_path=file_path_base)
