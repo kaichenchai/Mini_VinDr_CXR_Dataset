@@ -89,8 +89,8 @@ if __name__ == "__main__":
     optimizer = torch.optim.AdamW(learnable_params, lr=0.0001,
                                 weight_decay=0.005)
     
-    num_epochs = 1000
-    #fix_seed(12451)
+    num_epochs = 500
+    torch.manual_seed(42069)
     
     run = wandb.init(project="cardiomegaly_explainability",  # Change this to your desired project name
         name=f"fasterrcnn_{time.strftime('%Y%m%d_%H%M%S')}",  # Optional: unique run name
@@ -105,7 +105,7 @@ if __name__ == "__main__":
     metrics = MeanAveragePrecision(iou_type="bbox", extended_summary=True)
     
     print('----------------------train start--------------------------')
-    torch.manual_seed(123)
+
     for epoch in range(num_epochs):
         start = time.time()
         model.train()
@@ -150,3 +150,4 @@ if __name__ == "__main__":
         run.log(data=dict_to_log,
                 step=epoch,
                 commit=True)
+    torch.save(model.state_dict(), f"./{num_epochs}e_model.pt")
