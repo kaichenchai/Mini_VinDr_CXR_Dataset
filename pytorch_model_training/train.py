@@ -173,7 +173,7 @@ if __name__ == "__main__":
         run.log(data=dict_to_log,
                 step=epoch,
                 commit=True)
-        if early_stopper.early_stop(validation_loss):             
+        if early_stopper.early_stop_check(validation_loss):             
             break
     
     file_path_base = f"./outputs/{time.strftime('%Y%m%d_%H%M%S')}"
