@@ -40,7 +40,7 @@ def checkFolder(csv: str, dir: str):
     print(f"Files that should not be in folder {[x for x in filesInDir if x not in idList]}")
 
 if __name__ == "__main__":
-    #moveFiles("stratifiedSplit/image_labels_trainNEW.csv", "1024_brightnessEQ_dataset/images/train", "1024_brightnessEQ_dataset/images/newTrain")
+    #moveFiles("/mnt/data/kai/VinDr_Code/Mini_VinDr_CXR_Dataset/subset/c-subset/explainability/cardiomegaly_subset_to_annotate.csv", "/mnt/data/kai/VinDr_Subsets/YOLOv8_format_datasets/FULL_1024_brightnessEQ_FIXED/images/train1", "/mnt/data/kai/VinDr_Subsets/cardiomegaly_subset/1024_padding_brightnessEQ/train")
     #moveFiles("stratifiedSplit/image_labels_valNEW.csv", "1024_brightnessEQ_dataset/images/train", "1024_brightnessEQ_dataset/images/val")
-    checkFolder("stratifiedSplit/image_labels_valNEW.csv", "1024_brightnessEQ_dataset/images/val")
-    checkFolder("stratifiedSplit/image_labels_trainNEW.csv", "1024_brightnessEQ_dataset/images/train")
+    checkFolder("/mnt/data/kai/VinDr_Code/Mini_VinDr_CXR_Dataset/subset/c-subset/explainability/cardiomegaly_subset_to_annotate.csv", "/mnt/data/kai/VinDr_Subsets/cardiomegaly_subset/1024_padding_brightnessEQ/train")
+    #checkFolder("stratifiedSplit/image_labels_trainNEW.csv", "1024_brightnessEQ_dataset/images/train")

@@ -1,0 +1,168 @@
+{
+    "os": "Linux-6.8.9-100.fc38.x86_64-x86_64-with-glibc2.37",
+    "python": "3.12.3",
+    "heartbeatAt": "2025-06-26T15:07:54.643808",
+    "startedAt": "2025-06-26T15:07:53.729848",
+    "docker": null,
+    "cuda": null,
+    "args": [],
+    "state": "running",
+    "program": "/mnt/data/kai/VinDr_Code/Mini_VinDr_CXR_Dataset/pytorch_model_training/train.py",
+    "codePathLocal": "train.py",
+    "codePath": "pytorch_model_training/train.py",
+    "git": {
+        "remote": "git@github.com:kaichenchai/Mini_VinDr_CXR_Dataset.git",
+        "commit": "1ee783483a19cb9d667e1339828aa247764b03d0"
+    },
+    "email": "englishorc65@gmail.com",
+    "root": "/mnt/data/kai/VinDr_Code/Mini_VinDr_CXR_Dataset",
+    "host": "fedora",
+    "username": "kai",
+    "executable": "/home/kai/.conda/envs/vindr/bin/python3",
+    "cpu_count": 16,
+    "cpu_count_logical": 24,
+    "cpu_freq": {
+        "current": 2742.0844999999995,
+        "min": 800.0,
+        "max": 4950.0
+    },
+    "cpu_freq_per_core": [
+        {
+            "current": 5292.285,
+            "min": 800.0,
+            "max": 5300.0
+        },
+        {
+            "current": 5307.381,
+            "min": 800.0,
+            "max": 5300.0
+        },
+        {
+            "current": 4400.0,
+            "min": 800.0,
+            "max": 5300.0
+        },
+        {
+            "current": 800.0,
+            "min": 800.0,
+            "max": 5300.0
+        },
+        {
+            "current": 800.0,
+            "min": 800.0,
+            "max": 5300.0
+        },
+        {
+            "current": 800.0,
+            "min": 800.0,
+            "max": 5300.0
+        },
+        {
+            "current": 800.0,
+            "min": 800.0,
+            "max": 5300.0
+        },
+        {
+            "current": 800.0,
+            "min": 800.0,
+            "max": 5300.0
+        },
+        {
+            "current": 4400.0,
+            "min": 800.0,
+            "max": 5400.0
+        },
+        {
+            "current": 800.0,
+            "min": 800.0,
+            "max": 5400.0
+        },
+        {
+            "current": 5300.0,
+            "min": 800.0,
+            "max": 5400.0
+        },
+        {
+            "current": 800.0,
+            "min": 800.0,
+            "max": 5400.0
+        },
+        {
+            "current": 5300.0,
+            "min": 800.0,
+            "max": 5300.0
+        },
+        {
+            "current": 800.0,
+            "min": 800.0,
+            "max": 5300.0
+        },
+        {
+            "current": 800.0,
+            "min": 800.0,
+            "max": 5300.0
+        },
+        {
+            "current": 5304.624,
+            "min": 800.0,
+            "max": 5300.0
+        },
+        {
+            "current": 4258.72,
+            "min": 800.0,
+            "max": 4200.0
+        },
+        {
+            "current": 4212.98,
+            "min": 800.0,
+            "max": 4200.0
+        },
+        {
+            "current": 800.0,
+            "min": 800.0,
+            "max": 4200.0
+        },
+        {
+            "current": 4193.774,
+            "min": 800.0,
+            "max": 4200.0
+        },
+        {
+            "current": 800.0,
+            "min": 800.0,
+            "max": 4200.0
+        },
+        {
+            "current": 4169.594,
+            "min": 800.0,
+            "max": 4200.0
+        },
+        {
+            "current": 4199.856,
+            "min": 800.0,
+            "max": 4200.0
+        },
+        {
+            "current": 800.0,
+            "min": 800.0,
+            "max": 4200.0
+        }
+    ],
+    "disk": {
+        "/": {
+            "total": 929.92578125,
+            "used": 761.1852836608887
+        }
+    },
+    "gpu": "NVIDIA GeForce RTX 4090",
+    "gpu_count": 1,
+    "gpu_devices": [
+        {
+            "name": "NVIDIA GeForce RTX 4090",
+            "memory_total": 25757220864
+        }
+    ],
+    "memory": {
+        "total": 31.144962310791016
+    }
+}
