@@ -1,0 +1,24 @@
+
+----------------------train start--------------------------
+  0%|                                                                                                                                                                                    | 0/25 [00:00<?, ?it/s]/home/kai/miniconda3/envs/vindr/lib/python3.12/site-packages/torch/nn/modules/conv.py:456: UserWarning: Plan failed with an OutOfMemoryError: CUDA out of memory. Tried to allocate 4.51 GiB. GPU  (Triggered internally at /opt/conda/conda-bld/pytorch_1712609048481/work/aten/src/ATen/native/cudnn/Conv_v8.cpp:924.)
+  return F.conv2d(input, weight, bias, self.stride,
+/home/kai/miniconda3/envs/vindr/lib/python3.12/site-packages/torch/nn/modules/conv.py:456: UserWarning: Plan failed with an OutOfMemoryError: CUDA out of memory. Tried to allocate 4.64 GiB. GPU  (Triggered internally at /opt/conda/conda-bld/pytorch_1712609048481/work/aten/src/ATen/native/cudnn/Conv_v8.cpp:924.)
+  return F.conv2d(input, weight, bias, self.stride,
+
+
+
+
+
+
+
+
+
+
+
+ 96%|████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████▏      | 24/25 [00:25<00:01,  1.03s/it]
+100%|███████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████| 25/25 [00:26<00:00,  1.06s/it]
+
+
+
+ 85%|████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████▋                          | 11/13 [00:06<00:01,  1.61it/s]
+

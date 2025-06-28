@@ -1,0 +1,85 @@
+
+----------------------train start--------------------------
+  0%|                                                                                                                                                                                    | 0/25 [00:00<?, ?it/s]/home/kai/miniconda3/envs/vindr/lib/python3.12/site-packages/torch/nn/modules/conv.py:456: UserWarning: Plan failed with an OutOfMemoryError: CUDA out of memory. Tried to allocate 4.51 GiB. GPU  (Triggered internally at /opt/conda/conda-bld/pytorch_1712609048481/work/aten/src/ATen/native/cudnn/Conv_v8.cpp:924.)
+  return F.conv2d(input, weight, bias, self.stride,
+/home/kai/miniconda3/envs/vindr/lib/python3.12/site-packages/torch/nn/modules/conv.py:456: UserWarning: Plan failed with an OutOfMemoryError: CUDA out of memory. Tried to allocate 4.64 GiB. GPU  (Triggered internally at /opt/conda/conda-bld/pytorch_1712609048481/work/aten/src/ATen/native/cudnn/Conv_v8.cpp:924.)
+  return F.conv2d(input, weight, bias, self.stride,
+/home/kai/miniconda3/envs/vindr/lib/python3.12/site-packages/torch/nn/parallel/_functions.py:68: UserWarning: Was asked to gather along dimension 0, but all input tensors were scalars; will instead unsqueeze and return a vector.
+  warnings.warn('Was asked to gather along dimension 0, but all '
+
+
+
+
+
+
+
+
+
+
+
+ 92%|█████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████▎             | 23/25 [00:25<00:02,  1.06s/it]
+100%|███████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████| 25/25 [00:27<00:00,  1.09s/it]
+
+
+ 57%|██████████████████████████████████████████████████████████████████████████████████████████████████▊                                                                          | 4/7 [00:04<00:03,  1.04s/it]
+
+100%|█████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████| 7/7 [00:06<00:00,  1.06it/s]
+/home/kai/miniconda3/envs/vindr/lib/python3.12/site-packages/torch/nn/modules/conv.py:456: UserWarning: Plan failed with an OutOfMemoryError: CUDA out of memory. Tried to allocate 8.93 GiB. GPU  (Triggered internally at /opt/conda/conda-bld/pytorch_1712609048481/work/aten/src/ATen/native/cudnn/Conv_v8.cpp:924.)
+  return F.conv2d(input, weight, bias, self.stride,
+/home/kai/miniconda3/envs/vindr/lib/python3.12/site-packages/torch/nn/modules/conv.py:456: UserWarning: Plan failed with an OutOfMemoryError: CUDA out of memory. Tried to allocate 4.40 GiB. GPU  (Triggered internally at /opt/conda/conda-bld/pytorch_1712609048481/work/aten/src/ATen/native/cudnn/Conv_v8.cpp:924.)
+  return F.conv2d(input, weight, bias, self.stride,
+  0%|                                                                                                                                                                                    | 0/25 [00:00<?, ?it/s]/home/kai/miniconda3/envs/vindr/lib/python3.12/site-packages/torch/nn/parallel/_functions.py:68: UserWarning: Was asked to gather along dimension 0, but all input tensors were scalars; will instead unsqueeze and return a vector.
+  warnings.warn('Was asked to gather along dimension 0, but all '
+
+ 12%|████████████████████▋                                                                                                                                                       | 3/25 [00:03<00:29,  1.33s/it]
+Traceback (most recent call last):
+  File "/mnt/data/kai/Mini_VinDr_CXR_Dataset/pytorch_model_training/train.py", line 154, in <module>
+    train_loss_dict = model(imgs, annotations)
+                     ^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/kai/miniconda3/envs/vindr/lib/python3.12/site-packages/torch/nn/modules/module.py", line 1532, in _wrapped_call_impl
+    return self._call_impl(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/kai/miniconda3/envs/vindr/lib/python3.12/site-packages/torch/nn/modules/module.py", line 1541, in _call_impl
+    return forward_call(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/kai/miniconda3/envs/vindr/lib/python3.12/site-packages/torch/nn/parallel/data_parallel.py", line 185, in forward
+    outputs = self.parallel_apply(replicas, inputs, module_kwargs)
+              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/kai/miniconda3/envs/vindr/lib/python3.12/site-packages/torch/nn/parallel/data_parallel.py", line 200, in parallel_apply
+    return parallel_apply(replicas, inputs, kwargs, self.device_ids[:len(replicas)])
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/kai/miniconda3/envs/vindr/lib/python3.12/site-packages/torch/nn/parallel/parallel_apply.py", line 102, in parallel_apply
+    _worker(0, modules[0], inputs[0], kwargs_tup[0], devices[0], streams[0])
+  File "/home/kai/miniconda3/envs/vindr/lib/python3.12/site-packages/torch/nn/parallel/parallel_apply.py", line 83, in _worker
+    output = module(*input, **kwargs)
+             ^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/kai/miniconda3/envs/vindr/lib/python3.12/site-packages/torch/nn/modules/module.py", line 1532, in _wrapped_call_impl
+    return self._call_impl(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/kai/miniconda3/envs/vindr/lib/python3.12/site-packages/torch/nn/modules/module.py", line 1541, in _call_impl
+    return forward_call(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/kai/miniconda3/envs/vindr/lib/python3.12/site-packages/torchvision/models/detection/generalized_rcnn.py", line 104, in forward
+    proposals, proposal_losses = self.rpn(images, features, targets)
+                                 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/kai/miniconda3/envs/vindr/lib/python3.12/site-packages/torch/nn/modules/module.py", line 1532, in _wrapped_call_impl
+    return self._call_impl(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/kai/miniconda3/envs/vindr/lib/python3.12/site-packages/torch/nn/modules/module.py", line 1541, in _call_impl
+    return forward_call(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/kai/miniconda3/envs/vindr/lib/python3.12/site-packages/torchvision/models/detection/rpn.py", line 362, in forward
+    anchors = self.anchor_generator(images, features)
+              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/kai/miniconda3/envs/vindr/lib/python3.12/site-packages/torch/nn/modules/module.py", line 1532, in _wrapped_call_impl
+    return self._call_impl(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/kai/miniconda3/envs/vindr/lib/python3.12/site-packages/torch/nn/modules/module.py", line 1541, in _call_impl
+    return forward_call(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/kai/miniconda3/envs/vindr/lib/python3.12/site-packages/torchvision/models/detection/anchor_utils.py", line 126, in forward
+    self.set_cell_anchors(dtype, device)
+  File "/home/kai/miniconda3/envs/vindr/lib/python3.12/site-packages/torchvision/models/detection/anchor_utils.py", line 77, in set_cell_anchors
+    self.cell_anchors = [cell_anchor.to(dtype=dtype, device=device) for cell_anchor in self.cell_anchors]
+                         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+KeyboardInterrupt

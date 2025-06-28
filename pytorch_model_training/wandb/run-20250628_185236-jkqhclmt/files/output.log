@@ -1,0 +1,30 @@
+
+----------------------train start--------------------------
+  0%|                                                    | 0/25 [00:00<?, ?it/s]
+Traceback (most recent call last):
+  File "/mnt/data/kai/Mini_VinDr_CXR_Dataset/pytorch_model_training/train.py", line 141, in <module>
+    for imgs, annotations in tqdm.tqdm(train_loader):
+  File "/home/kai/miniconda3/envs/vindr/lib/python3.12/site-packages/tqdm/std.py", line 1181, in __iter__
+    for obj in iterable:
+  File "/home/kai/miniconda3/envs/vindr/lib/python3.12/site-packages/torch/utils/data/dataloader.py", line 631, in __next__
+    data = self._next_data()
+           ^^^^^^^^^^^^^^^^^
+  File "/home/kai/miniconda3/envs/vindr/lib/python3.12/site-packages/torch/utils/data/dataloader.py", line 675, in _next_data
+    data = self._dataset_fetcher.fetch(index)  # may raise StopIteration
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/kai/miniconda3/envs/vindr/lib/python3.12/site-packages/torch/utils/data/_utils/fetch.py", line 51, in fetch
+    data = [self.dataset[idx] for idx in possibly_batched_index]
+            ~~~~~~~~~~~~^^^^^
+  File "/home/kai/miniconda3/envs/vindr/lib/python3.12/site-packages/torchvision/tv_tensors/_dataset_wrapper.py", line 186, in __getitem__
+    sample = self._dataset[idx]
+             ~~~~~~~~~~~~~^^^^^
+  File "/home/kai/miniconda3/envs/vindr/lib/python3.12/site-packages/torchvision/datasets/coco.py", line 53, in __getitem__
+    image = self._load_image(id)
+            ^^^^^^^^^^^^^^^^^^^^
+  File "/home/kai/miniconda3/envs/vindr/lib/python3.12/site-packages/torchvision/datasets/coco.py", line 42, in _load_image
+    return Image.open(os.path.join(self.root, path)).convert("RGB")
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/kai/miniconda3/envs/vindr/lib/python3.12/site-packages/PIL/Image.py", line 3277, in open
+    fp = builtins.open(filename, "rb")
+         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+FileNotFoundError: [Errno 2] No such file or directory: '/mnt/data/kai/VinDr_Subsets/cardiomegaly_subset/train/19b51cda56e42d3fd879b996c986bbc1.png'

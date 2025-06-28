@@ -88,7 +88,7 @@ class ValidationLossEarlyStopping:
 
 if __name__ == "__main__":
     model = model_loader(feature_extracting=True, num_classes=3, greyscale_single_channel=True, imgsize=(1024,1024))
-    device = torch.device("cuda:0" if torch.cuda.is_available() else "cpu")
+    device = torch.device("cuda" if torch.cuda.is_available() else "cpu")
     model.to(device)
     # if greyscale = False, then we need to convert the greyscale images to not have 3 channels
     transforms = generate_transformations(no_img_channels=1)
@@ -98,13 +98,22 @@ if __name__ == "__main__":
                                       transforms=transforms)
     val_dataset = read_coco_dataset(images_root="/Users/kaichenchai/Documents/Projects/cardiomegaly_subset/val",
                                    annotations_path="subset/c-subset/explainability/cardiomegaly_100_subset_coco_labels_val.json",
-                                   transforms=transforms)"""
+                                   transforms=transforms)
+    
     train_dataset = read_coco_dataset(images_root="/mnt/data/kai/VinDr_Subsets/cardiomegaly_subset/train",
                                       annotations_path="../subset/c-subset/explainability/cardiomegaly_400_subset_coco_labels.json",
                                       transforms=transforms)
     val_dataset = read_coco_dataset(images_root="/mnt/data/kai/VinDr_Subsets/cardiomegaly_subset/val",
                                    annotations_path="../subset/c-subset/explainability/cardiomegaly_100_subset_coco_labels_val.json",
+                                   transforms=transforms)"""
+
+    train_dataset = read_coco_dataset(images_root="/mnt/data/kai/VinDr_datasets/cardiomegaly_subset/1024_padding_CLAHE/train",
+                                      annotations_path="../subset/c-subset/explainability/cardiomegaly_400_subset_coco_labels.json",
+                                      transforms=transforms)
+    val_dataset = read_coco_dataset(images_root="/mnt/data/kai/VinDr_datasets/cardiomegaly_subset/1024_padding_CLAHE/val",
+                                   annotations_path="../subset/c-subset/explainability/cardiomegaly_100_subset_coco_labels_val.json",
                                    transforms=transforms)
+    
     train_loader = DataLoader(train_dataset, batch_size=16, shuffle=True, 
                                    collate_fn=lambda x: tuple(zip(*x)))
     val_loader = DataLoader(val_dataset, batch_size=16, shuffle=True, 

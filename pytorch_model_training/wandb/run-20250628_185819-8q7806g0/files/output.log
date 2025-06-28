@@ -1,0 +1,11 @@
+
+----------------------train start--------------------------
+  0%|                                                                                                                                                                                    | 0/25 [00:00<?, ?it/s]
+Traceback (most recent call last):
+  File "/mnt/data/kai/Mini_VinDr_CXR_Dataset/pytorch_model_training/train.py", line 152, in <module>
+    imgs = list(img.to(device) for img in imgs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/mnt/data/kai/Mini_VinDr_CXR_Dataset/pytorch_model_training/train.py", line 152, in <genexpr>
+    imgs = list(img.to(device) for img in imgs)
+                       ^^^^^^
+NameError: name 'device' is not defined

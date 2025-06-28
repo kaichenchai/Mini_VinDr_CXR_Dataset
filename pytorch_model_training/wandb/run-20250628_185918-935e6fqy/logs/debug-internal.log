@@ -1,0 +1,190 @@
+2025-06-28 18:59:18,871 INFO    StreamThr :1171049 [internal.py:wandb_internal():86] W&B internal server running at pid: 1171049, started at: 2025-06-28 18:59:18.870501
+2025-06-28 18:59:18,875 DEBUG   HandlerThread:1171049 [handler.py:handle_request():146] handle_request: status
+2025-06-28 18:59:18,877 INFO    WriterThread:1171049 [datastore.py:open_for_write():87] open: /mnt/data/kai/Mini_VinDr_CXR_Dataset/pytorch_model_training/wandb/run-20250628_185918-935e6fqy/run-935e6fqy.wandb
+2025-06-28 18:59:18,878 DEBUG   SenderThread:1171049 [sender.py:send():379] send: header
+2025-06-28 18:59:18,878 DEBUG   SenderThread:1171049 [sender.py:send():379] send: run
+2025-06-28 18:59:19,532 INFO    SenderThread:1171049 [dir_watcher.py:__init__():211] watching files in: /mnt/data/kai/Mini_VinDr_CXR_Dataset/pytorch_model_training/wandb/run-20250628_185918-935e6fqy/files
+2025-06-28 18:59:19,532 INFO    SenderThread:1171049 [sender.py:_start_run_threads():1124] run started: 935e6fqy with start time 1751108358.869289
+2025-06-28 18:59:19,643 DEBUG   HandlerThread:1171049 [handler.py:handle_request():146] handle_request: check_version
+2025-06-28 18:59:19,644 DEBUG   SenderThread:1171049 [sender.py:send_request():406] send_request: check_version
+2025-06-28 18:59:19,727 DEBUG   HandlerThread:1171049 [handler.py:handle_request():146] handle_request: run_start
+2025-06-28 18:59:19,740 DEBUG   HandlerThread:1171049 [system_info.py:__init__():26] System info init
+2025-06-28 18:59:19,740 DEBUG   HandlerThread:1171049 [system_info.py:__init__():41] System info init done
+2025-06-28 18:59:19,740 INFO    HandlerThread:1171049 [system_monitor.py:start():194] Starting system monitor
+2025-06-28 18:59:19,740 INFO    SystemMonitor:1171049 [system_monitor.py:_start():158] Starting system asset monitoring threads
+2025-06-28 18:59:19,740 INFO    HandlerThread:1171049 [system_monitor.py:probe():214] Collecting system info
+2025-06-28 18:59:19,741 INFO    SystemMonitor:1171049 [interfaces.py:start():190] Started cpu monitoring
+2025-06-28 18:59:19,742 INFO    SystemMonitor:1171049 [interfaces.py:start():190] Started disk monitoring
+2025-06-28 18:59:19,742 INFO    SystemMonitor:1171049 [interfaces.py:start():190] Started gpu monitoring
+2025-06-28 18:59:19,743 INFO    SystemMonitor:1171049 [interfaces.py:start():190] Started memory monitoring
+2025-06-28 18:59:19,744 INFO    SystemMonitor:1171049 [interfaces.py:start():190] Started network monitoring
+2025-06-28 18:59:19,755 DEBUG   HandlerThread:1171049 [system_info.py:probe():150] Probing system
+2025-06-28 18:59:19,758 DEBUG   HandlerThread:1171049 [system_info.py:_probe_git():135] Probing git
+2025-06-28 18:59:19,764 DEBUG   HandlerThread:1171049 [system_info.py:_probe_git():143] Probing git done
+2025-06-28 18:59:19,764 DEBUG   HandlerThread:1171049 [system_info.py:probe():198] Probing system done
+2025-06-28 18:59:19,765 DEBUG   HandlerThread:1171049 [system_monitor.py:probe():223] {'os': 'Linux-6.5.0-28-generic-x86_64-with-glibc2.35', 'python': '3.12.3', 'heartbeatAt': '2025-06-28T10:59:19.756048', 'startedAt': '2025-06-28T10:59:18.864768', 'docker': None, 'cuda': None, 'args': (), 'state': 'running', 'program': '/mnt/data/kai/Mini_VinDr_CXR_Dataset/pytorch_model_training/train.py', 'codePathLocal': 'train.py', 'codePath': 'pytorch_model_training/train.py', 'git': {'remote': 'https://github.com/kaichenchai/Mini_VinDr_CXR_Dataset.git', 'commit': 'e1a33c5a0f9d322d0056443e30058d9c84b9ffb8'}, 'email': 'englishorc65@gmail.com', 'root': '/mnt/data/kai/Mini_VinDr_CXR_Dataset', 'host': 'thermaltake', 'username': 'kai', 'executable': '/home/kai/miniconda3/envs/vindr/bin/python3', 'cpu_count': 10, 'cpu_count_logical': 20, 'cpu_freq': {'current': 1524.2208000000003, 'min': 1200.0, 'max': 4120.0}, 'cpu_freq_per_core': [{'current': 1200.0, 'min': 1200.0, 'max': 4100.0}, {'current': 1200.0, 'min': 1200.0, 'max': 4100.0}, {'current': 1200.0, 'min': 1200.0, 'max': 4100.0}, {'current': 1200.005, 'min': 1200.0, 'max': 4200.0}, {'current': 1200.0, 'min': 1200.0, 'max': 4100.0}, {'current': 1200.0, 'min': 1200.0, 'max': 4100.0}, {'current': 1200.0, 'min': 1200.0, 'max': 4100.0}, {'current': 1199.986, 'min': 1200.0, 'max': 4100.0}, {'current': 4103.77, 'min': 1200.0, 'max': 4100.0}, {'current': 1200.144, 'min': 1200.0, 'max': 4200.0}, {'current': 1399.985, 'min': 1200.0, 'max': 4100.0}, {'current': 1200.0, 'min': 1200.0, 'max': 4100.0}, {'current': 2800.044, 'min': 1200.0, 'max': 4100.0}, {'current': 1200.0, 'min': 1200.0, 'max': 4200.0}, {'current': 1199.986, 'min': 1200.0, 'max': 4100.0}, {'current': 1200.0, 'min': 1200.0, 'max': 4100.0}, {'current': 1200.243, 'min': 1200.0, 'max': 4100.0}, {'current': 1200.0, 'min': 1200.0, 'max': 4100.0}, {'current': 3999.995, 'min': 1200.0, 'max': 4100.0}, {'current': 1200.0, 'min': 1200.0, 'max': 4200.0}], 'disk': {'/': {'total': 3753.976058959961, 'used': 558.2838478088379}}, 'gpu': 'NVIDIA GeForce RTX 2080 Ti', 'gpu_count': 2, 'gpu_devices': [{'name': 'NVIDIA GeForce RTX 2080 Ti', 'memory_total': 11811160064}, {'name': 'NVIDIA GeForce RTX 2080 Ti', 'memory_total': 11811160064}], 'memory': {'total': 62.469051361083984}}
+2025-06-28 18:59:19,765 INFO    HandlerThread:1171049 [system_monitor.py:probe():224] Finished collecting system info
+2025-06-28 18:59:19,765 INFO    HandlerThread:1171049 [system_monitor.py:probe():227] Publishing system info
+2025-06-28 18:59:19,765 DEBUG   HandlerThread:1171049 [system_info.py:_save_conda():207] Saving list of conda packages installed into the current environment
+2025-06-28 18:59:20,534 INFO    Thread-12 :1171049 [dir_watcher.py:_on_file_created():271] file/dir created: /mnt/data/kai/Mini_VinDr_CXR_Dataset/pytorch_model_training/wandb/run-20250628_185918-935e6fqy/files/conda-environment.yaml
+2025-06-28 18:59:21,532 INFO    Thread-12 :1171049 [dir_watcher.py:_on_file_modified():288] file/dir modified: /mnt/data/kai/Mini_VinDr_CXR_Dataset/pytorch_model_training/wandb/run-20250628_185918-935e6fqy/files/conda-environment.yaml
+2025-06-28 18:59:21,534 DEBUG   HandlerThread:1171049 [system_info.py:_save_conda():222] Saving conda packages done
+2025-06-28 18:59:21,535 INFO    HandlerThread:1171049 [system_monitor.py:probe():229] Finished publishing system info
+2025-06-28 18:59:21,538 DEBUG   SenderThread:1171049 [sender.py:send():379] send: files
+2025-06-28 18:59:21,539 INFO    SenderThread:1171049 [sender.py:_save_file():1390] saving file wandb-metadata.json with policy now
+2025-06-28 18:59:21,580 DEBUG   HandlerThread:1171049 [handler.py:handle_request():146] handle_request: python_packages
+2025-06-28 18:59:21,580 DEBUG   SenderThread:1171049 [sender.py:send_request():406] send_request: python_packages
+2025-06-28 18:59:21,582 DEBUG   HandlerThread:1171049 [handler.py:handle_request():146] handle_request: stop_status
+2025-06-28 18:59:21,582 DEBUG   SenderThread:1171049 [sender.py:send_request():406] send_request: stop_status
+2025-06-28 18:59:21,585 DEBUG   HandlerThread:1171049 [handler.py:handle_request():146] handle_request: internal_messages
+2025-06-28 18:59:21,987 DEBUG   SenderThread:1171049 [sender.py:send():379] send: telemetry
+2025-06-28 18:59:21,988 DEBUG   SenderThread:1171049 [sender.py:send():379] send: exit
+2025-06-28 18:59:21,988 INFO    SenderThread:1171049 [sender.py:send_exit():586] handling exit code: 1
+2025-06-28 18:59:21,988 INFO    SenderThread:1171049 [sender.py:send_exit():588] handling runtime: 2
+2025-06-28 18:59:21,990 INFO    SenderThread:1171049 [sender.py:_save_file():1390] saving file wandb-summary.json with policy end
+2025-06-28 18:59:21,990 INFO    SenderThread:1171049 [sender.py:send_exit():594] send defer
+2025-06-28 18:59:21,990 DEBUG   HandlerThread:1171049 [handler.py:handle_request():146] handle_request: defer
+2025-06-28 18:59:21,990 INFO    HandlerThread:1171049 [handler.py:handle_request_defer():172] handle defer: 0
+2025-06-28 18:59:21,991 DEBUG   SenderThread:1171049 [sender.py:send_request():406] send_request: defer
+2025-06-28 18:59:21,991 INFO    SenderThread:1171049 [sender.py:send_request_defer():610] handle sender defer: 0
+2025-06-28 18:59:21,991 INFO    SenderThread:1171049 [sender.py:transition_state():614] send defer: 1
+2025-06-28 18:59:21,991 DEBUG   HandlerThread:1171049 [handler.py:handle_request():146] handle_request: defer
+2025-06-28 18:59:21,991 INFO    HandlerThread:1171049 [handler.py:handle_request_defer():172] handle defer: 1
+2025-06-28 18:59:21,991 DEBUG   SenderThread:1171049 [sender.py:send_request():406] send_request: defer
+2025-06-28 18:59:21,991 INFO    SenderThread:1171049 [sender.py:send_request_defer():610] handle sender defer: 1
+2025-06-28 18:59:21,991 INFO    SenderThread:1171049 [sender.py:transition_state():614] send defer: 2
+2025-06-28 18:59:21,991 DEBUG   HandlerThread:1171049 [handler.py:handle_request():146] handle_request: defer
+2025-06-28 18:59:21,991 INFO    HandlerThread:1171049 [handler.py:handle_request_defer():172] handle defer: 2
+2025-06-28 18:59:21,991 INFO    HandlerThread:1171049 [system_monitor.py:finish():203] Stopping system monitor
+2025-06-28 18:59:21,991 DEBUG   SystemMonitor:1171049 [system_monitor.py:_start():172] Starting system metrics aggregation loop
+2025-06-28 18:59:21,992 INFO    HandlerThread:1171049 [interfaces.py:finish():202] Joined cpu monitor
+2025-06-28 18:59:21,992 DEBUG   SystemMonitor:1171049 [system_monitor.py:_start():179] Finished system metrics aggregation loop
+2025-06-28 18:59:21,992 INFO    HandlerThread:1171049 [interfaces.py:finish():202] Joined disk monitor
+2025-06-28 18:59:21,992 DEBUG   SystemMonitor:1171049 [system_monitor.py:_start():183] Publishing last batch of metrics
+2025-06-28 18:59:22,096 INFO    HandlerThread:1171049 [interfaces.py:finish():202] Joined gpu monitor
+2025-06-28 18:59:22,096 INFO    HandlerThread:1171049 [interfaces.py:finish():202] Joined memory monitor
+2025-06-28 18:59:22,096 INFO    HandlerThread:1171049 [interfaces.py:finish():202] Joined network monitor
+2025-06-28 18:59:22,097 DEBUG   SenderThread:1171049 [sender.py:send_request():406] send_request: defer
+2025-06-28 18:59:22,097 INFO    SenderThread:1171049 [sender.py:send_request_defer():610] handle sender defer: 2
+2025-06-28 18:59:22,097 INFO    SenderThread:1171049 [sender.py:transition_state():614] send defer: 3
+2025-06-28 18:59:22,097 DEBUG   SenderThread:1171049 [sender.py:send():379] send: stats
+2025-06-28 18:59:22,097 DEBUG   HandlerThread:1171049 [handler.py:handle_request():146] handle_request: defer
+2025-06-28 18:59:22,097 INFO    HandlerThread:1171049 [handler.py:handle_request_defer():172] handle defer: 3
+2025-06-28 18:59:22,097 DEBUG   SenderThread:1171049 [sender.py:send_request():406] send_request: defer
+2025-06-28 18:59:22,097 INFO    SenderThread:1171049 [sender.py:send_request_defer():610] handle sender defer: 3
+2025-06-28 18:59:22,097 INFO    SenderThread:1171049 [sender.py:transition_state():614] send defer: 4
+2025-06-28 18:59:22,098 DEBUG   HandlerThread:1171049 [handler.py:handle_request():146] handle_request: defer
+2025-06-28 18:59:22,098 INFO    HandlerThread:1171049 [handler.py:handle_request_defer():172] handle defer: 4
+2025-06-28 18:59:22,098 DEBUG   SenderThread:1171049 [sender.py:send_request():406] send_request: defer
+2025-06-28 18:59:22,098 INFO    SenderThread:1171049 [sender.py:send_request_defer():610] handle sender defer: 4
+2025-06-28 18:59:22,098 INFO    SenderThread:1171049 [sender.py:transition_state():614] send defer: 5
+2025-06-28 18:59:22,098 DEBUG   HandlerThread:1171049 [handler.py:handle_request():146] handle_request: defer
+2025-06-28 18:59:22,098 INFO    HandlerThread:1171049 [handler.py:handle_request_defer():172] handle defer: 5
+2025-06-28 18:59:22,098 DEBUG   SenderThread:1171049 [sender.py:send():379] send: summary
+2025-06-28 18:59:22,098 INFO    SenderThread:1171049 [sender.py:_save_file():1390] saving file wandb-summary.json with policy end
+2025-06-28 18:59:22,098 DEBUG   SenderThread:1171049 [sender.py:send_request():406] send_request: defer
+2025-06-28 18:59:22,099 INFO    SenderThread:1171049 [sender.py:send_request_defer():610] handle sender defer: 5
+2025-06-28 18:59:22,099 INFO    SenderThread:1171049 [sender.py:transition_state():614] send defer: 6
+2025-06-28 18:59:22,099 DEBUG   HandlerThread:1171049 [handler.py:handle_request():146] handle_request: defer
+2025-06-28 18:59:22,099 INFO    HandlerThread:1171049 [handler.py:handle_request_defer():172] handle defer: 6
+2025-06-28 18:59:22,099 DEBUG   SenderThread:1171049 [sender.py:send_request():406] send_request: defer
+2025-06-28 18:59:22,099 INFO    SenderThread:1171049 [sender.py:send_request_defer():610] handle sender defer: 6
+2025-06-28 18:59:22,101 DEBUG   HandlerThread:1171049 [handler.py:handle_request():146] handle_request: status_report
+2025-06-28 18:59:22,399 INFO    SenderThread:1171049 [sender.py:transition_state():614] send defer: 7
+2025-06-28 18:59:22,400 DEBUG   HandlerThread:1171049 [handler.py:handle_request():146] handle_request: defer
+2025-06-28 18:59:22,400 INFO    HandlerThread:1171049 [handler.py:handle_request_defer():172] handle defer: 7
+2025-06-28 18:59:22,400 DEBUG   SenderThread:1171049 [sender.py:send_request():406] send_request: defer
+2025-06-28 18:59:22,401 INFO    SenderThread:1171049 [sender.py:send_request_defer():610] handle sender defer: 7
+2025-06-28 18:59:22,533 INFO    Thread-12 :1171049 [dir_watcher.py:_on_file_modified():288] file/dir modified: /mnt/data/kai/Mini_VinDr_CXR_Dataset/pytorch_model_training/wandb/run-20250628_185918-935e6fqy/files/config.yaml
+2025-06-28 18:59:22,533 INFO    Thread-12 :1171049 [dir_watcher.py:_on_file_created():271] file/dir created: /mnt/data/kai/Mini_VinDr_CXR_Dataset/pytorch_model_training/wandb/run-20250628_185918-935e6fqy/files/requirements.txt
+2025-06-28 18:59:22,534 INFO    Thread-12 :1171049 [dir_watcher.py:_on_file_created():271] file/dir created: /mnt/data/kai/Mini_VinDr_CXR_Dataset/pytorch_model_training/wandb/run-20250628_185918-935e6fqy/files/wandb-summary.json
+2025-06-28 18:59:22,534 INFO    Thread-12 :1171049 [dir_watcher.py:_on_file_created():271] file/dir created: /mnt/data/kai/Mini_VinDr_CXR_Dataset/pytorch_model_training/wandb/run-20250628_185918-935e6fqy/files/output.log
+2025-06-28 18:59:22,534 INFO    Thread-12 :1171049 [dir_watcher.py:_on_file_created():271] file/dir created: /mnt/data/kai/Mini_VinDr_CXR_Dataset/pytorch_model_training/wandb/run-20250628_185918-935e6fqy/files/wandb-metadata.json
+2025-06-28 18:59:22,623 INFO    wandb-upload_0:1171049 [upload_job.py:push():131] Uploaded file /tmp/tmpwcc7hilewandb/6wj1dycf-wandb-metadata.json
+2025-06-28 18:59:22,848 DEBUG   HandlerThread:1171049 [handler.py:handle_request():146] handle_request: poll_exit
+2025-06-28 18:59:24,534 INFO    Thread-12 :1171049 [dir_watcher.py:_on_file_modified():288] file/dir modified: /mnt/data/kai/Mini_VinDr_CXR_Dataset/pytorch_model_training/wandb/run-20250628_185918-935e6fqy/files/output.log
+2025-06-28 18:59:25,998 INFO    SenderThread:1171049 [sender.py:transition_state():614] send defer: 8
+2025-06-28 18:59:25,998 DEBUG   SenderThread:1171049 [sender.py:send_request():406] send_request: poll_exit
+2025-06-28 18:59:25,999 DEBUG   HandlerThread:1171049 [handler.py:handle_request():146] handle_request: defer
+2025-06-28 18:59:25,999 INFO    HandlerThread:1171049 [handler.py:handle_request_defer():172] handle defer: 8
+2025-06-28 18:59:26,000 DEBUG   SenderThread:1171049 [sender.py:send_request():406] send_request: defer
+2025-06-28 18:59:26,000 INFO    SenderThread:1171049 [sender.py:send_request_defer():610] handle sender defer: 8
+2025-06-28 18:59:26,000 INFO    SenderThread:1171049 [job_builder.py:build():318] Attempting to build job artifact
+2025-06-28 18:59:26,000 INFO    SenderThread:1171049 [job_builder.py:_get_source_type():455] is repo sourced job
+2025-06-28 18:59:26,027 INFO    SenderThread:1171049 [job_builder.py:build():431] adding wandb-job metadata file
+2025-06-28 18:59:26,032 INFO    SenderThread:1171049 [sender.py:transition_state():614] send defer: 9
+2025-06-28 18:59:26,033 DEBUG   HandlerThread:1171049 [handler.py:handle_request():146] handle_request: defer
+2025-06-28 18:59:26,033 INFO    HandlerThread:1171049 [handler.py:handle_request_defer():172] handle defer: 9
+2025-06-28 18:59:26,033 DEBUG   SenderThread:1171049 [sender.py:send():379] send: artifact
+2025-06-28 18:59:26,535 INFO    Thread-12 :1171049 [dir_watcher.py:_on_file_modified():288] file/dir modified: /mnt/data/kai/Mini_VinDr_CXR_Dataset/pytorch_model_training/wandb/run-20250628_185918-935e6fqy/files/output.log
+2025-06-28 18:59:26,850 DEBUG   HandlerThread:1171049 [handler.py:handle_request():146] handle_request: poll_exit
+2025-06-28 18:59:27,328 INFO    SenderThread:1171049 [sender.py:send_artifact():1468] sent artifact job-https___github.com_kaichenchai_Mini_VinDr_CXR_Dataset.git_pytorch_model_training_train.py - {'id': 'QXJ0aWZhY3Q6MTg0Mjc5NDA2MQ==', 'state': 'COMMITTED', 'artifactSequence': {'id': 'QXJ0aWZhY3RDb2xsZWN0aW9uOjY3MzYxNzcwNg==', 'latestArtifact': {'id': 'QXJ0aWZhY3Q6MTg0Mjc5NDA2MQ==', 'versionIndex': 0}}}
+2025-06-28 18:59:27,328 DEBUG   SenderThread:1171049 [sender.py:send_request():406] send_request: defer
+2025-06-28 18:59:27,329 INFO    SenderThread:1171049 [sender.py:send_request_defer():610] handle sender defer: 9
+2025-06-28 18:59:27,329 INFO    SenderThread:1171049 [dir_watcher.py:finish():358] shutting down directory watcher
+2025-06-28 18:59:27,536 INFO    SenderThread:1171049 [dir_watcher.py:finish():388] scan: /mnt/data/kai/Mini_VinDr_CXR_Dataset/pytorch_model_training/wandb/run-20250628_185918-935e6fqy/files
+2025-06-28 18:59:27,537 INFO    SenderThread:1171049 [dir_watcher.py:finish():402] scan save: /mnt/data/kai/Mini_VinDr_CXR_Dataset/pytorch_model_training/wandb/run-20250628_185918-935e6fqy/files/requirements.txt requirements.txt
+2025-06-28 18:59:27,537 INFO    SenderThread:1171049 [dir_watcher.py:finish():402] scan save: /mnt/data/kai/Mini_VinDr_CXR_Dataset/pytorch_model_training/wandb/run-20250628_185918-935e6fqy/files/wandb-summary.json wandb-summary.json
+2025-06-28 18:59:27,537 INFO    SenderThread:1171049 [dir_watcher.py:finish():402] scan save: /mnt/data/kai/Mini_VinDr_CXR_Dataset/pytorch_model_training/wandb/run-20250628_185918-935e6fqy/files/config.yaml config.yaml
+2025-06-28 18:59:27,543 INFO    SenderThread:1171049 [dir_watcher.py:finish():402] scan save: /mnt/data/kai/Mini_VinDr_CXR_Dataset/pytorch_model_training/wandb/run-20250628_185918-935e6fqy/files/conda-environment.yaml conda-environment.yaml
+2025-06-28 18:59:27,544 INFO    SenderThread:1171049 [dir_watcher.py:finish():402] scan save: /mnt/data/kai/Mini_VinDr_CXR_Dataset/pytorch_model_training/wandb/run-20250628_185918-935e6fqy/files/wandb-metadata.json wandb-metadata.json
+2025-06-28 18:59:27,544 INFO    SenderThread:1171049 [dir_watcher.py:finish():402] scan save: /mnt/data/kai/Mini_VinDr_CXR_Dataset/pytorch_model_training/wandb/run-20250628_185918-935e6fqy/files/output.log output.log
+2025-06-28 18:59:27,547 INFO    SenderThread:1171049 [sender.py:transition_state():614] send defer: 10
+2025-06-28 18:59:27,548 DEBUG   SenderThread:1171049 [sender.py:send_request():406] send_request: poll_exit
+2025-06-28 18:59:27,554 DEBUG   HandlerThread:1171049 [handler.py:handle_request():146] handle_request: defer
+2025-06-28 18:59:27,554 INFO    HandlerThread:1171049 [handler.py:handle_request_defer():172] handle defer: 10
+2025-06-28 18:59:27,555 DEBUG   SenderThread:1171049 [sender.py:send_request():406] send_request: defer
+2025-06-28 18:59:27,555 INFO    SenderThread:1171049 [sender.py:send_request_defer():610] handle sender defer: 10
+2025-06-28 18:59:27,555 INFO    SenderThread:1171049 [file_pusher.py:finish():172] shutting down file pusher
+2025-06-28 18:59:27,851 DEBUG   HandlerThread:1171049 [handler.py:handle_request():146] handle_request: poll_exit
+2025-06-28 18:59:27,852 DEBUG   SenderThread:1171049 [sender.py:send_request():406] send_request: poll_exit
+2025-06-28 18:59:28,137 INFO    wandb-upload_0:1171049 [upload_job.py:push():131] Uploaded file /mnt/data/kai/Mini_VinDr_CXR_Dataset/pytorch_model_training/wandb/run-20250628_185918-935e6fqy/files/requirements.txt
+2025-06-28 18:59:28,336 INFO    wandb-upload_1:1171049 [upload_job.py:push():131] Uploaded file /mnt/data/kai/Mini_VinDr_CXR_Dataset/pytorch_model_training/wandb/run-20250628_185918-935e6fqy/files/wandb-summary.json
+2025-06-28 18:59:28,483 INFO    wandb-upload_4:1171049 [upload_job.py:push():131] Uploaded file /mnt/data/kai/Mini_VinDr_CXR_Dataset/pytorch_model_training/wandb/run-20250628_185918-935e6fqy/files/output.log
+2025-06-28 18:59:28,511 INFO    wandb-upload_2:1171049 [upload_job.py:push():131] Uploaded file /mnt/data/kai/Mini_VinDr_CXR_Dataset/pytorch_model_training/wandb/run-20250628_185918-935e6fqy/files/config.yaml
+2025-06-28 18:59:28,541 INFO    wandb-upload_3:1171049 [upload_job.py:push():131] Uploaded file /mnt/data/kai/Mini_VinDr_CXR_Dataset/pytorch_model_training/wandb/run-20250628_185918-935e6fqy/files/conda-environment.yaml
+2025-06-28 18:59:28,742 INFO    Thread-11 (_thread_body):1171049 [sender.py:transition_state():614] send defer: 11
+2025-06-28 18:59:28,743 DEBUG   HandlerThread:1171049 [handler.py:handle_request():146] handle_request: defer
+2025-06-28 18:59:28,743 INFO    HandlerThread:1171049 [handler.py:handle_request_defer():172] handle defer: 11
+2025-06-28 18:59:28,744 DEBUG   SenderThread:1171049 [sender.py:send_request():406] send_request: defer
+2025-06-28 18:59:28,744 INFO    SenderThread:1171049 [sender.py:send_request_defer():610] handle sender defer: 11
+2025-06-28 18:59:28,744 INFO    SenderThread:1171049 [file_pusher.py:join():178] waiting for file pusher
+2025-06-28 18:59:28,744 INFO    SenderThread:1171049 [sender.py:transition_state():614] send defer: 12
+2025-06-28 18:59:28,745 DEBUG   HandlerThread:1171049 [handler.py:handle_request():146] handle_request: defer
+2025-06-28 18:59:28,745 INFO    HandlerThread:1171049 [handler.py:handle_request_defer():172] handle defer: 12
+2025-06-28 18:59:28,745 DEBUG   SenderThread:1171049 [sender.py:send_request():406] send_request: defer
+2025-06-28 18:59:28,745 INFO    SenderThread:1171049 [sender.py:send_request_defer():610] handle sender defer: 12
+2025-06-28 18:59:28,745 INFO    SenderThread:1171049 [file_stream.py:finish():614] file stream finish called
+2025-06-28 18:59:28,852 DEBUG   HandlerThread:1171049 [handler.py:handle_request():146] handle_request: poll_exit
+2025-06-28 18:59:28,997 INFO    SenderThread:1171049 [file_stream.py:finish():618] file stream finish is done
+2025-06-28 18:59:28,997 INFO    SenderThread:1171049 [sender.py:transition_state():614] send defer: 13
+2025-06-28 18:59:28,997 DEBUG   SenderThread:1171049 [sender.py:send_request():406] send_request: poll_exit
+2025-06-28 18:59:28,998 DEBUG   HandlerThread:1171049 [handler.py:handle_request():146] handle_request: defer
+2025-06-28 18:59:28,998 INFO    HandlerThread:1171049 [handler.py:handle_request_defer():172] handle defer: 13
+2025-06-28 18:59:28,998 DEBUG   SenderThread:1171049 [sender.py:send_request():406] send_request: defer
+2025-06-28 18:59:28,999 INFO    SenderThread:1171049 [sender.py:send_request_defer():610] handle sender defer: 13
+2025-06-28 18:59:28,999 INFO    SenderThread:1171049 [sender.py:transition_state():614] send defer: 14
+2025-06-28 18:59:28,999 DEBUG   HandlerThread:1171049 [handler.py:handle_request():146] handle_request: defer
+2025-06-28 18:59:28,999 DEBUG   SenderThread:1171049 [sender.py:send():379] send: final
+2025-06-28 18:59:29,000 INFO    HandlerThread:1171049 [handler.py:handle_request_defer():172] handle defer: 14
+2025-06-28 18:59:29,000 DEBUG   SenderThread:1171049 [sender.py:send():379] send: footer
+2025-06-28 18:59:29,000 DEBUG   SenderThread:1171049 [sender.py:send_request():406] send_request: defer
+2025-06-28 18:59:29,000 INFO    SenderThread:1171049 [sender.py:send_request_defer():610] handle sender defer: 14
+2025-06-28 18:59:29,001 DEBUG   HandlerThread:1171049 [handler.py:handle_request():146] handle_request: poll_exit
+2025-06-28 18:59:29,001 DEBUG   SenderThread:1171049 [sender.py:send_request():406] send_request: poll_exit
+2025-06-28 18:59:29,002 DEBUG   HandlerThread:1171049 [handler.py:handle_request():146] handle_request: poll_exit
+2025-06-28 18:59:29,003 DEBUG   SenderThread:1171049 [sender.py:send_request():406] send_request: poll_exit
+2025-06-28 18:59:29,003 DEBUG   HandlerThread:1171049 [handler.py:handle_request():146] handle_request: server_info
+2025-06-28 18:59:29,003 DEBUG   SenderThread:1171049 [sender.py:send_request():406] send_request: server_info
+2025-06-28 18:59:29,005 DEBUG   HandlerThread:1171049 [handler.py:handle_request():146] handle_request: get_summary
+2025-06-28 18:59:29,006 DEBUG   HandlerThread:1171049 [handler.py:handle_request():146] handle_request: sampled_history
+2025-06-28 18:59:29,006 DEBUG   HandlerThread:1171049 [handler.py:handle_request():146] handle_request: internal_messages
+2025-06-28 18:59:29,265 INFO    MainThread:1171049 [wandb_run.py:_footer_history_summary_info():3920] rendering history
+2025-06-28 18:59:29,266 INFO    MainThread:1171049 [wandb_run.py:_footer_history_summary_info():3952] rendering summary
+2025-06-28 18:59:29,266 INFO    MainThread:1171049 [wandb_run.py:_footer_sync_info():3879] logging synced files
+2025-06-28 18:59:29,266 DEBUG   HandlerThread:1171049 [handler.py:handle_request():146] handle_request: shutdown
+2025-06-28 18:59:29,267 INFO    HandlerThread:1171049 [handler.py:finish():866] shutting down handler
+2025-06-28 18:59:30,003 INFO    WriterThread:1171049 [datastore.py:close():296] close: /mnt/data/kai/Mini_VinDr_CXR_Dataset/pytorch_model_training/wandb/run-20250628_185918-935e6fqy/run-935e6fqy.wandb
+2025-06-28 18:59:30,265 INFO    SenderThread:1171049 [sender.py:finish():1546] shutting down sender
+2025-06-28 18:59:30,266 INFO    SenderThread:1171049 [file_pusher.py:finish():172] shutting down file pusher
+2025-06-28 18:59:30,266 INFO    SenderThread:1171049 [file_pusher.py:join():178] waiting for file pusher

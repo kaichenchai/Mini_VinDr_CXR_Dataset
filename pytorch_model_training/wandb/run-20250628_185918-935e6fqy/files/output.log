@@ -1,0 +1,29 @@
+
+----------------------train start--------------------------
+  0%|                                                                                                                                                                                    | 0/25 [00:00<?, ?it/s]
+Traceback (most recent call last):
+  File "/mnt/data/kai/Mini_VinDr_CXR_Dataset/pytorch_model_training/train.py", line 154, in <module>
+    train_loss_dict = model(imgs, annotations)
+                     ^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/kai/miniconda3/envs/vindr/lib/python3.12/site-packages/torch/nn/modules/module.py", line 1532, in _wrapped_call_impl
+    return self._call_impl(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/kai/miniconda3/envs/vindr/lib/python3.12/site-packages/torch/nn/modules/module.py", line 1541, in _call_impl
+    return forward_call(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/kai/miniconda3/envs/vindr/lib/python3.12/site-packages/torchvision/models/detection/generalized_rcnn.py", line 83, in forward
+    images, targets = self.transform(images, targets)
+                      ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/kai/miniconda3/envs/vindr/lib/python3.12/site-packages/torch/nn/modules/module.py", line 1532, in _wrapped_call_impl
+    return self._call_impl(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/kai/miniconda3/envs/vindr/lib/python3.12/site-packages/torch/nn/modules/module.py", line 1541, in _call_impl
+    return forward_call(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/kai/miniconda3/envs/vindr/lib/python3.12/site-packages/torchvision/models/detection/transform.py", line 148, in forward
+    images = self.batch_images(images, size_divisible=self.size_divisible)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/kai/miniconda3/envs/vindr/lib/python3.12/site-packages/torchvision/models/detection/transform.py", line 250, in batch_images
+    batched_imgs = images[0].new_full(batch_shape, 0)
+                   ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+torch.cuda.OutOfMemoryError: CUDA out of memory. Tried to allocate 64.00 MiB. GPU
