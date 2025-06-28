@@ -112,7 +112,7 @@ if __name__ == "__main__":
     
     learnable_params = [p for p in model.parameters() if p.requires_grad]
     optimizer = torch.optim.AdamW(learnable_params, lr=0.0001,
-                                weight_decay=0.005)
+                                weight_decay=0.001)
     
     torch.manual_seed(42069)
     num_epochs = 500
