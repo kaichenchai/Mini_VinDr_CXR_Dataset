@@ -151,8 +151,9 @@ if __name__ == "__main__":
             i += 1
             imgs = list(img.to(device) for img in imgs)
             annotations = [{k: v.to(device) for k, v in t.items() if k != "image_id"} for t in annotations]
-            train_loss_dict = model(imgs, annotations) 
-            losses = sum(loss for loss in train_loss_dict.values())
+            with torch.amp.autocast(device_type="cuda"):
+                train_loss_dict = model(imgs, annotations) 
+                losses = sum(loss for loss in train_loss_dict.values())
             optimizer.zero_grad()
             losses.backward()
             optimizer.step() 
@@ -163,8 +164,9 @@ if __name__ == "__main__":
             for imgs, annotations in tqdm.tqdm(val_loader):
                 imgs = list(img.to(device) for img in imgs)
                 annotations = [{k: v.to(device) for k, v in t.items() if k != "image_id"} for t in annotations]
-                val_loss_dict = model(imgs, annotations)
-                losses = sum(loss for loss in val_loss_dict.values())
+                with torch.amp.autocast(device_type="cuda"):
+                    val_loss_dict = model(imgs, annotations)
+                    losses = sum(loss for loss in val_loss_dict.values())
                 validation_loss += losses
         if validation_loss < current_min_loss:
             best_model_state = deepcopy(model.state_dict())
@@ -174,7 +176,8 @@ if __name__ == "__main__":
             for imgs, annotations in val_loader:
                 imgs = list(img.to(device) for img in imgs)
                 annotations = [{k: v.to(device) for k, v in t.items() if k != "image_id"} for t in annotations]
-                val_predictions = model(imgs, annotations)
+                with torch.amp.autocast(device_type="cuda"):
+                    val_predictions = model(imgs, annotations)
                 metrics.update(preds=val_predictions, target=annotations)
         validation_results_dict = metrics.compute()
         # loss logging
