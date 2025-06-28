@@ -139,6 +139,7 @@ if __name__ == "__main__":
     
     metrics = MeanAveragePrecision(iou_type="bbox", extended_summary=True)
     early_stopper = ValidationLossEarlyStopping(patience=50, min_delta=0.01)
+    scaler = torch.GradScaler()
     
     print('----------------------train start--------------------------')
 
@@ -155,8 +156,9 @@ if __name__ == "__main__":
                 train_loss_dict = model(imgs, annotations) 
                 losses = sum(loss for loss in train_loss_dict.values())
             optimizer.zero_grad()
-            losses.backward()
-            optimizer.step() 
+            scaler.scale(losses).backward()
+            scaler.step(optimizer)
+            scaler.update()
             train_loss += losses
         print(f'(Train) epoch : {epoch}, Avg Loss : {train_loss/len(train_loader)}, time : {time.time() - start}')
         validation_loss = 0
