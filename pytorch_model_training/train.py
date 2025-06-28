@@ -8,6 +8,7 @@ import wandb
 import numpy as np
 from torchmetrics.detection.mean_ap import MeanAveragePrecision
 import torch
+import torch.nn as nn
 from torch.utils.data import DataLoader
 import torchvision
 from torchvision.models.detection import fasterrcnn_resnet50_fpn_v2, FasterRCNN_ResNet50_FPN_V2_Weights
@@ -15,7 +16,12 @@ from torchvision.models.detection.transform import GeneralizedRCNNTransform
 import torchvision.transforms.v2 as v2
 from torchvision.models.detection.faster_rcnn import FastRCNNPredictor
 
-def model_loader(feature_extracting:bool=True, num_classes:int=3, greyscale_single_channel:bool=True, imgsize = (1024,1024), weights=None):
+def model_loader(feature_extracting:bool=True,
+                 num_classes:int=3,
+                 greyscale_single_channel:bool=True,
+                 imgsize = (1024,1024),
+                 weights=None,
+                 parallel:bool=False):
     weights = FasterRCNN_ResNet50_FPN_V2_Weights.DEFAULT if weights is None else weights
     model = fasterrcnn_resnet50_fpn_v2(weights=weights)
     if greyscale_single_channel:
@@ -40,7 +46,9 @@ def model_loader(feature_extracting:bool=True, num_classes:int=3, greyscale_sing
         print("Fine tuning all layers:")   
     for name,param in model.named_parameters():
         if param.requires_grad:
-            print("  ",name)     
+            print("  ",name)
+    if parallel:
+        model = nn.DataParallel(model)
     return model
 
 def generate_transformations(extra_transforms:List=None, no_img_channels:int=1):
@@ -80,7 +88,7 @@ class ValidationLossEarlyStopping:
 
 if __name__ == "__main__":
     model = model_loader(feature_extracting=True, num_classes=3, greyscale_single_channel=True, imgsize=(1024,1024))
-    device = torch.device("cuda" if torch.cuda.is_available() else "cpu")
+    device = torch.device("cuda:0" if torch.cuda.is_available() else "cpu")
     model.to(device)
     # if greyscale = False, then we need to convert the greyscale images to not have 3 channels
     transforms = generate_transformations(no_img_channels=1)
