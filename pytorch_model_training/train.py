@@ -10,6 +10,7 @@ from torchmetrics.detection.mean_ap import MeanAveragePrecision
 import torch
 import torch.nn as nn
 from torch.utils.data import DataLoader
+from torch.optim.lr_scheduler import OneCycleLR
 import torchvision
 from torchvision.models.detection import fasterrcnn_resnet50_fpn_v2, FasterRCNN_ResNet50_FPN_V2_Weights
 from torchvision.models.detection.transform import GeneralizedRCNNTransform
@@ -122,6 +123,11 @@ if __name__ == "__main__":
     learnable_params = [p for p in model.parameters() if p.requires_grad]
     optimizer = torch.optim.AdamW(learnable_params, lr=0.0001,
                                 weight_decay=0.005)
+    scheduler = OneCycleLR(optimizer=optimizer,
+                           max_lr=0.01,
+                           steps_per_epoch=25,
+                           epochs=500,
+                           anneal_strategy="cos")
     
     torch.manual_seed(42069)
     num_epochs = 500
@@ -159,6 +165,8 @@ if __name__ == "__main__":
             scaler.scale(losses).backward()
             scaler.step(optimizer)
             scaler.update()
+            scheduler.step()
+            current_lr = scheduler.get_last_lr()[0]
             train_loss += losses
         print(f'(Train) epoch : {epoch}, Avg Loss : {train_loss/len(train_loader)}, time : {time.time() - start}')
         validation_loss = 0
@@ -191,12 +199,14 @@ if __name__ == "__main__":
         dict_to_log["metrics/mAP50-95"] = validation_results_dict["map"]
         dict_to_log["metrics/mAP_50"] = validation_results_dict["map_50"]
         dict_to_log["train/avg_loss"] = train_loss
+        dict_to_log["train/lr"] = current_lr
         dict_to_log["validate/avg_loss"] = validation_loss
         run.log(data=dict_to_log,
                 step=epoch,
                 commit=True)
-        if early_stopper.early_stop_check(validation_loss):             
-            break
+        if early_stopper:
+            if early_stopper.early_stop_check(validation_loss):             
+                break
     
     file_path_base = f"./outputs/{time.strftime('%Y%m%d_%H%M%S')}"
     if not(os.path.isdir(file_path_base)):
