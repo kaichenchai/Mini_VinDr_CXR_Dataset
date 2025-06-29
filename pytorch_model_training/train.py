@@ -22,8 +22,7 @@ def model_loader(feature_extracting:bool=True,
                  imgsize = (1024,1024),
                  weights=None,
                  parallel:bool=False):
-    weights = FasterRCNN_ResNet50_FPN_V2_Weights.DEFAULT if weights is None else weights
-    model = fasterrcnn_resnet50_fpn_v2(weights=weights)
+    model = fasterrcnn_resnet50_fpn_v2(weights=FasterRCNN_ResNet50_FPN_V2_Weights.DEFAULT)
     if greyscale_single_channel:
         # update transformations
         image_mean = [0.485]
@@ -49,6 +48,8 @@ def model_loader(feature_extracting:bool=True,
             print("  ",name)
     if parallel:
         model = nn.DataParallel(model)
+    if weights:
+        model.load_state_dict(weights)
     return model
 
 def generate_transformations(extra_transforms:List=None, no_img_channels:int=1):
@@ -190,8 +191,8 @@ if __name__ == "__main__":
             dict_to_log[f"validate/{key}"] = value
         dict_to_log["metrics/mAP50-95"] = validation_results_dict["map"]
         dict_to_log["metrics/mAP_50"] = validation_results_dict["map_50"]
-        dict_to_log["train/avg_loss"] = train_loss
-        dict_to_log["validate/avg_loss"] = validation_loss
+        dict_to_log["train/avg_loss"] = train_loss/len(train_loader)
+        dict_to_log["validate/avg_loss"] = validation_loss/len(val_loader)
         run.log(data=dict_to_log,
                 step=epoch,
                 commit=True)
