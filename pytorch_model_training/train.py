@@ -123,15 +123,16 @@ if __name__ == "__main__":
     learnable_params = [p for p in model.parameters() if p.requires_grad]
     optimizer = torch.optim.AdamW(learnable_params, lr=0.0001,
                                 weight_decay=0.005)
-    scheduler = OneCycleLR(optimizer=optimizer,
-                           max_lr=0.01,
-                           steps_per_epoch=25,
-                           epochs=500,
-                           anneal_strategy="cos")
     
     torch.manual_seed(42069)
     num_epochs = 500
     current_min_loss = np.inf
+    
+    scheduler = OneCycleLR(optimizer=optimizer,
+                        max_lr=0.01,
+                        steps_per_epoch=len(train_loader),
+                        epochs=num_epochs,
+                        anneal_strategy="cos")
     
     run = wandb.init(project="cardiomegaly_explainability",  # Change this to your desired project name
         name=f"fasterrcnn_{time.strftime('%Y%m%d_%H%M%S')}",  # Optional: unique run name
