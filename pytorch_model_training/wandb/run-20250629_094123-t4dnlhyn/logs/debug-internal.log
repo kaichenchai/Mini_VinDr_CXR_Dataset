@@ -1,0 +1,320 @@
+2025-06-29 09:41:23,138 INFO    StreamThr :1173460 [internal.py:wandb_internal():86] W&B internal server running at pid: 1173460, started at: 2025-06-29 09:41:23.137411
+2025-06-29 09:41:23,142 DEBUG   HandlerThread:1173460 [handler.py:handle_request():146] handle_request: status
+2025-06-29 09:41:23,145 INFO    WriterThread:1173460 [datastore.py:open_for_write():87] open: /mnt/data/kai/Mini_VinDr_CXR_Dataset/pytorch_model_training/wandb/run-20250629_094123-t4dnlhyn/run-t4dnlhyn.wandb
+2025-06-29 09:41:23,146 DEBUG   SenderThread:1173460 [sender.py:send():379] send: header
+2025-06-29 09:41:23,146 DEBUG   SenderThread:1173460 [sender.py:send():379] send: run
+2025-06-29 09:41:23,785 INFO    SenderThread:1173460 [dir_watcher.py:__init__():211] watching files in: /mnt/data/kai/Mini_VinDr_CXR_Dataset/pytorch_model_training/wandb/run-20250629_094123-t4dnlhyn/files
+2025-06-29 09:41:23,785 INFO    SenderThread:1173460 [sender.py:_start_run_threads():1124] run started: t4dnlhyn with start time 1751161283.137147
+2025-06-29 09:41:23,902 DEBUG   HandlerThread:1173460 [handler.py:handle_request():146] handle_request: check_version
+2025-06-29 09:41:23,903 DEBUG   SenderThread:1173460 [sender.py:send_request():406] send_request: check_version
+2025-06-29 09:41:24,279 DEBUG   HandlerThread:1173460 [handler.py:handle_request():146] handle_request: run_start
+2025-06-29 09:41:24,290 DEBUG   HandlerThread:1173460 [system_info.py:__init__():26] System info init
+2025-06-29 09:41:24,290 DEBUG   HandlerThread:1173460 [system_info.py:__init__():41] System info init done
+2025-06-29 09:41:24,290 INFO    HandlerThread:1173460 [system_monitor.py:start():194] Starting system monitor
+2025-06-29 09:41:24,291 INFO    SystemMonitor:1173460 [system_monitor.py:_start():158] Starting system asset monitoring threads
+2025-06-29 09:41:24,291 INFO    HandlerThread:1173460 [system_monitor.py:probe():214] Collecting system info
+2025-06-29 09:41:24,291 INFO    SystemMonitor:1173460 [interfaces.py:start():190] Started cpu monitoring
+2025-06-29 09:41:24,293 INFO    SystemMonitor:1173460 [interfaces.py:start():190] Started disk monitoring
+2025-06-29 09:41:24,294 INFO    SystemMonitor:1173460 [interfaces.py:start():190] Started gpu monitoring
+2025-06-29 09:41:24,295 INFO    SystemMonitor:1173460 [interfaces.py:start():190] Started memory monitoring
+2025-06-29 09:41:24,295 INFO    SystemMonitor:1173460 [interfaces.py:start():190] Started network monitoring
+2025-06-29 09:41:24,311 DEBUG   HandlerThread:1173460 [system_info.py:probe():150] Probing system
+2025-06-29 09:41:24,313 DEBUG   HandlerThread:1173460 [system_info.py:_probe_git():135] Probing git
+2025-06-29 09:41:24,318 DEBUG   HandlerThread:1173460 [system_info.py:_probe_git():143] Probing git done
+2025-06-29 09:41:24,318 DEBUG   HandlerThread:1173460 [system_info.py:probe():198] Probing system done
+2025-06-29 09:41:24,318 DEBUG   HandlerThread:1173460 [system_monitor.py:probe():223] {'os': 'Linux-6.5.0-28-generic-x86_64-with-glibc2.35', 'python': '3.12.3', 'heartbeatAt': '2025-06-29T01:41:24.311667', 'startedAt': '2025-06-29T01:41:23.129239', 'docker': None, 'cuda': None, 'args': (), 'state': 'running', 'program': '/mnt/data/kai/Mini_VinDr_CXR_Dataset/pytorch_model_training/train.py', 'codePathLocal': 'train.py', 'codePath': 'pytorch_model_training/train.py', 'git': {'remote': 'https://github.com/kaichenchai/Mini_VinDr_CXR_Dataset.git', 'commit': '7c1e5a9fd2dfcce3f5020fa0d143263b4d21487f'}, 'email': 'englishorc65@gmail.com', 'root': '/mnt/data/kai/Mini_VinDr_CXR_Dataset', 'host': 'thermaltake', 'username': 'kai', 'executable': '/home/kai/miniconda3/envs/vindr/bin/python3', 'cpu_count': 10, 'cpu_count_logical': 20, 'cpu_freq': {'current': 1523.3349999999998, 'min': 1200.0, 'max': 4120.0}, 'cpu_freq_per_core': [{'current': 4000.603, 'min': 1200.0, 'max': 4100.0}, {'current': 1200.0, 'min': 1200.0, 'max': 4100.0}, {'current': 3102.123, 'min': 1200.0, 'max': 4100.0}, {'current': 1200.0, 'min': 1200.0, 'max': 4200.0}, {'current': 3001.608, 'min': 1200.0, 'max': 4100.0}, {'current': 1200.0, 'min': 1200.0, 'max': 4100.0}, {'current': 1200.0, 'min': 1200.0, 'max': 4100.0}, {'current': 1200.231, 'min': 1200.0, 'max': 4100.0}, {'current': 1200.0, 'min': 1200.0, 'max': 4100.0}, {'current': 4000.021, 'min': 1200.0, 'max': 4200.0}, {'current': 1200.0, 'min': 1200.0, 'max': 4100.0}, {'current': 1200.0, 'min': 1200.0, 'max': 4100.0}, {'current': 1200.0, 'min': 1200.0, 'max': 4100.0}, {'current': 2700.014, 'min': 1200.0, 'max': 4200.0}, {'current': 1200.0, 'min': 1200.0, 'max': 4100.0}, {'current': 2000.018, 'min': 1200.0, 'max': 4100.0}, {'current': 1200.018, 'min': 1200.0, 'max': 4100.0}, {'current': 1200.0, 'min': 1200.0, 'max': 4100.0}, {'current': 1200.0, 'min': 1200.0, 'max': 4100.0}, {'current': 1200.0, 'min': 1200.0, 'max': 4200.0}], 'disk': {'/': {'total': 3753.976058959961, 'used': 558.2826156616211}}, 'gpu': 'NVIDIA GeForce RTX 2080 Ti', 'gpu_count': 2, 'gpu_devices': [{'name': 'NVIDIA GeForce RTX 2080 Ti', 'memory_total': 11811160064}, {'name': 'NVIDIA GeForce RTX 2080 Ti', 'memory_total': 11811160064}], 'memory': {'total': 62.469051361083984}}
+2025-06-29 09:41:24,318 INFO    HandlerThread:1173460 [system_monitor.py:probe():224] Finished collecting system info
+2025-06-29 09:41:24,318 INFO    HandlerThread:1173460 [system_monitor.py:probe():227] Publishing system info
+2025-06-29 09:41:24,318 DEBUG   HandlerThread:1173460 [system_info.py:_save_conda():207] Saving list of conda packages installed into the current environment
+2025-06-29 09:41:24,788 INFO    Thread-12 :1173460 [dir_watcher.py:_on_file_created():271] file/dir created: /mnt/data/kai/Mini_VinDr_CXR_Dataset/pytorch_model_training/wandb/run-20250629_094123-t4dnlhyn/files/conda-environment.yaml
+2025-06-29 09:41:26,038 DEBUG   HandlerThread:1173460 [system_info.py:_save_conda():222] Saving conda packages done
+2025-06-29 09:41:26,039 INFO    HandlerThread:1173460 [system_monitor.py:probe():229] Finished publishing system info
+2025-06-29 09:41:26,041 DEBUG   SenderThread:1173460 [sender.py:send():379] send: files
+2025-06-29 09:41:26,042 INFO    SenderThread:1173460 [sender.py:_save_file():1390] saving file wandb-metadata.json with policy now
+2025-06-29 09:41:26,077 DEBUG   HandlerThread:1173460 [handler.py:handle_request():146] handle_request: python_packages
+2025-06-29 09:41:26,077 DEBUG   SenderThread:1173460 [sender.py:send_request():406] send_request: python_packages
+2025-06-29 09:41:26,078 DEBUG   HandlerThread:1173460 [handler.py:handle_request():146] handle_request: stop_status
+2025-06-29 09:41:26,078 DEBUG   SenderThread:1173460 [sender.py:send_request():406] send_request: stop_status
+2025-06-29 09:41:26,083 DEBUG   HandlerThread:1173460 [handler.py:handle_request():146] handle_request: internal_messages
+2025-06-29 09:41:26,445 DEBUG   SenderThread:1173460 [sender.py:send():379] send: telemetry
+2025-06-29 09:41:26,786 INFO    Thread-12 :1173460 [dir_watcher.py:_on_file_modified():288] file/dir modified: /mnt/data/kai/Mini_VinDr_CXR_Dataset/pytorch_model_training/wandb/run-20250629_094123-t4dnlhyn/files/conda-environment.yaml
+2025-06-29 09:41:26,786 INFO    Thread-12 :1173460 [dir_watcher.py:_on_file_created():271] file/dir created: /mnt/data/kai/Mini_VinDr_CXR_Dataset/pytorch_model_training/wandb/run-20250629_094123-t4dnlhyn/files/wandb-metadata.json
+2025-06-29 09:41:26,786 INFO    Thread-12 :1173460 [dir_watcher.py:_on_file_created():271] file/dir created: /mnt/data/kai/Mini_VinDr_CXR_Dataset/pytorch_model_training/wandb/run-20250629_094123-t4dnlhyn/files/output.log
+2025-06-29 09:41:26,787 INFO    Thread-12 :1173460 [dir_watcher.py:_on_file_created():271] file/dir created: /mnt/data/kai/Mini_VinDr_CXR_Dataset/pytorch_model_training/wandb/run-20250629_094123-t4dnlhyn/files/requirements.txt
+2025-06-29 09:41:27,121 INFO    wandb-upload_0:1173460 [upload_job.py:push():131] Uploaded file /tmp/tmpc9kxmzjuwandb/5pcw851c-wandb-metadata.json
+2025-06-29 09:41:28,591 DEBUG   HandlerThread:1173460 [handler.py:handle_request():146] handle_request: status_report
+2025-06-29 09:41:28,787 INFO    Thread-12 :1173460 [dir_watcher.py:_on_file_modified():288] file/dir modified: /mnt/data/kai/Mini_VinDr_CXR_Dataset/pytorch_model_training/wandb/run-20250629_094123-t4dnlhyn/files/output.log
+2025-06-29 09:41:30,787 INFO    Thread-12 :1173460 [dir_watcher.py:_on_file_modified():288] file/dir modified: /mnt/data/kai/Mini_VinDr_CXR_Dataset/pytorch_model_training/wandb/run-20250629_094123-t4dnlhyn/files/output.log
+2025-06-29 09:41:32,788 INFO    Thread-12 :1173460 [dir_watcher.py:_on_file_modified():288] file/dir modified: /mnt/data/kai/Mini_VinDr_CXR_Dataset/pytorch_model_training/wandb/run-20250629_094123-t4dnlhyn/files/output.log
+2025-06-29 09:41:33,936 DEBUG   HandlerThread:1173460 [handler.py:handle_request():146] handle_request: status_report
+2025-06-29 09:41:34,788 INFO    Thread-12 :1173460 [dir_watcher.py:_on_file_modified():288] file/dir modified: /mnt/data/kai/Mini_VinDr_CXR_Dataset/pytorch_model_training/wandb/run-20250629_094123-t4dnlhyn/files/output.log
+2025-06-29 09:41:36,789 INFO    Thread-12 :1173460 [dir_watcher.py:_on_file_modified():288] file/dir modified: /mnt/data/kai/Mini_VinDr_CXR_Dataset/pytorch_model_training/wandb/run-20250629_094123-t4dnlhyn/files/output.log
+2025-06-29 09:41:38,790 INFO    Thread-12 :1173460 [dir_watcher.py:_on_file_modified():288] file/dir modified: /mnt/data/kai/Mini_VinDr_CXR_Dataset/pytorch_model_training/wandb/run-20250629_094123-t4dnlhyn/files/output.log
+2025-06-29 09:41:39,289 DEBUG   HandlerThread:1173460 [handler.py:handle_request():146] handle_request: status_report
+2025-06-29 09:41:40,790 INFO    Thread-12 :1173460 [dir_watcher.py:_on_file_modified():288] file/dir modified: /mnt/data/kai/Mini_VinDr_CXR_Dataset/pytorch_model_training/wandb/run-20250629_094123-t4dnlhyn/files/output.log
+2025-06-29 09:41:41,078 DEBUG   HandlerThread:1173460 [handler.py:handle_request():146] handle_request: stop_status
+2025-06-29 09:41:41,078 DEBUG   SenderThread:1173460 [sender.py:send_request():406] send_request: stop_status
+2025-06-29 09:41:41,079 DEBUG   HandlerThread:1173460 [handler.py:handle_request():146] handle_request: internal_messages
+2025-06-29 09:41:42,791 INFO    Thread-12 :1173460 [dir_watcher.py:_on_file_modified():288] file/dir modified: /mnt/data/kai/Mini_VinDr_CXR_Dataset/pytorch_model_training/wandb/run-20250629_094123-t4dnlhyn/files/output.log
+2025-06-29 09:41:44,627 DEBUG   HandlerThread:1173460 [handler.py:handle_request():146] handle_request: status_report
+2025-06-29 09:41:44,791 INFO    Thread-12 :1173460 [dir_watcher.py:_on_file_modified():288] file/dir modified: /mnt/data/kai/Mini_VinDr_CXR_Dataset/pytorch_model_training/wandb/run-20250629_094123-t4dnlhyn/files/output.log
+2025-06-29 09:41:46,792 INFO    Thread-12 :1173460 [dir_watcher.py:_on_file_modified():288] file/dir modified: /mnt/data/kai/Mini_VinDr_CXR_Dataset/pytorch_model_training/wandb/run-20250629_094123-t4dnlhyn/files/output.log
+2025-06-29 09:41:48,792 INFO    Thread-12 :1173460 [dir_watcher.py:_on_file_modified():288] file/dir modified: /mnt/data/kai/Mini_VinDr_CXR_Dataset/pytorch_model_training/wandb/run-20250629_094123-t4dnlhyn/files/output.log
+2025-06-29 09:41:50,533 DEBUG   HandlerThread:1173460 [handler.py:handle_request():146] handle_request: status_report
+2025-06-29 09:41:52,151 DEBUG   SenderThread:1173460 [sender.py:send():379] send: telemetry
+2025-06-29 09:41:52,274 DEBUG   HandlerThread:1173460 [handler.py:handle_request():146] handle_request: partial_history
+2025-06-29 09:41:52,276 DEBUG   SenderThread:1173460 [sender.py:send():379] send: history
+2025-06-29 09:41:52,277 DEBUG   SenderThread:1173460 [sender.py:send_request():406] send_request: summary_record
+2025-06-29 09:41:52,278 INFO    SenderThread:1173460 [sender.py:_save_file():1390] saving file wandb-summary.json with policy end
+2025-06-29 09:41:52,793 INFO    Thread-12 :1173460 [dir_watcher.py:_on_file_created():271] file/dir created: /mnt/data/kai/Mini_VinDr_CXR_Dataset/pytorch_model_training/wandb/run-20250629_094123-t4dnlhyn/files/wandb-summary.json
+2025-06-29 09:41:54,794 INFO    Thread-12 :1173460 [dir_watcher.py:_on_file_modified():288] file/dir modified: /mnt/data/kai/Mini_VinDr_CXR_Dataset/pytorch_model_training/wandb/run-20250629_094123-t4dnlhyn/files/output.log
+2025-06-29 09:41:55,646 DEBUG   HandlerThread:1173460 [handler.py:handle_request():146] handle_request: status_report
+2025-06-29 09:41:56,078 DEBUG   HandlerThread:1173460 [handler.py:handle_request():146] handle_request: stop_status
+2025-06-29 09:41:56,078 DEBUG   SenderThread:1173460 [sender.py:send_request():406] send_request: stop_status
+2025-06-29 09:41:56,078 DEBUG   HandlerThread:1173460 [handler.py:handle_request():146] handle_request: internal_messages
+2025-06-29 09:41:56,794 INFO    Thread-12 :1173460 [dir_watcher.py:_on_file_modified():288] file/dir modified: /mnt/data/kai/Mini_VinDr_CXR_Dataset/pytorch_model_training/wandb/run-20250629_094123-t4dnlhyn/files/output.log
+2025-06-29 09:41:56,794 INFO    Thread-12 :1173460 [dir_watcher.py:_on_file_modified():288] file/dir modified: /mnt/data/kai/Mini_VinDr_CXR_Dataset/pytorch_model_training/wandb/run-20250629_094123-t4dnlhyn/files/config.yaml
+2025-06-29 09:41:58,795 INFO    Thread-12 :1173460 [dir_watcher.py:_on_file_modified():288] file/dir modified: /mnt/data/kai/Mini_VinDr_CXR_Dataset/pytorch_model_training/wandb/run-20250629_094123-t4dnlhyn/files/output.log
+2025-06-29 09:42:00,795 INFO    Thread-12 :1173460 [dir_watcher.py:_on_file_modified():288] file/dir modified: /mnt/data/kai/Mini_VinDr_CXR_Dataset/pytorch_model_training/wandb/run-20250629_094123-t4dnlhyn/files/output.log
+2025-06-29 09:42:01,014 DEBUG   HandlerThread:1173460 [handler.py:handle_request():146] handle_request: status_report
+2025-06-29 09:42:02,796 INFO    Thread-12 :1173460 [dir_watcher.py:_on_file_modified():288] file/dir modified: /mnt/data/kai/Mini_VinDr_CXR_Dataset/pytorch_model_training/wandb/run-20250629_094123-t4dnlhyn/files/output.log
+2025-06-29 09:42:04,797 INFO    Thread-12 :1173460 [dir_watcher.py:_on_file_modified():288] file/dir modified: /mnt/data/kai/Mini_VinDr_CXR_Dataset/pytorch_model_training/wandb/run-20250629_094123-t4dnlhyn/files/output.log
+2025-06-29 09:42:06,352 DEBUG   HandlerThread:1173460 [handler.py:handle_request():146] handle_request: status_report
+2025-06-29 09:42:06,797 INFO    Thread-12 :1173460 [dir_watcher.py:_on_file_modified():288] file/dir modified: /mnt/data/kai/Mini_VinDr_CXR_Dataset/pytorch_model_training/wandb/run-20250629_094123-t4dnlhyn/files/output.log
+2025-06-29 09:42:08,798 INFO    Thread-12 :1173460 [dir_watcher.py:_on_file_modified():288] file/dir modified: /mnt/data/kai/Mini_VinDr_CXR_Dataset/pytorch_model_training/wandb/run-20250629_094123-t4dnlhyn/files/output.log
+2025-06-29 09:42:10,798 INFO    Thread-12 :1173460 [dir_watcher.py:_on_file_modified():288] file/dir modified: /mnt/data/kai/Mini_VinDr_CXR_Dataset/pytorch_model_training/wandb/run-20250629_094123-t4dnlhyn/files/output.log
+2025-06-29 09:42:11,078 DEBUG   HandlerThread:1173460 [handler.py:handle_request():146] handle_request: stop_status
+2025-06-29 09:42:11,078 DEBUG   SenderThread:1173460 [sender.py:send_request():406] send_request: stop_status
+2025-06-29 09:42:11,078 DEBUG   HandlerThread:1173460 [handler.py:handle_request():146] handle_request: internal_messages
+2025-06-29 09:42:11,692 DEBUG   HandlerThread:1173460 [handler.py:handle_request():146] handle_request: status_report
+2025-06-29 09:42:12,799 INFO    Thread-12 :1173460 [dir_watcher.py:_on_file_modified():288] file/dir modified: /mnt/data/kai/Mini_VinDr_CXR_Dataset/pytorch_model_training/wandb/run-20250629_094123-t4dnlhyn/files/output.log
+2025-06-29 09:42:14,800 INFO    Thread-12 :1173460 [dir_watcher.py:_on_file_modified():288] file/dir modified: /mnt/data/kai/Mini_VinDr_CXR_Dataset/pytorch_model_training/wandb/run-20250629_094123-t4dnlhyn/files/output.log
+2025-06-29 09:42:17,232 DEBUG   HandlerThread:1173460 [handler.py:handle_request():146] handle_request: status_report
+2025-06-29 09:42:18,388 DEBUG   HandlerThread:1173460 [handler.py:handle_request():146] handle_request: partial_history
+2025-06-29 09:42:18,390 DEBUG   SenderThread:1173460 [sender.py:send():379] send: history
+2025-06-29 09:42:18,390 DEBUG   SenderThread:1173460 [sender.py:send_request():406] send_request: summary_record
+2025-06-29 09:42:18,392 INFO    SenderThread:1173460 [sender.py:_save_file():1390] saving file wandb-summary.json with policy end
+2025-06-29 09:42:18,801 INFO    Thread-12 :1173460 [dir_watcher.py:_on_file_modified():288] file/dir modified: /mnt/data/kai/Mini_VinDr_CXR_Dataset/pytorch_model_training/wandb/run-20250629_094123-t4dnlhyn/files/wandb-summary.json
+2025-06-29 09:42:20,802 INFO    Thread-12 :1173460 [dir_watcher.py:_on_file_modified():288] file/dir modified: /mnt/data/kai/Mini_VinDr_CXR_Dataset/pytorch_model_training/wandb/run-20250629_094123-t4dnlhyn/files/output.log
+2025-06-29 09:42:22,390 DEBUG   HandlerThread:1173460 [handler.py:handle_request():146] handle_request: status_report
+2025-06-29 09:42:22,802 INFO    Thread-12 :1173460 [dir_watcher.py:_on_file_modified():288] file/dir modified: /mnt/data/kai/Mini_VinDr_CXR_Dataset/pytorch_model_training/wandb/run-20250629_094123-t4dnlhyn/files/output.log
+2025-06-29 09:42:24,296 DEBUG   SystemMonitor:1173460 [system_monitor.py:_start():172] Starting system metrics aggregation loop
+2025-06-29 09:42:24,298 DEBUG   SenderThread:1173460 [sender.py:send():379] send: stats
+2025-06-29 09:42:24,803 INFO    Thread-12 :1173460 [dir_watcher.py:_on_file_modified():288] file/dir modified: /mnt/data/kai/Mini_VinDr_CXR_Dataset/pytorch_model_training/wandb/run-20250629_094123-t4dnlhyn/files/output.log
+2025-06-29 09:42:26,078 DEBUG   HandlerThread:1173460 [handler.py:handle_request():146] handle_request: stop_status
+2025-06-29 09:42:26,078 DEBUG   SenderThread:1173460 [sender.py:send_request():406] send_request: stop_status
+2025-06-29 09:42:26,079 DEBUG   HandlerThread:1173460 [handler.py:handle_request():146] handle_request: internal_messages
+2025-06-29 09:42:26,803 INFO    Thread-12 :1173460 [dir_watcher.py:_on_file_modified():288] file/dir modified: /mnt/data/kai/Mini_VinDr_CXR_Dataset/pytorch_model_training/wandb/run-20250629_094123-t4dnlhyn/files/output.log
+2025-06-29 09:42:27,765 DEBUG   HandlerThread:1173460 [handler.py:handle_request():146] handle_request: status_report
+2025-06-29 09:42:28,804 INFO    Thread-12 :1173460 [dir_watcher.py:_on_file_modified():288] file/dir modified: /mnt/data/kai/Mini_VinDr_CXR_Dataset/pytorch_model_training/wandb/run-20250629_094123-t4dnlhyn/files/output.log
+2025-06-29 09:42:30,804 INFO    Thread-12 :1173460 [dir_watcher.py:_on_file_modified():288] file/dir modified: /mnt/data/kai/Mini_VinDr_CXR_Dataset/pytorch_model_training/wandb/run-20250629_094123-t4dnlhyn/files/output.log
+2025-06-29 09:42:32,805 INFO    Thread-12 :1173460 [dir_watcher.py:_on_file_modified():288] file/dir modified: /mnt/data/kai/Mini_VinDr_CXR_Dataset/pytorch_model_training/wandb/run-20250629_094123-t4dnlhyn/files/output.log
+2025-06-29 09:42:33,116 DEBUG   HandlerThread:1173460 [handler.py:handle_request():146] handle_request: status_report
+2025-06-29 09:42:34,805 INFO    Thread-12 :1173460 [dir_watcher.py:_on_file_modified():288] file/dir modified: /mnt/data/kai/Mini_VinDr_CXR_Dataset/pytorch_model_training/wandb/run-20250629_094123-t4dnlhyn/files/output.log
+2025-06-29 09:42:36,806 INFO    Thread-12 :1173460 [dir_watcher.py:_on_file_modified():288] file/dir modified: /mnt/data/kai/Mini_VinDr_CXR_Dataset/pytorch_model_training/wandb/run-20250629_094123-t4dnlhyn/files/output.log
+2025-06-29 09:42:38,501 DEBUG   HandlerThread:1173460 [handler.py:handle_request():146] handle_request: status_report
+2025-06-29 09:42:38,807 INFO    Thread-12 :1173460 [dir_watcher.py:_on_file_modified():288] file/dir modified: /mnt/data/kai/Mini_VinDr_CXR_Dataset/pytorch_model_training/wandb/run-20250629_094123-t4dnlhyn/files/output.log
+2025-06-29 09:42:40,807 INFO    Thread-12 :1173460 [dir_watcher.py:_on_file_modified():288] file/dir modified: /mnt/data/kai/Mini_VinDr_CXR_Dataset/pytorch_model_training/wandb/run-20250629_094123-t4dnlhyn/files/output.log
+2025-06-29 09:42:41,078 DEBUG   HandlerThread:1173460 [handler.py:handle_request():146] handle_request: stop_status
+2025-06-29 09:42:41,078 DEBUG   SenderThread:1173460 [sender.py:send_request():406] send_request: stop_status
+2025-06-29 09:42:41,078 DEBUG   HandlerThread:1173460 [handler.py:handle_request():146] handle_request: internal_messages
+2025-06-29 09:42:44,411 DEBUG   HandlerThread:1173460 [handler.py:handle_request():146] handle_request: status_report
+2025-06-29 09:42:44,882 DEBUG   HandlerThread:1173460 [handler.py:handle_request():146] handle_request: partial_history
+2025-06-29 09:42:44,884 DEBUG   SenderThread:1173460 [sender.py:send():379] send: history
+2025-06-29 09:42:44,884 DEBUG   SenderThread:1173460 [sender.py:send_request():406] send_request: summary_record
+2025-06-29 09:42:44,887 INFO    SenderThread:1173460 [sender.py:_save_file():1390] saving file wandb-summary.json with policy end
+2025-06-29 09:42:45,809 INFO    Thread-12 :1173460 [dir_watcher.py:_on_file_modified():288] file/dir modified: /mnt/data/kai/Mini_VinDr_CXR_Dataset/pytorch_model_training/wandb/run-20250629_094123-t4dnlhyn/files/wandb-summary.json
+2025-06-29 09:42:46,810 INFO    Thread-12 :1173460 [dir_watcher.py:_on_file_modified():288] file/dir modified: /mnt/data/kai/Mini_VinDr_CXR_Dataset/pytorch_model_training/wandb/run-20250629_094123-t4dnlhyn/files/output.log
+2025-06-29 09:42:48,810 INFO    Thread-12 :1173460 [dir_watcher.py:_on_file_modified():288] file/dir modified: /mnt/data/kai/Mini_VinDr_CXR_Dataset/pytorch_model_training/wandb/run-20250629_094123-t4dnlhyn/files/output.log
+2025-06-29 09:42:49,600 DEBUG   HandlerThread:1173460 [handler.py:handle_request():146] handle_request: status_report
+2025-06-29 09:42:50,811 INFO    Thread-12 :1173460 [dir_watcher.py:_on_file_modified():288] file/dir modified: /mnt/data/kai/Mini_VinDr_CXR_Dataset/pytorch_model_training/wandb/run-20250629_094123-t4dnlhyn/files/output.log
+2025-06-29 09:42:52,812 INFO    Thread-12 :1173460 [dir_watcher.py:_on_file_modified():288] file/dir modified: /mnt/data/kai/Mini_VinDr_CXR_Dataset/pytorch_model_training/wandb/run-20250629_094123-t4dnlhyn/files/output.log
+2025-06-29 09:42:54,306 DEBUG   SenderThread:1173460 [sender.py:send():379] send: stats
+2025-06-29 09:42:54,812 INFO    Thread-12 :1173460 [dir_watcher.py:_on_file_modified():288] file/dir modified: /mnt/data/kai/Mini_VinDr_CXR_Dataset/pytorch_model_training/wandb/run-20250629_094123-t4dnlhyn/files/output.log
+2025-06-29 09:42:54,967 DEBUG   HandlerThread:1173460 [handler.py:handle_request():146] handle_request: status_report
+2025-06-29 09:42:56,078 DEBUG   HandlerThread:1173460 [handler.py:handle_request():146] handle_request: stop_status
+2025-06-29 09:42:56,078 DEBUG   HandlerThread:1173460 [handler.py:handle_request():146] handle_request: internal_messages
+2025-06-29 09:42:56,079 DEBUG   SenderThread:1173460 [sender.py:send_request():406] send_request: stop_status
+2025-06-29 09:42:56,813 INFO    Thread-12 :1173460 [dir_watcher.py:_on_file_modified():288] file/dir modified: /mnt/data/kai/Mini_VinDr_CXR_Dataset/pytorch_model_training/wandb/run-20250629_094123-t4dnlhyn/files/output.log
+2025-06-29 09:42:58,814 INFO    Thread-12 :1173460 [dir_watcher.py:_on_file_modified():288] file/dir modified: /mnt/data/kai/Mini_VinDr_CXR_Dataset/pytorch_model_training/wandb/run-20250629_094123-t4dnlhyn/files/output.log
+2025-06-29 09:43:00,339 DEBUG   HandlerThread:1173460 [handler.py:handle_request():146] handle_request: status_report
+2025-06-29 09:43:00,814 INFO    Thread-12 :1173460 [dir_watcher.py:_on_file_modified():288] file/dir modified: /mnt/data/kai/Mini_VinDr_CXR_Dataset/pytorch_model_training/wandb/run-20250629_094123-t4dnlhyn/files/output.log
+2025-06-29 09:43:02,815 INFO    Thread-12 :1173460 [dir_watcher.py:_on_file_modified():288] file/dir modified: /mnt/data/kai/Mini_VinDr_CXR_Dataset/pytorch_model_training/wandb/run-20250629_094123-t4dnlhyn/files/output.log
+2025-06-29 09:43:04,815 INFO    Thread-12 :1173460 [dir_watcher.py:_on_file_modified():288] file/dir modified: /mnt/data/kai/Mini_VinDr_CXR_Dataset/pytorch_model_training/wandb/run-20250629_094123-t4dnlhyn/files/output.log
+2025-06-29 09:43:05,715 DEBUG   HandlerThread:1173460 [handler.py:handle_request():146] handle_request: status_report
+2025-06-29 09:43:06,816 INFO    Thread-12 :1173460 [dir_watcher.py:_on_file_modified():288] file/dir modified: /mnt/data/kai/Mini_VinDr_CXR_Dataset/pytorch_model_training/wandb/run-20250629_094123-t4dnlhyn/files/output.log
+2025-06-29 09:43:10,902 DEBUG   HandlerThread:1173460 [handler.py:handle_request():146] handle_request: status_report
+2025-06-29 09:43:11,108 DEBUG   HandlerThread:1173460 [handler.py:handle_request():146] handle_request: internal_messages
+2025-06-29 09:43:11,111 DEBUG   HandlerThread:1173460 [handler.py:handle_request():146] handle_request: stop_status
+2025-06-29 09:43:11,111 DEBUG   SenderThread:1173460 [sender.py:send_request():406] send_request: stop_status
+2025-06-29 09:43:11,988 DEBUG   HandlerThread:1173460 [handler.py:handle_request():146] handle_request: partial_history
+2025-06-29 09:43:11,990 DEBUG   SenderThread:1173460 [sender.py:send():379] send: history
+2025-06-29 09:43:11,990 DEBUG   SenderThread:1173460 [sender.py:send_request():406] send_request: summary_record
+2025-06-29 09:43:11,991 INFO    SenderThread:1173460 [sender.py:_save_file():1390] saving file wandb-summary.json with policy end
+2025-06-29 09:43:12,818 INFO    Thread-12 :1173460 [dir_watcher.py:_on_file_modified():288] file/dir modified: /mnt/data/kai/Mini_VinDr_CXR_Dataset/pytorch_model_training/wandb/run-20250629_094123-t4dnlhyn/files/wandb-summary.json
+2025-06-29 09:43:12,819 INFO    Thread-12 :1173460 [dir_watcher.py:_on_file_modified():288] file/dir modified: /mnt/data/kai/Mini_VinDr_CXR_Dataset/pytorch_model_training/wandb/run-20250629_094123-t4dnlhyn/files/output.log
+2025-06-29 09:43:14,819 INFO    Thread-12 :1173460 [dir_watcher.py:_on_file_modified():288] file/dir modified: /mnt/data/kai/Mini_VinDr_CXR_Dataset/pytorch_model_training/wandb/run-20250629_094123-t4dnlhyn/files/output.log
+2025-06-29 09:43:16,038 DEBUG   HandlerThread:1173460 [handler.py:handle_request():146] handle_request: status_report
+2025-06-29 09:43:16,819 INFO    Thread-12 :1173460 [dir_watcher.py:_on_file_modified():288] file/dir modified: /mnt/data/kai/Mini_VinDr_CXR_Dataset/pytorch_model_training/wandb/run-20250629_094123-t4dnlhyn/files/output.log
+2025-06-29 09:43:18,820 INFO    Thread-12 :1173460 [dir_watcher.py:_on_file_modified():288] file/dir modified: /mnt/data/kai/Mini_VinDr_CXR_Dataset/pytorch_model_training/wandb/run-20250629_094123-t4dnlhyn/files/output.log
+2025-06-29 09:43:20,821 INFO    Thread-12 :1173460 [dir_watcher.py:_on_file_modified():288] file/dir modified: /mnt/data/kai/Mini_VinDr_CXR_Dataset/pytorch_model_training/wandb/run-20250629_094123-t4dnlhyn/files/output.log
+2025-06-29 09:43:21,411 DEBUG   HandlerThread:1173460 [handler.py:handle_request():146] handle_request: status_report
+2025-06-29 09:43:22,821 INFO    Thread-12 :1173460 [dir_watcher.py:_on_file_modified():288] file/dir modified: /mnt/data/kai/Mini_VinDr_CXR_Dataset/pytorch_model_training/wandb/run-20250629_094123-t4dnlhyn/files/output.log
+2025-06-29 09:43:24,300 DEBUG   SenderThread:1173460 [sender.py:send():379] send: stats
+2025-06-29 09:43:24,822 INFO    Thread-12 :1173460 [dir_watcher.py:_on_file_modified():288] file/dir modified: /mnt/data/kai/Mini_VinDr_CXR_Dataset/pytorch_model_training/wandb/run-20250629_094123-t4dnlhyn/files/output.log
+2025-06-29 09:43:26,079 DEBUG   HandlerThread:1173460 [handler.py:handle_request():146] handle_request: stop_status
+2025-06-29 09:43:26,079 DEBUG   SenderThread:1173460 [sender.py:send_request():406] send_request: stop_status
+2025-06-29 09:43:26,082 DEBUG   HandlerThread:1173460 [handler.py:handle_request():146] handle_request: internal_messages
+2025-06-29 09:43:26,790 DEBUG   HandlerThread:1173460 [handler.py:handle_request():146] handle_request: status_report
+2025-06-29 09:43:26,822 INFO    Thread-12 :1173460 [dir_watcher.py:_on_file_modified():288] file/dir modified: /mnt/data/kai/Mini_VinDr_CXR_Dataset/pytorch_model_training/wandb/run-20250629_094123-t4dnlhyn/files/output.log
+2025-06-29 09:43:28,823 INFO    Thread-12 :1173460 [dir_watcher.py:_on_file_modified():288] file/dir modified: /mnt/data/kai/Mini_VinDr_CXR_Dataset/pytorch_model_training/wandb/run-20250629_094123-t4dnlhyn/files/output.log
+2025-06-29 09:43:30,824 INFO    Thread-12 :1173460 [dir_watcher.py:_on_file_modified():288] file/dir modified: /mnt/data/kai/Mini_VinDr_CXR_Dataset/pytorch_model_training/wandb/run-20250629_094123-t4dnlhyn/files/output.log
+2025-06-29 09:43:32,174 DEBUG   HandlerThread:1173460 [handler.py:handle_request():146] handle_request: status_report
+2025-06-29 09:43:32,824 INFO    Thread-12 :1173460 [dir_watcher.py:_on_file_modified():288] file/dir modified: /mnt/data/kai/Mini_VinDr_CXR_Dataset/pytorch_model_training/wandb/run-20250629_094123-t4dnlhyn/files/output.log
+2025-06-29 09:43:34,825 INFO    Thread-12 :1173460 [dir_watcher.py:_on_file_modified():288] file/dir modified: /mnt/data/kai/Mini_VinDr_CXR_Dataset/pytorch_model_training/wandb/run-20250629_094123-t4dnlhyn/files/output.log
+2025-06-29 09:43:38,036 DEBUG   HandlerThread:1173460 [handler.py:handle_request():146] handle_request: status_report
+2025-06-29 09:43:39,682 DEBUG   HandlerThread:1173460 [handler.py:handle_request():146] handle_request: partial_history
+2025-06-29 09:43:39,685 DEBUG   SenderThread:1173460 [sender.py:send():379] send: history
+2025-06-29 09:43:39,685 DEBUG   SenderThread:1173460 [sender.py:send_request():406] send_request: summary_record
+2025-06-29 09:43:39,687 INFO    SenderThread:1173460 [sender.py:_save_file():1390] saving file wandb-summary.json with policy end
+2025-06-29 09:43:39,688 DEBUG   SenderThread:1173460 [sender.py:send():379] send: exit
+2025-06-29 09:43:39,688 INFO    SenderThread:1173460 [sender.py:send_exit():586] handling exit code: 1
+2025-06-29 09:43:39,689 INFO    SenderThread:1173460 [sender.py:send_exit():588] handling runtime: 135
+2025-06-29 09:43:39,689 INFO    SenderThread:1173460 [sender.py:_save_file():1390] saving file wandb-summary.json with policy end
+2025-06-29 09:43:39,689 INFO    SenderThread:1173460 [sender.py:send_exit():594] send defer
+2025-06-29 09:43:39,689 DEBUG   HandlerThread:1173460 [handler.py:handle_request():146] handle_request: defer
+2025-06-29 09:43:39,690 INFO    HandlerThread:1173460 [handler.py:handle_request_defer():172] handle defer: 0
+2025-06-29 09:43:39,690 DEBUG   SenderThread:1173460 [sender.py:send_request():406] send_request: defer
+2025-06-29 09:43:39,690 INFO    SenderThread:1173460 [sender.py:send_request_defer():610] handle sender defer: 0
+2025-06-29 09:43:39,690 INFO    SenderThread:1173460 [sender.py:transition_state():614] send defer: 1
+2025-06-29 09:43:39,690 DEBUG   HandlerThread:1173460 [handler.py:handle_request():146] handle_request: defer
+2025-06-29 09:43:39,690 INFO    HandlerThread:1173460 [handler.py:handle_request_defer():172] handle defer: 1
+2025-06-29 09:43:39,691 DEBUG   SenderThread:1173460 [sender.py:send_request():406] send_request: defer
+2025-06-29 09:43:39,691 INFO    SenderThread:1173460 [sender.py:send_request_defer():610] handle sender defer: 1
+2025-06-29 09:43:39,691 INFO    SenderThread:1173460 [sender.py:transition_state():614] send defer: 2
+2025-06-29 09:43:39,691 DEBUG   HandlerThread:1173460 [handler.py:handle_request():146] handle_request: defer
+2025-06-29 09:43:39,691 INFO    HandlerThread:1173460 [handler.py:handle_request_defer():172] handle defer: 2
+2025-06-29 09:43:39,691 INFO    HandlerThread:1173460 [system_monitor.py:finish():203] Stopping system monitor
+2025-06-29 09:43:39,691 DEBUG   SystemMonitor:1173460 [system_monitor.py:_start():179] Finished system metrics aggregation loop
+2025-06-29 09:43:39,692 DEBUG   SystemMonitor:1173460 [system_monitor.py:_start():183] Publishing last batch of metrics
+2025-06-29 09:43:39,693 INFO    HandlerThread:1173460 [interfaces.py:finish():202] Joined cpu monitor
+2025-06-29 09:43:39,693 INFO    HandlerThread:1173460 [interfaces.py:finish():202] Joined disk monitor
+2025-06-29 09:43:39,793 INFO    HandlerThread:1173460 [interfaces.py:finish():202] Joined gpu monitor
+2025-06-29 09:43:39,793 INFO    HandlerThread:1173460 [interfaces.py:finish():202] Joined memory monitor
+2025-06-29 09:43:39,793 INFO    HandlerThread:1173460 [interfaces.py:finish():202] Joined network monitor
+2025-06-29 09:43:39,794 DEBUG   SenderThread:1173460 [sender.py:send_request():406] send_request: defer
+2025-06-29 09:43:39,794 INFO    SenderThread:1173460 [sender.py:send_request_defer():610] handle sender defer: 2
+2025-06-29 09:43:39,794 INFO    SenderThread:1173460 [sender.py:transition_state():614] send defer: 3
+2025-06-29 09:43:39,794 DEBUG   SenderThread:1173460 [sender.py:send():379] send: stats
+2025-06-29 09:43:39,795 DEBUG   HandlerThread:1173460 [handler.py:handle_request():146] handle_request: defer
+2025-06-29 09:43:39,795 INFO    HandlerThread:1173460 [handler.py:handle_request_defer():172] handle defer: 3
+2025-06-29 09:43:39,795 DEBUG   SenderThread:1173460 [sender.py:send_request():406] send_request: defer
+2025-06-29 09:43:39,795 INFO    SenderThread:1173460 [sender.py:send_request_defer():610] handle sender defer: 3
+2025-06-29 09:43:39,795 INFO    SenderThread:1173460 [sender.py:transition_state():614] send defer: 4
+2025-06-29 09:43:39,795 DEBUG   HandlerThread:1173460 [handler.py:handle_request():146] handle_request: defer
+2025-06-29 09:43:39,795 INFO    HandlerThread:1173460 [handler.py:handle_request_defer():172] handle defer: 4
+2025-06-29 09:43:39,795 DEBUG   SenderThread:1173460 [sender.py:send_request():406] send_request: defer
+2025-06-29 09:43:39,795 INFO    SenderThread:1173460 [sender.py:send_request_defer():610] handle sender defer: 4
+2025-06-29 09:43:39,795 INFO    SenderThread:1173460 [sender.py:transition_state():614] send defer: 5
+2025-06-29 09:43:39,795 DEBUG   HandlerThread:1173460 [handler.py:handle_request():146] handle_request: defer
+2025-06-29 09:43:39,795 INFO    HandlerThread:1173460 [handler.py:handle_request_defer():172] handle defer: 5
+2025-06-29 09:43:39,796 DEBUG   SenderThread:1173460 [sender.py:send():379] send: summary
+2025-06-29 09:43:39,796 INFO    SenderThread:1173460 [sender.py:_save_file():1390] saving file wandb-summary.json with policy end
+2025-06-29 09:43:39,796 DEBUG   SenderThread:1173460 [sender.py:send_request():406] send_request: defer
+2025-06-29 09:43:39,796 INFO    SenderThread:1173460 [sender.py:send_request_defer():610] handle sender defer: 5
+2025-06-29 09:43:39,796 INFO    SenderThread:1173460 [sender.py:transition_state():614] send defer: 6
+2025-06-29 09:43:39,796 DEBUG   HandlerThread:1173460 [handler.py:handle_request():146] handle_request: defer
+2025-06-29 09:43:39,796 INFO    HandlerThread:1173460 [handler.py:handle_request_defer():172] handle defer: 6
+2025-06-29 09:43:39,796 DEBUG   SenderThread:1173460 [sender.py:send_request():406] send_request: defer
+2025-06-29 09:43:39,796 INFO    SenderThread:1173460 [sender.py:send_request_defer():610] handle sender defer: 6
+2025-06-29 09:43:39,797 INFO    SenderThread:1173460 [sender.py:transition_state():614] send defer: 7
+2025-06-29 09:43:39,797 DEBUG   HandlerThread:1173460 [handler.py:handle_request():146] handle_request: status_report
+2025-06-29 09:43:39,797 DEBUG   HandlerThread:1173460 [handler.py:handle_request():146] handle_request: defer
+2025-06-29 09:43:39,797 INFO    HandlerThread:1173460 [handler.py:handle_request_defer():172] handle defer: 7
+2025-06-29 09:43:39,797 DEBUG   SenderThread:1173460 [sender.py:send_request():406] send_request: defer
+2025-06-29 09:43:39,797 INFO    SenderThread:1173460 [sender.py:send_request_defer():610] handle sender defer: 7
+2025-06-29 09:43:39,827 INFO    Thread-12 :1173460 [dir_watcher.py:_on_file_modified():288] file/dir modified: /mnt/data/kai/Mini_VinDr_CXR_Dataset/pytorch_model_training/wandb/run-20250629_094123-t4dnlhyn/files/wandb-summary.json
+2025-06-29 09:43:40,528 INFO    SenderThread:1173460 [sender.py:transition_state():614] send defer: 8
+2025-06-29 09:43:40,528 DEBUG   HandlerThread:1173460 [handler.py:handle_request():146] handle_request: defer
+2025-06-29 09:43:40,528 INFO    HandlerThread:1173460 [handler.py:handle_request_defer():172] handle defer: 8
+2025-06-29 09:43:40,529 DEBUG   SenderThread:1173460 [sender.py:send_request():406] send_request: defer
+2025-06-29 09:43:40,529 INFO    SenderThread:1173460 [sender.py:send_request_defer():610] handle sender defer: 8
+2025-06-29 09:43:40,529 INFO    SenderThread:1173460 [job_builder.py:build():318] Attempting to build job artifact
+2025-06-29 09:43:40,529 INFO    SenderThread:1173460 [job_builder.py:_get_source_type():455] is repo sourced job
+2025-06-29 09:43:40,552 INFO    SenderThread:1173460 [job_builder.py:build():431] adding wandb-job metadata file
+2025-06-29 09:43:40,558 INFO    SenderThread:1173460 [sender.py:transition_state():614] send defer: 9
+2025-06-29 09:43:40,559 DEBUG   HandlerThread:1173460 [handler.py:handle_request():146] handle_request: defer
+2025-06-29 09:43:40,559 INFO    HandlerThread:1173460 [handler.py:handle_request_defer():172] handle defer: 9
+2025-06-29 09:43:40,559 DEBUG   SenderThread:1173460 [sender.py:send():379] send: artifact
+2025-06-29 09:43:40,688 DEBUG   HandlerThread:1173460 [handler.py:handle_request():146] handle_request: poll_exit
+2025-06-29 09:43:40,827 INFO    Thread-12 :1173460 [dir_watcher.py:_on_file_modified():288] file/dir modified: /mnt/data/kai/Mini_VinDr_CXR_Dataset/pytorch_model_training/wandb/run-20250629_094123-t4dnlhyn/files/output.log
+2025-06-29 09:43:41,729 INFO    SenderThread:1173460 [sender.py:send_artifact():1468] sent artifact job-https___github.com_kaichenchai_Mini_VinDr_CXR_Dataset.git_pytorch_model_training_train.py - {'id': 'QXJ0aWZhY3Q6MTg0MzE0ODExMQ==', 'state': 'COMMITTED', 'artifactSequence': {'id': 'QXJ0aWZhY3RDb2xsZWN0aW9uOjY3MzYxNzcwNg==', 'latestArtifact': {'id': 'QXJ0aWZhY3Q6MTg0MzE0ODExMQ==', 'versionIndex': 4}}}
+2025-06-29 09:43:41,729 DEBUG   SenderThread:1173460 [sender.py:send_request():406] send_request: defer
+2025-06-29 09:43:41,729 INFO    SenderThread:1173460 [sender.py:send_request_defer():610] handle sender defer: 9
+2025-06-29 09:43:41,729 INFO    SenderThread:1173460 [dir_watcher.py:finish():358] shutting down directory watcher
+2025-06-29 09:43:41,829 INFO    SenderThread:1173460 [dir_watcher.py:finish():388] scan: /mnt/data/kai/Mini_VinDr_CXR_Dataset/pytorch_model_training/wandb/run-20250629_094123-t4dnlhyn/files
+2025-06-29 09:43:41,829 INFO    SenderThread:1173460 [dir_watcher.py:finish():402] scan save: /mnt/data/kai/Mini_VinDr_CXR_Dataset/pytorch_model_training/wandb/run-20250629_094123-t4dnlhyn/files/requirements.txt requirements.txt
+2025-06-29 09:43:41,829 INFO    SenderThread:1173460 [dir_watcher.py:finish():402] scan save: /mnt/data/kai/Mini_VinDr_CXR_Dataset/pytorch_model_training/wandb/run-20250629_094123-t4dnlhyn/files/wandb-summary.json wandb-summary.json
+2025-06-29 09:43:41,830 INFO    SenderThread:1173460 [dir_watcher.py:finish():402] scan save: /mnt/data/kai/Mini_VinDr_CXR_Dataset/pytorch_model_training/wandb/run-20250629_094123-t4dnlhyn/files/config.yaml config.yaml
+2025-06-29 09:43:41,832 INFO    SenderThread:1173460 [dir_watcher.py:finish():402] scan save: /mnt/data/kai/Mini_VinDr_CXR_Dataset/pytorch_model_training/wandb/run-20250629_094123-t4dnlhyn/files/conda-environment.yaml conda-environment.yaml
+2025-06-29 09:43:41,835 INFO    SenderThread:1173460 [dir_watcher.py:finish():402] scan save: /mnt/data/kai/Mini_VinDr_CXR_Dataset/pytorch_model_training/wandb/run-20250629_094123-t4dnlhyn/files/wandb-metadata.json wandb-metadata.json
+2025-06-29 09:43:41,836 INFO    SenderThread:1173460 [dir_watcher.py:finish():402] scan save: /mnt/data/kai/Mini_VinDr_CXR_Dataset/pytorch_model_training/wandb/run-20250629_094123-t4dnlhyn/files/output.log output.log
+2025-06-29 09:43:41,837 INFO    SenderThread:1173460 [sender.py:transition_state():614] send defer: 10
+2025-06-29 09:43:41,837 DEBUG   SenderThread:1173460 [sender.py:send_request():406] send_request: poll_exit
+2025-06-29 09:43:41,843 DEBUG   HandlerThread:1173460 [handler.py:handle_request():146] handle_request: defer
+2025-06-29 09:43:41,843 INFO    HandlerThread:1173460 [handler.py:handle_request_defer():172] handle defer: 10
+2025-06-29 09:43:41,843 DEBUG   SenderThread:1173460 [sender.py:send_request():406] send_request: defer
+2025-06-29 09:43:41,846 INFO    SenderThread:1173460 [sender.py:send_request_defer():610] handle sender defer: 10
+2025-06-29 09:43:41,846 INFO    SenderThread:1173460 [file_pusher.py:finish():172] shutting down file pusher
+2025-06-29 09:43:42,426 INFO    wandb-upload_0:1173460 [upload_job.py:push():131] Uploaded file /mnt/data/kai/Mini_VinDr_CXR_Dataset/pytorch_model_training/wandb/run-20250629_094123-t4dnlhyn/files/requirements.txt
+2025-06-29 09:43:42,601 INFO    wandb-upload_1:1173460 [upload_job.py:push():131] Uploaded file /mnt/data/kai/Mini_VinDr_CXR_Dataset/pytorch_model_training/wandb/run-20250629_094123-t4dnlhyn/files/wandb-summary.json
+2025-06-29 09:43:42,689 DEBUG   HandlerThread:1173460 [handler.py:handle_request():146] handle_request: poll_exit
+2025-06-29 09:43:42,690 DEBUG   SenderThread:1173460 [sender.py:send_request():406] send_request: poll_exit
+2025-06-29 09:43:42,772 INFO    wandb-upload_2:1173460 [upload_job.py:push():131] Uploaded file /mnt/data/kai/Mini_VinDr_CXR_Dataset/pytorch_model_training/wandb/run-20250629_094123-t4dnlhyn/files/config.yaml
+2025-06-29 09:43:42,804 INFO    wandb-upload_3:1173460 [upload_job.py:push():131] Uploaded file /mnt/data/kai/Mini_VinDr_CXR_Dataset/pytorch_model_training/wandb/run-20250629_094123-t4dnlhyn/files/conda-environment.yaml
+2025-06-29 09:43:42,840 INFO    wandb-upload_4:1173460 [upload_job.py:push():131] Uploaded file /mnt/data/kai/Mini_VinDr_CXR_Dataset/pytorch_model_training/wandb/run-20250629_094123-t4dnlhyn/files/output.log
+2025-06-29 09:43:43,041 INFO    Thread-11 (_thread_body):1173460 [sender.py:transition_state():614] send defer: 11
+2025-06-29 09:43:43,042 DEBUG   HandlerThread:1173460 [handler.py:handle_request():146] handle_request: defer
+2025-06-29 09:43:43,042 INFO    HandlerThread:1173460 [handler.py:handle_request_defer():172] handle defer: 11
+2025-06-29 09:43:43,042 DEBUG   SenderThread:1173460 [sender.py:send_request():406] send_request: defer
+2025-06-29 09:43:43,042 INFO    SenderThread:1173460 [sender.py:send_request_defer():610] handle sender defer: 11
+2025-06-29 09:43:43,043 INFO    SenderThread:1173460 [file_pusher.py:join():178] waiting for file pusher
+2025-06-29 09:43:43,043 INFO    SenderThread:1173460 [sender.py:transition_state():614] send defer: 12
+2025-06-29 09:43:43,043 DEBUG   HandlerThread:1173460 [handler.py:handle_request():146] handle_request: defer
+2025-06-29 09:43:43,043 INFO    HandlerThread:1173460 [handler.py:handle_request_defer():172] handle defer: 12
+2025-06-29 09:43:43,044 DEBUG   SenderThread:1173460 [sender.py:send_request():406] send_request: defer
+2025-06-29 09:43:43,044 INFO    SenderThread:1173460 [sender.py:send_request_defer():610] handle sender defer: 12
+2025-06-29 09:43:43,044 INFO    SenderThread:1173460 [file_stream.py:finish():614] file stream finish called
+2025-06-29 09:43:43,690 DEBUG   HandlerThread:1173460 [handler.py:handle_request():146] handle_request: poll_exit
+2025-06-29 09:43:43,814 INFO    SenderThread:1173460 [file_stream.py:finish():618] file stream finish is done
+2025-06-29 09:43:43,814 INFO    SenderThread:1173460 [sender.py:transition_state():614] send defer: 13
+2025-06-29 09:43:43,814 DEBUG   SenderThread:1173460 [sender.py:send_request():406] send_request: poll_exit
+2025-06-29 09:43:43,814 DEBUG   HandlerThread:1173460 [handler.py:handle_request():146] handle_request: defer
+2025-06-29 09:43:43,815 INFO    HandlerThread:1173460 [handler.py:handle_request_defer():172] handle defer: 13
+2025-06-29 09:43:43,815 DEBUG   SenderThread:1173460 [sender.py:send_request():406] send_request: defer
+2025-06-29 09:43:43,815 INFO    SenderThread:1173460 [sender.py:send_request_defer():610] handle sender defer: 13
+2025-06-29 09:43:43,816 INFO    SenderThread:1173460 [sender.py:transition_state():614] send defer: 14
+2025-06-29 09:43:43,816 DEBUG   HandlerThread:1173460 [handler.py:handle_request():146] handle_request: defer
+2025-06-29 09:43:43,816 DEBUG   SenderThread:1173460 [sender.py:send():379] send: final
+2025-06-29 09:43:43,816 INFO    HandlerThread:1173460 [handler.py:handle_request_defer():172] handle defer: 14
+2025-06-29 09:43:43,816 DEBUG   SenderThread:1173460 [sender.py:send():379] send: footer
+2025-06-29 09:43:43,817 DEBUG   SenderThread:1173460 [sender.py:send_request():406] send_request: defer
+2025-06-29 09:43:43,817 INFO    SenderThread:1173460 [sender.py:send_request_defer():610] handle sender defer: 14
+2025-06-29 09:43:43,818 DEBUG   HandlerThread:1173460 [handler.py:handle_request():146] handle_request: poll_exit
+2025-06-29 09:43:43,818 DEBUG   SenderThread:1173460 [sender.py:send_request():406] send_request: poll_exit
+2025-06-29 09:43:43,819 DEBUG   HandlerThread:1173460 [handler.py:handle_request():146] handle_request: poll_exit
+2025-06-29 09:43:43,819 DEBUG   SenderThread:1173460 [sender.py:send_request():406] send_request: poll_exit
+2025-06-29 09:43:43,819 DEBUG   HandlerThread:1173460 [handler.py:handle_request():146] handle_request: server_info
+2025-06-29 09:43:43,820 DEBUG   SenderThread:1173460 [sender.py:send_request():406] send_request: server_info
+2025-06-29 09:43:43,822 DEBUG   HandlerThread:1173460 [handler.py:handle_request():146] handle_request: get_summary
+2025-06-29 09:43:43,823 DEBUG   HandlerThread:1173460 [handler.py:handle_request():146] handle_request: sampled_history
+2025-06-29 09:43:43,823 DEBUG   HandlerThread:1173460 [handler.py:handle_request():146] handle_request: internal_messages
+2025-06-29 09:43:44,048 INFO    MainThread:1173460 [wandb_run.py:_footer_history_summary_info():3920] rendering history
+2025-06-29 09:43:44,049 INFO    MainThread:1173460 [wandb_run.py:_footer_history_summary_info():3952] rendering summary
+2025-06-29 09:43:44,049 INFO    MainThread:1173460 [wandb_run.py:_footer_sync_info():3879] logging synced files
+2025-06-29 09:43:44,050 DEBUG   HandlerThread:1173460 [handler.py:handle_request():146] handle_request: shutdown
+2025-06-29 09:43:44,050 INFO    HandlerThread:1173460 [handler.py:finish():866] shutting down handler
+2025-06-29 09:43:44,820 INFO    WriterThread:1173460 [datastore.py:close():296] close: /mnt/data/kai/Mini_VinDr_CXR_Dataset/pytorch_model_training/wandb/run-20250629_094123-t4dnlhyn/run-t4dnlhyn.wandb
+2025-06-29 09:43:45,048 INFO    SenderThread:1173460 [sender.py:finish():1546] shutting down sender
+2025-06-29 09:43:45,048 INFO    SenderThread:1173460 [file_pusher.py:finish():172] shutting down file pusher
+2025-06-29 09:43:45,048 INFO    SenderThread:1173460 [file_pusher.py:join():178] waiting for file pusher
