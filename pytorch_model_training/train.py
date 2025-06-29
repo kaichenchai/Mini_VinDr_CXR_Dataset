@@ -180,6 +180,7 @@ if __name__ == "__main__":
                 validation_loss += losses
         if validation_loss < current_min_loss:
             best_model_state = deepcopy(model.state_dict())
+            lowest_loss_epoch = i
         print(f'(Val) epoch : {epoch}, Avg Loss : {validation_loss/len(val_loader)}')
         model.eval()
         with torch.no_grad():
@@ -206,13 +207,15 @@ if __name__ == "__main__":
                 commit=True)
         if early_stopper:
             if early_stopper.early_stop_check(validation_loss):             
+                early_stop_epoch = i
                 break
     
     file_path_base = f"./outputs/{time.strftime('%Y%m%d_%H%M%S')}"
     if not(os.path.isdir(file_path_base)):
         os.makedirs(file_path_base, exist_ok=True)
-    file_path = f"{file_path_base}/{num_epochs}e_model.pt"
-    file_path_lowest_loss = f"{file_path_base}/{num_epochs}e_model_min_val_loss.pt"
+    last_epoch = num_epochs if 'early_stop_epoch' not in locals() else early_stop_epoch
+    file_path = f"{file_path_base}/{last_epoch}e_model.pt"
+    file_path_lowest_loss = f"{file_path_base}/{lowest_loss_epoch}e_model_min_val_loss.pt"
     torch.save(model.state_dict(), file_path)
     torch.save(best_model_state, file_path_lowest_loss)
     run.save(file_path, base_path=file_path_base)
