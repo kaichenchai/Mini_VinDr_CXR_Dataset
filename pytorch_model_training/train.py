@@ -149,14 +149,12 @@ if __name__ == "__main__":
     scaler = torch.GradScaler()
     
     print('----------------------train start--------------------------')
-
+    
     for epoch in range(num_epochs):
         start = time.time()
         model.train()
-        i = 0    
         train_loss = 0
         for imgs, annotations in tqdm.tqdm(train_loader):
-            i += 1
             imgs = list(img.to(device) for img in imgs)
             annotations = [{k: v.to(device) for k, v in t.items() if k != "image_id"} for t in annotations]
             with torch.amp.autocast(device_type="cuda"):
@@ -181,7 +179,7 @@ if __name__ == "__main__":
                 validation_loss += losses
         if validation_loss < current_min_loss:
             best_model_state = deepcopy(model.state_dict())
-            lowest_loss_epoch = i
+            lowest_loss_epoch = epoch
         print(f'(Val) epoch : {epoch}, Avg Loss : {validation_loss/len(val_loader)}')
         model.eval()
         with torch.no_grad():
@@ -208,7 +206,7 @@ if __name__ == "__main__":
                 commit=True)
         if early_stopper:
             if early_stopper.early_stop_check(validation_loss):             
-                early_stop_epoch = i
+                early_stop_epoch = epoch
                 break
     
     file_path_base = f"./outputs/{time.strftime('%Y%m%d_%H%M%S')}"
