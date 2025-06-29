@@ -121,7 +121,7 @@ if __name__ == "__main__":
     
     learnable_params = [p for p in model.parameters() if p.requires_grad]
     optimizer = torch.optim.AdamW(learnable_params, lr=0.0001,
-                                weight_decay=0.001)
+                                weight_decay=0.005)
     
     torch.manual_seed(42069)
     num_epochs = 500
@@ -138,7 +138,7 @@ if __name__ == "__main__":
     })
     
     metrics = MeanAveragePrecision(iou_type="bbox", extended_summary=True)
-    early_stopper = ValidationLossEarlyStopping(patience=50, min_delta=0.01)
+    early_stopper = ValidationLossEarlyStopping(patience=100, min_delta=0.01)
     scaler = torch.GradScaler()
     
     print('----------------------train start--------------------------')
@@ -200,7 +200,7 @@ if __name__ == "__main__":
     
     file_path_base = f"./outputs/{time.strftime('%Y%m%d_%H%M%S')}"
     if not(os.path.isdir(file_path_base)):
-        os.mkdir(file_path_base)
+        os.makedirs(file_path_base, exist_ok=True)
     file_path = f"{file_path_base}/{num_epochs}e_model.pt"
     file_path_lowest_loss = f"{file_path_base}/{num_epochs}e_model_min_val_loss.pt"
     torch.save(model.state_dict(), file_path)
