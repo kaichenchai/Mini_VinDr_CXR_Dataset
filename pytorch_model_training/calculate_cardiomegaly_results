@@ -1,4 +1,5 @@
 import argparse
+import json
 from train import model_loader, generate_transformations
 import torch
 import torchvision
@@ -8,6 +9,7 @@ if __name__ == "__main__":
     parser = argparse.ArgumentParser()
     parser.add_argument("--weights_path", type=str, required=True, help="Weights to load to model")
     parser.add_argument("--images_path", type=str, required=True, help="Folder of images to parse")
+    parser.add_argument("--output_path", type=str, required=True, help="Json output")
     args = parser.parse_args()
     trained_weights = torch.load(args.weights_path)
     model = model_loader(feature_extracting=False,
@@ -24,3 +26,6 @@ if __name__ == "__main__":
     with torch.no_grad():
         for data, target in dataset_loader():
             prediction = model(data)
+    
+    with open(file=args.output_path, mode="w") as outfile:
+        json.dumps(prediction, outfile)
