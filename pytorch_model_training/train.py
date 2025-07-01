@@ -94,20 +94,7 @@ if __name__ == "__main__":
     # if greyscale = False, then we need to convert the greyscale images to not have 3 channels
     transforms = generate_transformations(no_img_channels=1)
     print(transforms) 
-    """train_dataset = read_coco_dataset(images_root="/Users/kaichenchai/Documents/Projects/cardiomegaly_subset/train",
-                                      annotations_path="subset/c-subset/explainability/cardiomegaly_400_subset_coco_labels.json",
-                                      transforms=transforms)
-    val_dataset = read_coco_dataset(images_root="/Users/kaichenchai/Documents/Projects/cardiomegaly_subset/val",
-                                   annotations_path="subset/c-subset/explainability/cardiomegaly_100_subset_coco_labels_val.json",
-                                   transforms=transforms)
     
-    train_dataset = read_coco_dataset(images_root="/mnt/data/kai/VinDr_Subsets/cardiomegaly_subset/train",
-                                      annotations_path="../subset/c-subset/explainability/cardiomegaly_400_subset_coco_labels.json",
-                                      transforms=transforms)
-    val_dataset = read_coco_dataset(images_root="/mnt/data/kai/VinDr_Subsets/cardiomegaly_subset/val",
-                                   annotations_path="../subset/c-subset/explainability/cardiomegaly_100_subset_coco_labels_val.json",
-                                   transforms=transforms)"""
-
     train_dataset = read_coco_dataset(images_root="/mnt/data/kai/VinDr_datasets/cardiomegaly_subset/1024_padding_CLAHE/train",
                                       annotations_path="../subset/c-subset/explainability/cardiomegaly_400_subset_coco_labels.json",
                                       transforms=transforms)
@@ -134,8 +121,9 @@ if __name__ == "__main__":
                         epochs=num_epochs,
                         anneal_strategy="cos")
     
+    run_name = f"fasterrcnn_{time.strftime('%Y%m%d_%H%M%S')}"
     run = wandb.init(project="cardiomegaly_explainability",  # Change this to your desired project name
-        name=f"fasterrcnn_{time.strftime('%Y%m%d_%H%M%S')}",  # Optional: unique run name
+        name=run_name,  # Optional: unique run name
         config={
             "model": "fasterrcnn_resnet50_fpn_v2",
             "epochs": num_epochs,
@@ -209,7 +197,7 @@ if __name__ == "__main__":
                 early_stop_epoch = epoch
                 break
     
-    file_path_base = f"./outputs/{time.strftime('%Y%m%d_%H%M%S')}"
+    file_path_base = f"./outputs/{run_name}"
     if not(os.path.isdir(file_path_base)):
         os.makedirs(file_path_base, exist_ok=True)
     last_epoch = num_epochs if 'early_stop_epoch' not in locals() else early_stop_epoch
