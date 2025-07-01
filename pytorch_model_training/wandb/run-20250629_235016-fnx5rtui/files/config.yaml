@@ -1,0 +1,45 @@
+wandb_version: 1
+
+model:
+  desc: null
+  value: fasterrcnn_resnet50_fpn_v2
+epochs:
+  desc: null
+  value: 500
+batch_size:
+  desc: null
+  value: 16
+optimizer:
+  desc: null
+  value: AdamW
+learning_rate:
+  desc: null
+  value: 0.0003999999999999993
+_wandb:
+  desc: null
+  value:
+    python_version: 3.12.3
+    cli_version: 0.16.5
+    framework: torch
+    is_jupyter_run: false
+    is_kaggle_kernel: false
+    start_time: 1751212216.0
+    t:
+      1:
+      - 1
+      - 41
+      - 55
+      2:
+      - 1
+      - 41
+      - 55
+      3:
+      - 13
+      - 16
+      - 23
+      - 61
+      4: 3.12.3
+      5: 0.16.5
+      8:
+      - 5
+      13: linux-x86_64
