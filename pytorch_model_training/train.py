@@ -187,9 +187,9 @@ if __name__ == "__main__":
             dict_to_log[f"validate/{key}"] = value
         dict_to_log["metrics/mAP50-95"] = validation_results_dict["map"]
         dict_to_log["metrics/mAP_50"] = validation_results_dict["map_50"]
-        dict_to_log["train/avg_loss"] = train_loss
+        dict_to_log["train/avg_loss"] = train_loss/len(val_loader.dataset)
         dict_to_log["train/lr"] = current_lr
-        dict_to_log["validate/avg_loss"] = validation_loss
+        dict_to_log["validate/avg_loss"] = validation_loss/len(val_loader.dataset)
         run.log(data=dict_to_log,
                 step=epoch,
                 commit=True)
