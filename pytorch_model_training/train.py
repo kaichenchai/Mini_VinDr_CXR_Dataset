@@ -10,6 +10,7 @@ from torchmetrics.detection.mean_ap import MeanAveragePrecision
 import torch
 import torch.nn as nn
 from torch.utils.data import DataLoader
+from torch.optim.lr_scheduler import OneCycleLR
 import torchvision
 from torchvision.models.detection import fasterrcnn_resnet50_fpn_v2, FasterRCNN_ResNet50_FPN_V2_Weights
 from torchvision.models.detection.transform import GeneralizedRCNNTransform
@@ -94,20 +95,7 @@ if __name__ == "__main__":
     # if greyscale = False, then we need to convert the greyscale images to not have 3 channels
     transforms = generate_transformations(no_img_channels=1)
     print(transforms) 
-    """train_dataset = read_coco_dataset(images_root="/Users/kaichenchai/Documents/Projects/cardiomegaly_subset/train",
-                                      annotations_path="subset/c-subset/explainability/cardiomegaly_400_subset_coco_labels.json",
-                                      transforms=transforms)
-    val_dataset = read_coco_dataset(images_root="/Users/kaichenchai/Documents/Projects/cardiomegaly_subset/val",
-                                   annotations_path="subset/c-subset/explainability/cardiomegaly_100_subset_coco_labels_val.json",
-                                   transforms=transforms)
     
-    train_dataset = read_coco_dataset(images_root="/mnt/data/kai/VinDr_Subsets/cardiomegaly_subset/train",
-                                      annotations_path="../subset/c-subset/explainability/cardiomegaly_400_subset_coco_labels.json",
-                                      transforms=transforms)
-    val_dataset = read_coco_dataset(images_root="/mnt/data/kai/VinDr_Subsets/cardiomegaly_subset/val",
-                                   annotations_path="../subset/c-subset/explainability/cardiomegaly_100_subset_coco_labels_val.json",
-                                   transforms=transforms)"""
-
     train_dataset = read_coco_dataset(images_root="/mnt/data/kai/VinDr_datasets/cardiomegaly_subset/1024_padding_CLAHE/train",
                                       annotations_path="../subset/c-subset/explainability/cardiomegaly_400_subset_coco_labels.json",
                                       transforms=transforms)
@@ -128,8 +116,15 @@ if __name__ == "__main__":
     num_epochs = 500
     current_min_loss = np.inf
     
+    scheduler = OneCycleLR(optimizer=optimizer,
+                        max_lr=0.01,
+                        steps_per_epoch=len(train_loader),
+                        epochs=num_epochs,
+                        anneal_strategy="cos")
+    
+    run_name = f"fasterrcnn_{time.strftime('%Y%m%d_%H%M%S')}"
     run = wandb.init(project="cardiomegaly_explainability",  # Change this to your desired project name
-        name=f"fasterrcnn_{time.strftime('%Y%m%d_%H%M%S')}",  # Optional: unique run name
+        name=run_name,  # Optional: unique run name
         config={
             "model": "fasterrcnn_resnet50_fpn_v2",
             "epochs": num_epochs,
@@ -143,14 +138,12 @@ if __name__ == "__main__":
     scaler = torch.GradScaler()
     
     print('----------------------train start--------------------------')
-
+    
     for epoch in range(num_epochs):
         start = time.time()
         model.train()
-        i = 0    
         train_loss = 0
         for imgs, annotations in tqdm.tqdm(train_loader):
-            i += 1
             imgs = list(img.to(device) for img in imgs)
             annotations = [{k: v.to(device) for k, v in t.items() if k != "image_id"} for t in annotations]
             with torch.amp.autocast(device_type="cuda"):
@@ -160,6 +153,8 @@ if __name__ == "__main__":
             scaler.scale(losses).backward()
             scaler.step(optimizer)
             scaler.update()
+            scheduler.step()
+            current_lr = scheduler.get_last_lr()[0]
             train_loss += losses
         print(f'(Train) epoch : {epoch}, Avg Loss : {train_loss/len(train_loader)}, time : {time.time() - start}')
         validation_loss = 0
@@ -173,6 +168,7 @@ if __name__ == "__main__":
                 validation_loss += losses
         if validation_loss < current_min_loss:
             best_model_state = deepcopy(model.state_dict())
+            lowest_loss_epoch = epoch
         print(f'(Val) epoch : {epoch}, Avg Loss : {validation_loss/len(val_loader)}')
         model.eval()
         with torch.no_grad():
@@ -191,19 +187,23 @@ if __name__ == "__main__":
             dict_to_log[f"validate/{key}"] = value
         dict_to_log["metrics/mAP50-95"] = validation_results_dict["map"]
         dict_to_log["metrics/mAP_50"] = validation_results_dict["map_50"]
-        dict_to_log["train/avg_loss"] = train_loss/len(train_loader)
-        dict_to_log["validate/avg_loss"] = validation_loss/len(val_loader)
+        dict_to_log["train/avg_loss"] = train_loss
+        dict_to_log["train/lr"] = current_lr
+        dict_to_log["validate/avg_loss"] = validation_loss
         run.log(data=dict_to_log,
                 step=epoch,
                 commit=True)
-        if early_stopper.early_stop_check(validation_loss):             
-            break
+        if early_stopper:
+            if early_stopper.early_stop_check(validation_loss):             
+                early_stop_epoch = epoch
+                break
     
-    file_path_base = f"./outputs/{time.strftime('%Y%m%d_%H%M%S')}"
+    file_path_base = f"./outputs/{run_name}"
     if not(os.path.isdir(file_path_base)):
         os.makedirs(file_path_base, exist_ok=True)
-    file_path = f"{file_path_base}/{num_epochs}e_model.pt"
-    file_path_lowest_loss = f"{file_path_base}/{num_epochs}e_model_min_val_loss.pt"
+    last_epoch = num_epochs if 'early_stop_epoch' not in locals() else early_stop_epoch
+    file_path = f"{file_path_base}/{last_epoch}e_model.pt"
+    file_path_lowest_loss = f"{file_path_base}/{lowest_loss_epoch}e_model_min_val_loss.pt"
     torch.save(model.state_dict(), file_path)
     torch.save(best_model_state, file_path_lowest_loss)
     run.save(file_path, base_path=file_path_base)
