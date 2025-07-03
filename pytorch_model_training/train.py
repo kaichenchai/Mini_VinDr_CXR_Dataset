@@ -133,7 +133,7 @@ if __name__ == "__main__":
     })
     
     metrics = MeanAveragePrecision(iou_type="bbox", extended_summary=True)
-    early_stopper = ValidationLossEarlyStopping(patience=100, min_delta=0.01)
+    early_stopper = ValidationLossEarlyStopping(patience=200, min_delta=0.01)
     scaler = torch.GradScaler()
     
     print('----------------------train start--------------------------')
