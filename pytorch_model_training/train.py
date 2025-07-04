@@ -89,7 +89,7 @@ class ValidationLossEarlyStopping:
 
 
 if __name__ == "__main__":
-    model = model_loader(feature_extracting=True, num_classes=3, greyscale_single_channel=True, imgsize=(1024,1024))
+    model = model_loader(feature_extracting=False, num_classes=3, greyscale_single_channel=True, imgsize=(1024,1024))
     device = torch.device("cuda" if torch.cuda.is_available() else "cpu")
     model.to(device)
     # if greyscale = False, then we need to convert the greyscale images to not have 3 channels
@@ -113,7 +113,7 @@ if __name__ == "__main__":
                                 weight_decay=0.005)
     
     torch.manual_seed(42069)
-    num_epochs = 500
+    num_epochs = 5
     current_min_loss = np.inf
     
     scheduler = OneCycleLR(optimizer=optimizer,
@@ -130,7 +130,8 @@ if __name__ == "__main__":
             "epochs": num_epochs,
             "batch_size": train_loader.batch_size,
             "optimizer": "AdamW",
-            "learning_rate": optimizer.param_groups[0]["lr"]
+            "learning_rate": optimizer.param_groups[0]["lr"],
+            "pretrained_backbone": False
     })
     
     metrics = MeanAveragePrecision(iou_type="bbox", extended_summary=True)
