@@ -53,14 +53,17 @@ def model_loader(feature_extracting:bool=True,
         model.load_state_dict(weights)
     return model
 
-def generate_transformations(extra_transforms:List=None, no_img_channels:int=1):
+def generate_transformations(extra_transforms:List=None,
+                             no_img_channels:int=1,
+                             has_bounding_boxes:bool=False):
     base_transform_list = []
-    base_transform_list.extend([v2.ToImage(),])
+    base_transform_list.append(v2.ToImage())
     base_transform_list.append(v2.Grayscale(num_output_channels=no_img_channels))
     if extra_transforms:
         base_transform_list.extend(extra_transforms)
-    base_transform_list.extend([v2.SanitizeBoundingBoxes(),
-                                v2.ToDtype(torch.float32, scale=True),])  # we always want this to be last transformation
+    if has_bounding_boxes:
+        base_transform_list.append(v2.SanitizeBoundingBoxes())
+    base_transform_list.append(v2.ToDtype(torch.float32, scale=True))  # we always want this to be last transformation
     transforms = v2.Compose(base_transform_list)
     return transforms
 
