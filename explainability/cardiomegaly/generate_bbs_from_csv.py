@@ -44,11 +44,11 @@ if __name__ == "__main__":
     dfs = []
     image_id_list = []
     for full_path, dir in zip(images_dir, input_csv["Frontal_Image_Path"].to_list()):
-        data = cv2.imread(full_path)
-        data = cv2.cvtColor(data, cv2.COLOR_BGR2GRAY)
+        data = cv2.imread(full_path)  # read in image as numpy
+        data = cv2.cvtColor(data, cv2.COLOR_BGR2GRAY)  # convert to greyscale for hist eq
         data = cv2.equalizeHist(data)
-        data = cv2.cvtColor(data,cv2.COLOR_GRAY2BGR)
-        data = resizeWithPadding(data, (1024,1024))
+        data = cv2.cvtColor(data,cv2.COLOR_GRAY2BGR)  # convert back to 3 channel img for yolo
+        data = resizeWithPadding(data, (1024,1024))  # resize image to 1024x1024 with padding to make square
         
         results = model.predict(
             source = data,
