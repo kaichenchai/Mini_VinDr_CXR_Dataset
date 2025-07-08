@@ -96,10 +96,10 @@ if __name__ == "__main__":
     transforms = generate_transformations(no_img_channels=1)
     print(transforms) 
     
-    train_dataset = read_coco_dataset(images_root="/mnt/data/kai/VinDr_datasets/cardiomegaly_subset/1024_padding_CLAHE/train",
+    train_dataset = read_coco_dataset(images_root="/mnt/data/kai/VinDr_Subsets/cardiomegaly_subset/1024_padding_CLAHE/train",
                                       annotations_path="../subset/c-subset/explainability/cardiomegaly_400_subset_coco_labels.json",
                                       transforms=transforms)
-    val_dataset = read_coco_dataset(images_root="/mnt/data/kai/VinDr_datasets/cardiomegaly_subset/1024_padding_CLAHE/val",
+    val_dataset = read_coco_dataset(images_root="/mnt/data/kai/VinDr_Subsets/cardiomegaly_subset/1024_padding_CLAHE/val",
                                    annotations_path="../subset/c-subset/explainability/cardiomegaly_100_subset_coco_labels_val.json",
                                    transforms=transforms)
     
