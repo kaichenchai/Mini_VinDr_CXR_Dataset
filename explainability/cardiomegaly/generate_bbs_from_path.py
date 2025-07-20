@@ -19,7 +19,7 @@ if __name__ == "__main__":
     
     dfs = []
     image_id_list = []
-    for dir, id in zip(images_dir, image_ids):    
+    for dir, id in zip(images_dir, image_ids):
         results = model.predict(
             source = dir,
             imgsz = 1024,
