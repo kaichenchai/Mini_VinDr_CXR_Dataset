@@ -1,10 +1,10 @@
 import os
 import shutil
-from typing import Dict, bool
+from typing import Dict
 import pandas as pd
 
 
-def json_annos_to_txt_files(input_output_dict: Dict[str, str]) -> bool:
+def json_annos_to_txt_files(input_output_dict: Dict[str, str]):
     """_summary_
 
     Args:
@@ -39,7 +39,16 @@ def move_images(source_dir: str,
                 shutil.copyfile(original_path, new_path)
     else:
         raise ValueError(f"Source dir {source_dir} is not a path")
+    return True
 
 if __name__ == "__main__":
-    input_files_with_outputs = {"INPUT_PATH": "OUTPUT_PATH"}
+    input_files_with_outputs = {"./bb_annotations_stratified_split/8_point_annos/train_yolo_format.json": "/home/kai/mnt/siim-acr-pneumothorax/yolo_format/siim_acr_512_yolo/labels/train",
+                                "./bb_annotations_stratified_split/8_point_annos/val_yolo_format.json": "/home/kai/mnt/siim-acr-pneumothorax/yolo_format/siim_acr_512_yolo/labels/val",
+                                "./bb_annotations_stratified_split/8_point_annos/test_yolo_format.json": "/home/kai/mnt/siim-acr-pneumothorax/yolo_format/siim_acr_512_yolo/labels/test"}
     print(json_annos_to_txt_files(input_files_with_outputs))
+
+    input_annos_with_img_outputs = {"./bb_annotations_stratified_split/8_point_annos/train_yolo_format.json": "/home/kai/mnt/siim-acr-pneumothorax/yolo_format/siim_acr_512_yolo/images/train",
+                                "./bb_annotations_stratified_split/8_point_annos/val_yolo_format.json": "/home/kai/mnt/siim-acr-pneumothorax/yolo_format/siim_acr_512_yolo/images/val",
+                                "./bb_annotations_stratified_split/8_point_annos/test_yolo_format.json": "/home/kai/mnt/siim-acr-pneumothorax/yolo_format/siim_acr_512_yolo/images/test"}
+    print(move_images("/home/kai/mnt/siim-acr-pneumothorax/siim_acr_dataset/train/images/512/dicom",
+                input_annos_with_img_outputs))
