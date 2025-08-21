@@ -1,8 +1,8 @@
-from genericpath import isdir
-from xml.dom import NotFoundErr
-import pandas as pd
 import os
+import shutil
 from typing import Dict, bool
+import pandas as pd
+
 
 def json_annos_to_txt_files(input_output_dict: Dict[str, str]) -> bool:
     """_summary_
@@ -25,13 +25,20 @@ def json_annos_to_txt_files(input_output_dict: Dict[str, str]) -> bool:
     return True
 
 def move_images(source_dir: str,
-                json_files_to_output_dir: Dict[str, str],
+                json_ids_to_output_dir: Dict[str, str],
                 image_id_key_in_json: str = "image_id",
                 image_ext: str = ".png"):
     if os.path.isdir(source_dir):
-        pass
+        for json_with_ids, output_dir in json_ids_to_output_dir.items():
+            df = pd.read_json(json_with_ids)
+            ids_to_move = df[image_id_key_in_json].to_list()
+            for id in ids_to_move:
+                image_filename = id + image_ext
+                original_path = os.path.join(source_dir, image_filename)
+                new_path = os.path.join(output_dir, image_filename)
+                shutil.copyfile(original_path, new_path)
     else:
-        raise NotFoundErr(f"Source dir {source_dir} is not a path")
+        raise ValueError(f"Source dir {source_dir} is not a path")
 
 if __name__ == "__main__":
     input_files_with_outputs = {"INPUT_PATH": "OUTPUT_PATH"}
