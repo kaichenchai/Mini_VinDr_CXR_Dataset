@@ -42,13 +42,7 @@ def move_images(source_dir: str,
     return True
 
 if __name__ == "__main__":
-    input_files_with_outputs = {"./bb_annotations_stratified_split/8_point_annos/train_yolo_format.json": "/home/kai/mnt/siim-acr-pneumothorax/yolo_format/siim_acr_512_yolo/labels/train",
-                                "./bb_annotations_stratified_split/8_point_annos/val_yolo_format.json": "/home/kai/mnt/siim-acr-pneumothorax/yolo_format/siim_acr_512_yolo/labels/val",
-                                "./bb_annotations_stratified_split/8_point_annos/test_yolo_format.json": "/home/kai/mnt/siim-acr-pneumothorax/yolo_format/siim_acr_512_yolo/labels/test"}
+    input_files_with_outputs = {"./obb_annotations_stratified_split/annos_with_areas/25_percentile/yolo_format/train_yolo_format.json": "/home/kai/mnt/siim-acr-pneumothorax/yolo_format/siim_acr_512_yolo/labels_25_percentile/train",
+                                "./obb_annotations_stratified_split/annos_with_areas/25_percentile/yolo_format/val_yolo_format.json": "/home/kai/mnt/siim-acr-pneumothorax/yolo_format/siim_acr_512_yolo/labels_25_percentile/val",
+                                "./obb_annotations_stratified_split/annos_with_areas/25_percentile/yolo_format/test_yolo_format.json": "/home/kai/mnt/siim-acr-pneumothorax/yolo_format/siim_acr_512_yolo/labels_25_percentile/test"}
     print(json_annos_to_txt_files(input_files_with_outputs))
-
-    input_annos_with_img_outputs = {"./bb_annotations_stratified_split/8_point_annos/train_yolo_format.json": "/home/kai/mnt/siim-acr-pneumothorax/yolo_format/siim_acr_512_yolo/images/train",
-                                "./bb_annotations_stratified_split/8_point_annos/val_yolo_format.json": "/home/kai/mnt/siim-acr-pneumothorax/yolo_format/siim_acr_512_yolo/images/val",
-                                "./bb_annotations_stratified_split/8_point_annos/test_yolo_format.json": "/home/kai/mnt/siim-acr-pneumothorax/yolo_format/siim_acr_512_yolo/images/test"}
-    print(move_images("/home/kai/mnt/siim-acr-pneumothorax/siim_acr_dataset/train/images/512/dicom",
-                input_annos_with_img_outputs))
