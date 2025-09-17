@@ -1,13 +1,16 @@
 import glob
 from pathlib import Path
 import json
+from tqdm import tqdm
 import pydicom
 
-
 def get_dicom_metadata(images_dir: str):
-    images = glob.glob(images_dir)
+    filetypes = [".dcm", ".dicom"]
+    images = []
+    for filetype in filetypes:
+        images.extend(glob.glob(f"{images_dir}/*{filetype}"))
     metadata_dict = {}
-    for image in images:
+    for image in tqdm(images):
         image_id = Path(image).stem
         dicom = pydicom.dcmread(image, stop_before_pixels=True)
         metadata = dicom.to_json_dict()
@@ -15,7 +18,8 @@ def get_dicom_metadata(images_dir: str):
     return metadata_dict
 
 if __name__ == "__main__":
-    images_dir = ""
-    outpath = "./train_metadata.json"
+    images_dir = "/mnt/data/datasets/vindr-cxr/1.0.0/test/"
+    outpath = "./test_metadata.json"
     metadata = get_dicom_metadata(images_dir=images_dir)
-    json.dump(metadata, outpath)
+    with open(outpath, "w") as f:
+        json.dump(metadata, f, indent=2)
