@@ -18,8 +18,8 @@ def get_dicom_metadata(images_dir: str):
     return metadata_dict
 
 if __name__ == "__main__":
-    images_dir = "/mnt/data/datasets/vindr-cxr/1.0.0/test/"
-    outpath = "./test_metadata.json"
+    images_dir = "/home/kai/mnt/siim-acr-pneumothorax/siim_acr_dataset/test/dicom_files/"
+    outpath = "./siim_acr_test_metadata.json"
     metadata = get_dicom_metadata(images_dir=images_dir)
     with open(outpath, "w") as f:
         json.dump(metadata, f, indent=2)
