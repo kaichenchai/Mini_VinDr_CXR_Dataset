@@ -20,7 +20,9 @@ def dicom_to_array(path, voi_lut = True):
     if dicom.PhotometricInterpretation == "MONOCHROME1":
         data = np.amax(data) - data
     
-    data = (data).astype(np.uint16)
+    data = data.astype(np.uint32)
+    data = (data * 2**16) / 2**dicom.BitsStored
+    data = data.astype(np.uint16)
     
     return data
 
