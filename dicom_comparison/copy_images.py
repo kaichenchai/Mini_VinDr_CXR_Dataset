@@ -31,7 +31,37 @@ def copy_images(source_dir: str, output_dir: str, filenames: list, ext: str):
             print(f"File not found: {src_file}")
 
 
+def copy_images_timm_format(input_dir:str, output_base_path:str, df: pd.DataFrame, ext: str):
+    normal_dir = os.path.join(output_base_path, "normal")
+    cardiomegaly_dir = os.path.join(output_base_path, "cardiomegaly")
+    os.makedirs(normal_dir, exist_ok=True)
+    os.makedirs(cardiomegaly_dir, exist_ok=True)
+
+    # Filter image IDs
+    normal = df[df["cardiomegaly_flag"] == 0]["image_id"].tolist()
+    cardiomegaly = df[df["cardiomegaly_flag"] == 1]["image_id"].tolist()
+
+    # Move normal images
+    for image_id in normal:
+        src = os.path.join(input_dir, f"{image_id}{ext}")
+        dst = os.path.join(normal_dir, f"{image_id}{ext}")
+        if os.path.exists(src):
+            shutil.copy(src, dst)
+        else:
+            print(f"Warning: {src} not found.")
+
+    # Move cardiomegaly images
+    for image_id in cardiomegaly:
+        src = os.path.join(input_dir, f"{image_id}{ext}")
+        dst = os.path.join(cardiomegaly_dir, f"{image_id}{ext}")
+        if os.path.exists(src):
+            shutil.copy(src, dst)
+        else:
+            print(f"Warning: {src} not found.")
+
 if __name__ == "__main__":
     files = pd.read_csv("../explainability/cardiomegaly/generate_subset/cardiomegaly_subset_to_annotate.csv")
-    names = files["image_id"].to_list()
-    copy_images("/mnt/data/datasets/vindr-cxr/1.0.0/train","/home/kai/mnt/VinDr_Subsets/cardiomegaly_subset/dicom",names,".dicom")
+    copy_images_timm_format("/home/kai/mnt/VinDr_Subsets/cardiomegaly_subset/1024_padding_CLAHE/train",
+                            "/home/kai/mnt/VinDr_Subsets/cardiomegaly_subset/timm_format/8_bit_png/train",
+                            files,
+                            ".png")

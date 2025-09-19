@@ -49,7 +49,7 @@ def dicom_to_16_bit_png(images_dir: str,
                         output_dir: str,
                         resolution = (1024, 1024),
                         equalise = False,
-                        CLAHE = False,
+                        CLAHE = True,
                         padding = True):
     clahe = cv2.createCLAHE(clipLimit=2.0, tileGridSize=(8,8))
     filetypes = [".dcm", ".dicom"]
@@ -70,6 +70,5 @@ def dicom_to_16_bit_png(images_dir: str,
         image = cv2.imwrite(os.path.join(output_dir, f"{image_id}.png"), array, )
         
 
-if __name__ == "__man__":
-    data = dicom_to_array("../original_dataset/test_subset/0aed23e64ebdea798486056b4f174424.dicom")
-    print(data[0])
+if __name__ == "__main__":
+    dicom_to_16_bit_png("/home/kai/mnt/VinDr_Subsets/cardiomegaly_subset/dicom/val/", "/home/kai/mnt/VinDr_Subsets/cardiomegaly_subset/16_bit_png/val")
