@@ -28,14 +28,14 @@ from pytorch_accelerated.trainer import (
     TrainerWithTimmScheduler,
 )
 
-def load_dataset(dataset_name, dataset_path, train_transforms, eval_transforms):
+def load_dataset(dataset_path, train_transforms, eval_transforms):
     dataset_path = Path(dataset_path)
 
     train_dataset = ImageDataset(
         str(dataset_path / "train"), transform=train_transforms
     )
     eval_dataset = ImageDataset(
-        str(dataset_path / "validation"), transform=eval_transforms
+        str(dataset_path / "val"), transform=eval_transforms
     )
 
     return train_dataset, eval_dataset
@@ -43,10 +43,10 @@ def load_dataset(dataset_name, dataset_path, train_transforms, eval_transforms):
 
 class AccuracyCallback(TrainerCallback):
     def __init__(self, num_classes):
-        self.accuracy = torchmetrics.Accuracy(num_classes=num_classes)
+        self.accuracy = torchmetrics.Accuracy(task="binary", num_classes=num_classes)
 
     def _move_to_device(self, trainer):
-        self.metrics.to(trainer.device)
+        self.accuracy.to(trainer.device)
 
     def on_training_run_start(self, trainer, **kwargs):
         self._move_to_device(trainer)
@@ -63,7 +63,7 @@ class AccuracyCallback(TrainerCallback):
         self.accuracy.reset()
 
 
-def create_transforms(greyscale, num_channels, pretrained, dataset_name, training=True):
+def create_transforms(greyscale, num_channels, pretrained, training=True):
     if training:
         tfms = [transforms.RandomResizedCrop(224, scale=(0.5, 1.0))]
 
@@ -119,7 +119,6 @@ def main(
     num_epochs,
     frozen_lr,
     batch_size,
-    dataset_name,
     num_channels,
     greyscale,
     pretrained,
@@ -139,15 +138,15 @@ def main(
     )
 
     train_transforms = create_transforms(
-        greyscale, num_channels, pretrained, dataset_name, training=True
+        greyscale, num_channels, pretrained, training=True
     )
     eval_transforms = create_transforms(
-        greyscale, num_channels, pretrained, dataset_name, training=False
+        greyscale, num_channels, pretrained, training=False
     )
 
     # Create datasets
     train_dataset, eval_dataset = load_dataset(
-        dataset_name, data_dir, train_transforms, eval_transforms
+        data_dir, train_transforms, eval_transforms
     )
 
     # Define loss function
@@ -229,9 +228,6 @@ if __name__ == "__main__":
     )
 
     parser.add_argument(
-        "--dataset", required=False, help="dataset name", type=str, default="beans"
-    )
-    parser.add_argument(
         "--num_chans",
         required=False,
         help="the number of image channels",
@@ -248,12 +244,12 @@ if __name__ == "__main__":
         "--freeze", type=lambda s: s.lower() in ["true", "t", "yes", "1"]
     )
     args = parser.parse_args()
+    print(args.data_dir)
     main(
         args.data_dir,
         args.epochs,
         args.lr,
         args.batch_size,
-        args.dataset,
         args.num_chans,
         args.greyscale,
         args.pretrained,
