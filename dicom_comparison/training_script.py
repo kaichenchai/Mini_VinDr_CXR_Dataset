@@ -3,6 +3,7 @@ from functools import partial
 from pathlib import Path
 
 import pandas as pd
+import wandb
 import torch
 import torchmetrics
 from PIL import Image
@@ -103,6 +104,26 @@ def create_transforms(greyscale, num_channels, pretrained, training=True):
     return tfm_pipeline
 
 
+class WandBLoggerCallback(LogMetricsCallback):
+    def __init__(self, run_name):
+        self.run_name = run_name
+        if self.run_name == None:
+            self.run_name = "test_run"
+
+    def on_training_run_start(self, trainer, **kwargs):
+        self.run = wandb.init(project="dicom_comparison",
+                     run=self.run_name,
+                     config=trainer.run_config.to_dict()
+                )
+
+
+    def log_metrics(self, trainer, metrics):
+        if trainer.run_config.is_world_process_zero:
+            self.run.log(metrics,
+                         commit=True)
+
+
+
 def create_scheduler():
     return partial(
         CosineLRScheduler,
@@ -123,8 +144,9 @@ def main(
     greyscale,
     pretrained,
     freeze,
+    run_name
 ):
-
+    
     data_dir = Path(data_dir)
 
     num_classes = 2
@@ -173,6 +195,7 @@ def main(
             TerminateOnNaNCallback,
             PrintProgressCallback,
             LogMetricsCallback,
+            WandBLoggerCallback(run_name=run_name)
             SaveBestModelCallback,
             EarlyStoppingCallback(early_stopping_patience=early_stop_counter),
         ],
@@ -224,7 +247,7 @@ if __name__ == "__main__":
         default=0.001,
     )
     parser.add_argument(
-        "--batch-size", required=False, help="batch_size", type=int, default=32
+        "--batch_size", required=False, help="batch_size", type=int, default=32
     )
 
     parser.add_argument(
@@ -243,6 +266,7 @@ if __name__ == "__main__":
     parser.add_argument(
         "--freeze", type=lambda s: s.lower() in ["true", "t", "yes", "1"]
     )
+    parser.add_argument("--run_name", required=False, help="wandb run name", type=str)
     args = parser.parse_args()
     print(args.data_dir)
     main(
@@ -254,4 +278,5 @@ if __name__ == "__main__":
         args.greyscale,
         args.pretrained,
         args.freeze,
+        args.run_name   
     )
