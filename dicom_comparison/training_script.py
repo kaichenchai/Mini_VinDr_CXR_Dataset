@@ -144,7 +144,8 @@ def main(
     greyscale,
     pretrained,
     freeze,
-    run_name
+    run_name,
+    early_stop
 ):
     
     data_dir = Path(data_dir)
@@ -177,13 +178,11 @@ def main(
     freezer = ModelFreezer(model, freeze_batch_norms=False)
     if freeze:
         freezer.freeze()
-    else:
-        num_epochs = num_epochs * 2
-
+    
     # Define optimizer
     optimizer = torch.optim.AdamW(freezer.get_trainable_parameters(), lr=frozen_lr)
 
-    early_stop_counter = 25 if freeze else 50
+    early_stop_counter = early_stop if early_stop else 50
 
     trainer = TrainerWithTimmScheduler(
         model=model,
@@ -267,6 +266,7 @@ if __name__ == "__main__":
         "--freeze", type=lambda s: s.lower() in ["true", "t", "yes", "1"]
     )
     parser.add_argument("--run_name", required=False, help="wandb run name", type=str)
+    parser.add_argument("--early_stop", required=False, help="early stopping epochs", type=int)    
     args = parser.parse_args()
     print(args.data_dir)
     main(
@@ -278,5 +278,6 @@ if __name__ == "__main__":
         args.greyscale,
         args.pretrained,
         args.freeze,
-        args.run_name   
+        args.run_name,   
+        args.early_stop
     )
