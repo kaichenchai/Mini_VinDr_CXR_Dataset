@@ -1,0 +1,75 @@
+Starting epoch 1
+train_loss_epoch: 0.7041624188423157
+Starting eval epoch
+eval_loss_epoch: 0.6556633114814758
+accuracy: 0.6499999761581421
+/home/kai/.conda/envs/vindr/lib/python3.12/site-packages/torch/nn/modules/conv.py:456: UserWarning: Applied workaround for CuDNN issue, install nvrtc.so (Triggered internally at /opt/conda/conda-bld/pytorch_1712609048481/work/aten/src/ATen/native/cudnn/Conv_v8.cpp:84.)
+  return F.conv2d(input, weight, bias, self.stride,
+Starting epoch 2
+train_loss_epoch: 0.6847305297851562
+Starting eval epoch
+eval_loss_epoch: 0.6134946942329407
+accuracy: 0.7200000286102295
+Improvement of 0.042168617248535156 observed, resetting counter.
+Early stopping counter: 0/3
+Starting epoch 3
+train_loss_epoch: 0.6593024730682373
+Starting eval epoch
+eval_loss_epoch: 0.6068527698516846
+accuracy: 0.699999988079071
+No improvement above threshold observed, incrementing counter.
+Early stopping counter: 1/3
+Starting epoch 4
+train_loss_epoch: 0.6628132462501526
+Starting eval epoch
+eval_loss_epoch: 0.6168361902236938
+accuracy: 0.6700000166893005
+No improvement above threshold observed, incrementing counter.
+Early stopping counter: 2/3
+Starting epoch 5
+train_loss_epoch: 0.6654706001281738
+Starting eval epoch
+eval_loss_epoch: 0.6087783575057983
+accuracy: 0.7099999785423279
+No improvement above threshold observed, incrementing counter.
+Early stopping counter: 3/3
+Stopping training due to no improvement after 3 epochs
+Finishing training run
+Loading checkpoint with eval_loss_epoch: 0.6068527698516846 from epoch 3
+Starting training run
+Starting epoch 1
+train_loss_epoch: 0.7555825710296631
+Starting eval epoch
+eval_loss_epoch: 1.1801633834838867
+accuracy: 0.5099999904632568
+Starting epoch 2
+train_loss_epoch: 0.6937128305435181
+Starting eval epoch
+eval_loss_epoch: 0.7160463929176331
+accuracy: 0.6000000238418579
+Improvement of 0.46411699056625366 observed, resetting counter.
+Early stopping counter: 0/3
+Starting epoch 3
+train_loss_epoch: 0.6755431294441223
+Starting eval epoch
+eval_loss_epoch: 0.7396643757820129
+accuracy: 0.5799999833106995
+No improvement above threshold observed, incrementing counter.
+Early stopping counter: 1/3
+Starting epoch 4
+train_loss_epoch: 0.6672524809837341
+Starting eval epoch
+eval_loss_epoch: 0.8062396049499512
+accuracy: 0.699999988079071
+No improvement above threshold observed, incrementing counter.
+Early stopping counter: 2/3
+Starting epoch 5
+train_loss_epoch: 0.6647467613220215
+Starting eval epoch
+eval_loss_epoch: 0.7830615043640137
+accuracy: 0.6600000262260437
+No improvement above threshold observed, incrementing counter.
+Early stopping counter: 3/3
+Stopping training due to no improvement after 3 epochs
+Finishing training run
+Loading checkpoint with eval_loss_epoch: 0.7160463929176331 from epoch 2

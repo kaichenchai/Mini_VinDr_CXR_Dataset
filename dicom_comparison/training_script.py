@@ -112,7 +112,7 @@ class WandBLoggerCallback(LogMetricsCallback):
 
     def on_training_run_start(self, trainer, **kwargs):
         self.run = wandb.init(project="dicom_comparison",
-                     run=self.run_name,
+                     name=self.run_name,
                      config=trainer.run_config.to_dict()
                 )
 
@@ -183,7 +183,7 @@ def main(
     # Define optimizer
     optimizer = torch.optim.AdamW(freezer.get_trainable_parameters(), lr=frozen_lr)
 
-    early_stop_counter = 3 if freeze else 6
+    early_stop_counter = 25 if freeze else 50
 
     trainer = TrainerWithTimmScheduler(
         model=model,
@@ -195,7 +195,7 @@ def main(
             TerminateOnNaNCallback,
             PrintProgressCallback,
             LogMetricsCallback,
-            WandBLoggerCallback(run_name=run_name)
+            WandBLoggerCallback(run_name=run_name),
             SaveBestModelCallback,
             EarlyStoppingCallback(early_stopping_patience=early_stop_counter),
         ],

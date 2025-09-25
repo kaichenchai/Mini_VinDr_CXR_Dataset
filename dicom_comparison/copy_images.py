@@ -60,8 +60,8 @@ def copy_images_timm_format(input_dir:str, output_base_path:str, df: pd.DataFram
             print(f"Warning: {src} not found.")
 
 if __name__ == "__main__":
-    files = pd.read_csv("../explainability/cardiomegaly/generate_subset/cardiomegaly_subset_to_annotate.csv")
-    copy_images_timm_format("/home/kai/mnt/VinDr_Subsets/cardiomegaly_subset/1024_padding_CLAHE/train",
-                            "/home/kai/mnt/VinDr_Subsets/cardiomegaly_subset/timm_format/8_bit_png/train",
+    files = pd.read_csv("../explainability/cardiomegaly/generate_subset/cardiomegaly_val_subset_to_annotate.csv")
+    copy_images_timm_format("/home/kai/mnt/VinDr_Subsets/cardiomegaly_subset/8_bit_png_norm/val",
+                            "/home/kai/mnt/VinDr_Subsets/cardiomegaly_subset/timm_format/8_bit_png_norm/val",
                             files,
                             ".png")

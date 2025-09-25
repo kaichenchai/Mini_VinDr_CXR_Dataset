@@ -73,4 +73,5 @@ def dicom_to_16_bit_png(images_dir: str,
         
 
 if __name__ == "__main__":
-    dicom_to_16_bit_png("/home/kai/mnt/VinDr_Subsets/cardiomegaly_subset/dicom/val/", "/home/kai/mnt/VinDr_Subsets/cardiomegaly_subset/16_bit_png/val")
+    dicom_to_16_bit_png("/home/kai/mnt/VinDr_Subsets/cardiomegaly_subset/dicom/val/", "/home/kai/mnt/VinDr_Subsets/cardiomegaly_subset/8_bit_png_norm/val")
+    dicom_to_16_bit_png("/home/kai/mnt/VinDr_Subsets/cardiomegaly_subset/dicom/train/", "/home/kai/mnt/VinDr_Subsets/cardiomegaly_subset/8_bit_png_norm/train")

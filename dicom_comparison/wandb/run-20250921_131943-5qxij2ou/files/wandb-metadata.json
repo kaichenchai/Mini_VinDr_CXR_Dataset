@@ -1,0 +1,185 @@
+{
+    "os": "Linux-6.8.9-100.fc38.x86_64-x86_64-with-glibc2.37",
+    "python": "3.12.3",
+    "heartbeatAt": "2025-09-21T05:19:44.323817",
+    "startedAt": "2025-09-21T05:19:43.313952",
+    "docker": null,
+    "cuda": null,
+    "args": [
+        "--data_dir",
+        "/home/kai/mnt/VinDr_Subsets/cardiomegaly_subset/timm_format/8_bit_png_norm",
+        "--epochs",
+        "50",
+        "--num_chans",
+        "3",
+        "--greyscale",
+        "t",
+        "--pretrained",
+        "t",
+        "--freeze",
+        "f",
+        "--batch_size",
+        "8",
+        "--run_name",
+        "8b_norm_50e_finetune"
+    ],
+    "state": "running",
+    "program": "/mnt/data/kai/VinDr_Code/Mini_VinDr_CXR_Dataset/dicom_comparison/training_script.py",
+    "codePathLocal": "training_script.py",
+    "codePath": "dicom_comparison/training_script.py",
+    "git": {
+        "remote": "git@github.com:kaichenchai/Mini_VinDr_CXR_Dataset.git",
+        "commit": "974d67b795d23b879d239d690be6a1ce9e597a3f"
+    },
+    "email": "englishorc65@gmail.com",
+    "root": "/mnt/data/kai/VinDr_Code/Mini_VinDr_CXR_Dataset",
+    "host": "fedora",
+    "username": "kai",
+    "executable": "/home/kai/.conda/envs/vindr/bin/python3",
+    "cpu_count": 16,
+    "cpu_count_logical": 24,
+    "cpu_freq": {
+        "current": 2892.047666666667,
+        "min": 800.0,
+        "max": 4950.0
+    },
+    "cpu_freq_per_core": [
+        {
+            "current": 5045.973,
+            "min": 800.0,
+            "max": 5300.0
+        },
+        {
+            "current": 5318.661,
+            "min": 800.0,
+            "max": 5300.0
+        },
+        {
+            "current": 5296.018,
+            "min": 800.0,
+            "max": 5300.0
+        },
+        {
+            "current": 800.0,
+            "min": 800.0,
+            "max": 5300.0
+        },
+        {
+            "current": 5300.0,
+            "min": 800.0,
+            "max": 5300.0
+        },
+        {
+            "current": 800.0,
+            "min": 800.0,
+            "max": 5300.0
+        },
+        {
+            "current": 800.0,
+            "min": 800.0,
+            "max": 5300.0
+        },
+        {
+            "current": 800.0,
+            "min": 800.0,
+            "max": 5300.0
+        },
+        {
+            "current": 800.0,
+            "min": 800.0,
+            "max": 5400.0
+        },
+        {
+            "current": 800.0,
+            "min": 800.0,
+            "max": 5400.0
+        },
+        {
+            "current": 800.0,
+            "min": 800.0,
+            "max": 5400.0
+        },
+        {
+            "current": 4438.257,
+            "min": 800.0,
+            "max": 5400.0
+        },
+        {
+            "current": 4512.869,
+            "min": 800.0,
+            "max": 5300.0
+        },
+        {
+            "current": 800.0,
+            "min": 800.0,
+            "max": 5300.0
+        },
+        {
+            "current": 5300.0,
+            "min": 800.0,
+            "max": 5300.0
+        },
+        {
+            "current": 800.0,
+            "min": 800.0,
+            "max": 5300.0
+        },
+        {
+            "current": 4227.743,
+            "min": 800.0,
+            "max": 4200.0
+        },
+        {
+            "current": 4285.135,
+            "min": 800.0,
+            "max": 4200.0
+        },
+        {
+            "current": 800.0,
+            "min": 800.0,
+            "max": 4200.0
+        },
+        {
+            "current": 800.0,
+            "min": 800.0,
+            "max": 4200.0
+        },
+        {
+            "current": 4116.111,
+            "min": 800.0,
+            "max": 4200.0
+        },
+        {
+            "current": 4199.946,
+            "min": 800.0,
+            "max": 4200.0
+        },
+        {
+            "current": 4200.517,
+            "min": 800.0,
+            "max": 4200.0
+        },
+        {
+            "current": 4231.435,
+            "min": 800.0,
+            "max": 4200.0
+        }
+    ],
+    "disk": {
+        "/": {
+            "total": 929.92578125,
+            "used": 853.0948829650879
+        }
+    },
+    "gpu": "NVIDIA GeForce RTX 4090",
+    "gpu_count": 1,
+    "gpu_devices": [
+        {
+            "name": "NVIDIA GeForce RTX 4090",
+            "memory_total": 25757220864
+        }
+    ],
+    "memory": {
+        "total": 31.144962310791016
+    }
+}
