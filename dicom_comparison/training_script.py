@@ -1,6 +1,7 @@
 import argparse
 from functools import partial
 from pathlib import Path
+from datetime import datetime
 
 import pandas as pd
 import wandb
@@ -66,7 +67,7 @@ class AccuracyCallback(TrainerCallback):
 
 def create_transforms(greyscale, num_channels, pretrained, training=True):
     if training:
-        tfms = [transforms.RandomResizedCrop(224, scale=(0.5, 1.0))]
+        tfms = [transforms.RandomResizedCrop(224, scale=(0.8, 1.0))]
 
         if greyscale:
             print("adding greyscale tfm")
@@ -183,6 +184,11 @@ def main(
     optimizer = torch.optim.AdamW(freezer.get_trainable_parameters(), lr=frozen_lr)
 
     early_stop_counter = early_stop if early_stop else 50
+    
+    current_datetime = datetime.now()
+
+    # Format it as an ISO 8601 string
+    formatted_date = current_datetime.isoformat()   
 
     trainer = TrainerWithTimmScheduler(
         model=model,
@@ -195,7 +201,7 @@ def main(
             PrintProgressCallback,
             LogMetricsCallback,
             WandBLoggerCallback(run_name=run_name),
-            SaveBestModelCallback,
+            SaveBestModelCallback(save_path=f"./experiments/{run_name}_{formatted_date}.pt"),
             EarlyStoppingCallback(early_stopping_patience=early_stop_counter),
         ],
     )

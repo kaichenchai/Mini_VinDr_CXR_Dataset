@@ -6,7 +6,7 @@ import cv2
 from pydicom.pixel_data_handlers.util import apply_voi_lut
 import pydicom
 
-def dicom_to_array(path, voi_lut = True):
+def dicom_to_array(path, voi_lut = True, bit_depth: int = 16):
     #dicom = pydicom.read_file(path) read_file has been repreciated
     dicom = pydicom.dcmread(path)
     
@@ -21,9 +21,16 @@ def dicom_to_array(path, voi_lut = True):
         data = np.amax(data) - data
     
     data = data.astype(np.uint32)
-    data = (data * 2**16) / 2**dicom.BitsStored
-    data = data.astype(np.uint16)
-    
+    data = (data * 2**bit_depth) / 2**dicom.BitsStored
+    if bit_depth == 16:
+        data = data.astype(np.uint16)
+    elif bit_depth == 8:
+        data = data.astype(np.uint8)
+    elif bit_depth == 4:
+        data = data.astype(np.uint4)
+    else:
+        data = data.astype(np.uint8)
+
     return data
 
 #from https://stackoverflow.com/questions/43391205/add-padding-to-images-to-get-them-into-the-same-shape
@@ -47,20 +54,22 @@ def resizeWithPadding(image, newDim):
     
     return newImg
 
-def dicom_to_16_bit_png(images_dir: str,
-                        output_dir: str,
-                        resolution = (1024, 1024),
-                        equalise = False,
-                        CLAHE = True,
-                        padding = True):
+def dicom_to_png(images_dir: str,
+                output_dir: str,
+                resolution = (1024, 1024),
+                bit_depth = 16,
+                equalise = False,
+                CLAHE = True,
+                padding = True):
     clahe = cv2.createCLAHE(clipLimit=2.0, tileGridSize=(8,8))
     filetypes = [".dcm", ".dicom"]
     images = []
     for filetype in filetypes:
         images.extend(glob.glob(f"{images_dir}/*{filetype}"))
+    print(images)
     for image in images:
         image_id = Path(image).stem
-        array = dicom_to_array(image)
+        array = dicom_to_array(image, bit_depth = bit_depth)
         if equalise:
             array = cv2.equalizeHist(array)
         #uses CLAHE to perform histogram equalisation, better way to do as does it with a moving kernel
@@ -73,5 +82,11 @@ def dicom_to_16_bit_png(images_dir: str,
         
 
 if __name__ == "__main__":
-    dicom_to_16_bit_png("/home/kai/mnt/VinDr_Subsets/cardiomegaly_subset/dicom/val/", "/home/kai/mnt/VinDr_Subsets/cardiomegaly_subset/8_bit_png_norm/val")
-    dicom_to_16_bit_png("/home/kai/mnt/VinDr_Subsets/cardiomegaly_subset/dicom/train/", "/home/kai/mnt/VinDr_Subsets/cardiomegaly_subset/8_bit_png_norm/train")
+    dicom_to_png("/home/kai/mnt/VinDr_Subsets/pneumothorax_subsets/dicom/val/",
+                 "/home/kai/mnt/VinDr_Subsets/pneumothorax_subsets/8_bit_png_norm/val", bit_depth = 8)
+    dicom_to_png("/home/kai/mnt/VinDr_Subsets/pneumothorax_subsets/dicom/train/",
+                 "/home/kai/mnt/VinDr_Subsets/pneumothorax_subsets/8_bit_png_norm/train", bit_depth = 8)
+    dicom_to_png("/home/kai/mnt/VinDr_Subsets/pneumothorax_subsets/dicom/val/",
+                 "/home/kai/mnt/VinDr_Subsets/pneumothorax_subsets/16_bit_png_norm/val", bit_depth = 16)
+    dicom_to_png("/home/kai/mnt/VinDr_Subsets/pneumothorax_subsets/dicom/train/",
+                 "/home/kai/mnt/VinDr_Subsets/pneumothorax_subsets/16_bit_png_norm/train", bit_depth = 16)
