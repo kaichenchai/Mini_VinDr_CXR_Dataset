@@ -24,10 +24,6 @@ def dicom_to_array(path, voi_lut = True, bit_depth: int = 16):
     data = (data * 2**bit_depth) / 2**dicom.BitsStored
     if bit_depth == 16:
         data = data.astype(np.uint16)
-    elif bit_depth == 8:
-        data = data.astype(np.uint8)
-    elif bit_depth == 4:
-        data = data.astype(np.uint4)
     else:
         data = data.astype(np.uint8)
 
@@ -82,6 +78,18 @@ def dicom_to_png(images_dir: str,
         
 
 if __name__ == "__main__":
+
+    dicom_to_png("/home/kai/mnt/VinDr_Subsets/pneumothorax_subsets/dicom/val/",
+                 "/home/kai/mnt/VinDr_Subsets/pneumothorax_subsets/2_bit_png_norm/val", bit_depth = 2)
+    dicom_to_png("/home/kai/mnt/VinDr_Subsets/pneumothorax_subsets/dicom/train/",
+                 "/home/kai/mnt/VinDr_Subsets/pneumothorax_subsets/2_bit_png_norm/train", bit_depth = 2)
+
+    """
+    dicom_to_png("/home/kai/mnt/VinDr_Subsets/pneumothorax_subsets/dicom/val/",
+                 "/home/kai/mnt/VinDr_Subsets/pneumothorax_subsets/4_bit_png_norm/val", bit_depth = 4)
+    dicom_to_png("/home/kai/mnt/VinDr_Subsets/pneumothorax_subsets/dicom/train/",
+                 "/home/kai/mnt/VinDr_Subsets/pneumothorax_subsets/4_bit_png_norm/train", bit_depth = 4)
+    
     dicom_to_png("/home/kai/mnt/VinDr_Subsets/pneumothorax_subsets/dicom/val/",
                  "/home/kai/mnt/VinDr_Subsets/pneumothorax_subsets/8_bit_png_norm/val", bit_depth = 8)
     dicom_to_png("/home/kai/mnt/VinDr_Subsets/pneumothorax_subsets/dicom/train/",
@@ -90,3 +98,4 @@ if __name__ == "__main__":
                  "/home/kai/mnt/VinDr_Subsets/pneumothorax_subsets/16_bit_png_norm/val", bit_depth = 16)
     dicom_to_png("/home/kai/mnt/VinDr_Subsets/pneumothorax_subsets/dicom/train/",
                  "/home/kai/mnt/VinDr_Subsets/pneumothorax_subsets/16_bit_png_norm/train", bit_depth = 16)
+    """

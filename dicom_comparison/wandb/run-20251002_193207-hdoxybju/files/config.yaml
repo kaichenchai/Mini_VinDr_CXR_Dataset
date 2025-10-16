@@ -1,0 +1,96 @@
+wandb_version: 1
+
+num_epochs:
+  desc: null
+  value: 500
+train_per_device_batch_size:
+  desc: null
+  value: 8
+train_dl_kwargs:
+  desc: null
+  value:
+    shuffle: true
+    pin_memory: true
+    batch_size: 8
+    num_workers: 24
+    worker_init_fn: pytorch_accelerated.utils.worker_init_fn
+eval_per_device_batch_size:
+  desc: null
+  value: 8
+eval_dl_kwargs:
+  desc: null
+  value:
+    shuffle: false
+    pin_memory: true
+    batch_size: 8
+    num_workers: 24
+    worker_init_fn: pytorch_accelerated.utils.worker_init_fn
+gradient_accumulation_steps:
+  desc: null
+  value: 1
+gradient_clip_value:
+  desc: null
+  value: null
+train_total_batch_size:
+  desc: null
+  value: 8
+eval_total_batch_size:
+  desc: null
+  value: 8
+num_update_steps_per_epoch:
+  desc: null
+  value: 18
+num_local_update_steps_per_epoch:
+  desc: null
+  value: 18
+max_num_train_steps:
+  desc: null
+  value: 9001
+is_local_process_zero:
+  desc: null
+  value: true
+is_world_process_zero:
+  desc: null
+  value: true
+is_distributed:
+  desc: null
+  value: false
+mixed_precision:
+  desc: null
+  value: 'no'
+num_processes:
+  desc: null
+  value: 1
+_wandb:
+  desc: null
+  value:
+    python_version: 3.12.3
+    cli_version: 0.16.5
+    framework: torch
+    is_jupyter_run: false
+    is_kaggle_kernel: false
+    start_time: 1759404727.0
+    t:
+      1:
+      - 1
+      - 41
+      - 49
+      - 55
+      - 63
+      - 71
+      2:
+      - 1
+      - 41
+      - 49
+      - 55
+      - 63
+      - 71
+      3:
+      - 13
+      - 16
+      - 23
+      4: 3.12.3
+      5: 0.16.5
+      8:
+      - 5
+      13: linux-x86_64

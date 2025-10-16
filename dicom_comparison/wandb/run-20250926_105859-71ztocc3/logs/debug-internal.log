@@ -1,0 +1,196 @@
+2025-09-26 10:58:59,288 INFO    StreamThr :2240455 [internal.py:wandb_internal():86] W&B internal server running at pid: 2240455, started at: 2025-09-26 10:58:59.287659
+2025-09-26 10:58:59,289 DEBUG   HandlerThread:2240455 [handler.py:handle_request():146] handle_request: status
+2025-09-26 10:58:59,290 INFO    WriterThread:2240455 [datastore.py:open_for_write():87] open: /mnt/data/kai/VinDr_Code/Mini_VinDr_CXR_Dataset/dicom_comparison/wandb/run-20250926_105859-71ztocc3/run-71ztocc3.wandb
+2025-09-26 10:58:59,290 DEBUG   SenderThread:2240455 [sender.py:send():379] send: header
+2025-09-26 10:58:59,291 DEBUG   SenderThread:2240455 [sender.py:send():379] send: run
+2025-09-26 10:59:00,003 INFO    SenderThread:2240455 [dir_watcher.py:__init__():211] watching files in: /mnt/data/kai/VinDr_Code/Mini_VinDr_CXR_Dataset/dicom_comparison/wandb/run-20250926_105859-71ztocc3/files
+2025-09-26 10:59:00,003 INFO    SenderThread:2240455 [sender.py:_start_run_threads():1124] run started: 71ztocc3 with start time 1758855539.287303
+2025-09-26 10:59:00,008 DEBUG   HandlerThread:2240455 [handler.py:handle_request():146] handle_request: check_version
+2025-09-26 10:59:00,008 DEBUG   SenderThread:2240455 [sender.py:send_request():406] send_request: check_version
+2025-09-26 10:59:00,075 DEBUG   HandlerThread:2240455 [handler.py:handle_request():146] handle_request: run_start
+2025-09-26 10:59:00,087 DEBUG   HandlerThread:2240455 [system_info.py:__init__():26] System info init
+2025-09-26 10:59:00,087 DEBUG   HandlerThread:2240455 [system_info.py:__init__():41] System info init done
+2025-09-26 10:59:00,087 INFO    HandlerThread:2240455 [system_monitor.py:start():194] Starting system monitor
+2025-09-26 10:59:00,087 INFO    SystemMonitor:2240455 [system_monitor.py:_start():158] Starting system asset monitoring threads
+2025-09-26 10:59:00,087 INFO    HandlerThread:2240455 [system_monitor.py:probe():214] Collecting system info
+2025-09-26 10:59:00,088 INFO    SystemMonitor:2240455 [interfaces.py:start():190] Started cpu monitoring
+2025-09-26 10:59:00,088 INFO    SystemMonitor:2240455 [interfaces.py:start():190] Started disk monitoring
+2025-09-26 10:59:00,088 INFO    SystemMonitor:2240455 [interfaces.py:start():190] Started gpu monitoring
+2025-09-26 10:59:00,089 INFO    SystemMonitor:2240455 [interfaces.py:start():190] Started memory monitoring
+2025-09-26 10:59:00,090 INFO    SystemMonitor:2240455 [interfaces.py:start():190] Started network monitoring
+2025-09-26 10:59:00,095 DEBUG   HandlerThread:2240455 [system_info.py:probe():150] Probing system
+2025-09-26 10:59:00,097 DEBUG   HandlerThread:2240455 [system_info.py:_probe_git():135] Probing git
+2025-09-26 10:59:00,100 DEBUG   HandlerThread:2240455 [system_info.py:_probe_git():143] Probing git done
+2025-09-26 10:59:00,100 DEBUG   HandlerThread:2240455 [system_info.py:probe():198] Probing system done
+2025-09-26 10:59:00,100 DEBUG   HandlerThread:2240455 [system_monitor.py:probe():223] {'os': 'Linux-6.8.9-100.fc38.x86_64-x86_64-with-glibc2.37', 'python': '3.12.3', 'heartbeatAt': '2025-09-26T02:59:00.096044', 'startedAt': '2025-09-26T02:58:59.285175', 'docker': None, 'cuda': None, 'args': ('--model_checkpoint', './experiments/pneumothorax_16_norm_200e_pretrained_2025-09-26T10:27:48.076870.pt', '--data_dir', '/home/kai/mnt/VinDr_Subsets/pneumothorax_subsets/timm_format/16_bit_png_norm', '--batch_size', '32', '--num_channels', '3', '--greyscale', 'true', '--pretrained', 'true', '--run_name', 'pneumothorax_16_norm_200e_pretrained_val'), 'state': 'running', 'program': '/mnt/data/kai/VinDr_Code/Mini_VinDr_CXR_Dataset/dicom_comparison/validation_script.py', 'codePathLocal': 'validation_script.py', 'codePath': 'dicom_comparison/validation_script.py', 'git': {'remote': 'git@github.com:kaichenchai/Mini_VinDr_CXR_Dataset.git', 'commit': '6ad98e956edc47d6cded8d5ae7a7dc6f3c81b744'}, 'email': 'englishorc65@gmail.com', 'root': '/mnt/data/kai/VinDr_Code/Mini_VinDr_CXR_Dataset', 'host': 'fedora', 'username': 'kai', 'executable': '/home/kai/.conda/envs/vindr/bin/python', 'cpu_count': 16, 'cpu_count_logical': 24, 'cpu_freq': {'current': 2613.699708333333, 'min': 800.0, 'max': 4950.0}, 'cpu_freq_per_core': [{'current': 4400.0, 'min': 800.0, 'max': 5300.0}, {'current': 4407.213, 'min': 800.0, 'max': 5300.0}, {'current': 800.0, 'min': 800.0, 'max': 5300.0}, {'current': 800.0, 'min': 800.0, 'max': 5300.0}, {'current': 800.0, 'min': 800.0, 'max': 5300.0}, {'current': 800.0, 'min': 800.0, 'max': 5300.0}, {'current': 800.0, 'min': 800.0, 'max': 5300.0}, {'current': 800.0, 'min': 800.0, 'max': 5300.0}, {'current': 4436.492, 'min': 800.0, 'max': 5400.0}, {'current': 800.0, 'min': 800.0, 'max': 5400.0}, {'current': 800.0, 'min': 800.0, 'max': 5400.0}, {'current': 800.0, 'min': 800.0, 'max': 5400.0}, {'current': 800.0, 'min': 800.0, 'max': 5300.0}, {'current': 800.0, 'min': 800.0, 'max': 5300.0}, {'current': 5004.737, 'min': 800.0, 'max': 5300.0}, {'current': 5305.11, 'min': 800.0, 'max': 5300.0}, {'current': 4199.842, 'min': 800.0, 'max': 4200.0}, {'current': 4242.567, 'min': 800.0, 'max': 4200.0}, {'current': 800.0, 'min': 800.0, 'max': 4200.0}, {'current': 4200.0, 'min': 800.0, 'max': 4200.0}, {'current': 4134.09, 'min': 800.0, 'max': 4200.0}, {'current': 4200.112, 'min': 800.0, 'max': 4200.0}, {'current': 4191.176, 'min': 800.0, 'max': 4200.0}, {'current': 4160.714, 'min': 800.0, 'max': 4200.0}], 'disk': {'/': {'total': 929.92578125, 'used': 853.1046943664551}}, 'gpu': 'NVIDIA GeForce RTX 4090', 'gpu_count': 1, 'gpu_devices': [{'name': 'NVIDIA GeForce RTX 4090', 'memory_total': 25757220864}], 'memory': {'total': 31.144962310791016}}
+2025-09-26 10:59:00,100 INFO    HandlerThread:2240455 [system_monitor.py:probe():224] Finished collecting system info
+2025-09-26 10:59:00,100 INFO    HandlerThread:2240455 [system_monitor.py:probe():227] Publishing system info
+2025-09-26 10:59:00,100 DEBUG   HandlerThread:2240455 [system_info.py:_save_conda():207] Saving list of conda packages installed into the current environment
+2025-09-26 10:59:01,004 INFO    Thread-12 :2240455 [dir_watcher.py:_on_file_created():271] file/dir created: /mnt/data/kai/VinDr_Code/Mini_VinDr_CXR_Dataset/dicom_comparison/wandb/run-20250926_105859-71ztocc3/files/conda-environment.yaml
+2025-09-26 10:59:01,167 DEBUG   HandlerThread:2240455 [system_info.py:_save_conda():222] Saving conda packages done
+2025-09-26 10:59:01,168 INFO    HandlerThread:2240455 [system_monitor.py:probe():229] Finished publishing system info
+2025-09-26 10:59:01,169 DEBUG   SenderThread:2240455 [sender.py:send():379] send: files
+2025-09-26 10:59:01,169 INFO    SenderThread:2240455 [sender.py:_save_file():1390] saving file wandb-metadata.json with policy now
+2025-09-26 10:59:01,190 DEBUG   HandlerThread:2240455 [handler.py:handle_request():146] handle_request: python_packages
+2025-09-26 10:59:01,190 DEBUG   SenderThread:2240455 [sender.py:send_request():406] send_request: python_packages
+2025-09-26 10:59:01,190 DEBUG   HandlerThread:2240455 [handler.py:handle_request():146] handle_request: stop_status
+2025-09-26 10:59:01,190 DEBUG   SenderThread:2240455 [sender.py:send_request():406] send_request: stop_status
+2025-09-26 10:59:01,192 DEBUG   HandlerThread:2240455 [handler.py:handle_request():146] handle_request: internal_messages
+2025-09-26 10:59:01,598 DEBUG   SenderThread:2240455 [sender.py:send():379] send: telemetry
+2025-09-26 10:59:02,004 INFO    Thread-12 :2240455 [dir_watcher.py:_on_file_modified():288] file/dir modified: /mnt/data/kai/VinDr_Code/Mini_VinDr_CXR_Dataset/dicom_comparison/wandb/run-20250926_105859-71ztocc3/files/conda-environment.yaml
+2025-09-26 10:59:02,004 INFO    Thread-12 :2240455 [dir_watcher.py:_on_file_created():271] file/dir created: /mnt/data/kai/VinDr_Code/Mini_VinDr_CXR_Dataset/dicom_comparison/wandb/run-20250926_105859-71ztocc3/files/output.log
+2025-09-26 10:59:02,004 INFO    Thread-12 :2240455 [dir_watcher.py:_on_file_created():271] file/dir created: /mnt/data/kai/VinDr_Code/Mini_VinDr_CXR_Dataset/dicom_comparison/wandb/run-20250926_105859-71ztocc3/files/wandb-metadata.json
+2025-09-26 10:59:02,004 INFO    Thread-12 :2240455 [dir_watcher.py:_on_file_created():271] file/dir created: /mnt/data/kai/VinDr_Code/Mini_VinDr_CXR_Dataset/dicom_comparison/wandb/run-20250926_105859-71ztocc3/files/requirements.txt
+2025-09-26 10:59:02,252 INFO    wandb-upload_0:2240455 [upload_job.py:push():131] Uploaded file /tmp/tmp8r9jhwzgwandb/6t08t630-wandb-metadata.json
+2025-09-26 10:59:02,726 DEBUG   HandlerThread:2240455 [handler.py:handle_request():146] handle_request: partial_history
+2025-09-26 10:59:02,727 DEBUG   SenderThread:2240455 [sender.py:send():379] send: files
+2025-09-26 10:59:02,727 INFO    SenderThread:2240455 [sender.py:_save_file():1390] saving file media/images/confusion_matrix_0_f67dcaeac639169909c1.png with policy now
+2025-09-26 10:59:02,728 DEBUG   SenderThread:2240455 [sender.py:send():379] send: history
+2025-09-26 10:59:02,728 DEBUG   SenderThread:2240455 [sender.py:send_request():406] send_request: summary_record
+2025-09-26 10:59:02,729 INFO    SenderThread:2240455 [sender.py:_save_file():1390] saving file wandb-summary.json with policy end
+2025-09-26 10:59:02,729 DEBUG   SenderThread:2240455 [sender.py:send():379] send: telemetry
+2025-09-26 10:59:02,729 DEBUG   SenderThread:2240455 [sender.py:send():379] send: exit
+2025-09-26 10:59:02,729 INFO    SenderThread:2240455 [sender.py:send_exit():586] handling exit code: 0
+2025-09-26 10:59:02,729 INFO    SenderThread:2240455 [sender.py:send_exit():588] handling runtime: 2
+2025-09-26 10:59:02,730 INFO    SenderThread:2240455 [sender.py:_save_file():1390] saving file wandb-summary.json with policy end
+2025-09-26 10:59:02,730 INFO    SenderThread:2240455 [sender.py:send_exit():594] send defer
+2025-09-26 10:59:02,730 DEBUG   HandlerThread:2240455 [handler.py:handle_request():146] handle_request: defer
+2025-09-26 10:59:02,730 INFO    HandlerThread:2240455 [handler.py:handle_request_defer():172] handle defer: 0
+2025-09-26 10:59:02,730 DEBUG   SenderThread:2240455 [sender.py:send_request():406] send_request: defer
+2025-09-26 10:59:02,730 INFO    SenderThread:2240455 [sender.py:send_request_defer():610] handle sender defer: 0
+2025-09-26 10:59:02,730 INFO    SenderThread:2240455 [sender.py:transition_state():614] send defer: 1
+2025-09-26 10:59:02,731 DEBUG   HandlerThread:2240455 [handler.py:handle_request():146] handle_request: defer
+2025-09-26 10:59:02,731 INFO    HandlerThread:2240455 [handler.py:handle_request_defer():172] handle defer: 1
+2025-09-26 10:59:02,731 DEBUG   SenderThread:2240455 [sender.py:send_request():406] send_request: defer
+2025-09-26 10:59:02,731 INFO    SenderThread:2240455 [sender.py:send_request_defer():610] handle sender defer: 1
+2025-09-26 10:59:02,731 INFO    SenderThread:2240455 [sender.py:transition_state():614] send defer: 2
+2025-09-26 10:59:02,731 DEBUG   HandlerThread:2240455 [handler.py:handle_request():146] handle_request: defer
+2025-09-26 10:59:02,731 INFO    HandlerThread:2240455 [handler.py:handle_request_defer():172] handle defer: 2
+2025-09-26 10:59:02,731 INFO    HandlerThread:2240455 [system_monitor.py:finish():203] Stopping system monitor
+2025-09-26 10:59:02,731 DEBUG   SystemMonitor:2240455 [system_monitor.py:_start():172] Starting system metrics aggregation loop
+2025-09-26 10:59:02,731 DEBUG   SystemMonitor:2240455 [system_monitor.py:_start():179] Finished system metrics aggregation loop
+2025-09-26 10:59:02,731 DEBUG   SystemMonitor:2240455 [system_monitor.py:_start():183] Publishing last batch of metrics
+2025-09-26 10:59:02,731 INFO    HandlerThread:2240455 [interfaces.py:finish():202] Joined cpu monitor
+2025-09-26 10:59:02,732 INFO    HandlerThread:2240455 [interfaces.py:finish():202] Joined disk monitor
+2025-09-26 10:59:02,754 INFO    HandlerThread:2240455 [interfaces.py:finish():202] Joined gpu monitor
+2025-09-26 10:59:02,754 INFO    HandlerThread:2240455 [interfaces.py:finish():202] Joined memory monitor
+2025-09-26 10:59:02,754 INFO    HandlerThread:2240455 [interfaces.py:finish():202] Joined network monitor
+2025-09-26 10:59:02,755 DEBUG   SenderThread:2240455 [sender.py:send_request():406] send_request: defer
+2025-09-26 10:59:02,755 INFO    SenderThread:2240455 [sender.py:send_request_defer():610] handle sender defer: 2
+2025-09-26 10:59:02,755 INFO    SenderThread:2240455 [sender.py:transition_state():614] send defer: 3
+2025-09-26 10:59:02,755 DEBUG   SenderThread:2240455 [sender.py:send():379] send: stats
+2025-09-26 10:59:02,755 DEBUG   HandlerThread:2240455 [handler.py:handle_request():146] handle_request: defer
+2025-09-26 10:59:02,755 INFO    HandlerThread:2240455 [handler.py:handle_request_defer():172] handle defer: 3
+2025-09-26 10:59:02,755 DEBUG   SenderThread:2240455 [sender.py:send_request():406] send_request: defer
+2025-09-26 10:59:02,755 INFO    SenderThread:2240455 [sender.py:send_request_defer():610] handle sender defer: 3
+2025-09-26 10:59:02,755 INFO    SenderThread:2240455 [sender.py:transition_state():614] send defer: 4
+2025-09-26 10:59:02,755 DEBUG   HandlerThread:2240455 [handler.py:handle_request():146] handle_request: defer
+2025-09-26 10:59:02,755 INFO    HandlerThread:2240455 [handler.py:handle_request_defer():172] handle defer: 4
+2025-09-26 10:59:02,755 DEBUG   SenderThread:2240455 [sender.py:send_request():406] send_request: defer
+2025-09-26 10:59:02,755 INFO    SenderThread:2240455 [sender.py:send_request_defer():610] handle sender defer: 4
+2025-09-26 10:59:02,755 INFO    SenderThread:2240455 [sender.py:transition_state():614] send defer: 5
+2025-09-26 10:59:02,755 DEBUG   HandlerThread:2240455 [handler.py:handle_request():146] handle_request: defer
+2025-09-26 10:59:02,755 INFO    HandlerThread:2240455 [handler.py:handle_request_defer():172] handle defer: 5
+2025-09-26 10:59:02,756 DEBUG   SenderThread:2240455 [sender.py:send():379] send: summary
+2025-09-26 10:59:02,756 INFO    SenderThread:2240455 [sender.py:_save_file():1390] saving file wandb-summary.json with policy end
+2025-09-26 10:59:02,756 DEBUG   SenderThread:2240455 [sender.py:send_request():406] send_request: defer
+2025-09-26 10:59:02,756 INFO    SenderThread:2240455 [sender.py:send_request_defer():610] handle sender defer: 5
+2025-09-26 10:59:02,756 INFO    SenderThread:2240455 [sender.py:transition_state():614] send defer: 6
+2025-09-26 10:59:02,756 DEBUG   HandlerThread:2240455 [handler.py:handle_request():146] handle_request: defer
+2025-09-26 10:59:02,756 INFO    HandlerThread:2240455 [handler.py:handle_request_defer():172] handle defer: 6
+2025-09-26 10:59:02,756 DEBUG   SenderThread:2240455 [sender.py:send_request():406] send_request: defer
+2025-09-26 10:59:02,756 INFO    SenderThread:2240455 [sender.py:send_request_defer():610] handle sender defer: 6
+2025-09-26 10:59:02,757 DEBUG   HandlerThread:2240455 [handler.py:handle_request():146] handle_request: status_report
+2025-09-26 10:59:03,004 INFO    Thread-12 :2240455 [dir_watcher.py:_on_file_created():271] file/dir created: /mnt/data/kai/VinDr_Code/Mini_VinDr_CXR_Dataset/dicom_comparison/wandb/run-20250926_105859-71ztocc3/files/wandb-summary.json
+2025-09-26 10:59:03,004 INFO    Thread-12 :2240455 [dir_watcher.py:_on_file_created():271] file/dir created: /mnt/data/kai/VinDr_Code/Mini_VinDr_CXR_Dataset/dicom_comparison/wandb/run-20250926_105859-71ztocc3/files/media/images/confusion_matrix_0_f67dcaeac639169909c1.png
+2025-09-26 10:59:03,004 INFO    Thread-12 :2240455 [dir_watcher.py:_on_file_created():271] file/dir created: /mnt/data/kai/VinDr_Code/Mini_VinDr_CXR_Dataset/dicom_comparison/wandb/run-20250926_105859-71ztocc3/files/media/images
+2025-09-26 10:59:03,004 INFO    Thread-12 :2240455 [dir_watcher.py:_on_file_created():271] file/dir created: /mnt/data/kai/VinDr_Code/Mini_VinDr_CXR_Dataset/dicom_comparison/wandb/run-20250926_105859-71ztocc3/files/media
+2025-09-26 10:59:03,085 INFO    SenderThread:2240455 [sender.py:transition_state():614] send defer: 7
+2025-09-26 10:59:03,085 DEBUG   HandlerThread:2240455 [handler.py:handle_request():146] handle_request: defer
+2025-09-26 10:59:03,085 INFO    HandlerThread:2240455 [handler.py:handle_request_defer():172] handle defer: 7
+2025-09-26 10:59:03,085 DEBUG   SenderThread:2240455 [sender.py:send_request():406] send_request: defer
+2025-09-26 10:59:03,085 INFO    SenderThread:2240455 [sender.py:send_request_defer():610] handle sender defer: 7
+2025-09-26 10:59:03,428 INFO    wandb-upload_0:2240455 [upload_job.py:push():131] Uploaded file /tmp/tmp8r9jhwzgwandb/hbcw8u84-media/images/confusion_matrix_0_f67dcaeac639169909c1.png
+2025-09-26 10:59:03,728 DEBUG   HandlerThread:2240455 [handler.py:handle_request():146] handle_request: poll_exit
+2025-09-26 10:59:04,005 INFO    Thread-12 :2240455 [dir_watcher.py:_on_file_modified():288] file/dir modified: /mnt/data/kai/VinDr_Code/Mini_VinDr_CXR_Dataset/dicom_comparison/wandb/run-20250926_105859-71ztocc3/files/output.log
+2025-09-26 10:59:04,005 INFO    Thread-12 :2240455 [dir_watcher.py:_on_file_modified():288] file/dir modified: /mnt/data/kai/VinDr_Code/Mini_VinDr_CXR_Dataset/dicom_comparison/wandb/run-20250926_105859-71ztocc3/files/config.yaml
+2025-09-26 10:59:04,129 INFO    wandb-upload_0:2240455 [upload_job.py:push():131] Uploaded file /tmp/tmp8r9jhwzgwandb/j8e2nlpj-media/images/confusion_matrix_0_f67dcaeac639169909c1.png
+2025-09-26 10:59:04,730 INFO    SenderThread:2240455 [sender.py:transition_state():614] send defer: 8
+2025-09-26 10:59:04,730 DEBUG   SenderThread:2240455 [sender.py:send_request():406] send_request: poll_exit
+2025-09-26 10:59:04,731 DEBUG   HandlerThread:2240455 [handler.py:handle_request():146] handle_request: defer
+2025-09-26 10:59:04,731 INFO    HandlerThread:2240455 [handler.py:handle_request_defer():172] handle defer: 8
+2025-09-26 10:59:04,731 DEBUG   SenderThread:2240455 [sender.py:send_request():406] send_request: defer
+2025-09-26 10:59:04,731 INFO    SenderThread:2240455 [sender.py:send_request_defer():610] handle sender defer: 8
+2025-09-26 10:59:04,731 INFO    SenderThread:2240455 [job_builder.py:build():318] Attempting to build job artifact
+2025-09-26 10:59:04,731 INFO    SenderThread:2240455 [job_builder.py:_get_source_type():455] is repo sourced job
+2025-09-26 10:59:04,743 INFO    SenderThread:2240455 [job_builder.py:build():431] adding wandb-job metadata file
+2025-09-26 10:59:04,744 INFO    SenderThread:2240455 [sender.py:transition_state():614] send defer: 9
+2025-09-26 10:59:04,744 DEBUG   HandlerThread:2240455 [handler.py:handle_request():146] handle_request: defer
+2025-09-26 10:59:04,744 INFO    HandlerThread:2240455 [handler.py:handle_request_defer():172] handle defer: 9
+2025-09-26 10:59:04,744 DEBUG   SenderThread:2240455 [sender.py:send():379] send: artifact
+2025-09-26 10:59:05,005 INFO    Thread-12 :2240455 [dir_watcher.py:_on_file_modified():288] file/dir modified: /mnt/data/kai/VinDr_Code/Mini_VinDr_CXR_Dataset/dicom_comparison/wandb/run-20250926_105859-71ztocc3/files/output.log
+2025-09-26 10:59:05,729 DEBUG   HandlerThread:2240455 [handler.py:handle_request():146] handle_request: poll_exit
+2025-09-26 10:59:06,211 INFO    SenderThread:2240455 [sender.py:send_artifact():1468] sent artifact job-git_github.com_kaichenchai_Mini_VinDr_CXR_Dataset.git_dicom_comparison_validation_script.py - {'id': 'QXJ0aWZhY3Q6MjA4MjUwOTAzNw==', 'state': 'COMMITTED', 'artifactSequence': {'id': 'QXJ0aWZhY3RDb2xsZWN0aW9uOjc1MTc1NTU5Mg==', 'latestArtifact': {'id': 'QXJ0aWZhY3Q6MjA4MjUwOTAzNw==', 'versionIndex': 0}}}
+2025-09-26 10:59:06,211 DEBUG   SenderThread:2240455 [sender.py:send_request():406] send_request: defer
+2025-09-26 10:59:06,211 INFO    SenderThread:2240455 [sender.py:send_request_defer():610] handle sender defer: 9
+2025-09-26 10:59:06,211 INFO    SenderThread:2240455 [dir_watcher.py:finish():358] shutting down directory watcher
+2025-09-26 10:59:07,006 INFO    SenderThread:2240455 [dir_watcher.py:finish():388] scan: /mnt/data/kai/VinDr_Code/Mini_VinDr_CXR_Dataset/dicom_comparison/wandb/run-20250926_105859-71ztocc3/files
+2025-09-26 10:59:07,007 INFO    SenderThread:2240455 [dir_watcher.py:finish():402] scan save: /mnt/data/kai/VinDr_Code/Mini_VinDr_CXR_Dataset/dicom_comparison/wandb/run-20250926_105859-71ztocc3/files/output.log output.log
+2025-09-26 10:59:07,007 INFO    SenderThread:2240455 [dir_watcher.py:finish():402] scan save: /mnt/data/kai/VinDr_Code/Mini_VinDr_CXR_Dataset/dicom_comparison/wandb/run-20250926_105859-71ztocc3/files/conda-environment.yaml conda-environment.yaml
+2025-09-26 10:59:07,007 INFO    SenderThread:2240455 [dir_watcher.py:finish():402] scan save: /mnt/data/kai/VinDr_Code/Mini_VinDr_CXR_Dataset/dicom_comparison/wandb/run-20250926_105859-71ztocc3/files/config.yaml config.yaml
+2025-09-26 10:59:07,007 INFO    SenderThread:2240455 [dir_watcher.py:finish():402] scan save: /mnt/data/kai/VinDr_Code/Mini_VinDr_CXR_Dataset/dicom_comparison/wandb/run-20250926_105859-71ztocc3/files/wandb-metadata.json wandb-metadata.json
+2025-09-26 10:59:07,007 INFO    SenderThread:2240455 [dir_watcher.py:finish():402] scan save: /mnt/data/kai/VinDr_Code/Mini_VinDr_CXR_Dataset/dicom_comparison/wandb/run-20250926_105859-71ztocc3/files/requirements.txt requirements.txt
+2025-09-26 10:59:07,007 INFO    SenderThread:2240455 [dir_watcher.py:finish():402] scan save: /mnt/data/kai/VinDr_Code/Mini_VinDr_CXR_Dataset/dicom_comparison/wandb/run-20250926_105859-71ztocc3/files/wandb-summary.json wandb-summary.json
+2025-09-26 10:59:07,007 INFO    SenderThread:2240455 [dir_watcher.py:finish():402] scan save: /mnt/data/kai/VinDr_Code/Mini_VinDr_CXR_Dataset/dicom_comparison/wandb/run-20250926_105859-71ztocc3/files/media/images/confusion_matrix_0_f67dcaeac639169909c1.png media/images/confusion_matrix_0_f67dcaeac639169909c1.png
+2025-09-26 10:59:07,007 INFO    SenderThread:2240455 [sender.py:transition_state():614] send defer: 10
+2025-09-26 10:59:07,007 DEBUG   SenderThread:2240455 [sender.py:send_request():406] send_request: poll_exit
+2025-09-26 10:59:07,011 DEBUG   HandlerThread:2240455 [handler.py:handle_request():146] handle_request: defer
+2025-09-26 10:59:07,012 INFO    HandlerThread:2240455 [handler.py:handle_request_defer():172] handle defer: 10
+2025-09-26 10:59:07,012 DEBUG   SenderThread:2240455 [sender.py:send_request():406] send_request: defer
+2025-09-26 10:59:07,012 INFO    SenderThread:2240455 [sender.py:send_request_defer():610] handle sender defer: 10
+2025-09-26 10:59:07,012 INFO    SenderThread:2240455 [file_pusher.py:finish():172] shutting down file pusher
+2025-09-26 10:59:07,602 INFO    wandb-upload_1:2240455 [upload_job.py:push():131] Uploaded file /mnt/data/kai/VinDr_Code/Mini_VinDr_CXR_Dataset/dicom_comparison/wandb/run-20250926_105859-71ztocc3/files/output.log
+2025-09-26 10:59:07,730 DEBUG   HandlerThread:2240455 [handler.py:handle_request():146] handle_request: poll_exit
+2025-09-26 10:59:07,730 DEBUG   SenderThread:2240455 [sender.py:send_request():406] send_request: poll_exit
+2025-09-26 10:59:07,836 INFO    wandb-upload_2:2240455 [upload_job.py:push():131] Uploaded file /mnt/data/kai/VinDr_Code/Mini_VinDr_CXR_Dataset/dicom_comparison/wandb/run-20250926_105859-71ztocc3/files/config.yaml
+2025-09-26 10:59:07,905 INFO    wandb-upload_3:2240455 [upload_job.py:push():131] Uploaded file /mnt/data/kai/VinDr_Code/Mini_VinDr_CXR_Dataset/dicom_comparison/wandb/run-20250926_105859-71ztocc3/files/requirements.txt
+2025-09-26 10:59:07,938 INFO    wandb-upload_4:2240455 [upload_job.py:push():131] Uploaded file /mnt/data/kai/VinDr_Code/Mini_VinDr_CXR_Dataset/dicom_comparison/wandb/run-20250926_105859-71ztocc3/files/wandb-summary.json
+2025-09-26 10:59:07,964 INFO    wandb-upload_0:2240455 [upload_job.py:push():131] Uploaded file /mnt/data/kai/VinDr_Code/Mini_VinDr_CXR_Dataset/dicom_comparison/wandb/run-20250926_105859-71ztocc3/files/conda-environment.yaml
+2025-09-26 10:59:08,165 INFO    Thread-11 (_thread_body):2240455 [sender.py:transition_state():614] send defer: 11
+2025-09-26 10:59:08,165 DEBUG   HandlerThread:2240455 [handler.py:handle_request():146] handle_request: defer
+2025-09-26 10:59:08,165 INFO    HandlerThread:2240455 [handler.py:handle_request_defer():172] handle defer: 11
+2025-09-26 10:59:08,166 DEBUG   SenderThread:2240455 [sender.py:send_request():406] send_request: defer
+2025-09-26 10:59:08,166 INFO    SenderThread:2240455 [sender.py:send_request_defer():610] handle sender defer: 11
+2025-09-26 10:59:08,166 INFO    SenderThread:2240455 [file_pusher.py:join():178] waiting for file pusher
+2025-09-26 10:59:08,166 INFO    SenderThread:2240455 [sender.py:transition_state():614] send defer: 12
+2025-09-26 10:59:08,166 DEBUG   HandlerThread:2240455 [handler.py:handle_request():146] handle_request: defer
+2025-09-26 10:59:08,166 INFO    HandlerThread:2240455 [handler.py:handle_request_defer():172] handle defer: 12
+2025-09-26 10:59:08,166 DEBUG   SenderThread:2240455 [sender.py:send_request():406] send_request: defer
+2025-09-26 10:59:08,166 INFO    SenderThread:2240455 [sender.py:send_request_defer():610] handle sender defer: 12
+2025-09-26 10:59:08,166 INFO    SenderThread:2240455 [file_stream.py:finish():614] file stream finish called
+2025-09-26 10:59:08,465 INFO    SenderThread:2240455 [file_stream.py:finish():618] file stream finish is done
+2025-09-26 10:59:08,465 INFO    SenderThread:2240455 [sender.py:transition_state():614] send defer: 13
+2025-09-26 10:59:08,465 DEBUG   HandlerThread:2240455 [handler.py:handle_request():146] handle_request: defer
+2025-09-26 10:59:08,465 INFO    HandlerThread:2240455 [handler.py:handle_request_defer():172] handle defer: 13
+2025-09-26 10:59:08,465 DEBUG   SenderThread:2240455 [sender.py:send_request():406] send_request: defer
+2025-09-26 10:59:08,466 INFO    SenderThread:2240455 [sender.py:send_request_defer():610] handle sender defer: 13
+2025-09-26 10:59:08,466 INFO    SenderThread:2240455 [sender.py:transition_state():614] send defer: 14
+2025-09-26 10:59:08,466 DEBUG   HandlerThread:2240455 [handler.py:handle_request():146] handle_request: defer
+2025-09-26 10:59:08,466 INFO    HandlerThread:2240455 [handler.py:handle_request_defer():172] handle defer: 14
+2025-09-26 10:59:08,466 DEBUG   SenderThread:2240455 [sender.py:send():379] send: final
+2025-09-26 10:59:08,466 DEBUG   SenderThread:2240455 [sender.py:send():379] send: footer
+2025-09-26 10:59:08,466 DEBUG   SenderThread:2240455 [sender.py:send_request():406] send_request: defer
+2025-09-26 10:59:08,466 INFO    SenderThread:2240455 [sender.py:send_request_defer():610] handle sender defer: 14
+2025-09-26 10:59:08,467 DEBUG   HandlerThread:2240455 [handler.py:handle_request():146] handle_request: poll_exit
+2025-09-26 10:59:08,467 DEBUG   SenderThread:2240455 [sender.py:send_request():406] send_request: poll_exit
+2025-09-26 10:59:08,468 DEBUG   HandlerThread:2240455 [handler.py:handle_request():146] handle_request: internal_messages
+2025-09-26 10:59:08,468 DEBUG   HandlerThread:2240455 [handler.py:handle_request():146] handle_request: server_info
+2025-09-26 10:59:08,468 DEBUG   SenderThread:2240455 [sender.py:send_request():406] send_request: server_info
+2025-09-26 10:59:08,509 DEBUG   HandlerThread:2240455 [handler.py:handle_request():146] handle_request: get_summary
+2025-09-26 10:59:08,509 DEBUG   HandlerThread:2240455 [handler.py:handle_request():146] handle_request: sampled_history
+2025-09-26 10:59:08,739 DEBUG   HandlerThread:2240455 [handler.py:handle_request():146] handle_request: shutdown
+2025-09-26 10:59:08,739 INFO    HandlerThread:2240455 [handler.py:finish():866] shutting down handler
+2025-09-26 10:59:09,469 INFO    WriterThread:2240455 [datastore.py:close():296] close: /mnt/data/kai/VinDr_Code/Mini_VinDr_CXR_Dataset/dicom_comparison/wandb/run-20250926_105859-71ztocc3/run-71ztocc3.wandb
+2025-09-26 10:59:09,738 INFO    SenderThread:2240455 [sender.py:finish():1546] shutting down sender
+2025-09-26 10:59:09,738 INFO    SenderThread:2240455 [file_pusher.py:finish():172] shutting down file pusher
+2025-09-26 10:59:09,738 INFO    SenderThread:2240455 [file_pusher.py:join():178] waiting for file pusher

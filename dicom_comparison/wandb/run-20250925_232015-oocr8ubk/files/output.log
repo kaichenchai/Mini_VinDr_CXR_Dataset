@@ -1,0 +1,91 @@
+
+Starting epoch 1
+/home/kai/.conda/envs/vindr/lib/python3.12/site-packages/torch/nn/modules/conv.py:456: UserWarning: Applied workaround for CuDNN issue, install nvrtc.so (Triggered internally at /opt/conda/conda-bld/pytorch_1712609048481/work/aten/src/ATen/native/cudnn/Conv_v8.cpp:84.)
+  return F.conv2d(input, weight, bias, self.stride,
+train_loss_epoch: 0.7476831078529358
+Starting eval epoch
+eval_loss_epoch: 0.7722353935241699
+accuracy: 0.5
+Starting epoch 2
+train_loss_epoch: 0.8376792073249817
+Starting eval epoch
+eval_loss_epoch: 0.9582123756408691
+accuracy: 0.5
+No improvement above threshold observed, incrementing counter.
+Early stopping counter: 1/50
+Starting epoch 3
+train_loss_epoch: 0.7414178252220154
+Starting eval epoch
+eval_loss_epoch: 0.74036705493927
+accuracy: 0.5
+Improvement of 0.0318683385848999 observed, resetting counter.
+Early stopping counter: 0/50
+Starting epoch 4
+train_loss_epoch: 0.6688520908355713
+Starting eval epoch
+eval_loss_epoch: 0.7569703459739685
+accuracy: 0.47999998927116394
+No improvement above threshold observed, incrementing counter.
+Early stopping counter: 1/50
+Starting epoch 5
+train_loss_epoch: 0.7054089307785034
+Starting eval epoch
+eval_loss_epoch: 0.7309802770614624
+accuracy: 0.3799999952316284
+No improvement above threshold observed, incrementing counter.
+Early stopping counter: 2/50
+Starting epoch 6
+train_loss_epoch: 0.7234797477722168
+Starting eval epoch
+eval_loss_epoch: 1.4722764492034912
+accuracy: 0.5
+No improvement above threshold observed, incrementing counter.
+Early stopping counter: 3/50
+Starting epoch 7
+train_loss_epoch: 0.6815722584724426
+Starting eval epoch
+eval_loss_epoch: 0.8520873785018921
+accuracy: 0.5199999809265137
+No improvement above threshold observed, incrementing counter.
+Early stopping counter: 4/50
+Starting epoch 8
+train_loss_epoch: 0.7105795741081238
+Starting eval epoch
+eval_loss_epoch: 1.3594914674758911
+accuracy: 0.5
+No improvement above threshold observed, incrementing counter.
+Early stopping counter: 5/50
+Starting epoch 9
+Traceback (most recent call last):
+  File "/mnt/data/kai/VinDr_Code/Mini_VinDr_CXR_Dataset/dicom_comparison/training_script.py", line 272, in <module>
+    main(
+  File "/mnt/data/kai/VinDr_Code/Mini_VinDr_CXR_Dataset/dicom_comparison/training_script.py", line 205, in main
+    trainer.train(
+  File "/home/kai/.conda/envs/vindr/lib/python3.12/site-packages/pytorch_accelerated/trainer.py", line 472, in train
+    self._run_training()
+  File "/home/kai/.conda/envs/vindr/lib/python3.12/site-packages/pytorch_accelerated/trainer.py", line 746, in _run_training
+    reached_max_steps = self._run_train_epoch(self._train_dataloader)
+                        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/kai/.conda/envs/vindr/lib/python3.12/site-packages/pytorch_accelerated/trainer.py", line 820, in _run_train_epoch
+    for step, batch in enumerate(train_dl):
+  File "/home/kai/.conda/envs/vindr/lib/python3.12/site-packages/accelerate/data_loader.py", line 563, in __iter__
+    current_batch = next(dataloader_iter)
+                    ^^^^^^^^^^^^^^^^^^^^^
+  File "/home/kai/.conda/envs/vindr/lib/python3.12/site-packages/torch/utils/data/dataloader.py", line 631, in __next__
+    data = self._next_data()
+           ^^^^^^^^^^^^^^^^^
+  File "/home/kai/.conda/envs/vindr/lib/python3.12/site-packages/torch/utils/data/dataloader.py", line 1329, in _next_data
+    idx, data = self._get_data()
+                ^^^^^^^^^^^^^^^^
+  File "/home/kai/.conda/envs/vindr/lib/python3.12/site-packages/torch/utils/data/dataloader.py", line 1285, in _get_data
+    success, data = self._try_get_data()
+                    ^^^^^^^^^^^^^^^^^^^^
+  File "/home/kai/.conda/envs/vindr/lib/python3.12/site-packages/torch/utils/data/dataloader.py", line 1133, in _try_get_data
+    data = self._data_queue.get(timeout=timeout)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/kai/.conda/envs/vindr/lib/python3.12/queue.py", line 180, in get
+    self.not_empty.wait(remaining)
+  File "/home/kai/.conda/envs/vindr/lib/python3.12/threading.py", line 359, in wait
+    gotit = waiter.acquire(True, timeout)
+            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+KeyboardInterrupt

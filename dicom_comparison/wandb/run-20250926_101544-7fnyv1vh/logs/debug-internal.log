@@ -1,0 +1,1197 @@
+2025-09-26 10:15:44,667 INFO    StreamThr :2169346 [internal.py:wandb_internal():86] W&B internal server running at pid: 2169346, started at: 2025-09-26 10:15:44.666770
+2025-09-26 10:15:44,668 DEBUG   HandlerThread:2169346 [handler.py:handle_request():146] handle_request: status
+2025-09-26 10:15:44,669 INFO    WriterThread:2169346 [datastore.py:open_for_write():87] open: /mnt/data/kai/VinDr_Code/Mini_VinDr_CXR_Dataset/dicom_comparison/wandb/run-20250926_101544-7fnyv1vh/run-7fnyv1vh.wandb
+2025-09-26 10:15:44,669 DEBUG   SenderThread:2169346 [sender.py:send():379] send: header
+2025-09-26 10:15:44,670 DEBUG   SenderThread:2169346 [sender.py:send():379] send: run
+2025-09-26 10:15:45,383 INFO    SenderThread:2169346 [dir_watcher.py:__init__():211] watching files in: /mnt/data/kai/VinDr_Code/Mini_VinDr_CXR_Dataset/dicom_comparison/wandb/run-20250926_101544-7fnyv1vh/files
+2025-09-26 10:15:45,383 INFO    SenderThread:2169346 [sender.py:_start_run_threads():1124] run started: 7fnyv1vh with start time 1758852944.66669
+2025-09-26 10:15:45,388 DEBUG   HandlerThread:2169346 [handler.py:handle_request():146] handle_request: check_version
+2025-09-26 10:15:45,388 DEBUG   SenderThread:2169346 [sender.py:send_request():406] send_request: check_version
+2025-09-26 10:15:45,452 DEBUG   HandlerThread:2169346 [handler.py:handle_request():146] handle_request: run_start
+2025-09-26 10:15:45,462 DEBUG   HandlerThread:2169346 [system_info.py:__init__():26] System info init
+2025-09-26 10:15:45,462 DEBUG   HandlerThread:2169346 [system_info.py:__init__():41] System info init done
+2025-09-26 10:15:45,462 INFO    HandlerThread:2169346 [system_monitor.py:start():194] Starting system monitor
+2025-09-26 10:15:45,462 INFO    SystemMonitor:2169346 [system_monitor.py:_start():158] Starting system asset monitoring threads
+2025-09-26 10:15:45,462 INFO    HandlerThread:2169346 [system_monitor.py:probe():214] Collecting system info
+2025-09-26 10:15:45,463 INFO    SystemMonitor:2169346 [interfaces.py:start():190] Started cpu monitoring
+2025-09-26 10:15:45,463 INFO    SystemMonitor:2169346 [interfaces.py:start():190] Started disk monitoring
+2025-09-26 10:15:45,463 INFO    SystemMonitor:2169346 [interfaces.py:start():190] Started gpu monitoring
+2025-09-26 10:15:45,464 INFO    SystemMonitor:2169346 [interfaces.py:start():190] Started memory monitoring
+2025-09-26 10:15:45,464 INFO    SystemMonitor:2169346 [interfaces.py:start():190] Started network monitoring
+2025-09-26 10:15:45,472 DEBUG   HandlerThread:2169346 [system_info.py:probe():150] Probing system
+2025-09-26 10:15:45,473 DEBUG   HandlerThread:2169346 [system_info.py:_probe_git():135] Probing git
+2025-09-26 10:15:45,477 DEBUG   HandlerThread:2169346 [system_info.py:_probe_git():143] Probing git done
+2025-09-26 10:15:45,477 DEBUG   HandlerThread:2169346 [system_info.py:probe():198] Probing system done
+2025-09-26 10:15:45,477 DEBUG   HandlerThread:2169346 [system_monitor.py:probe():223] {'os': 'Linux-6.8.9-100.fc38.x86_64-x86_64-with-glibc2.37', 'python': '3.12.3', 'heartbeatAt': '2025-09-26T02:15:45.472684', 'startedAt': '2025-09-26T02:15:44.664980', 'docker': None, 'cuda': None, 'args': ('--data_dir', '/home/kai/mnt/VinDr_Subsets/pneumothorax_subsets/timm_format/8_bit_png_norm', '--epochs', '200', '--lr', '0.001', '--num_chans', '3', '--greyscale', 't', '--batch_size', '8', '--pretrained', 't', '--run_name', 'pneumothorax_8_norm_200e_pretrained', '--early_stop', '50'), 'state': 'running', 'program': '/mnt/data/kai/VinDr_Code/Mini_VinDr_CXR_Dataset/dicom_comparison/training_script.py', 'codePathLocal': 'training_script.py', 'codePath': 'dicom_comparison/training_script.py', 'git': {'remote': 'git@github.com:kaichenchai/Mini_VinDr_CXR_Dataset.git', 'commit': '80b9b3ae4e7ee5bec9fcdf664539f77e69100083'}, 'email': 'englishorc65@gmail.com', 'root': '/mnt/data/kai/VinDr_Code/Mini_VinDr_CXR_Dataset', 'host': 'fedora', 'username': 'kai', 'executable': '/home/kai/.conda/envs/vindr/bin/python3', 'cpu_count': 16, 'cpu_count_logical': 24, 'cpu_freq': {'current': 2619.8709583333334, 'min': 800.0, 'max': 4950.0}, 'cpu_freq_per_core': [{'current': 5300.0, 'min': 800.0, 'max': 5300.0}, {'current': 5300.0, 'min': 800.0, 'max': 5300.0}, {'current': 800.0, 'min': 800.0, 'max': 5300.0}, {'current': 800.0, 'min': 800.0, 'max': 5300.0}, {'current': 4976.308, 'min': 800.0, 'max': 5300.0}, {'current': 5300.133, 'min': 800.0, 'max': 5300.0}, {'current': 800.0, 'min': 800.0, 'max': 5300.0}, {'current': 800.0, 'min': 800.0, 'max': 5300.0}, {'current': 5300.052, 'min': 800.0, 'max': 5400.0}, {'current': 800.0, 'min': 800.0, 'max': 5400.0}, {'current': 5300.0, 'min': 800.0, 'max': 5400.0}, {'current': 800.0, 'min': 800.0, 'max': 5400.0}, {'current': 5300.0, 'min': 800.0, 'max': 5300.0}, {'current': 800.0, 'min': 800.0, 'max': 5300.0}, {'current': 800.0, 'min': 800.0, 'max': 5300.0}, {'current': 800.0, 'min': 800.0, 'max': 5300.0}, {'current': 4205.113, 'min': 800.0, 'max': 4200.0}, {'current': 4211.65, 'min': 800.0, 'max': 4200.0}, {'current': 4199.754, 'min': 800.0, 'max': 4200.0}, {'current': 4200.378, 'min': 800.0, 'max': 4200.0}, {'current': 800.0, 'min': 800.0, 'max': 4200.0}, {'current': 800.0, 'min': 800.0, 'max': 4200.0}, {'current': 800.0, 'min': 800.0, 'max': 4200.0}, {'current': 4186.868, 'min': 800.0, 'max': 4200.0}], 'disk': {'/': {'total': 929.92578125, 'used': 853.1046867370605}}, 'gpu': 'NVIDIA GeForce RTX 4090', 'gpu_count': 1, 'gpu_devices': [{'name': 'NVIDIA GeForce RTX 4090', 'memory_total': 25757220864}], 'memory': {'total': 31.144962310791016}}
+2025-09-26 10:15:45,477 INFO    HandlerThread:2169346 [system_monitor.py:probe():224] Finished collecting system info
+2025-09-26 10:15:45,477 INFO    HandlerThread:2169346 [system_monitor.py:probe():227] Publishing system info
+2025-09-26 10:15:45,477 DEBUG   HandlerThread:2169346 [system_info.py:_save_conda():207] Saving list of conda packages installed into the current environment
+2025-09-26 10:15:46,384 INFO    Thread-12 :2169346 [dir_watcher.py:_on_file_created():271] file/dir created: /mnt/data/kai/VinDr_Code/Mini_VinDr_CXR_Dataset/dicom_comparison/wandb/run-20250926_101544-7fnyv1vh/files/conda-environment.yaml
+2025-09-26 10:15:46,445 DEBUG   HandlerThread:2169346 [system_info.py:_save_conda():222] Saving conda packages done
+2025-09-26 10:15:46,446 INFO    HandlerThread:2169346 [system_monitor.py:probe():229] Finished publishing system info
+2025-09-26 10:15:46,447 DEBUG   SenderThread:2169346 [sender.py:send():379] send: files
+2025-09-26 10:15:46,447 INFO    SenderThread:2169346 [sender.py:_save_file():1390] saving file wandb-metadata.json with policy now
+2025-09-26 10:15:46,467 DEBUG   HandlerThread:2169346 [handler.py:handle_request():146] handle_request: python_packages
+2025-09-26 10:15:46,467 DEBUG   SenderThread:2169346 [sender.py:send_request():406] send_request: python_packages
+2025-09-26 10:15:46,468 DEBUG   SenderThread:2169346 [sender.py:send():379] send: telemetry
+2025-09-26 10:15:46,469 DEBUG   HandlerThread:2169346 [handler.py:handle_request():146] handle_request: stop_status
+2025-09-26 10:15:46,469 DEBUG   HandlerThread:2169346 [handler.py:handle_request():146] handle_request: internal_messages
+2025-09-26 10:15:46,469 DEBUG   SenderThread:2169346 [sender.py:send_request():406] send_request: stop_status
+2025-09-26 10:15:47,383 INFO    Thread-12 :2169346 [dir_watcher.py:_on_file_modified():288] file/dir modified: /mnt/data/kai/VinDr_Code/Mini_VinDr_CXR_Dataset/dicom_comparison/wandb/run-20250926_101544-7fnyv1vh/files/conda-environment.yaml
+2025-09-26 10:15:47,383 INFO    Thread-12 :2169346 [dir_watcher.py:_on_file_created():271] file/dir created: /mnt/data/kai/VinDr_Code/Mini_VinDr_CXR_Dataset/dicom_comparison/wandb/run-20250926_101544-7fnyv1vh/files/wandb-metadata.json
+2025-09-26 10:15:47,383 INFO    Thread-12 :2169346 [dir_watcher.py:_on_file_created():271] file/dir created: /mnt/data/kai/VinDr_Code/Mini_VinDr_CXR_Dataset/dicom_comparison/wandb/run-20250926_101544-7fnyv1vh/files/output.log
+2025-09-26 10:15:47,383 INFO    Thread-12 :2169346 [dir_watcher.py:_on_file_created():271] file/dir created: /mnt/data/kai/VinDr_Code/Mini_VinDr_CXR_Dataset/dicom_comparison/wandb/run-20250926_101544-7fnyv1vh/files/requirements.txt
+2025-09-26 10:15:47,527 INFO    wandb-upload_0:2169346 [upload_job.py:push():131] Uploaded file /tmp/tmphuq9566iwandb/j9l0ptyi-wandb-metadata.json
+2025-09-26 10:15:47,624 DEBUG   HandlerThread:2169346 [handler.py:handle_request():146] handle_request: partial_history
+2025-09-26 10:15:47,625 DEBUG   SenderThread:2169346 [sender.py:send():379] send: history
+2025-09-26 10:15:47,625 DEBUG   SenderThread:2169346 [sender.py:send_request():406] send_request: summary_record
+2025-09-26 10:15:47,626 INFO    SenderThread:2169346 [sender.py:_save_file():1390] saving file wandb-summary.json with policy end
+2025-09-26 10:15:47,988 DEBUG   HandlerThread:2169346 [handler.py:handle_request():146] handle_request: partial_history
+2025-09-26 10:15:47,989 DEBUG   SenderThread:2169346 [sender.py:send():379] send: history
+2025-09-26 10:15:47,989 DEBUG   SenderThread:2169346 [sender.py:send_request():406] send_request: summary_record
+2025-09-26 10:15:47,989 INFO    SenderThread:2169346 [sender.py:_save_file():1390] saving file wandb-summary.json with policy end
+2025-09-26 10:15:48,383 INFO    Thread-12 :2169346 [dir_watcher.py:_on_file_created():271] file/dir created: /mnt/data/kai/VinDr_Code/Mini_VinDr_CXR_Dataset/dicom_comparison/wandb/run-20250926_101544-7fnyv1vh/files/wandb-summary.json
+2025-09-26 10:15:49,384 INFO    Thread-12 :2169346 [dir_watcher.py:_on_file_modified():288] file/dir modified: /mnt/data/kai/VinDr_Code/Mini_VinDr_CXR_Dataset/dicom_comparison/wandb/run-20250926_101544-7fnyv1vh/files/output.log
+2025-09-26 10:15:50,340 DEBUG   HandlerThread:2169346 [handler.py:handle_request():146] handle_request: partial_history
+2025-09-26 10:15:50,340 DEBUG   HandlerThread:2169346 [handler.py:handle_request():146] handle_request: status_report
+2025-09-26 10:15:50,340 DEBUG   SenderThread:2169346 [sender.py:send():379] send: history
+2025-09-26 10:15:50,340 DEBUG   SenderThread:2169346 [sender.py:send_request():406] send_request: summary_record
+2025-09-26 10:15:50,341 INFO    SenderThread:2169346 [sender.py:_save_file():1390] saving file wandb-summary.json with policy end
+2025-09-26 10:15:50,384 INFO    Thread-12 :2169346 [dir_watcher.py:_on_file_modified():288] file/dir modified: /mnt/data/kai/VinDr_Code/Mini_VinDr_CXR_Dataset/dicom_comparison/wandb/run-20250926_101544-7fnyv1vh/files/wandb-summary.json
+2025-09-26 10:15:50,811 DEBUG   HandlerThread:2169346 [handler.py:handle_request():146] handle_request: partial_history
+2025-09-26 10:15:50,812 DEBUG   SenderThread:2169346 [sender.py:send():379] send: history
+2025-09-26 10:15:50,812 DEBUG   SenderThread:2169346 [sender.py:send_request():406] send_request: summary_record
+2025-09-26 10:15:50,812 INFO    SenderThread:2169346 [sender.py:_save_file():1390] saving file wandb-summary.json with policy end
+2025-09-26 10:15:51,384 INFO    Thread-12 :2169346 [dir_watcher.py:_on_file_modified():288] file/dir modified: /mnt/data/kai/VinDr_Code/Mini_VinDr_CXR_Dataset/dicom_comparison/wandb/run-20250926_101544-7fnyv1vh/files/wandb-summary.json
+2025-09-26 10:15:51,384 INFO    Thread-12 :2169346 [dir_watcher.py:_on_file_modified():288] file/dir modified: /mnt/data/kai/VinDr_Code/Mini_VinDr_CXR_Dataset/dicom_comparison/wandb/run-20250926_101544-7fnyv1vh/files/output.log
+2025-09-26 10:15:53,251 DEBUG   HandlerThread:2169346 [handler.py:handle_request():146] handle_request: partial_history
+2025-09-26 10:15:53,251 DEBUG   SenderThread:2169346 [sender.py:send():379] send: history
+2025-09-26 10:15:53,251 DEBUG   SenderThread:2169346 [sender.py:send_request():406] send_request: summary_record
+2025-09-26 10:15:53,251 INFO    SenderThread:2169346 [sender.py:_save_file():1390] saving file wandb-summary.json with policy end
+2025-09-26 10:15:53,384 INFO    Thread-12 :2169346 [dir_watcher.py:_on_file_modified():288] file/dir modified: /mnt/data/kai/VinDr_Code/Mini_VinDr_CXR_Dataset/dicom_comparison/wandb/run-20250926_101544-7fnyv1vh/files/wandb-summary.json
+2025-09-26 10:15:53,384 INFO    Thread-12 :2169346 [dir_watcher.py:_on_file_modified():288] file/dir modified: /mnt/data/kai/VinDr_Code/Mini_VinDr_CXR_Dataset/dicom_comparison/wandb/run-20250926_101544-7fnyv1vh/files/output.log
+2025-09-26 10:15:53,579 DEBUG   HandlerThread:2169346 [handler.py:handle_request():146] handle_request: partial_history
+2025-09-26 10:15:53,579 DEBUG   SenderThread:2169346 [sender.py:send():379] send: history
+2025-09-26 10:15:53,579 DEBUG   SenderThread:2169346 [sender.py:send_request():406] send_request: summary_record
+2025-09-26 10:15:53,579 INFO    SenderThread:2169346 [sender.py:_save_file():1390] saving file wandb-summary.json with policy end
+2025-09-26 10:15:54,385 INFO    Thread-12 :2169346 [dir_watcher.py:_on_file_modified():288] file/dir modified: /mnt/data/kai/VinDr_Code/Mini_VinDr_CXR_Dataset/dicom_comparison/wandb/run-20250926_101544-7fnyv1vh/files/wandb-summary.json
+2025-09-26 10:15:54,543 DEBUG   HandlerThread:2169346 [handler.py:handle_request():146] handle_request: partial_history
+2025-09-26 10:15:54,543 DEBUG   SenderThread:2169346 [sender.py:send():379] send: history
+2025-09-26 10:15:54,543 DEBUG   SenderThread:2169346 [sender.py:send_request():406] send_request: summary_record
+2025-09-26 10:15:54,543 INFO    SenderThread:2169346 [sender.py:_save_file():1390] saving file wandb-summary.json with policy end
+2025-09-26 10:15:54,898 DEBUG   HandlerThread:2169346 [handler.py:handle_request():146] handle_request: partial_history
+2025-09-26 10:15:54,898 DEBUG   SenderThread:2169346 [sender.py:send():379] send: history
+2025-09-26 10:15:54,898 DEBUG   SenderThread:2169346 [sender.py:send_request():406] send_request: summary_record
+2025-09-26 10:15:54,898 INFO    SenderThread:2169346 [sender.py:_save_file():1390] saving file wandb-summary.json with policy end
+2025-09-26 10:15:55,385 INFO    Thread-12 :2169346 [dir_watcher.py:_on_file_modified():288] file/dir modified: /mnt/data/kai/VinDr_Code/Mini_VinDr_CXR_Dataset/dicom_comparison/wandb/run-20250926_101544-7fnyv1vh/files/wandb-summary.json
+2025-09-26 10:15:55,385 INFO    Thread-12 :2169346 [dir_watcher.py:_on_file_modified():288] file/dir modified: /mnt/data/kai/VinDr_Code/Mini_VinDr_CXR_Dataset/dicom_comparison/wandb/run-20250926_101544-7fnyv1vh/files/output.log
+2025-09-26 10:15:55,899 DEBUG   HandlerThread:2169346 [handler.py:handle_request():146] handle_request: status_report
+2025-09-26 10:15:55,925 DEBUG   HandlerThread:2169346 [handler.py:handle_request():146] handle_request: partial_history
+2025-09-26 10:15:55,925 DEBUG   SenderThread:2169346 [sender.py:send():379] send: history
+2025-09-26 10:15:55,925 DEBUG   SenderThread:2169346 [sender.py:send_request():406] send_request: summary_record
+2025-09-26 10:15:55,926 INFO    SenderThread:2169346 [sender.py:_save_file():1390] saving file wandb-summary.json with policy end
+2025-09-26 10:15:56,294 DEBUG   HandlerThread:2169346 [handler.py:handle_request():146] handle_request: partial_history
+2025-09-26 10:15:56,294 DEBUG   SenderThread:2169346 [sender.py:send():379] send: history
+2025-09-26 10:15:56,295 DEBUG   SenderThread:2169346 [sender.py:send_request():406] send_request: summary_record
+2025-09-26 10:15:56,295 INFO    SenderThread:2169346 [sender.py:_save_file():1390] saving file wandb-summary.json with policy end
+2025-09-26 10:15:56,385 INFO    Thread-12 :2169346 [dir_watcher.py:_on_file_modified():288] file/dir modified: /mnt/data/kai/VinDr_Code/Mini_VinDr_CXR_Dataset/dicom_comparison/wandb/run-20250926_101544-7fnyv1vh/files/wandb-summary.json
+2025-09-26 10:15:57,316 DEBUG   HandlerThread:2169346 [handler.py:handle_request():146] handle_request: partial_history
+2025-09-26 10:15:57,316 DEBUG   SenderThread:2169346 [sender.py:send():379] send: history
+2025-09-26 10:15:57,316 DEBUG   SenderThread:2169346 [sender.py:send_request():406] send_request: summary_record
+2025-09-26 10:15:57,316 INFO    SenderThread:2169346 [sender.py:_save_file():1390] saving file wandb-summary.json with policy end
+2025-09-26 10:15:57,385 INFO    Thread-12 :2169346 [dir_watcher.py:_on_file_modified():288] file/dir modified: /mnt/data/kai/VinDr_Code/Mini_VinDr_CXR_Dataset/dicom_comparison/wandb/run-20250926_101544-7fnyv1vh/files/wandb-summary.json
+2025-09-26 10:15:57,385 INFO    Thread-12 :2169346 [dir_watcher.py:_on_file_modified():288] file/dir modified: /mnt/data/kai/VinDr_Code/Mini_VinDr_CXR_Dataset/dicom_comparison/wandb/run-20250926_101544-7fnyv1vh/files/output.log
+2025-09-26 10:15:57,639 DEBUG   HandlerThread:2169346 [handler.py:handle_request():146] handle_request: partial_history
+2025-09-26 10:15:57,639 DEBUG   SenderThread:2169346 [sender.py:send():379] send: history
+2025-09-26 10:15:57,639 DEBUG   SenderThread:2169346 [sender.py:send_request():406] send_request: summary_record
+2025-09-26 10:15:57,640 INFO    SenderThread:2169346 [sender.py:_save_file():1390] saving file wandb-summary.json with policy end
+2025-09-26 10:15:58,385 INFO    Thread-12 :2169346 [dir_watcher.py:_on_file_modified():288] file/dir modified: /mnt/data/kai/VinDr_Code/Mini_VinDr_CXR_Dataset/dicom_comparison/wandb/run-20250926_101544-7fnyv1vh/files/wandb-summary.json
+2025-09-26 10:15:58,479 DEBUG   HandlerThread:2169346 [handler.py:handle_request():146] handle_request: partial_history
+2025-09-26 10:15:58,479 DEBUG   SenderThread:2169346 [sender.py:send():379] send: history
+2025-09-26 10:15:58,479 DEBUG   SenderThread:2169346 [sender.py:send_request():406] send_request: summary_record
+2025-09-26 10:15:58,479 INFO    SenderThread:2169346 [sender.py:_save_file():1390] saving file wandb-summary.json with policy end
+2025-09-26 10:15:58,799 DEBUG   HandlerThread:2169346 [handler.py:handle_request():146] handle_request: partial_history
+2025-09-26 10:15:58,799 DEBUG   SenderThread:2169346 [sender.py:send():379] send: history
+2025-09-26 10:15:58,799 DEBUG   SenderThread:2169346 [sender.py:send_request():406] send_request: summary_record
+2025-09-26 10:15:58,799 INFO    SenderThread:2169346 [sender.py:_save_file():1390] saving file wandb-summary.json with policy end
+2025-09-26 10:15:59,385 INFO    Thread-12 :2169346 [dir_watcher.py:_on_file_modified():288] file/dir modified: /mnt/data/kai/VinDr_Code/Mini_VinDr_CXR_Dataset/dicom_comparison/wandb/run-20250926_101544-7fnyv1vh/files/wandb-summary.json
+2025-09-26 10:15:59,386 INFO    Thread-12 :2169346 [dir_watcher.py:_on_file_modified():288] file/dir modified: /mnt/data/kai/VinDr_Code/Mini_VinDr_CXR_Dataset/dicom_comparison/wandb/run-20250926_101544-7fnyv1vh/files/output.log
+2025-09-26 10:15:59,534 DEBUG   HandlerThread:2169346 [handler.py:handle_request():146] handle_request: partial_history
+2025-09-26 10:15:59,534 DEBUG   SenderThread:2169346 [sender.py:send():379] send: history
+2025-09-26 10:15:59,534 DEBUG   SenderThread:2169346 [sender.py:send_request():406] send_request: summary_record
+2025-09-26 10:15:59,535 INFO    SenderThread:2169346 [sender.py:_save_file():1390] saving file wandb-summary.json with policy end
+2025-09-26 10:15:59,850 DEBUG   HandlerThread:2169346 [handler.py:handle_request():146] handle_request: partial_history
+2025-09-26 10:15:59,850 DEBUG   SenderThread:2169346 [sender.py:send():379] send: history
+2025-09-26 10:15:59,850 DEBUG   SenderThread:2169346 [sender.py:send_request():406] send_request: summary_record
+2025-09-26 10:15:59,850 INFO    SenderThread:2169346 [sender.py:_save_file():1390] saving file wandb-summary.json with policy end
+2025-09-26 10:16:00,386 INFO    Thread-12 :2169346 [dir_watcher.py:_on_file_modified():288] file/dir modified: /mnt/data/kai/VinDr_Code/Mini_VinDr_CXR_Dataset/dicom_comparison/wandb/run-20250926_101544-7fnyv1vh/files/wandb-summary.json
+2025-09-26 10:16:00,573 DEBUG   HandlerThread:2169346 [handler.py:handle_request():146] handle_request: partial_history
+2025-09-26 10:16:00,573 DEBUG   SenderThread:2169346 [sender.py:send():379] send: history
+2025-09-26 10:16:00,573 DEBUG   SenderThread:2169346 [sender.py:send_request():406] send_request: summary_record
+2025-09-26 10:16:00,573 INFO    SenderThread:2169346 [sender.py:_save_file():1390] saving file wandb-summary.json with policy end
+2025-09-26 10:16:00,908 DEBUG   HandlerThread:2169346 [handler.py:handle_request():146] handle_request: status_report
+2025-09-26 10:16:00,908 DEBUG   HandlerThread:2169346 [handler.py:handle_request():146] handle_request: partial_history
+2025-09-26 10:16:00,908 DEBUG   SenderThread:2169346 [sender.py:send():379] send: history
+2025-09-26 10:16:00,908 DEBUG   SenderThread:2169346 [sender.py:send_request():406] send_request: summary_record
+2025-09-26 10:16:00,908 INFO    SenderThread:2169346 [sender.py:_save_file():1390] saving file wandb-summary.json with policy end
+2025-09-26 10:16:01,386 INFO    Thread-12 :2169346 [dir_watcher.py:_on_file_modified():288] file/dir modified: /mnt/data/kai/VinDr_Code/Mini_VinDr_CXR_Dataset/dicom_comparison/wandb/run-20250926_101544-7fnyv1vh/files/wandb-summary.json
+2025-09-26 10:16:01,386 INFO    Thread-12 :2169346 [dir_watcher.py:_on_file_modified():288] file/dir modified: /mnt/data/kai/VinDr_Code/Mini_VinDr_CXR_Dataset/dicom_comparison/wandb/run-20250926_101544-7fnyv1vh/files/output.log
+2025-09-26 10:16:01,468 DEBUG   HandlerThread:2169346 [handler.py:handle_request():146] handle_request: stop_status
+2025-09-26 10:16:01,468 DEBUG   HandlerThread:2169346 [handler.py:handle_request():146] handle_request: internal_messages
+2025-09-26 10:16:01,469 DEBUG   SenderThread:2169346 [sender.py:send_request():406] send_request: stop_status
+2025-09-26 10:16:01,641 DEBUG   HandlerThread:2169346 [handler.py:handle_request():146] handle_request: partial_history
+2025-09-26 10:16:01,783 DEBUG   SenderThread:2169346 [sender.py:send():379] send: history
+2025-09-26 10:16:01,783 DEBUG   SenderThread:2169346 [sender.py:send_request():406] send_request: summary_record
+2025-09-26 10:16:01,787 INFO    SenderThread:2169346 [sender.py:_save_file():1390] saving file wandb-summary.json with policy end
+2025-09-26 10:16:01,894 DEBUG   HandlerThread:2169346 [handler.py:handle_request():146] handle_request: partial_history
+2025-09-26 10:16:01,894 DEBUG   SenderThread:2169346 [sender.py:send():379] send: history
+2025-09-26 10:16:01,894 DEBUG   SenderThread:2169346 [sender.py:send_request():406] send_request: summary_record
+2025-09-26 10:16:02,015 INFO    SenderThread:2169346 [sender.py:_save_file():1390] saving file wandb-summary.json with policy end
+2025-09-26 10:16:02,386 INFO    Thread-12 :2169346 [dir_watcher.py:_on_file_modified():288] file/dir modified: /mnt/data/kai/VinDr_Code/Mini_VinDr_CXR_Dataset/dicom_comparison/wandb/run-20250926_101544-7fnyv1vh/files/wandb-summary.json
+2025-09-26 10:16:02,516 DEBUG   HandlerThread:2169346 [handler.py:handle_request():146] handle_request: partial_history
+2025-09-26 10:16:02,516 DEBUG   SenderThread:2169346 [sender.py:send():379] send: history
+2025-09-26 10:16:02,516 DEBUG   SenderThread:2169346 [sender.py:send_request():406] send_request: summary_record
+2025-09-26 10:16:02,529 INFO    SenderThread:2169346 [sender.py:_save_file():1390] saving file wandb-summary.json with policy end
+2025-09-26 10:16:02,807 DEBUG   HandlerThread:2169346 [handler.py:handle_request():146] handle_request: partial_history
+2025-09-26 10:16:02,807 DEBUG   SenderThread:2169346 [sender.py:send():379] send: history
+2025-09-26 10:16:02,807 DEBUG   SenderThread:2169346 [sender.py:send_request():406] send_request: summary_record
+2025-09-26 10:16:03,208 INFO    SenderThread:2169346 [sender.py:_save_file():1390] saving file wandb-summary.json with policy end
+2025-09-26 10:16:03,386 INFO    Thread-12 :2169346 [dir_watcher.py:_on_file_modified():288] file/dir modified: /mnt/data/kai/VinDr_Code/Mini_VinDr_CXR_Dataset/dicom_comparison/wandb/run-20250926_101544-7fnyv1vh/files/wandb-summary.json
+2025-09-26 10:16:03,386 INFO    Thread-12 :2169346 [dir_watcher.py:_on_file_modified():288] file/dir modified: /mnt/data/kai/VinDr_Code/Mini_VinDr_CXR_Dataset/dicom_comparison/wandb/run-20250926_101544-7fnyv1vh/files/output.log
+2025-09-26 10:16:03,461 DEBUG   HandlerThread:2169346 [handler.py:handle_request():146] handle_request: partial_history
+2025-09-26 10:16:03,462 DEBUG   SenderThread:2169346 [sender.py:send():379] send: history
+2025-09-26 10:16:03,462 DEBUG   SenderThread:2169346 [sender.py:send_request():406] send_request: summary_record
+2025-09-26 10:16:03,462 INFO    SenderThread:2169346 [sender.py:_save_file():1390] saving file wandb-summary.json with policy end
+2025-09-26 10:16:03,798 DEBUG   HandlerThread:2169346 [handler.py:handle_request():146] handle_request: partial_history
+2025-09-26 10:16:03,798 DEBUG   SenderThread:2169346 [sender.py:send():379] send: history
+2025-09-26 10:16:03,798 DEBUG   SenderThread:2169346 [sender.py:send_request():406] send_request: summary_record
+2025-09-26 10:16:03,798 INFO    SenderThread:2169346 [sender.py:_save_file():1390] saving file wandb-summary.json with policy end
+2025-09-26 10:16:04,386 INFO    Thread-12 :2169346 [dir_watcher.py:_on_file_modified():288] file/dir modified: /mnt/data/kai/VinDr_Code/Mini_VinDr_CXR_Dataset/dicom_comparison/wandb/run-20250926_101544-7fnyv1vh/files/wandb-summary.json
+2025-09-26 10:16:04,539 DEBUG   HandlerThread:2169346 [handler.py:handle_request():146] handle_request: partial_history
+2025-09-26 10:16:04,540 DEBUG   SenderThread:2169346 [sender.py:send():379] send: history
+2025-09-26 10:16:04,540 DEBUG   SenderThread:2169346 [sender.py:send_request():406] send_request: summary_record
+2025-09-26 10:16:04,540 INFO    SenderThread:2169346 [sender.py:_save_file():1390] saving file wandb-summary.json with policy end
+2025-09-26 10:16:04,960 DEBUG   HandlerThread:2169346 [handler.py:handle_request():146] handle_request: partial_history
+2025-09-26 10:16:04,961 DEBUG   SenderThread:2169346 [sender.py:send():379] send: history
+2025-09-26 10:16:04,961 DEBUG   SenderThread:2169346 [sender.py:send_request():406] send_request: summary_record
+2025-09-26 10:16:04,961 INFO    SenderThread:2169346 [sender.py:_save_file():1390] saving file wandb-summary.json with policy end
+2025-09-26 10:16:05,387 INFO    Thread-12 :2169346 [dir_watcher.py:_on_file_modified():288] file/dir modified: /mnt/data/kai/VinDr_Code/Mini_VinDr_CXR_Dataset/dicom_comparison/wandb/run-20250926_101544-7fnyv1vh/files/wandb-summary.json
+2025-09-26 10:16:05,387 INFO    Thread-12 :2169346 [dir_watcher.py:_on_file_modified():288] file/dir modified: /mnt/data/kai/VinDr_Code/Mini_VinDr_CXR_Dataset/dicom_comparison/wandb/run-20250926_101544-7fnyv1vh/files/output.log
+2025-09-26 10:16:05,719 DEBUG   HandlerThread:2169346 [handler.py:handle_request():146] handle_request: partial_history
+2025-09-26 10:16:05,719 DEBUG   SenderThread:2169346 [sender.py:send():379] send: history
+2025-09-26 10:16:05,719 DEBUG   SenderThread:2169346 [sender.py:send_request():406] send_request: summary_record
+2025-09-26 10:16:05,720 INFO    SenderThread:2169346 [sender.py:_save_file():1390] saving file wandb-summary.json with policy end
+2025-09-26 10:16:06,109 DEBUG   HandlerThread:2169346 [handler.py:handle_request():146] handle_request: status_report
+2025-09-26 10:16:06,109 DEBUG   HandlerThread:2169346 [handler.py:handle_request():146] handle_request: partial_history
+2025-09-26 10:16:06,110 DEBUG   SenderThread:2169346 [sender.py:send():379] send: history
+2025-09-26 10:16:06,110 DEBUG   SenderThread:2169346 [sender.py:send_request():406] send_request: summary_record
+2025-09-26 10:16:06,110 INFO    SenderThread:2169346 [sender.py:_save_file():1390] saving file wandb-summary.json with policy end
+2025-09-26 10:16:06,391 INFO    Thread-12 :2169346 [dir_watcher.py:_on_file_modified():288] file/dir modified: /mnt/data/kai/VinDr_Code/Mini_VinDr_CXR_Dataset/dicom_comparison/wandb/run-20250926_101544-7fnyv1vh/files/wandb-summary.json
+2025-09-26 10:16:06,843 DEBUG   HandlerThread:2169346 [handler.py:handle_request():146] handle_request: partial_history
+2025-09-26 10:16:06,843 DEBUG   SenderThread:2169346 [sender.py:send():379] send: history
+2025-09-26 10:16:06,843 DEBUG   SenderThread:2169346 [sender.py:send_request():406] send_request: summary_record
+2025-09-26 10:16:06,844 INFO    SenderThread:2169346 [sender.py:_save_file():1390] saving file wandb-summary.json with policy end
+2025-09-26 10:16:07,261 DEBUG   HandlerThread:2169346 [handler.py:handle_request():146] handle_request: partial_history
+2025-09-26 10:16:07,262 DEBUG   SenderThread:2169346 [sender.py:send():379] send: history
+2025-09-26 10:16:07,262 DEBUG   SenderThread:2169346 [sender.py:send_request():406] send_request: summary_record
+2025-09-26 10:16:07,262 INFO    SenderThread:2169346 [sender.py:_save_file():1390] saving file wandb-summary.json with policy end
+2025-09-26 10:16:07,391 INFO    Thread-12 :2169346 [dir_watcher.py:_on_file_modified():288] file/dir modified: /mnt/data/kai/VinDr_Code/Mini_VinDr_CXR_Dataset/dicom_comparison/wandb/run-20250926_101544-7fnyv1vh/files/wandb-summary.json
+2025-09-26 10:16:07,391 INFO    Thread-12 :2169346 [dir_watcher.py:_on_file_modified():288] file/dir modified: /mnt/data/kai/VinDr_Code/Mini_VinDr_CXR_Dataset/dicom_comparison/wandb/run-20250926_101544-7fnyv1vh/files/output.log
+2025-09-26 10:16:07,958 DEBUG   HandlerThread:2169346 [handler.py:handle_request():146] handle_request: partial_history
+2025-09-26 10:16:07,959 DEBUG   SenderThread:2169346 [sender.py:send():379] send: history
+2025-09-26 10:16:07,959 DEBUG   SenderThread:2169346 [sender.py:send_request():406] send_request: summary_record
+2025-09-26 10:16:07,959 INFO    SenderThread:2169346 [sender.py:_save_file():1390] saving file wandb-summary.json with policy end
+2025-09-26 10:16:08,393 INFO    Thread-12 :2169346 [dir_watcher.py:_on_file_modified():288] file/dir modified: /mnt/data/kai/VinDr_Code/Mini_VinDr_CXR_Dataset/dicom_comparison/wandb/run-20250926_101544-7fnyv1vh/files/wandb-summary.json
+2025-09-26 10:16:08,412 DEBUG   HandlerThread:2169346 [handler.py:handle_request():146] handle_request: partial_history
+2025-09-26 10:16:08,412 DEBUG   SenderThread:2169346 [sender.py:send():379] send: history
+2025-09-26 10:16:08,413 DEBUG   SenderThread:2169346 [sender.py:send_request():406] send_request: summary_record
+2025-09-26 10:16:08,413 INFO    SenderThread:2169346 [sender.py:_save_file():1390] saving file wandb-summary.json with policy end
+2025-09-26 10:16:09,393 INFO    Thread-12 :2169346 [dir_watcher.py:_on_file_modified():288] file/dir modified: /mnt/data/kai/VinDr_Code/Mini_VinDr_CXR_Dataset/dicom_comparison/wandb/run-20250926_101544-7fnyv1vh/files/wandb-summary.json
+2025-09-26 10:16:09,393 INFO    Thread-12 :2169346 [dir_watcher.py:_on_file_modified():288] file/dir modified: /mnt/data/kai/VinDr_Code/Mini_VinDr_CXR_Dataset/dicom_comparison/wandb/run-20250926_101544-7fnyv1vh/files/output.log
+2025-09-26 10:16:10,819 DEBUG   HandlerThread:2169346 [handler.py:handle_request():146] handle_request: partial_history
+2025-09-26 10:16:10,820 DEBUG   SenderThread:2169346 [sender.py:send():379] send: history
+2025-09-26 10:16:10,820 DEBUG   SenderThread:2169346 [sender.py:send_request():406] send_request: summary_record
+2025-09-26 10:16:10,820 INFO    SenderThread:2169346 [sender.py:_save_file():1390] saving file wandb-summary.json with policy end
+2025-09-26 10:16:11,139 DEBUG   HandlerThread:2169346 [handler.py:handle_request():146] handle_request: status_report
+2025-09-26 10:16:11,139 DEBUG   HandlerThread:2169346 [handler.py:handle_request():146] handle_request: partial_history
+2025-09-26 10:16:11,139 DEBUG   SenderThread:2169346 [sender.py:send():379] send: history
+2025-09-26 10:16:11,140 DEBUG   SenderThread:2169346 [sender.py:send_request():406] send_request: summary_record
+2025-09-26 10:16:11,140 INFO    SenderThread:2169346 [sender.py:_save_file():1390] saving file wandb-summary.json with policy end
+2025-09-26 10:16:11,393 INFO    Thread-12 :2169346 [dir_watcher.py:_on_file_modified():288] file/dir modified: /mnt/data/kai/VinDr_Code/Mini_VinDr_CXR_Dataset/dicom_comparison/wandb/run-20250926_101544-7fnyv1vh/files/wandb-summary.json
+2025-09-26 10:16:11,393 INFO    Thread-12 :2169346 [dir_watcher.py:_on_file_modified():288] file/dir modified: /mnt/data/kai/VinDr_Code/Mini_VinDr_CXR_Dataset/dicom_comparison/wandb/run-20250926_101544-7fnyv1vh/files/output.log
+2025-09-26 10:16:11,950 DEBUG   HandlerThread:2169346 [handler.py:handle_request():146] handle_request: partial_history
+2025-09-26 10:16:11,950 DEBUG   SenderThread:2169346 [sender.py:send():379] send: history
+2025-09-26 10:16:11,950 DEBUG   SenderThread:2169346 [sender.py:send_request():406] send_request: summary_record
+2025-09-26 10:16:11,950 INFO    SenderThread:2169346 [sender.py:_save_file():1390] saving file wandb-summary.json with policy end
+2025-09-26 10:16:12,284 DEBUG   HandlerThread:2169346 [handler.py:handle_request():146] handle_request: partial_history
+2025-09-26 10:16:12,284 DEBUG   SenderThread:2169346 [sender.py:send():379] send: history
+2025-09-26 10:16:12,284 DEBUG   SenderThread:2169346 [sender.py:send_request():406] send_request: summary_record
+2025-09-26 10:16:12,284 INFO    SenderThread:2169346 [sender.py:_save_file():1390] saving file wandb-summary.json with policy end
+2025-09-26 10:16:12,393 INFO    Thread-12 :2169346 [dir_watcher.py:_on_file_modified():288] file/dir modified: /mnt/data/kai/VinDr_Code/Mini_VinDr_CXR_Dataset/dicom_comparison/wandb/run-20250926_101544-7fnyv1vh/files/wandb-summary.json
+2025-09-26 10:16:13,135 DEBUG   HandlerThread:2169346 [handler.py:handle_request():146] handle_request: partial_history
+2025-09-26 10:16:13,136 DEBUG   SenderThread:2169346 [sender.py:send():379] send: history
+2025-09-26 10:16:13,136 DEBUG   SenderThread:2169346 [sender.py:send_request():406] send_request: summary_record
+2025-09-26 10:16:13,136 INFO    SenderThread:2169346 [sender.py:_save_file():1390] saving file wandb-summary.json with policy end
+2025-09-26 10:16:13,394 INFO    Thread-12 :2169346 [dir_watcher.py:_on_file_modified():288] file/dir modified: /mnt/data/kai/VinDr_Code/Mini_VinDr_CXR_Dataset/dicom_comparison/wandb/run-20250926_101544-7fnyv1vh/files/wandb-summary.json
+2025-09-26 10:16:13,394 INFO    Thread-12 :2169346 [dir_watcher.py:_on_file_modified():288] file/dir modified: /mnt/data/kai/VinDr_Code/Mini_VinDr_CXR_Dataset/dicom_comparison/wandb/run-20250926_101544-7fnyv1vh/files/output.log
+2025-09-26 10:16:13,474 DEBUG   HandlerThread:2169346 [handler.py:handle_request():146] handle_request: partial_history
+2025-09-26 10:16:13,475 DEBUG   SenderThread:2169346 [sender.py:send():379] send: history
+2025-09-26 10:16:13,475 DEBUG   SenderThread:2169346 [sender.py:send_request():406] send_request: summary_record
+2025-09-26 10:16:13,475 INFO    SenderThread:2169346 [sender.py:_save_file():1390] saving file wandb-summary.json with policy end
+2025-09-26 10:16:14,106 DEBUG   HandlerThread:2169346 [handler.py:handle_request():146] handle_request: partial_history
+2025-09-26 10:16:14,106 DEBUG   SenderThread:2169346 [sender.py:send():379] send: history
+2025-09-26 10:16:14,106 DEBUG   SenderThread:2169346 [sender.py:send_request():406] send_request: summary_record
+2025-09-26 10:16:14,112 INFO    SenderThread:2169346 [sender.py:_save_file():1390] saving file wandb-summary.json with policy end
+2025-09-26 10:16:14,394 INFO    Thread-12 :2169346 [dir_watcher.py:_on_file_modified():288] file/dir modified: /mnt/data/kai/VinDr_Code/Mini_VinDr_CXR_Dataset/dicom_comparison/wandb/run-20250926_101544-7fnyv1vh/files/wandb-summary.json
+2025-09-26 10:16:14,397 DEBUG   HandlerThread:2169346 [handler.py:handle_request():146] handle_request: partial_history
+2025-09-26 10:16:14,397 DEBUG   SenderThread:2169346 [sender.py:send():379] send: history
+2025-09-26 10:16:14,398 DEBUG   SenderThread:2169346 [sender.py:send_request():406] send_request: summary_record
+2025-09-26 10:16:14,429 INFO    SenderThread:2169346 [sender.py:_save_file():1390] saving file wandb-summary.json with policy end
+2025-09-26 10:16:15,010 DEBUG   HandlerThread:2169346 [handler.py:handle_request():146] handle_request: partial_history
+2025-09-26 10:16:15,011 DEBUG   SenderThread:2169346 [sender.py:send():379] send: history
+2025-09-26 10:16:15,011 DEBUG   SenderThread:2169346 [sender.py:send_request():406] send_request: summary_record
+2025-09-26 10:16:15,107 INFO    SenderThread:2169346 [sender.py:_save_file():1390] saving file wandb-summary.json with policy end
+2025-09-26 10:16:15,385 DEBUG   HandlerThread:2169346 [handler.py:handle_request():146] handle_request: partial_history
+2025-09-26 10:16:15,385 DEBUG   SenderThread:2169346 [sender.py:send():379] send: history
+2025-09-26 10:16:15,385 DEBUG   SenderThread:2169346 [sender.py:send_request():406] send_request: summary_record
+2025-09-26 10:16:15,386 INFO    SenderThread:2169346 [sender.py:_save_file():1390] saving file wandb-summary.json with policy end
+2025-09-26 10:16:15,394 INFO    Thread-12 :2169346 [dir_watcher.py:_on_file_modified():288] file/dir modified: /mnt/data/kai/VinDr_Code/Mini_VinDr_CXR_Dataset/dicom_comparison/wandb/run-20250926_101544-7fnyv1vh/files/wandb-summary.json
+2025-09-26 10:16:15,394 INFO    Thread-12 :2169346 [dir_watcher.py:_on_file_modified():288] file/dir modified: /mnt/data/kai/VinDr_Code/Mini_VinDr_CXR_Dataset/dicom_comparison/wandb/run-20250926_101544-7fnyv1vh/files/output.log
+2025-09-26 10:16:16,041 DEBUG   HandlerThread:2169346 [handler.py:handle_request():146] handle_request: partial_history
+2025-09-26 10:16:16,042 DEBUG   SenderThread:2169346 [sender.py:send():379] send: history
+2025-09-26 10:16:16,042 DEBUG   SenderThread:2169346 [sender.py:send_request():406] send_request: summary_record
+2025-09-26 10:16:16,042 INFO    SenderThread:2169346 [sender.py:_save_file():1390] saving file wandb-summary.json with policy end
+2025-09-26 10:16:16,394 INFO    Thread-12 :2169346 [dir_watcher.py:_on_file_modified():288] file/dir modified: /mnt/data/kai/VinDr_Code/Mini_VinDr_CXR_Dataset/dicom_comparison/wandb/run-20250926_101544-7fnyv1vh/files/wandb-summary.json
+2025-09-26 10:16:16,455 DEBUG   HandlerThread:2169346 [handler.py:handle_request():146] handle_request: partial_history
+2025-09-26 10:16:16,456 DEBUG   HandlerThread:2169346 [handler.py:handle_request():146] handle_request: status_report
+2025-09-26 10:16:16,486 DEBUG   HandlerThread:2169346 [handler.py:handle_request():146] handle_request: internal_messages
+2025-09-26 10:16:16,487 DEBUG   HandlerThread:2169346 [handler.py:handle_request():146] handle_request: stop_status
+2025-09-26 10:16:16,757 DEBUG   SenderThread:2169346 [sender.py:send():379] send: history
+2025-09-26 10:16:16,758 DEBUG   SenderThread:2169346 [sender.py:send_request():406] send_request: summary_record
+2025-09-26 10:16:16,758 INFO    SenderThread:2169346 [sender.py:_save_file():1390] saving file wandb-summary.json with policy end
+2025-09-26 10:16:16,758 DEBUG   SenderThread:2169346 [sender.py:send_request():406] send_request: stop_status
+2025-09-26 10:16:17,118 DEBUG   HandlerThread:2169346 [handler.py:handle_request():146] handle_request: partial_history
+2025-09-26 10:16:17,141 DEBUG   SenderThread:2169346 [sender.py:send():379] send: history
+2025-09-26 10:16:17,141 DEBUG   SenderThread:2169346 [sender.py:send_request():406] send_request: summary_record
+2025-09-26 10:16:17,142 INFO    SenderThread:2169346 [sender.py:_save_file():1390] saving file wandb-summary.json with policy end
+2025-09-26 10:16:17,395 INFO    Thread-12 :2169346 [dir_watcher.py:_on_file_modified():288] file/dir modified: /mnt/data/kai/VinDr_Code/Mini_VinDr_CXR_Dataset/dicom_comparison/wandb/run-20250926_101544-7fnyv1vh/files/config.yaml
+2025-09-26 10:16:17,395 INFO    Thread-12 :2169346 [dir_watcher.py:_on_file_modified():288] file/dir modified: /mnt/data/kai/VinDr_Code/Mini_VinDr_CXR_Dataset/dicom_comparison/wandb/run-20250926_101544-7fnyv1vh/files/wandb-summary.json
+2025-09-26 10:16:17,395 INFO    Thread-12 :2169346 [dir_watcher.py:_on_file_modified():288] file/dir modified: /mnt/data/kai/VinDr_Code/Mini_VinDr_CXR_Dataset/dicom_comparison/wandb/run-20250926_101544-7fnyv1vh/files/output.log
+2025-09-26 10:16:17,561 DEBUG   HandlerThread:2169346 [handler.py:handle_request():146] handle_request: partial_history
+2025-09-26 10:16:17,561 DEBUG   SenderThread:2169346 [sender.py:send():379] send: history
+2025-09-26 10:16:17,561 DEBUG   SenderThread:2169346 [sender.py:send_request():406] send_request: summary_record
+2025-09-26 10:16:17,561 INFO    SenderThread:2169346 [sender.py:_save_file():1390] saving file wandb-summary.json with policy end
+2025-09-26 10:16:18,211 DEBUG   HandlerThread:2169346 [handler.py:handle_request():146] handle_request: partial_history
+2025-09-26 10:16:18,212 DEBUG   SenderThread:2169346 [sender.py:send():379] send: history
+2025-09-26 10:16:18,212 DEBUG   SenderThread:2169346 [sender.py:send_request():406] send_request: summary_record
+2025-09-26 10:16:18,212 INFO    SenderThread:2169346 [sender.py:_save_file():1390] saving file wandb-summary.json with policy end
+2025-09-26 10:16:18,395 INFO    Thread-12 :2169346 [dir_watcher.py:_on_file_modified():288] file/dir modified: /mnt/data/kai/VinDr_Code/Mini_VinDr_CXR_Dataset/dicom_comparison/wandb/run-20250926_101544-7fnyv1vh/files/wandb-summary.json
+2025-09-26 10:16:18,577 DEBUG   HandlerThread:2169346 [handler.py:handle_request():146] handle_request: partial_history
+2025-09-26 10:16:18,577 DEBUG   SenderThread:2169346 [sender.py:send():379] send: history
+2025-09-26 10:16:18,577 DEBUG   SenderThread:2169346 [sender.py:send_request():406] send_request: summary_record
+2025-09-26 10:16:18,578 INFO    SenderThread:2169346 [sender.py:_save_file():1390] saving file wandb-summary.json with policy end
+2025-09-26 10:16:19,342 DEBUG   HandlerThread:2169346 [handler.py:handle_request():146] handle_request: partial_history
+2025-09-26 10:16:19,342 DEBUG   SenderThread:2169346 [sender.py:send():379] send: history
+2025-09-26 10:16:19,342 DEBUG   SenderThread:2169346 [sender.py:send_request():406] send_request: summary_record
+2025-09-26 10:16:19,343 INFO    SenderThread:2169346 [sender.py:_save_file():1390] saving file wandb-summary.json with policy end
+2025-09-26 10:16:19,395 INFO    Thread-12 :2169346 [dir_watcher.py:_on_file_modified():288] file/dir modified: /mnt/data/kai/VinDr_Code/Mini_VinDr_CXR_Dataset/dicom_comparison/wandb/run-20250926_101544-7fnyv1vh/files/wandb-summary.json
+2025-09-26 10:16:19,395 INFO    Thread-12 :2169346 [dir_watcher.py:_on_file_modified():288] file/dir modified: /mnt/data/kai/VinDr_Code/Mini_VinDr_CXR_Dataset/dicom_comparison/wandb/run-20250926_101544-7fnyv1vh/files/output.log
+2025-09-26 10:16:19,741 DEBUG   HandlerThread:2169346 [handler.py:handle_request():146] handle_request: partial_history
+2025-09-26 10:16:19,741 DEBUG   SenderThread:2169346 [sender.py:send():379] send: history
+2025-09-26 10:16:19,742 DEBUG   SenderThread:2169346 [sender.py:send_request():406] send_request: summary_record
+2025-09-26 10:16:19,742 INFO    SenderThread:2169346 [sender.py:_save_file():1390] saving file wandb-summary.json with policy end
+2025-09-26 10:16:20,395 INFO    Thread-12 :2169346 [dir_watcher.py:_on_file_modified():288] file/dir modified: /mnt/data/kai/VinDr_Code/Mini_VinDr_CXR_Dataset/dicom_comparison/wandb/run-20250926_101544-7fnyv1vh/files/wandb-summary.json
+2025-09-26 10:16:20,439 DEBUG   HandlerThread:2169346 [handler.py:handle_request():146] handle_request: partial_history
+2025-09-26 10:16:20,440 DEBUG   SenderThread:2169346 [sender.py:send():379] send: history
+2025-09-26 10:16:20,440 DEBUG   SenderThread:2169346 [sender.py:send_request():406] send_request: summary_record
+2025-09-26 10:16:20,440 INFO    SenderThread:2169346 [sender.py:_save_file():1390] saving file wandb-summary.json with policy end
+2025-09-26 10:16:20,826 DEBUG   HandlerThread:2169346 [handler.py:handle_request():146] handle_request: partial_history
+2025-09-26 10:16:20,826 DEBUG   SenderThread:2169346 [sender.py:send():379] send: history
+2025-09-26 10:16:20,827 DEBUG   SenderThread:2169346 [sender.py:send_request():406] send_request: summary_record
+2025-09-26 10:16:20,827 INFO    SenderThread:2169346 [sender.py:_save_file():1390] saving file wandb-summary.json with policy end
+2025-09-26 10:16:21,396 INFO    Thread-12 :2169346 [dir_watcher.py:_on_file_modified():288] file/dir modified: /mnt/data/kai/VinDr_Code/Mini_VinDr_CXR_Dataset/dicom_comparison/wandb/run-20250926_101544-7fnyv1vh/files/wandb-summary.json
+2025-09-26 10:16:21,396 INFO    Thread-12 :2169346 [dir_watcher.py:_on_file_modified():288] file/dir modified: /mnt/data/kai/VinDr_Code/Mini_VinDr_CXR_Dataset/dicom_comparison/wandb/run-20250926_101544-7fnyv1vh/files/output.log
+2025-09-26 10:16:21,535 DEBUG   HandlerThread:2169346 [handler.py:handle_request():146] handle_request: partial_history
+2025-09-26 10:16:21,536 DEBUG   SenderThread:2169346 [sender.py:send():379] send: history
+2025-09-26 10:16:21,536 DEBUG   SenderThread:2169346 [sender.py:send_request():406] send_request: summary_record
+2025-09-26 10:16:21,536 INFO    SenderThread:2169346 [sender.py:_save_file():1390] saving file wandb-summary.json with policy end
+2025-09-26 10:16:21,855 DEBUG   HandlerThread:2169346 [handler.py:handle_request():146] handle_request: partial_history
+2025-09-26 10:16:21,855 DEBUG   HandlerThread:2169346 [handler.py:handle_request():146] handle_request: status_report
+2025-09-26 10:16:21,855 DEBUG   SenderThread:2169346 [sender.py:send():379] send: history
+2025-09-26 10:16:21,855 DEBUG   SenderThread:2169346 [sender.py:send_request():406] send_request: summary_record
+2025-09-26 10:16:21,857 INFO    SenderThread:2169346 [sender.py:_save_file():1390] saving file wandb-summary.json with policy end
+2025-09-26 10:16:22,396 INFO    Thread-12 :2169346 [dir_watcher.py:_on_file_modified():288] file/dir modified: /mnt/data/kai/VinDr_Code/Mini_VinDr_CXR_Dataset/dicom_comparison/wandb/run-20250926_101544-7fnyv1vh/files/wandb-summary.json
+2025-09-26 10:16:22,467 DEBUG   HandlerThread:2169346 [handler.py:handle_request():146] handle_request: partial_history
+2025-09-26 10:16:22,467 DEBUG   SenderThread:2169346 [sender.py:send():379] send: history
+2025-09-26 10:16:22,467 DEBUG   SenderThread:2169346 [sender.py:send_request():406] send_request: summary_record
+2025-09-26 10:16:22,616 INFO    SenderThread:2169346 [sender.py:_save_file():1390] saving file wandb-summary.json with policy end
+2025-09-26 10:16:22,758 DEBUG   HandlerThread:2169346 [handler.py:handle_request():146] handle_request: partial_history
+2025-09-26 10:16:22,759 DEBUG   SenderThread:2169346 [sender.py:send():379] send: history
+2025-09-26 10:16:22,759 DEBUG   SenderThread:2169346 [sender.py:send_request():406] send_request: summary_record
+2025-09-26 10:16:22,759 INFO    SenderThread:2169346 [sender.py:_save_file():1390] saving file wandb-summary.json with policy end
+2025-09-26 10:16:23,396 INFO    Thread-12 :2169346 [dir_watcher.py:_on_file_modified():288] file/dir modified: /mnt/data/kai/VinDr_Code/Mini_VinDr_CXR_Dataset/dicom_comparison/wandb/run-20250926_101544-7fnyv1vh/files/wandb-summary.json
+2025-09-26 10:16:23,396 INFO    Thread-12 :2169346 [dir_watcher.py:_on_file_modified():288] file/dir modified: /mnt/data/kai/VinDr_Code/Mini_VinDr_CXR_Dataset/dicom_comparison/wandb/run-20250926_101544-7fnyv1vh/files/output.log
+2025-09-26 10:16:23,458 DEBUG   HandlerThread:2169346 [handler.py:handle_request():146] handle_request: partial_history
+2025-09-26 10:16:23,458 DEBUG   SenderThread:2169346 [sender.py:send():379] send: history
+2025-09-26 10:16:23,458 DEBUG   SenderThread:2169346 [sender.py:send_request():406] send_request: summary_record
+2025-09-26 10:16:23,458 INFO    SenderThread:2169346 [sender.py:_save_file():1390] saving file wandb-summary.json with policy end
+2025-09-26 10:16:23,776 DEBUG   HandlerThread:2169346 [handler.py:handle_request():146] handle_request: partial_history
+2025-09-26 10:16:23,777 DEBUG   SenderThread:2169346 [sender.py:send():379] send: history
+2025-09-26 10:16:23,777 DEBUG   SenderThread:2169346 [sender.py:send_request():406] send_request: summary_record
+2025-09-26 10:16:23,777 INFO    SenderThread:2169346 [sender.py:_save_file():1390] saving file wandb-summary.json with policy end
+2025-09-26 10:16:24,396 INFO    Thread-12 :2169346 [dir_watcher.py:_on_file_modified():288] file/dir modified: /mnt/data/kai/VinDr_Code/Mini_VinDr_CXR_Dataset/dicom_comparison/wandb/run-20250926_101544-7fnyv1vh/files/wandb-summary.json
+2025-09-26 10:16:24,501 DEBUG   HandlerThread:2169346 [handler.py:handle_request():146] handle_request: partial_history
+2025-09-26 10:16:24,502 DEBUG   SenderThread:2169346 [sender.py:send():379] send: history
+2025-09-26 10:16:24,502 DEBUG   SenderThread:2169346 [sender.py:send_request():406] send_request: summary_record
+2025-09-26 10:16:24,502 INFO    SenderThread:2169346 [sender.py:_save_file():1390] saving file wandb-summary.json with policy end
+2025-09-26 10:16:24,903 DEBUG   HandlerThread:2169346 [handler.py:handle_request():146] handle_request: partial_history
+2025-09-26 10:16:24,903 DEBUG   SenderThread:2169346 [sender.py:send():379] send: history
+2025-09-26 10:16:24,903 DEBUG   SenderThread:2169346 [sender.py:send_request():406] send_request: summary_record
+2025-09-26 10:16:24,903 INFO    SenderThread:2169346 [sender.py:_save_file():1390] saving file wandb-summary.json with policy end
+2025-09-26 10:16:25,397 INFO    Thread-12 :2169346 [dir_watcher.py:_on_file_modified():288] file/dir modified: /mnt/data/kai/VinDr_Code/Mini_VinDr_CXR_Dataset/dicom_comparison/wandb/run-20250926_101544-7fnyv1vh/files/wandb-summary.json
+2025-09-26 10:16:25,397 INFO    Thread-12 :2169346 [dir_watcher.py:_on_file_modified():288] file/dir modified: /mnt/data/kai/VinDr_Code/Mini_VinDr_CXR_Dataset/dicom_comparison/wandb/run-20250926_101544-7fnyv1vh/files/output.log
+2025-09-26 10:16:25,606 DEBUG   HandlerThread:2169346 [handler.py:handle_request():146] handle_request: partial_history
+2025-09-26 10:16:25,606 DEBUG   SenderThread:2169346 [sender.py:send():379] send: history
+2025-09-26 10:16:25,606 DEBUG   SenderThread:2169346 [sender.py:send_request():406] send_request: summary_record
+2025-09-26 10:16:25,606 INFO    SenderThread:2169346 [sender.py:_save_file():1390] saving file wandb-summary.json with policy end
+2025-09-26 10:16:26,052 DEBUG   HandlerThread:2169346 [handler.py:handle_request():146] handle_request: partial_history
+2025-09-26 10:16:26,053 DEBUG   SenderThread:2169346 [sender.py:send():379] send: history
+2025-09-26 10:16:26,053 DEBUG   SenderThread:2169346 [sender.py:send_request():406] send_request: summary_record
+2025-09-26 10:16:26,053 INFO    SenderThread:2169346 [sender.py:_save_file():1390] saving file wandb-summary.json with policy end
+2025-09-26 10:16:26,397 INFO    Thread-12 :2169346 [dir_watcher.py:_on_file_modified():288] file/dir modified: /mnt/data/kai/VinDr_Code/Mini_VinDr_CXR_Dataset/dicom_comparison/wandb/run-20250926_101544-7fnyv1vh/files/wandb-summary.json
+2025-09-26 10:16:26,743 DEBUG   HandlerThread:2169346 [handler.py:handle_request():146] handle_request: partial_history
+2025-09-26 10:16:26,743 DEBUG   SenderThread:2169346 [sender.py:send():379] send: history
+2025-09-26 10:16:26,743 DEBUG   SenderThread:2169346 [sender.py:send_request():406] send_request: summary_record
+2025-09-26 10:16:26,744 INFO    SenderThread:2169346 [sender.py:_save_file():1390] saving file wandb-summary.json with policy end
+2025-09-26 10:16:27,200 DEBUG   HandlerThread:2169346 [handler.py:handle_request():146] handle_request: partial_history
+2025-09-26 10:16:27,200 DEBUG   HandlerThread:2169346 [handler.py:handle_request():146] handle_request: status_report
+2025-09-26 10:16:27,201 DEBUG   SenderThread:2169346 [sender.py:send():379] send: history
+2025-09-26 10:16:27,201 DEBUG   SenderThread:2169346 [sender.py:send_request():406] send_request: summary_record
+2025-09-26 10:16:27,201 INFO    SenderThread:2169346 [sender.py:_save_file():1390] saving file wandb-summary.json with policy end
+2025-09-26 10:16:27,397 INFO    Thread-12 :2169346 [dir_watcher.py:_on_file_modified():288] file/dir modified: /mnt/data/kai/VinDr_Code/Mini_VinDr_CXR_Dataset/dicom_comparison/wandb/run-20250926_101544-7fnyv1vh/files/wandb-summary.json
+2025-09-26 10:16:27,397 INFO    Thread-12 :2169346 [dir_watcher.py:_on_file_modified():288] file/dir modified: /mnt/data/kai/VinDr_Code/Mini_VinDr_CXR_Dataset/dicom_comparison/wandb/run-20250926_101544-7fnyv1vh/files/output.log
+2025-09-26 10:16:27,891 DEBUG   HandlerThread:2169346 [handler.py:handle_request():146] handle_request: partial_history
+2025-09-26 10:16:27,891 DEBUG   SenderThread:2169346 [sender.py:send():379] send: history
+2025-09-26 10:16:27,891 DEBUG   SenderThread:2169346 [sender.py:send_request():406] send_request: summary_record
+2025-09-26 10:16:27,891 INFO    SenderThread:2169346 [sender.py:_save_file():1390] saving file wandb-summary.json with policy end
+2025-09-26 10:16:28,359 DEBUG   HandlerThread:2169346 [handler.py:handle_request():146] handle_request: partial_history
+2025-09-26 10:16:28,360 DEBUG   SenderThread:2169346 [sender.py:send():379] send: history
+2025-09-26 10:16:28,360 DEBUG   SenderThread:2169346 [sender.py:send_request():406] send_request: summary_record
+2025-09-26 10:16:28,360 INFO    SenderThread:2169346 [sender.py:_save_file():1390] saving file wandb-summary.json with policy end
+2025-09-26 10:16:28,397 INFO    Thread-12 :2169346 [dir_watcher.py:_on_file_modified():288] file/dir modified: /mnt/data/kai/VinDr_Code/Mini_VinDr_CXR_Dataset/dicom_comparison/wandb/run-20250926_101544-7fnyv1vh/files/wandb-summary.json
+2025-09-26 10:16:29,030 DEBUG   HandlerThread:2169346 [handler.py:handle_request():146] handle_request: partial_history
+2025-09-26 10:16:29,030 DEBUG   SenderThread:2169346 [sender.py:send():379] send: history
+2025-09-26 10:16:29,030 DEBUG   SenderThread:2169346 [sender.py:send_request():406] send_request: summary_record
+2025-09-26 10:16:29,030 INFO    SenderThread:2169346 [sender.py:_save_file():1390] saving file wandb-summary.json with policy end
+2025-09-26 10:16:29,397 INFO    Thread-12 :2169346 [dir_watcher.py:_on_file_modified():288] file/dir modified: /mnt/data/kai/VinDr_Code/Mini_VinDr_CXR_Dataset/dicom_comparison/wandb/run-20250926_101544-7fnyv1vh/files/wandb-summary.json
+2025-09-26 10:16:29,398 INFO    Thread-12 :2169346 [dir_watcher.py:_on_file_modified():288] file/dir modified: /mnt/data/kai/VinDr_Code/Mini_VinDr_CXR_Dataset/dicom_comparison/wandb/run-20250926_101544-7fnyv1vh/files/output.log
+2025-09-26 10:16:29,403 DEBUG   HandlerThread:2169346 [handler.py:handle_request():146] handle_request: partial_history
+2025-09-26 10:16:29,404 DEBUG   SenderThread:2169346 [sender.py:send():379] send: history
+2025-09-26 10:16:29,404 DEBUG   SenderThread:2169346 [sender.py:send_request():406] send_request: summary_record
+2025-09-26 10:16:29,404 INFO    SenderThread:2169346 [sender.py:_save_file():1390] saving file wandb-summary.json with policy end
+2025-09-26 10:16:30,398 INFO    Thread-12 :2169346 [dir_watcher.py:_on_file_modified():288] file/dir modified: /mnt/data/kai/VinDr_Code/Mini_VinDr_CXR_Dataset/dicom_comparison/wandb/run-20250926_101544-7fnyv1vh/files/wandb-summary.json
+2025-09-26 10:16:31,401 INFO    Thread-12 :2169346 [dir_watcher.py:_on_file_modified():288] file/dir modified: /mnt/data/kai/VinDr_Code/Mini_VinDr_CXR_Dataset/dicom_comparison/wandb/run-20250926_101544-7fnyv1vh/files/output.log
+2025-09-26 10:16:31,473 DEBUG   HandlerThread:2169346 [handler.py:handle_request():146] handle_request: stop_status
+2025-09-26 10:16:31,473 DEBUG   HandlerThread:2169346 [handler.py:handle_request():146] handle_request: internal_messages
+2025-09-26 10:16:31,473 DEBUG   SenderThread:2169346 [sender.py:send_request():406] send_request: stop_status
+2025-09-26 10:16:32,095 DEBUG   HandlerThread:2169346 [handler.py:handle_request():146] handle_request: partial_history
+2025-09-26 10:16:32,096 DEBUG   SenderThread:2169346 [sender.py:send():379] send: history
+2025-09-26 10:16:32,096 DEBUG   SenderThread:2169346 [sender.py:send_request():406] send_request: summary_record
+2025-09-26 10:16:32,096 INFO    SenderThread:2169346 [sender.py:_save_file():1390] saving file wandb-summary.json with policy end
+2025-09-26 10:16:32,375 DEBUG   HandlerThread:2169346 [handler.py:handle_request():146] handle_request: partial_history
+2025-09-26 10:16:32,376 DEBUG   HandlerThread:2169346 [handler.py:handle_request():146] handle_request: status_report
+2025-09-26 10:16:32,376 DEBUG   SenderThread:2169346 [sender.py:send():379] send: history
+2025-09-26 10:16:32,376 DEBUG   SenderThread:2169346 [sender.py:send_request():406] send_request: summary_record
+2025-09-26 10:16:32,376 INFO    SenderThread:2169346 [sender.py:_save_file():1390] saving file wandb-summary.json with policy end
+2025-09-26 10:16:32,400 INFO    Thread-12 :2169346 [dir_watcher.py:_on_file_modified():288] file/dir modified: /mnt/data/kai/VinDr_Code/Mini_VinDr_CXR_Dataset/dicom_comparison/wandb/run-20250926_101544-7fnyv1vh/files/wandb-summary.json
+2025-09-26 10:16:33,267 DEBUG   HandlerThread:2169346 [handler.py:handle_request():146] handle_request: partial_history
+2025-09-26 10:16:33,268 DEBUG   SenderThread:2169346 [sender.py:send():379] send: history
+2025-09-26 10:16:33,268 DEBUG   SenderThread:2169346 [sender.py:send_request():406] send_request: summary_record
+2025-09-26 10:16:33,268 INFO    SenderThread:2169346 [sender.py:_save_file():1390] saving file wandb-summary.json with policy end
+2025-09-26 10:16:33,400 INFO    Thread-12 :2169346 [dir_watcher.py:_on_file_modified():288] file/dir modified: /mnt/data/kai/VinDr_Code/Mini_VinDr_CXR_Dataset/dicom_comparison/wandb/run-20250926_101544-7fnyv1vh/files/wandb-summary.json
+2025-09-26 10:16:33,400 INFO    Thread-12 :2169346 [dir_watcher.py:_on_file_modified():288] file/dir modified: /mnt/data/kai/VinDr_Code/Mini_VinDr_CXR_Dataset/dicom_comparison/wandb/run-20250926_101544-7fnyv1vh/files/output.log
+2025-09-26 10:16:33,611 DEBUG   HandlerThread:2169346 [handler.py:handle_request():146] handle_request: partial_history
+2025-09-26 10:16:33,611 DEBUG   SenderThread:2169346 [sender.py:send():379] send: history
+2025-09-26 10:16:33,611 DEBUG   SenderThread:2169346 [sender.py:send_request():406] send_request: summary_record
+2025-09-26 10:16:33,612 INFO    SenderThread:2169346 [sender.py:_save_file():1390] saving file wandb-summary.json with policy end
+2025-09-26 10:16:34,374 DEBUG   HandlerThread:2169346 [handler.py:handle_request():146] handle_request: partial_history
+2025-09-26 10:16:34,375 DEBUG   SenderThread:2169346 [sender.py:send():379] send: history
+2025-09-26 10:16:34,375 DEBUG   SenderThread:2169346 [sender.py:send_request():406] send_request: summary_record
+2025-09-26 10:16:34,375 INFO    SenderThread:2169346 [sender.py:_save_file():1390] saving file wandb-summary.json with policy end
+2025-09-26 10:16:34,400 INFO    Thread-12 :2169346 [dir_watcher.py:_on_file_modified():288] file/dir modified: /mnt/data/kai/VinDr_Code/Mini_VinDr_CXR_Dataset/dicom_comparison/wandb/run-20250926_101544-7fnyv1vh/files/wandb-summary.json
+2025-09-26 10:16:34,682 DEBUG   HandlerThread:2169346 [handler.py:handle_request():146] handle_request: partial_history
+2025-09-26 10:16:34,682 DEBUG   SenderThread:2169346 [sender.py:send():379] send: history
+2025-09-26 10:16:34,682 DEBUG   SenderThread:2169346 [sender.py:send_request():406] send_request: summary_record
+2025-09-26 10:16:34,682 INFO    SenderThread:2169346 [sender.py:_save_file():1390] saving file wandb-summary.json with policy end
+2025-09-26 10:16:35,386 DEBUG   HandlerThread:2169346 [handler.py:handle_request():146] handle_request: partial_history
+2025-09-26 10:16:35,386 DEBUG   SenderThread:2169346 [sender.py:send():379] send: history
+2025-09-26 10:16:35,386 DEBUG   SenderThread:2169346 [sender.py:send_request():406] send_request: summary_record
+2025-09-26 10:16:35,387 INFO    SenderThread:2169346 [sender.py:_save_file():1390] saving file wandb-summary.json with policy end
+2025-09-26 10:16:35,400 INFO    Thread-12 :2169346 [dir_watcher.py:_on_file_modified():288] file/dir modified: /mnt/data/kai/VinDr_Code/Mini_VinDr_CXR_Dataset/dicom_comparison/wandb/run-20250926_101544-7fnyv1vh/files/wandb-summary.json
+2025-09-26 10:16:35,401 INFO    Thread-12 :2169346 [dir_watcher.py:_on_file_modified():288] file/dir modified: /mnt/data/kai/VinDr_Code/Mini_VinDr_CXR_Dataset/dicom_comparison/wandb/run-20250926_101544-7fnyv1vh/files/output.log
+2025-09-26 10:16:35,718 DEBUG   HandlerThread:2169346 [handler.py:handle_request():146] handle_request: partial_history
+2025-09-26 10:16:35,718 DEBUG   SenderThread:2169346 [sender.py:send():379] send: history
+2025-09-26 10:16:35,718 DEBUG   SenderThread:2169346 [sender.py:send_request():406] send_request: summary_record
+2025-09-26 10:16:35,719 INFO    SenderThread:2169346 [sender.py:_save_file():1390] saving file wandb-summary.json with policy end
+2025-09-26 10:16:36,401 INFO    Thread-12 :2169346 [dir_watcher.py:_on_file_modified():288] file/dir modified: /mnt/data/kai/VinDr_Code/Mini_VinDr_CXR_Dataset/dicom_comparison/wandb/run-20250926_101544-7fnyv1vh/files/wandb-summary.json
+2025-09-26 10:16:36,425 DEBUG   HandlerThread:2169346 [handler.py:handle_request():146] handle_request: partial_history
+2025-09-26 10:16:36,426 DEBUG   SenderThread:2169346 [sender.py:send():379] send: history
+2025-09-26 10:16:36,426 DEBUG   SenderThread:2169346 [sender.py:send_request():406] send_request: summary_record
+2025-09-26 10:16:36,426 INFO    SenderThread:2169346 [sender.py:_save_file():1390] saving file wandb-summary.json with policy end
+2025-09-26 10:16:36,875 DEBUG   HandlerThread:2169346 [handler.py:handle_request():146] handle_request: partial_history
+2025-09-26 10:16:36,943 DEBUG   SenderThread:2169346 [sender.py:send():379] send: history
+2025-09-26 10:16:36,943 DEBUG   SenderThread:2169346 [sender.py:send_request():406] send_request: summary_record
+2025-09-26 10:16:36,943 INFO    SenderThread:2169346 [sender.py:_save_file():1390] saving file wandb-summary.json with policy end
+2025-09-26 10:16:37,401 INFO    Thread-12 :2169346 [dir_watcher.py:_on_file_modified():288] file/dir modified: /mnt/data/kai/VinDr_Code/Mini_VinDr_CXR_Dataset/dicom_comparison/wandb/run-20250926_101544-7fnyv1vh/files/wandb-summary.json
+2025-09-26 10:16:37,401 INFO    Thread-12 :2169346 [dir_watcher.py:_on_file_modified():288] file/dir modified: /mnt/data/kai/VinDr_Code/Mini_VinDr_CXR_Dataset/dicom_comparison/wandb/run-20250926_101544-7fnyv1vh/files/output.log
+2025-09-26 10:16:37,944 DEBUG   HandlerThread:2169346 [handler.py:handle_request():146] handle_request: status_report
+2025-09-26 10:16:38,843 DEBUG   HandlerThread:2169346 [handler.py:handle_request():146] handle_request: partial_history
+2025-09-26 10:16:38,844 DEBUG   SenderThread:2169346 [sender.py:send():379] send: history
+2025-09-26 10:16:38,844 DEBUG   SenderThread:2169346 [sender.py:send_request():406] send_request: summary_record
+2025-09-26 10:16:38,969 INFO    SenderThread:2169346 [sender.py:_save_file():1390] saving file wandb-summary.json with policy end
+2025-09-26 10:16:39,134 DEBUG   HandlerThread:2169346 [handler.py:handle_request():146] handle_request: partial_history
+2025-09-26 10:16:39,135 DEBUG   SenderThread:2169346 [sender.py:send():379] send: history
+2025-09-26 10:16:39,135 DEBUG   SenderThread:2169346 [sender.py:send_request():406] send_request: summary_record
+2025-09-26 10:16:39,167 INFO    SenderThread:2169346 [sender.py:_save_file():1390] saving file wandb-summary.json with policy end
+2025-09-26 10:16:39,401 INFO    Thread-12 :2169346 [dir_watcher.py:_on_file_modified():288] file/dir modified: /mnt/data/kai/VinDr_Code/Mini_VinDr_CXR_Dataset/dicom_comparison/wandb/run-20250926_101544-7fnyv1vh/files/wandb-summary.json
+2025-09-26 10:16:39,402 INFO    Thread-12 :2169346 [dir_watcher.py:_on_file_modified():288] file/dir modified: /mnt/data/kai/VinDr_Code/Mini_VinDr_CXR_Dataset/dicom_comparison/wandb/run-20250926_101544-7fnyv1vh/files/output.log
+2025-09-26 10:16:39,753 DEBUG   HandlerThread:2169346 [handler.py:handle_request():146] handle_request: partial_history
+2025-09-26 10:16:39,753 DEBUG   SenderThread:2169346 [sender.py:send():379] send: history
+2025-09-26 10:16:39,753 DEBUG   SenderThread:2169346 [sender.py:send_request():406] send_request: summary_record
+2025-09-26 10:16:40,049 DEBUG   HandlerThread:2169346 [handler.py:handle_request():146] handle_request: partial_history
+2025-09-26 10:16:40,163 INFO    SenderThread:2169346 [sender.py:_save_file():1390] saving file wandb-summary.json with policy end
+2025-09-26 10:16:40,163 DEBUG   SenderThread:2169346 [sender.py:send():379] send: history
+2025-09-26 10:16:40,163 DEBUG   SenderThread:2169346 [sender.py:send_request():406] send_request: summary_record
+2025-09-26 10:16:40,163 INFO    SenderThread:2169346 [sender.py:_save_file():1390] saving file wandb-summary.json with policy end
+2025-09-26 10:16:40,406 INFO    Thread-12 :2169346 [dir_watcher.py:_on_file_modified():288] file/dir modified: /mnt/data/kai/VinDr_Code/Mini_VinDr_CXR_Dataset/dicom_comparison/wandb/run-20250926_101544-7fnyv1vh/files/wandb-summary.json
+2025-09-26 10:16:41,047 DEBUG   HandlerThread:2169346 [handler.py:handle_request():146] handle_request: partial_history
+2025-09-26 10:16:41,047 DEBUG   SenderThread:2169346 [sender.py:send():379] send: history
+2025-09-26 10:16:41,048 DEBUG   SenderThread:2169346 [sender.py:send_request():406] send_request: summary_record
+2025-09-26 10:16:41,048 INFO    SenderThread:2169346 [sender.py:_save_file():1390] saving file wandb-summary.json with policy end
+2025-09-26 10:16:41,406 INFO    Thread-12 :2169346 [dir_watcher.py:_on_file_modified():288] file/dir modified: /mnt/data/kai/VinDr_Code/Mini_VinDr_CXR_Dataset/dicom_comparison/wandb/run-20250926_101544-7fnyv1vh/files/wandb-summary.json
+2025-09-26 10:16:41,406 INFO    Thread-12 :2169346 [dir_watcher.py:_on_file_modified():288] file/dir modified: /mnt/data/kai/VinDr_Code/Mini_VinDr_CXR_Dataset/dicom_comparison/wandb/run-20250926_101544-7fnyv1vh/files/output.log
+2025-09-26 10:16:41,419 DEBUG   HandlerThread:2169346 [handler.py:handle_request():146] handle_request: partial_history
+2025-09-26 10:16:41,419 DEBUG   SenderThread:2169346 [sender.py:send():379] send: history
+2025-09-26 10:16:41,419 DEBUG   SenderThread:2169346 [sender.py:send_request():406] send_request: summary_record
+2025-09-26 10:16:41,419 INFO    SenderThread:2169346 [sender.py:_save_file():1390] saving file wandb-summary.json with policy end
+2025-09-26 10:16:42,357 DEBUG   HandlerThread:2169346 [handler.py:handle_request():146] handle_request: partial_history
+2025-09-26 10:16:42,357 DEBUG   SenderThread:2169346 [sender.py:send():379] send: history
+2025-09-26 10:16:42,357 DEBUG   SenderThread:2169346 [sender.py:send_request():406] send_request: summary_record
+2025-09-26 10:16:42,357 INFO    SenderThread:2169346 [sender.py:_save_file():1390] saving file wandb-summary.json with policy end
+2025-09-26 10:16:42,406 INFO    Thread-12 :2169346 [dir_watcher.py:_on_file_modified():288] file/dir modified: /mnt/data/kai/VinDr_Code/Mini_VinDr_CXR_Dataset/dicom_comparison/wandb/run-20250926_101544-7fnyv1vh/files/wandb-summary.json
+2025-09-26 10:16:42,698 DEBUG   HandlerThread:2169346 [handler.py:handle_request():146] handle_request: partial_history
+2025-09-26 10:16:42,698 DEBUG   SenderThread:2169346 [sender.py:send():379] send: history
+2025-09-26 10:16:42,698 DEBUG   SenderThread:2169346 [sender.py:send_request():406] send_request: summary_record
+2025-09-26 10:16:42,698 INFO    SenderThread:2169346 [sender.py:_save_file():1390] saving file wandb-summary.json with policy end
+2025-09-26 10:16:43,406 INFO    Thread-12 :2169346 [dir_watcher.py:_on_file_modified():288] file/dir modified: /mnt/data/kai/VinDr_Code/Mini_VinDr_CXR_Dataset/dicom_comparison/wandb/run-20250926_101544-7fnyv1vh/files/wandb-summary.json
+2025-09-26 10:16:43,406 INFO    Thread-12 :2169346 [dir_watcher.py:_on_file_modified():288] file/dir modified: /mnt/data/kai/VinDr_Code/Mini_VinDr_CXR_Dataset/dicom_comparison/wandb/run-20250926_101544-7fnyv1vh/files/output.log
+2025-09-26 10:16:43,588 DEBUG   HandlerThread:2169346 [handler.py:handle_request():146] handle_request: partial_history
+2025-09-26 10:16:43,588 DEBUG   HandlerThread:2169346 [handler.py:handle_request():146] handle_request: status_report
+2025-09-26 10:16:43,588 DEBUG   SenderThread:2169346 [sender.py:send():379] send: history
+2025-09-26 10:16:43,588 DEBUG   SenderThread:2169346 [sender.py:send_request():406] send_request: summary_record
+2025-09-26 10:16:43,588 INFO    SenderThread:2169346 [sender.py:_save_file():1390] saving file wandb-summary.json with policy end
+2025-09-26 10:16:43,923 DEBUG   HandlerThread:2169346 [handler.py:handle_request():146] handle_request: partial_history
+2025-09-26 10:16:43,923 DEBUG   SenderThread:2169346 [sender.py:send():379] send: history
+2025-09-26 10:16:43,923 DEBUG   SenderThread:2169346 [sender.py:send_request():406] send_request: summary_record
+2025-09-26 10:16:43,923 INFO    SenderThread:2169346 [sender.py:_save_file():1390] saving file wandb-summary.json with policy end
+2025-09-26 10:16:44,406 INFO    Thread-12 :2169346 [dir_watcher.py:_on_file_modified():288] file/dir modified: /mnt/data/kai/VinDr_Code/Mini_VinDr_CXR_Dataset/dicom_comparison/wandb/run-20250926_101544-7fnyv1vh/files/wandb-summary.json
+2025-09-26 10:16:44,651 DEBUG   HandlerThread:2169346 [handler.py:handle_request():146] handle_request: partial_history
+2025-09-26 10:16:44,651 DEBUG   SenderThread:2169346 [sender.py:send():379] send: history
+2025-09-26 10:16:44,651 DEBUG   SenderThread:2169346 [sender.py:send_request():406] send_request: summary_record
+2025-09-26 10:16:44,651 INFO    SenderThread:2169346 [sender.py:_save_file():1390] saving file wandb-summary.json with policy end
+2025-09-26 10:16:44,961 DEBUG   HandlerThread:2169346 [handler.py:handle_request():146] handle_request: partial_history
+2025-09-26 10:16:44,961 DEBUG   SenderThread:2169346 [sender.py:send():379] send: history
+2025-09-26 10:16:44,961 DEBUG   SenderThread:2169346 [sender.py:send_request():406] send_request: summary_record
+2025-09-26 10:16:44,961 INFO    SenderThread:2169346 [sender.py:_save_file():1390] saving file wandb-summary.json with policy end
+2025-09-26 10:16:45,407 INFO    Thread-12 :2169346 [dir_watcher.py:_on_file_modified():288] file/dir modified: /mnt/data/kai/VinDr_Code/Mini_VinDr_CXR_Dataset/dicom_comparison/wandb/run-20250926_101544-7fnyv1vh/files/wandb-summary.json
+2025-09-26 10:16:45,407 INFO    Thread-12 :2169346 [dir_watcher.py:_on_file_modified():288] file/dir modified: /mnt/data/kai/VinDr_Code/Mini_VinDr_CXR_Dataset/dicom_comparison/wandb/run-20250926_101544-7fnyv1vh/files/output.log
+2025-09-26 10:16:45,464 DEBUG   SystemMonitor:2169346 [system_monitor.py:_start():172] Starting system metrics aggregation loop
+2025-09-26 10:16:45,465 DEBUG   SenderThread:2169346 [sender.py:send():379] send: stats
+2025-09-26 10:16:45,679 DEBUG   HandlerThread:2169346 [handler.py:handle_request():146] handle_request: partial_history
+2025-09-26 10:16:45,679 DEBUG   SenderThread:2169346 [sender.py:send():379] send: history
+2025-09-26 10:16:45,679 DEBUG   SenderThread:2169346 [sender.py:send_request():406] send_request: summary_record
+2025-09-26 10:16:45,679 INFO    SenderThread:2169346 [sender.py:_save_file():1390] saving file wandb-summary.json with policy end
+2025-09-26 10:16:46,031 DEBUG   HandlerThread:2169346 [handler.py:handle_request():146] handle_request: partial_history
+2025-09-26 10:16:46,031 DEBUG   SenderThread:2169346 [sender.py:send():379] send: history
+2025-09-26 10:16:46,031 DEBUG   SenderThread:2169346 [sender.py:send_request():406] send_request: summary_record
+2025-09-26 10:16:46,031 INFO    SenderThread:2169346 [sender.py:_save_file():1390] saving file wandb-summary.json with policy end
+2025-09-26 10:16:46,407 INFO    Thread-12 :2169346 [dir_watcher.py:_on_file_modified():288] file/dir modified: /mnt/data/kai/VinDr_Code/Mini_VinDr_CXR_Dataset/dicom_comparison/wandb/run-20250926_101544-7fnyv1vh/files/wandb-summary.json
+2025-09-26 10:16:46,473 DEBUG   HandlerThread:2169346 [handler.py:handle_request():146] handle_request: internal_messages
+2025-09-26 10:16:46,473 DEBUG   HandlerThread:2169346 [handler.py:handle_request():146] handle_request: stop_status
+2025-09-26 10:16:46,473 DEBUG   SenderThread:2169346 [sender.py:send_request():406] send_request: stop_status
+2025-09-26 10:16:46,769 DEBUG   HandlerThread:2169346 [handler.py:handle_request():146] handle_request: partial_history
+2025-09-26 10:16:46,769 DEBUG   SenderThread:2169346 [sender.py:send():379] send: history
+2025-09-26 10:16:46,769 DEBUG   SenderThread:2169346 [sender.py:send_request():406] send_request: summary_record
+2025-09-26 10:16:46,770 INFO    SenderThread:2169346 [sender.py:_save_file():1390] saving file wandb-summary.json with policy end
+2025-09-26 10:16:47,204 DEBUG   HandlerThread:2169346 [handler.py:handle_request():146] handle_request: partial_history
+2025-09-26 10:16:47,204 DEBUG   SenderThread:2169346 [sender.py:send():379] send: history
+2025-09-26 10:16:47,204 DEBUG   SenderThread:2169346 [sender.py:send_request():406] send_request: summary_record
+2025-09-26 10:16:47,204 INFO    SenderThread:2169346 [sender.py:_save_file():1390] saving file wandb-summary.json with policy end
+2025-09-26 10:16:47,409 INFO    Thread-12 :2169346 [dir_watcher.py:_on_file_modified():288] file/dir modified: /mnt/data/kai/VinDr_Code/Mini_VinDr_CXR_Dataset/dicom_comparison/wandb/run-20250926_101544-7fnyv1vh/files/wandb-summary.json
+2025-09-26 10:16:47,410 INFO    Thread-12 :2169346 [dir_watcher.py:_on_file_modified():288] file/dir modified: /mnt/data/kai/VinDr_Code/Mini_VinDr_CXR_Dataset/dicom_comparison/wandb/run-20250926_101544-7fnyv1vh/files/output.log
+2025-09-26 10:16:47,948 DEBUG   HandlerThread:2169346 [handler.py:handle_request():146] handle_request: partial_history
+2025-09-26 10:16:47,948 DEBUG   SenderThread:2169346 [sender.py:send():379] send: history
+2025-09-26 10:16:47,948 DEBUG   SenderThread:2169346 [sender.py:send_request():406] send_request: summary_record
+2025-09-26 10:16:47,948 INFO    SenderThread:2169346 [sender.py:_save_file():1390] saving file wandb-summary.json with policy end
+2025-09-26 10:16:48,352 DEBUG   HandlerThread:2169346 [handler.py:handle_request():146] handle_request: partial_history
+2025-09-26 10:16:48,353 DEBUG   SenderThread:2169346 [sender.py:send():379] send: history
+2025-09-26 10:16:48,353 DEBUG   SenderThread:2169346 [sender.py:send_request():406] send_request: summary_record
+2025-09-26 10:16:48,353 INFO    SenderThread:2169346 [sender.py:_save_file():1390] saving file wandb-summary.json with policy end
+2025-09-26 10:16:48,410 INFO    Thread-12 :2169346 [dir_watcher.py:_on_file_modified():288] file/dir modified: /mnt/data/kai/VinDr_Code/Mini_VinDr_CXR_Dataset/dicom_comparison/wandb/run-20250926_101544-7fnyv1vh/files/wandb-summary.json
+2025-09-26 10:16:49,353 DEBUG   HandlerThread:2169346 [handler.py:handle_request():146] handle_request: status_report
+2025-09-26 10:16:49,410 INFO    Thread-12 :2169346 [dir_watcher.py:_on_file_modified():288] file/dir modified: /mnt/data/kai/VinDr_Code/Mini_VinDr_CXR_Dataset/dicom_comparison/wandb/run-20250926_101544-7fnyv1vh/files/output.log
+2025-09-26 10:16:50,696 DEBUG   HandlerThread:2169346 [handler.py:handle_request():146] handle_request: partial_history
+2025-09-26 10:16:50,696 DEBUG   SenderThread:2169346 [sender.py:send():379] send: history
+2025-09-26 10:16:50,697 DEBUG   SenderThread:2169346 [sender.py:send_request():406] send_request: summary_record
+2025-09-26 10:16:50,697 INFO    SenderThread:2169346 [sender.py:_save_file():1390] saving file wandb-summary.json with policy end
+2025-09-26 10:16:51,020 DEBUG   HandlerThread:2169346 [handler.py:handle_request():146] handle_request: partial_history
+2025-09-26 10:16:51,020 DEBUG   SenderThread:2169346 [sender.py:send():379] send: history
+2025-09-26 10:16:51,020 DEBUG   SenderThread:2169346 [sender.py:send_request():406] send_request: summary_record
+2025-09-26 10:16:51,020 INFO    SenderThread:2169346 [sender.py:_save_file():1390] saving file wandb-summary.json with policy end
+2025-09-26 10:16:51,410 INFO    Thread-12 :2169346 [dir_watcher.py:_on_file_modified():288] file/dir modified: /mnt/data/kai/VinDr_Code/Mini_VinDr_CXR_Dataset/dicom_comparison/wandb/run-20250926_101544-7fnyv1vh/files/wandb-summary.json
+2025-09-26 10:16:51,410 INFO    Thread-12 :2169346 [dir_watcher.py:_on_file_modified():288] file/dir modified: /mnt/data/kai/VinDr_Code/Mini_VinDr_CXR_Dataset/dicom_comparison/wandb/run-20250926_101544-7fnyv1vh/files/output.log
+2025-09-26 10:16:51,849 DEBUG   HandlerThread:2169346 [handler.py:handle_request():146] handle_request: partial_history
+2025-09-26 10:16:51,849 DEBUG   SenderThread:2169346 [sender.py:send():379] send: history
+2025-09-26 10:16:51,849 DEBUG   SenderThread:2169346 [sender.py:send_request():406] send_request: summary_record
+2025-09-26 10:16:51,849 INFO    SenderThread:2169346 [sender.py:_save_file():1390] saving file wandb-summary.json with policy end
+2025-09-26 10:16:52,180 DEBUG   HandlerThread:2169346 [handler.py:handle_request():146] handle_request: partial_history
+2025-09-26 10:16:52,180 DEBUG   SenderThread:2169346 [sender.py:send():379] send: history
+2025-09-26 10:16:52,180 DEBUG   SenderThread:2169346 [sender.py:send_request():406] send_request: summary_record
+2025-09-26 10:16:52,180 INFO    SenderThread:2169346 [sender.py:_save_file():1390] saving file wandb-summary.json with policy end
+2025-09-26 10:16:52,410 INFO    Thread-12 :2169346 [dir_watcher.py:_on_file_modified():288] file/dir modified: /mnt/data/kai/VinDr_Code/Mini_VinDr_CXR_Dataset/dicom_comparison/wandb/run-20250926_101544-7fnyv1vh/files/wandb-summary.json
+2025-09-26 10:16:53,049 DEBUG   HandlerThread:2169346 [handler.py:handle_request():146] handle_request: partial_history
+2025-09-26 10:16:53,050 DEBUG   SenderThread:2169346 [sender.py:send():379] send: history
+2025-09-26 10:16:53,050 DEBUG   SenderThread:2169346 [sender.py:send_request():406] send_request: summary_record
+2025-09-26 10:16:53,050 INFO    SenderThread:2169346 [sender.py:_save_file():1390] saving file wandb-summary.json with policy end
+2025-09-26 10:16:53,381 DEBUG   HandlerThread:2169346 [handler.py:handle_request():146] handle_request: partial_history
+2025-09-26 10:16:53,382 DEBUG   SenderThread:2169346 [sender.py:send():379] send: history
+2025-09-26 10:16:53,382 DEBUG   SenderThread:2169346 [sender.py:send_request():406] send_request: summary_record
+2025-09-26 10:16:53,382 INFO    SenderThread:2169346 [sender.py:_save_file():1390] saving file wandb-summary.json with policy end
+2025-09-26 10:16:53,411 INFO    Thread-12 :2169346 [dir_watcher.py:_on_file_modified():288] file/dir modified: /mnt/data/kai/VinDr_Code/Mini_VinDr_CXR_Dataset/dicom_comparison/wandb/run-20250926_101544-7fnyv1vh/files/wandb-summary.json
+2025-09-26 10:16:53,411 INFO    Thread-12 :2169346 [dir_watcher.py:_on_file_modified():288] file/dir modified: /mnt/data/kai/VinDr_Code/Mini_VinDr_CXR_Dataset/dicom_comparison/wandb/run-20250926_101544-7fnyv1vh/files/output.log
+2025-09-26 10:16:54,309 DEBUG   HandlerThread:2169346 [handler.py:handle_request():146] handle_request: partial_history
+2025-09-26 10:16:54,309 DEBUG   SenderThread:2169346 [sender.py:send():379] send: history
+2025-09-26 10:16:54,309 DEBUG   SenderThread:2169346 [sender.py:send_request():406] send_request: summary_record
+2025-09-26 10:16:54,309 INFO    SenderThread:2169346 [sender.py:_save_file():1390] saving file wandb-summary.json with policy end
+2025-09-26 10:16:54,411 INFO    Thread-12 :2169346 [dir_watcher.py:_on_file_modified():288] file/dir modified: /mnt/data/kai/VinDr_Code/Mini_VinDr_CXR_Dataset/dicom_comparison/wandb/run-20250926_101544-7fnyv1vh/files/wandb-summary.json
+2025-09-26 10:16:54,642 DEBUG   HandlerThread:2169346 [handler.py:handle_request():146] handle_request: status_report
+2025-09-26 10:16:54,642 DEBUG   HandlerThread:2169346 [handler.py:handle_request():146] handle_request: partial_history
+2025-09-26 10:16:54,642 DEBUG   SenderThread:2169346 [sender.py:send():379] send: history
+2025-09-26 10:16:54,642 DEBUG   SenderThread:2169346 [sender.py:send_request():406] send_request: summary_record
+2025-09-26 10:16:54,642 INFO    SenderThread:2169346 [sender.py:_save_file():1390] saving file wandb-summary.json with policy end
+2025-09-26 10:16:55,411 INFO    Thread-12 :2169346 [dir_watcher.py:_on_file_modified():288] file/dir modified: /mnt/data/kai/VinDr_Code/Mini_VinDr_CXR_Dataset/dicom_comparison/wandb/run-20250926_101544-7fnyv1vh/files/wandb-summary.json
+2025-09-26 10:16:55,411 INFO    Thread-12 :2169346 [dir_watcher.py:_on_file_modified():288] file/dir modified: /mnt/data/kai/VinDr_Code/Mini_VinDr_CXR_Dataset/dicom_comparison/wandb/run-20250926_101544-7fnyv1vh/files/output.log
+2025-09-26 10:16:55,602 DEBUG   HandlerThread:2169346 [handler.py:handle_request():146] handle_request: partial_history
+2025-09-26 10:16:55,602 DEBUG   SenderThread:2169346 [sender.py:send():379] send: history
+2025-09-26 10:16:55,602 DEBUG   SenderThread:2169346 [sender.py:send_request():406] send_request: summary_record
+2025-09-26 10:16:55,602 INFO    SenderThread:2169346 [sender.py:_save_file():1390] saving file wandb-summary.json with policy end
+2025-09-26 10:16:55,953 DEBUG   HandlerThread:2169346 [handler.py:handle_request():146] handle_request: partial_history
+2025-09-26 10:16:55,953 DEBUG   SenderThread:2169346 [sender.py:send():379] send: history
+2025-09-26 10:16:55,953 DEBUG   SenderThread:2169346 [sender.py:send_request():406] send_request: summary_record
+2025-09-26 10:16:55,953 INFO    SenderThread:2169346 [sender.py:_save_file():1390] saving file wandb-summary.json with policy end
+2025-09-26 10:16:56,411 INFO    Thread-12 :2169346 [dir_watcher.py:_on_file_modified():288] file/dir modified: /mnt/data/kai/VinDr_Code/Mini_VinDr_CXR_Dataset/dicom_comparison/wandb/run-20250926_101544-7fnyv1vh/files/wandb-summary.json
+2025-09-26 10:16:56,585 DEBUG   HandlerThread:2169346 [handler.py:handle_request():146] handle_request: partial_history
+2025-09-26 10:16:56,586 DEBUG   SenderThread:2169346 [sender.py:send():379] send: history
+2025-09-26 10:16:56,586 DEBUG   SenderThread:2169346 [sender.py:send_request():406] send_request: summary_record
+2025-09-26 10:16:56,619 INFO    SenderThread:2169346 [sender.py:_save_file():1390] saving file wandb-summary.json with policy end
+2025-09-26 10:16:56,880 DEBUG   HandlerThread:2169346 [handler.py:handle_request():146] handle_request: partial_history
+2025-09-26 10:16:56,880 DEBUG   SenderThread:2169346 [sender.py:send():379] send: history
+2025-09-26 10:16:56,880 DEBUG   SenderThread:2169346 [sender.py:send_request():406] send_request: summary_record
+2025-09-26 10:16:56,983 INFO    SenderThread:2169346 [sender.py:_save_file():1390] saving file wandb-summary.json with policy end
+2025-09-26 10:16:57,412 INFO    Thread-12 :2169346 [dir_watcher.py:_on_file_modified():288] file/dir modified: /mnt/data/kai/VinDr_Code/Mini_VinDr_CXR_Dataset/dicom_comparison/wandb/run-20250926_101544-7fnyv1vh/files/wandb-summary.json
+2025-09-26 10:16:57,412 INFO    Thread-12 :2169346 [dir_watcher.py:_on_file_modified():288] file/dir modified: /mnt/data/kai/VinDr_Code/Mini_VinDr_CXR_Dataset/dicom_comparison/wandb/run-20250926_101544-7fnyv1vh/files/output.log
+2025-09-26 10:16:57,503 DEBUG   HandlerThread:2169346 [handler.py:handle_request():146] handle_request: partial_history
+2025-09-26 10:16:57,503 DEBUG   SenderThread:2169346 [sender.py:send():379] send: history
+2025-09-26 10:16:57,503 DEBUG   SenderThread:2169346 [sender.py:send_request():406] send_request: summary_record
+2025-09-26 10:16:57,559 INFO    SenderThread:2169346 [sender.py:_save_file():1390] saving file wandb-summary.json with policy end
+2025-09-26 10:16:57,888 DEBUG   HandlerThread:2169346 [handler.py:handle_request():146] handle_request: partial_history
+2025-09-26 10:16:57,889 DEBUG   SenderThread:2169346 [sender.py:send():379] send: history
+2025-09-26 10:16:57,889 DEBUG   SenderThread:2169346 [sender.py:send_request():406] send_request: summary_record
+2025-09-26 10:16:57,889 INFO    SenderThread:2169346 [sender.py:_save_file():1390] saving file wandb-summary.json with policy end
+2025-09-26 10:16:58,412 INFO    Thread-12 :2169346 [dir_watcher.py:_on_file_modified():288] file/dir modified: /mnt/data/kai/VinDr_Code/Mini_VinDr_CXR_Dataset/dicom_comparison/wandb/run-20250926_101544-7fnyv1vh/files/wandb-summary.json
+2025-09-26 10:16:58,604 DEBUG   HandlerThread:2169346 [handler.py:handle_request():146] handle_request: partial_history
+2025-09-26 10:16:58,604 DEBUG   SenderThread:2169346 [sender.py:send():379] send: history
+2025-09-26 10:16:58,605 DEBUG   SenderThread:2169346 [sender.py:send_request():406] send_request: summary_record
+2025-09-26 10:16:58,605 INFO    SenderThread:2169346 [sender.py:_save_file():1390] saving file wandb-summary.json with policy end
+2025-09-26 10:16:58,976 DEBUG   HandlerThread:2169346 [handler.py:handle_request():146] handle_request: partial_history
+2025-09-26 10:16:58,976 DEBUG   SenderThread:2169346 [sender.py:send():379] send: history
+2025-09-26 10:16:58,976 DEBUG   SenderThread:2169346 [sender.py:send_request():406] send_request: summary_record
+2025-09-26 10:16:58,977 INFO    SenderThread:2169346 [sender.py:_save_file():1390] saving file wandb-summary.json with policy end
+2025-09-26 10:16:59,412 INFO    Thread-12 :2169346 [dir_watcher.py:_on_file_modified():288] file/dir modified: /mnt/data/kai/VinDr_Code/Mini_VinDr_CXR_Dataset/dicom_comparison/wandb/run-20250926_101544-7fnyv1vh/files/wandb-summary.json
+2025-09-26 10:16:59,412 INFO    Thread-12 :2169346 [dir_watcher.py:_on_file_modified():288] file/dir modified: /mnt/data/kai/VinDr_Code/Mini_VinDr_CXR_Dataset/dicom_comparison/wandb/run-20250926_101544-7fnyv1vh/files/output.log
+2025-09-26 10:16:59,732 DEBUG   HandlerThread:2169346 [handler.py:handle_request():146] handle_request: partial_history
+2025-09-26 10:16:59,733 DEBUG   HandlerThread:2169346 [handler.py:handle_request():146] handle_request: status_report
+2025-09-26 10:16:59,733 DEBUG   SenderThread:2169346 [sender.py:send():379] send: history
+2025-09-26 10:16:59,733 DEBUG   SenderThread:2169346 [sender.py:send_request():406] send_request: summary_record
+2025-09-26 10:16:59,733 INFO    SenderThread:2169346 [sender.py:_save_file():1390] saving file wandb-summary.json with policy end
+2025-09-26 10:17:00,055 DEBUG   HandlerThread:2169346 [handler.py:handle_request():146] handle_request: partial_history
+2025-09-26 10:17:00,055 DEBUG   SenderThread:2169346 [sender.py:send():379] send: history
+2025-09-26 10:17:00,056 DEBUG   SenderThread:2169346 [sender.py:send_request():406] send_request: summary_record
+2025-09-26 10:17:00,056 INFO    SenderThread:2169346 [sender.py:_save_file():1390] saving file wandb-summary.json with policy end
+2025-09-26 10:17:00,413 INFO    Thread-12 :2169346 [dir_watcher.py:_on_file_modified():288] file/dir modified: /mnt/data/kai/VinDr_Code/Mini_VinDr_CXR_Dataset/dicom_comparison/wandb/run-20250926_101544-7fnyv1vh/files/wandb-summary.json
+2025-09-26 10:17:00,904 DEBUG   HandlerThread:2169346 [handler.py:handle_request():146] handle_request: partial_history
+2025-09-26 10:17:00,904 DEBUG   SenderThread:2169346 [sender.py:send():379] send: history
+2025-09-26 10:17:00,904 DEBUG   SenderThread:2169346 [sender.py:send_request():406] send_request: summary_record
+2025-09-26 10:17:00,904 INFO    SenderThread:2169346 [sender.py:_save_file():1390] saving file wandb-summary.json with policy end
+2025-09-26 10:17:01,248 DEBUG   HandlerThread:2169346 [handler.py:handle_request():146] handle_request: partial_history
+2025-09-26 10:17:01,248 DEBUG   SenderThread:2169346 [sender.py:send():379] send: history
+2025-09-26 10:17:01,248 DEBUG   SenderThread:2169346 [sender.py:send_request():406] send_request: summary_record
+2025-09-26 10:17:01,248 INFO    SenderThread:2169346 [sender.py:_save_file():1390] saving file wandb-summary.json with policy end
+2025-09-26 10:17:01,413 INFO    Thread-12 :2169346 [dir_watcher.py:_on_file_modified():288] file/dir modified: /mnt/data/kai/VinDr_Code/Mini_VinDr_CXR_Dataset/dicom_comparison/wandb/run-20250926_101544-7fnyv1vh/files/wandb-summary.json
+2025-09-26 10:17:01,413 INFO    Thread-12 :2169346 [dir_watcher.py:_on_file_modified():288] file/dir modified: /mnt/data/kai/VinDr_Code/Mini_VinDr_CXR_Dataset/dicom_comparison/wandb/run-20250926_101544-7fnyv1vh/files/output.log
+2025-09-26 10:17:01,502 DEBUG   HandlerThread:2169346 [handler.py:handle_request():146] handle_request: internal_messages
+2025-09-26 10:17:01,503 DEBUG   HandlerThread:2169346 [handler.py:handle_request():146] handle_request: stop_status
+2025-09-26 10:17:01,503 DEBUG   SenderThread:2169346 [sender.py:send_request():406] send_request: stop_status
+2025-09-26 10:17:02,129 DEBUG   HandlerThread:2169346 [handler.py:handle_request():146] handle_request: partial_history
+2025-09-26 10:17:02,129 DEBUG   SenderThread:2169346 [sender.py:send():379] send: history
+2025-09-26 10:17:02,129 DEBUG   SenderThread:2169346 [sender.py:send_request():406] send_request: summary_record
+2025-09-26 10:17:02,129 INFO    SenderThread:2169346 [sender.py:_save_file():1390] saving file wandb-summary.json with policy end
+2025-09-26 10:17:02,413 INFO    Thread-12 :2169346 [dir_watcher.py:_on_file_modified():288] file/dir modified: /mnt/data/kai/VinDr_Code/Mini_VinDr_CXR_Dataset/dicom_comparison/wandb/run-20250926_101544-7fnyv1vh/files/wandb-summary.json
+2025-09-26 10:17:02,473 DEBUG   HandlerThread:2169346 [handler.py:handle_request():146] handle_request: partial_history
+2025-09-26 10:17:02,473 DEBUG   SenderThread:2169346 [sender.py:send():379] send: history
+2025-09-26 10:17:02,473 DEBUG   SenderThread:2169346 [sender.py:send_request():406] send_request: summary_record
+2025-09-26 10:17:02,474 INFO    SenderThread:2169346 [sender.py:_save_file():1390] saving file wandb-summary.json with policy end
+2025-09-26 10:17:03,368 DEBUG   HandlerThread:2169346 [handler.py:handle_request():146] handle_request: partial_history
+2025-09-26 10:17:03,369 DEBUG   SenderThread:2169346 [sender.py:send():379] send: history
+2025-09-26 10:17:03,369 DEBUG   SenderThread:2169346 [sender.py:send_request():406] send_request: summary_record
+2025-09-26 10:17:03,369 INFO    SenderThread:2169346 [sender.py:_save_file():1390] saving file wandb-summary.json with policy end
+2025-09-26 10:17:03,413 INFO    Thread-12 :2169346 [dir_watcher.py:_on_file_modified():288] file/dir modified: /mnt/data/kai/VinDr_Code/Mini_VinDr_CXR_Dataset/dicom_comparison/wandb/run-20250926_101544-7fnyv1vh/files/wandb-summary.json
+2025-09-26 10:17:03,413 INFO    Thread-12 :2169346 [dir_watcher.py:_on_file_modified():288] file/dir modified: /mnt/data/kai/VinDr_Code/Mini_VinDr_CXR_Dataset/dicom_comparison/wandb/run-20250926_101544-7fnyv1vh/files/output.log
+2025-09-26 10:17:03,703 DEBUG   HandlerThread:2169346 [handler.py:handle_request():146] handle_request: partial_history
+2025-09-26 10:17:03,703 DEBUG   SenderThread:2169346 [sender.py:send():379] send: history
+2025-09-26 10:17:03,703 DEBUG   SenderThread:2169346 [sender.py:send_request():406] send_request: summary_record
+2025-09-26 10:17:03,703 INFO    SenderThread:2169346 [sender.py:_save_file():1390] saving file wandb-summary.json with policy end
+2025-09-26 10:17:04,413 INFO    Thread-12 :2169346 [dir_watcher.py:_on_file_modified():288] file/dir modified: /mnt/data/kai/VinDr_Code/Mini_VinDr_CXR_Dataset/dicom_comparison/wandb/run-20250926_101544-7fnyv1vh/files/wandb-summary.json
+2025-09-26 10:17:04,700 DEBUG   HandlerThread:2169346 [handler.py:handle_request():146] handle_request: partial_history
+2025-09-26 10:17:04,700 DEBUG   SenderThread:2169346 [sender.py:send():379] send: history
+2025-09-26 10:17:04,700 DEBUG   SenderThread:2169346 [sender.py:send_request():406] send_request: summary_record
+2025-09-26 10:17:04,700 INFO    SenderThread:2169346 [sender.py:_save_file():1390] saving file wandb-summary.json with policy end
+2025-09-26 10:17:05,039 DEBUG   HandlerThread:2169346 [handler.py:handle_request():146] handle_request: partial_history
+2025-09-26 10:17:05,040 DEBUG   HandlerThread:2169346 [handler.py:handle_request():146] handle_request: status_report
+2025-09-26 10:17:05,040 DEBUG   SenderThread:2169346 [sender.py:send():379] send: history
+2025-09-26 10:17:05,040 DEBUG   SenderThread:2169346 [sender.py:send_request():406] send_request: summary_record
+2025-09-26 10:17:05,041 INFO    SenderThread:2169346 [sender.py:_save_file():1390] saving file wandb-summary.json with policy end
+2025-09-26 10:17:05,414 INFO    Thread-12 :2169346 [dir_watcher.py:_on_file_modified():288] file/dir modified: /mnt/data/kai/VinDr_Code/Mini_VinDr_CXR_Dataset/dicom_comparison/wandb/run-20250926_101544-7fnyv1vh/files/wandb-summary.json
+2025-09-26 10:17:05,414 INFO    Thread-12 :2169346 [dir_watcher.py:_on_file_modified():288] file/dir modified: /mnt/data/kai/VinDr_Code/Mini_VinDr_CXR_Dataset/dicom_comparison/wandb/run-20250926_101544-7fnyv1vh/files/output.log
+2025-09-26 10:17:06,021 DEBUG   HandlerThread:2169346 [handler.py:handle_request():146] handle_request: partial_history
+2025-09-26 10:17:06,021 DEBUG   SenderThread:2169346 [sender.py:send():379] send: history
+2025-09-26 10:17:06,021 DEBUG   SenderThread:2169346 [sender.py:send_request():406] send_request: summary_record
+2025-09-26 10:17:06,021 INFO    SenderThread:2169346 [sender.py:_save_file():1390] saving file wandb-summary.json with policy end
+2025-09-26 10:17:06,353 DEBUG   HandlerThread:2169346 [handler.py:handle_request():146] handle_request: partial_history
+2025-09-26 10:17:06,354 DEBUG   SenderThread:2169346 [sender.py:send():379] send: history
+2025-09-26 10:17:06,354 DEBUG   SenderThread:2169346 [sender.py:send_request():406] send_request: summary_record
+2025-09-26 10:17:06,354 INFO    SenderThread:2169346 [sender.py:_save_file():1390] saving file wandb-summary.json with policy end
+2025-09-26 10:17:06,414 INFO    Thread-12 :2169346 [dir_watcher.py:_on_file_modified():288] file/dir modified: /mnt/data/kai/VinDr_Code/Mini_VinDr_CXR_Dataset/dicom_comparison/wandb/run-20250926_101544-7fnyv1vh/files/wandb-summary.json
+2025-09-26 10:17:07,206 DEBUG   HandlerThread:2169346 [handler.py:handle_request():146] handle_request: partial_history
+2025-09-26 10:17:07,207 DEBUG   SenderThread:2169346 [sender.py:send():379] send: history
+2025-09-26 10:17:07,207 DEBUG   SenderThread:2169346 [sender.py:send_request():406] send_request: summary_record
+2025-09-26 10:17:07,207 INFO    SenderThread:2169346 [sender.py:_save_file():1390] saving file wandb-summary.json with policy end
+2025-09-26 10:17:07,414 INFO    Thread-12 :2169346 [dir_watcher.py:_on_file_modified():288] file/dir modified: /mnt/data/kai/VinDr_Code/Mini_VinDr_CXR_Dataset/dicom_comparison/wandb/run-20250926_101544-7fnyv1vh/files/wandb-summary.json
+2025-09-26 10:17:07,414 INFO    Thread-12 :2169346 [dir_watcher.py:_on_file_modified():288] file/dir modified: /mnt/data/kai/VinDr_Code/Mini_VinDr_CXR_Dataset/dicom_comparison/wandb/run-20250926_101544-7fnyv1vh/files/output.log
+2025-09-26 10:17:07,533 DEBUG   HandlerThread:2169346 [handler.py:handle_request():146] handle_request: partial_history
+2025-09-26 10:17:07,534 DEBUG   SenderThread:2169346 [sender.py:send():379] send: history
+2025-09-26 10:17:07,534 DEBUG   SenderThread:2169346 [sender.py:send_request():406] send_request: summary_record
+2025-09-26 10:17:07,534 INFO    SenderThread:2169346 [sender.py:_save_file():1390] saving file wandb-summary.json with policy end
+2025-09-26 10:17:08,315 DEBUG   HandlerThread:2169346 [handler.py:handle_request():146] handle_request: partial_history
+2025-09-26 10:17:08,315 DEBUG   SenderThread:2169346 [sender.py:send():379] send: history
+2025-09-26 10:17:08,315 DEBUG   SenderThread:2169346 [sender.py:send_request():406] send_request: summary_record
+2025-09-26 10:17:08,316 INFO    SenderThread:2169346 [sender.py:_save_file():1390] saving file wandb-summary.json with policy end
+2025-09-26 10:17:08,414 INFO    Thread-12 :2169346 [dir_watcher.py:_on_file_modified():288] file/dir modified: /mnt/data/kai/VinDr_Code/Mini_VinDr_CXR_Dataset/dicom_comparison/wandb/run-20250926_101544-7fnyv1vh/files/wandb-summary.json
+2025-09-26 10:17:08,624 DEBUG   HandlerThread:2169346 [handler.py:handle_request():146] handle_request: partial_history
+2025-09-26 10:17:08,624 DEBUG   SenderThread:2169346 [sender.py:send():379] send: history
+2025-09-26 10:17:08,625 DEBUG   SenderThread:2169346 [sender.py:send_request():406] send_request: summary_record
+2025-09-26 10:17:08,625 INFO    SenderThread:2169346 [sender.py:_save_file():1390] saving file wandb-summary.json with policy end
+2025-09-26 10:17:09,347 DEBUG   HandlerThread:2169346 [handler.py:handle_request():146] handle_request: partial_history
+2025-09-26 10:17:09,347 DEBUG   SenderThread:2169346 [sender.py:send():379] send: history
+2025-09-26 10:17:09,347 DEBUG   SenderThread:2169346 [sender.py:send_request():406] send_request: summary_record
+2025-09-26 10:17:09,348 INFO    SenderThread:2169346 [sender.py:_save_file():1390] saving file wandb-summary.json with policy end
+2025-09-26 10:17:09,414 INFO    Thread-12 :2169346 [dir_watcher.py:_on_file_modified():288] file/dir modified: /mnt/data/kai/VinDr_Code/Mini_VinDr_CXR_Dataset/dicom_comparison/wandb/run-20250926_101544-7fnyv1vh/files/wandb-summary.json
+2025-09-26 10:17:09,415 INFO    Thread-12 :2169346 [dir_watcher.py:_on_file_modified():288] file/dir modified: /mnt/data/kai/VinDr_Code/Mini_VinDr_CXR_Dataset/dicom_comparison/wandb/run-20250926_101544-7fnyv1vh/files/output.log
+2025-09-26 10:17:09,682 DEBUG   HandlerThread:2169346 [handler.py:handle_request():146] handle_request: partial_history
+2025-09-26 10:17:09,683 DEBUG   SenderThread:2169346 [sender.py:send():379] send: history
+2025-09-26 10:17:09,683 DEBUG   SenderThread:2169346 [sender.py:send_request():406] send_request: summary_record
+2025-09-26 10:17:09,683 INFO    SenderThread:2169346 [sender.py:_save_file():1390] saving file wandb-summary.json with policy end
+2025-09-26 10:17:10,410 DEBUG   HandlerThread:2169346 [handler.py:handle_request():146] handle_request: partial_history
+2025-09-26 10:17:10,411 DEBUG   HandlerThread:2169346 [handler.py:handle_request():146] handle_request: status_report
+2025-09-26 10:17:10,411 DEBUG   SenderThread:2169346 [sender.py:send():379] send: history
+2025-09-26 10:17:10,411 DEBUG   SenderThread:2169346 [sender.py:send_request():406] send_request: summary_record
+2025-09-26 10:17:10,411 INFO    SenderThread:2169346 [sender.py:_save_file():1390] saving file wandb-summary.json with policy end
+2025-09-26 10:17:10,415 INFO    Thread-12 :2169346 [dir_watcher.py:_on_file_modified():288] file/dir modified: /mnt/data/kai/VinDr_Code/Mini_VinDr_CXR_Dataset/dicom_comparison/wandb/run-20250926_101544-7fnyv1vh/files/wandb-summary.json
+2025-09-26 10:17:10,820 DEBUG   HandlerThread:2169346 [handler.py:handle_request():146] handle_request: partial_history
+2025-09-26 10:17:10,820 DEBUG   SenderThread:2169346 [sender.py:send():379] send: history
+2025-09-26 10:17:10,820 DEBUG   SenderThread:2169346 [sender.py:send_request():406] send_request: summary_record
+2025-09-26 10:17:10,820 INFO    SenderThread:2169346 [sender.py:_save_file():1390] saving file wandb-summary.json with policy end
+2025-09-26 10:17:11,415 INFO    Thread-12 :2169346 [dir_watcher.py:_on_file_modified():288] file/dir modified: /mnt/data/kai/VinDr_Code/Mini_VinDr_CXR_Dataset/dicom_comparison/wandb/run-20250926_101544-7fnyv1vh/files/wandb-summary.json
+2025-09-26 10:17:11,415 INFO    Thread-12 :2169346 [dir_watcher.py:_on_file_modified():288] file/dir modified: /mnt/data/kai/VinDr_Code/Mini_VinDr_CXR_Dataset/dicom_comparison/wandb/run-20250926_101544-7fnyv1vh/files/output.log
+2025-09-26 10:17:11,507 DEBUG   HandlerThread:2169346 [handler.py:handle_request():146] handle_request: partial_history
+2025-09-26 10:17:11,507 DEBUG   SenderThread:2169346 [sender.py:send():379] send: history
+2025-09-26 10:17:11,507 DEBUG   SenderThread:2169346 [sender.py:send_request():406] send_request: summary_record
+2025-09-26 10:17:11,508 INFO    SenderThread:2169346 [sender.py:_save_file():1390] saving file wandb-summary.json with policy end
+2025-09-26 10:17:11,972 DEBUG   HandlerThread:2169346 [handler.py:handle_request():146] handle_request: partial_history
+2025-09-26 10:17:11,973 DEBUG   SenderThread:2169346 [sender.py:send():379] send: history
+2025-09-26 10:17:11,973 DEBUG   SenderThread:2169346 [sender.py:send_request():406] send_request: summary_record
+2025-09-26 10:17:11,973 INFO    SenderThread:2169346 [sender.py:_save_file():1390] saving file wandb-summary.json with policy end
+2025-09-26 10:17:12,415 INFO    Thread-12 :2169346 [dir_watcher.py:_on_file_modified():288] file/dir modified: /mnt/data/kai/VinDr_Code/Mini_VinDr_CXR_Dataset/dicom_comparison/wandb/run-20250926_101544-7fnyv1vh/files/wandb-summary.json
+2025-09-26 10:17:12,654 DEBUG   HandlerThread:2169346 [handler.py:handle_request():146] handle_request: partial_history
+2025-09-26 10:17:12,654 DEBUG   SenderThread:2169346 [sender.py:send():379] send: history
+2025-09-26 10:17:12,654 DEBUG   SenderThread:2169346 [sender.py:send_request():406] send_request: summary_record
+2025-09-26 10:17:12,655 INFO    SenderThread:2169346 [sender.py:_save_file():1390] saving file wandb-summary.json with policy end
+2025-09-26 10:17:13,121 DEBUG   HandlerThread:2169346 [handler.py:handle_request():146] handle_request: partial_history
+2025-09-26 10:17:13,122 DEBUG   SenderThread:2169346 [sender.py:send():379] send: history
+2025-09-26 10:17:13,122 DEBUG   SenderThread:2169346 [sender.py:send_request():406] send_request: summary_record
+2025-09-26 10:17:13,122 INFO    SenderThread:2169346 [sender.py:_save_file():1390] saving file wandb-summary.json with policy end
+2025-09-26 10:17:13,415 INFO    Thread-12 :2169346 [dir_watcher.py:_on_file_modified():288] file/dir modified: /mnt/data/kai/VinDr_Code/Mini_VinDr_CXR_Dataset/dicom_comparison/wandb/run-20250926_101544-7fnyv1vh/files/wandb-summary.json
+2025-09-26 10:17:13,416 INFO    Thread-12 :2169346 [dir_watcher.py:_on_file_modified():288] file/dir modified: /mnt/data/kai/VinDr_Code/Mini_VinDr_CXR_Dataset/dicom_comparison/wandb/run-20250926_101544-7fnyv1vh/files/output.log
+2025-09-26 10:17:13,809 DEBUG   HandlerThread:2169346 [handler.py:handle_request():146] handle_request: partial_history
+2025-09-26 10:17:13,809 DEBUG   SenderThread:2169346 [sender.py:send():379] send: history
+2025-09-26 10:17:13,809 DEBUG   SenderThread:2169346 [sender.py:send_request():406] send_request: summary_record
+2025-09-26 10:17:13,810 INFO    SenderThread:2169346 [sender.py:_save_file():1390] saving file wandb-summary.json with policy end
+2025-09-26 10:17:14,200 DEBUG   HandlerThread:2169346 [handler.py:handle_request():146] handle_request: partial_history
+2025-09-26 10:17:14,201 DEBUG   SenderThread:2169346 [sender.py:send():379] send: history
+2025-09-26 10:17:14,201 DEBUG   SenderThread:2169346 [sender.py:send_request():406] send_request: summary_record
+2025-09-26 10:17:14,201 INFO    SenderThread:2169346 [sender.py:_save_file():1390] saving file wandb-summary.json with policy end
+2025-09-26 10:17:14,416 INFO    Thread-12 :2169346 [dir_watcher.py:_on_file_modified():288] file/dir modified: /mnt/data/kai/VinDr_Code/Mini_VinDr_CXR_Dataset/dicom_comparison/wandb/run-20250926_101544-7fnyv1vh/files/wandb-summary.json
+2025-09-26 10:17:14,863 DEBUG   HandlerThread:2169346 [handler.py:handle_request():146] handle_request: partial_history
+2025-09-26 10:17:14,863 DEBUG   SenderThread:2169346 [sender.py:send():379] send: history
+2025-09-26 10:17:14,863 DEBUG   SenderThread:2169346 [sender.py:send_request():406] send_request: summary_record
+2025-09-26 10:17:14,863 INFO    SenderThread:2169346 [sender.py:_save_file():1390] saving file wandb-summary.json with policy end
+2025-09-26 10:17:15,246 DEBUG   HandlerThread:2169346 [handler.py:handle_request():146] handle_request: partial_history
+2025-09-26 10:17:15,247 DEBUG   SenderThread:2169346 [sender.py:send():379] send: history
+2025-09-26 10:17:15,247 DEBUG   SenderThread:2169346 [sender.py:send_request():406] send_request: summary_record
+2025-09-26 10:17:15,248 INFO    SenderThread:2169346 [sender.py:_save_file():1390] saving file wandb-summary.json with policy end
+2025-09-26 10:17:15,416 INFO    Thread-12 :2169346 [dir_watcher.py:_on_file_modified():288] file/dir modified: /mnt/data/kai/VinDr_Code/Mini_VinDr_CXR_Dataset/dicom_comparison/wandb/run-20250926_101544-7fnyv1vh/files/wandb-summary.json
+2025-09-26 10:17:15,416 INFO    Thread-12 :2169346 [dir_watcher.py:_on_file_modified():288] file/dir modified: /mnt/data/kai/VinDr_Code/Mini_VinDr_CXR_Dataset/dicom_comparison/wandb/run-20250926_101544-7fnyv1vh/files/output.log
+2025-09-26 10:17:15,466 DEBUG   SenderThread:2169346 [sender.py:send():379] send: stats
+2025-09-26 10:17:15,466 DEBUG   HandlerThread:2169346 [handler.py:handle_request():146] handle_request: status_report
+2025-09-26 10:17:15,953 DEBUG   HandlerThread:2169346 [handler.py:handle_request():146] handle_request: partial_history
+2025-09-26 10:17:15,953 DEBUG   SenderThread:2169346 [sender.py:send():379] send: history
+2025-09-26 10:17:15,953 DEBUG   SenderThread:2169346 [sender.py:send_request():406] send_request: summary_record
+2025-09-26 10:17:15,954 INFO    SenderThread:2169346 [sender.py:_save_file():1390] saving file wandb-summary.json with policy end
+2025-09-26 10:17:16,335 DEBUG   HandlerThread:2169346 [handler.py:handle_request():146] handle_request: partial_history
+2025-09-26 10:17:16,336 DEBUG   SenderThread:2169346 [sender.py:send():379] send: history
+2025-09-26 10:17:16,336 DEBUG   SenderThread:2169346 [sender.py:send_request():406] send_request: summary_record
+2025-09-26 10:17:16,336 INFO    SenderThread:2169346 [sender.py:_save_file():1390] saving file wandb-summary.json with policy end
+2025-09-26 10:17:16,416 INFO    Thread-12 :2169346 [dir_watcher.py:_on_file_modified():288] file/dir modified: /mnt/data/kai/VinDr_Code/Mini_VinDr_CXR_Dataset/dicom_comparison/wandb/run-20250926_101544-7fnyv1vh/files/wandb-summary.json
+2025-09-26 10:17:16,488 DEBUG   HandlerThread:2169346 [handler.py:handle_request():146] handle_request: internal_messages
+2025-09-26 10:17:16,510 DEBUG   HandlerThread:2169346 [handler.py:handle_request():146] handle_request: stop_status
+2025-09-26 10:17:16,510 DEBUG   SenderThread:2169346 [sender.py:send_request():406] send_request: stop_status
+2025-09-26 10:17:17,076 DEBUG   HandlerThread:2169346 [handler.py:handle_request():146] handle_request: partial_history
+2025-09-26 10:17:17,076 DEBUG   SenderThread:2169346 [sender.py:send():379] send: history
+2025-09-26 10:17:17,077 DEBUG   SenderThread:2169346 [sender.py:send_request():406] send_request: summary_record
+2025-09-26 10:17:17,077 INFO    SenderThread:2169346 [sender.py:_save_file():1390] saving file wandb-summary.json with policy end
+2025-09-26 10:17:17,419 INFO    Thread-12 :2169346 [dir_watcher.py:_on_file_modified():288] file/dir modified: /mnt/data/kai/VinDr_Code/Mini_VinDr_CXR_Dataset/dicom_comparison/wandb/run-20250926_101544-7fnyv1vh/files/wandb-summary.json
+2025-09-26 10:17:17,420 INFO    Thread-12 :2169346 [dir_watcher.py:_on_file_modified():288] file/dir modified: /mnt/data/kai/VinDr_Code/Mini_VinDr_CXR_Dataset/dicom_comparison/wandb/run-20250926_101544-7fnyv1vh/files/output.log
+2025-09-26 10:17:17,473 DEBUG   HandlerThread:2169346 [handler.py:handle_request():146] handle_request: partial_history
+2025-09-26 10:17:17,473 DEBUG   SenderThread:2169346 [sender.py:send():379] send: history
+2025-09-26 10:17:17,473 DEBUG   SenderThread:2169346 [sender.py:send_request():406] send_request: summary_record
+2025-09-26 10:17:17,474 INFO    SenderThread:2169346 [sender.py:_save_file():1390] saving file wandb-summary.json with policy end
+2025-09-26 10:17:18,188 DEBUG   HandlerThread:2169346 [handler.py:handle_request():146] handle_request: partial_history
+2025-09-26 10:17:18,188 DEBUG   SenderThread:2169346 [sender.py:send():379] send: history
+2025-09-26 10:17:18,188 DEBUG   SenderThread:2169346 [sender.py:send_request():406] send_request: summary_record
+2025-09-26 10:17:18,189 INFO    SenderThread:2169346 [sender.py:_save_file():1390] saving file wandb-summary.json with policy end
+2025-09-26 10:17:18,417 INFO    Thread-12 :2169346 [dir_watcher.py:_on_file_modified():288] file/dir modified: /mnt/data/kai/VinDr_Code/Mini_VinDr_CXR_Dataset/dicom_comparison/wandb/run-20250926_101544-7fnyv1vh/files/wandb-summary.json
+2025-09-26 10:17:18,503 DEBUG   HandlerThread:2169346 [handler.py:handle_request():146] handle_request: partial_history
+2025-09-26 10:17:18,504 DEBUG   SenderThread:2169346 [sender.py:send():379] send: history
+2025-09-26 10:17:18,504 DEBUG   SenderThread:2169346 [sender.py:send_request():406] send_request: summary_record
+2025-09-26 10:17:18,504 INFO    SenderThread:2169346 [sender.py:_save_file():1390] saving file wandb-summary.json with policy end
+2025-09-26 10:17:19,330 DEBUG   HandlerThread:2169346 [handler.py:handle_request():146] handle_request: partial_history
+2025-09-26 10:17:19,330 DEBUG   SenderThread:2169346 [sender.py:send():379] send: history
+2025-09-26 10:17:19,330 DEBUG   SenderThread:2169346 [sender.py:send_request():406] send_request: summary_record
+2025-09-26 10:17:19,330 INFO    SenderThread:2169346 [sender.py:_save_file():1390] saving file wandb-summary.json with policy end
+2025-09-26 10:17:19,418 INFO    Thread-12 :2169346 [dir_watcher.py:_on_file_modified():288] file/dir modified: /mnt/data/kai/VinDr_Code/Mini_VinDr_CXR_Dataset/dicom_comparison/wandb/run-20250926_101544-7fnyv1vh/files/wandb-summary.json
+2025-09-26 10:17:19,418 INFO    Thread-12 :2169346 [dir_watcher.py:_on_file_modified():288] file/dir modified: /mnt/data/kai/VinDr_Code/Mini_VinDr_CXR_Dataset/dicom_comparison/wandb/run-20250926_101544-7fnyv1vh/files/output.log
+2025-09-26 10:17:19,666 DEBUG   HandlerThread:2169346 [handler.py:handle_request():146] handle_request: partial_history
+2025-09-26 10:17:19,666 DEBUG   SenderThread:2169346 [sender.py:send():379] send: history
+2025-09-26 10:17:19,666 DEBUG   SenderThread:2169346 [sender.py:send_request():406] send_request: summary_record
+2025-09-26 10:17:19,666 INFO    SenderThread:2169346 [sender.py:_save_file():1390] saving file wandb-summary.json with policy end
+2025-09-26 10:17:20,418 INFO    Thread-12 :2169346 [dir_watcher.py:_on_file_modified():288] file/dir modified: /mnt/data/kai/VinDr_Code/Mini_VinDr_CXR_Dataset/dicom_comparison/wandb/run-20250926_101544-7fnyv1vh/files/wandb-summary.json
+2025-09-26 10:17:20,527 DEBUG   HandlerThread:2169346 [handler.py:handle_request():146] handle_request: partial_history
+2025-09-26 10:17:20,527 DEBUG   HandlerThread:2169346 [handler.py:handle_request():146] handle_request: status_report
+2025-09-26 10:17:20,527 DEBUG   SenderThread:2169346 [sender.py:send():379] send: history
+2025-09-26 10:17:20,527 DEBUG   SenderThread:2169346 [sender.py:send_request():406] send_request: summary_record
+2025-09-26 10:17:20,527 INFO    SenderThread:2169346 [sender.py:_save_file():1390] saving file wandb-summary.json with policy end
+2025-09-26 10:17:20,858 DEBUG   HandlerThread:2169346 [handler.py:handle_request():146] handle_request: partial_history
+2025-09-26 10:17:20,859 DEBUG   SenderThread:2169346 [sender.py:send():379] send: history
+2025-09-26 10:17:20,859 DEBUG   SenderThread:2169346 [sender.py:send_request():406] send_request: summary_record
+2025-09-26 10:17:20,859 INFO    SenderThread:2169346 [sender.py:_save_file():1390] saving file wandb-summary.json with policy end
+2025-09-26 10:17:21,418 INFO    Thread-12 :2169346 [dir_watcher.py:_on_file_modified():288] file/dir modified: /mnt/data/kai/VinDr_Code/Mini_VinDr_CXR_Dataset/dicom_comparison/wandb/run-20250926_101544-7fnyv1vh/files/wandb-summary.json
+2025-09-26 10:17:21,418 INFO    Thread-12 :2169346 [dir_watcher.py:_on_file_modified():288] file/dir modified: /mnt/data/kai/VinDr_Code/Mini_VinDr_CXR_Dataset/dicom_comparison/wandb/run-20250926_101544-7fnyv1vh/files/output.log
+2025-09-26 10:17:21,778 DEBUG   HandlerThread:2169346 [handler.py:handle_request():146] handle_request: partial_history
+2025-09-26 10:17:21,778 DEBUG   SenderThread:2169346 [sender.py:send():379] send: history
+2025-09-26 10:17:21,778 DEBUG   SenderThread:2169346 [sender.py:send_request():406] send_request: summary_record
+2025-09-26 10:17:21,778 INFO    SenderThread:2169346 [sender.py:_save_file():1390] saving file wandb-summary.json with policy end
+2025-09-26 10:17:22,118 DEBUG   HandlerThread:2169346 [handler.py:handle_request():146] handle_request: partial_history
+2025-09-26 10:17:22,118 DEBUG   SenderThread:2169346 [sender.py:send():379] send: history
+2025-09-26 10:17:22,118 DEBUG   SenderThread:2169346 [sender.py:send_request():406] send_request: summary_record
+2025-09-26 10:17:22,119 INFO    SenderThread:2169346 [sender.py:_save_file():1390] saving file wandb-summary.json with policy end
+2025-09-26 10:17:22,420 INFO    Thread-12 :2169346 [dir_watcher.py:_on_file_modified():288] file/dir modified: /mnt/data/kai/VinDr_Code/Mini_VinDr_CXR_Dataset/dicom_comparison/wandb/run-20250926_101544-7fnyv1vh/files/wandb-summary.json
+2025-09-26 10:17:23,094 DEBUG   HandlerThread:2169346 [handler.py:handle_request():146] handle_request: partial_history
+2025-09-26 10:17:23,095 DEBUG   SenderThread:2169346 [sender.py:send():379] send: history
+2025-09-26 10:17:23,095 DEBUG   SenderThread:2169346 [sender.py:send_request():406] send_request: summary_record
+2025-09-26 10:17:23,095 INFO    SenderThread:2169346 [sender.py:_save_file():1390] saving file wandb-summary.json with policy end
+2025-09-26 10:17:23,420 INFO    Thread-12 :2169346 [dir_watcher.py:_on_file_modified():288] file/dir modified: /mnt/data/kai/VinDr_Code/Mini_VinDr_CXR_Dataset/dicom_comparison/wandb/run-20250926_101544-7fnyv1vh/files/wandb-summary.json
+2025-09-26 10:17:23,420 INFO    Thread-12 :2169346 [dir_watcher.py:_on_file_modified():288] file/dir modified: /mnt/data/kai/VinDr_Code/Mini_VinDr_CXR_Dataset/dicom_comparison/wandb/run-20250926_101544-7fnyv1vh/files/output.log
+2025-09-26 10:17:23,455 DEBUG   HandlerThread:2169346 [handler.py:handle_request():146] handle_request: partial_history
+2025-09-26 10:17:23,455 DEBUG   SenderThread:2169346 [sender.py:send():379] send: history
+2025-09-26 10:17:23,455 DEBUG   SenderThread:2169346 [sender.py:send_request():406] send_request: summary_record
+2025-09-26 10:17:23,455 INFO    SenderThread:2169346 [sender.py:_save_file():1390] saving file wandb-summary.json with policy end
+2025-09-26 10:17:24,422 INFO    Thread-12 :2169346 [dir_watcher.py:_on_file_modified():288] file/dir modified: /mnt/data/kai/VinDr_Code/Mini_VinDr_CXR_Dataset/dicom_comparison/wandb/run-20250926_101544-7fnyv1vh/files/wandb-summary.json
+2025-09-26 10:17:24,467 DEBUG   HandlerThread:2169346 [handler.py:handle_request():146] handle_request: partial_history
+2025-09-26 10:17:24,467 DEBUG   SenderThread:2169346 [sender.py:send():379] send: history
+2025-09-26 10:17:24,467 DEBUG   SenderThread:2169346 [sender.py:send_request():406] send_request: summary_record
+2025-09-26 10:17:24,467 INFO    SenderThread:2169346 [sender.py:_save_file():1390] saving file wandb-summary.json with policy end
+2025-09-26 10:17:24,851 DEBUG   HandlerThread:2169346 [handler.py:handle_request():146] handle_request: partial_history
+2025-09-26 10:17:24,852 DEBUG   SenderThread:2169346 [sender.py:send():379] send: history
+2025-09-26 10:17:24,852 DEBUG   SenderThread:2169346 [sender.py:send_request():406] send_request: summary_record
+2025-09-26 10:17:24,852 INFO    SenderThread:2169346 [sender.py:_save_file():1390] saving file wandb-summary.json with policy end
+2025-09-26 10:17:25,420 INFO    Thread-12 :2169346 [dir_watcher.py:_on_file_modified():288] file/dir modified: /mnt/data/kai/VinDr_Code/Mini_VinDr_CXR_Dataset/dicom_comparison/wandb/run-20250926_101544-7fnyv1vh/files/wandb-summary.json
+2025-09-26 10:17:25,420 INFO    Thread-12 :2169346 [dir_watcher.py:_on_file_modified():288] file/dir modified: /mnt/data/kai/VinDr_Code/Mini_VinDr_CXR_Dataset/dicom_comparison/wandb/run-20250926_101544-7fnyv1vh/files/output.log
+2025-09-26 10:17:25,854 DEBUG   HandlerThread:2169346 [handler.py:handle_request():146] handle_request: status_report
+2025-09-26 10:17:25,889 DEBUG   HandlerThread:2169346 [handler.py:handle_request():146] handle_request: partial_history
+2025-09-26 10:17:25,889 DEBUG   SenderThread:2169346 [sender.py:send():379] send: history
+2025-09-26 10:17:25,889 DEBUG   SenderThread:2169346 [sender.py:send_request():406] send_request: summary_record
+2025-09-26 10:17:25,889 INFO    SenderThread:2169346 [sender.py:_save_file():1390] saving file wandb-summary.json with policy end
+2025-09-26 10:17:26,247 DEBUG   HandlerThread:2169346 [handler.py:handle_request():146] handle_request: partial_history
+2025-09-26 10:17:26,247 DEBUG   SenderThread:2169346 [sender.py:send():379] send: history
+2025-09-26 10:17:26,247 DEBUG   SenderThread:2169346 [sender.py:send_request():406] send_request: summary_record
+2025-09-26 10:17:26,247 INFO    SenderThread:2169346 [sender.py:_save_file():1390] saving file wandb-summary.json with policy end
+2025-09-26 10:17:26,420 INFO    Thread-12 :2169346 [dir_watcher.py:_on_file_modified():288] file/dir modified: /mnt/data/kai/VinDr_Code/Mini_VinDr_CXR_Dataset/dicom_comparison/wandb/run-20250926_101544-7fnyv1vh/files/wandb-summary.json
+2025-09-26 10:17:27,219 DEBUG   HandlerThread:2169346 [handler.py:handle_request():146] handle_request: partial_history
+2025-09-26 10:17:27,219 DEBUG   SenderThread:2169346 [sender.py:send():379] send: history
+2025-09-26 10:17:27,219 DEBUG   SenderThread:2169346 [sender.py:send_request():406] send_request: summary_record
+2025-09-26 10:17:27,220 INFO    SenderThread:2169346 [sender.py:_save_file():1390] saving file wandb-summary.json with policy end
+2025-09-26 10:17:27,421 INFO    Thread-12 :2169346 [dir_watcher.py:_on_file_modified():288] file/dir modified: /mnt/data/kai/VinDr_Code/Mini_VinDr_CXR_Dataset/dicom_comparison/wandb/run-20250926_101544-7fnyv1vh/files/wandb-summary.json
+2025-09-26 10:17:27,421 INFO    Thread-12 :2169346 [dir_watcher.py:_on_file_modified():288] file/dir modified: /mnt/data/kai/VinDr_Code/Mini_VinDr_CXR_Dataset/dicom_comparison/wandb/run-20250926_101544-7fnyv1vh/files/output.log
+2025-09-26 10:17:27,555 DEBUG   HandlerThread:2169346 [handler.py:handle_request():146] handle_request: partial_history
+2025-09-26 10:17:27,555 DEBUG   SenderThread:2169346 [sender.py:send():379] send: history
+2025-09-26 10:17:27,555 DEBUG   SenderThread:2169346 [sender.py:send_request():406] send_request: summary_record
+2025-09-26 10:17:27,555 INFO    SenderThread:2169346 [sender.py:_save_file():1390] saving file wandb-summary.json with policy end
+2025-09-26 10:17:28,373 DEBUG   HandlerThread:2169346 [handler.py:handle_request():146] handle_request: partial_history
+2025-09-26 10:17:28,373 DEBUG   SenderThread:2169346 [sender.py:send():379] send: history
+2025-09-26 10:17:28,373 DEBUG   SenderThread:2169346 [sender.py:send_request():406] send_request: summary_record
+2025-09-26 10:17:28,374 INFO    SenderThread:2169346 [sender.py:_save_file():1390] saving file wandb-summary.json with policy end
+2025-09-26 10:17:28,421 INFO    Thread-12 :2169346 [dir_watcher.py:_on_file_modified():288] file/dir modified: /mnt/data/kai/VinDr_Code/Mini_VinDr_CXR_Dataset/dicom_comparison/wandb/run-20250926_101544-7fnyv1vh/files/wandb-summary.json
+2025-09-26 10:17:28,685 DEBUG   HandlerThread:2169346 [handler.py:handle_request():146] handle_request: partial_history
+2025-09-26 10:17:28,686 DEBUG   SenderThread:2169346 [sender.py:send():379] send: history
+2025-09-26 10:17:28,686 DEBUG   SenderThread:2169346 [sender.py:send_request():406] send_request: summary_record
+2025-09-26 10:17:28,686 INFO    SenderThread:2169346 [sender.py:_save_file():1390] saving file wandb-summary.json with policy end
+2025-09-26 10:17:29,384 DEBUG   HandlerThread:2169346 [handler.py:handle_request():146] handle_request: partial_history
+2025-09-26 10:17:29,384 DEBUG   SenderThread:2169346 [sender.py:send():379] send: history
+2025-09-26 10:17:29,384 DEBUG   SenderThread:2169346 [sender.py:send_request():406] send_request: summary_record
+2025-09-26 10:17:29,385 INFO    SenderThread:2169346 [sender.py:_save_file():1390] saving file wandb-summary.json with policy end
+2025-09-26 10:17:29,421 INFO    Thread-12 :2169346 [dir_watcher.py:_on_file_modified():288] file/dir modified: /mnt/data/kai/VinDr_Code/Mini_VinDr_CXR_Dataset/dicom_comparison/wandb/run-20250926_101544-7fnyv1vh/files/wandb-summary.json
+2025-09-26 10:17:29,421 INFO    Thread-12 :2169346 [dir_watcher.py:_on_file_modified():288] file/dir modified: /mnt/data/kai/VinDr_Code/Mini_VinDr_CXR_Dataset/dicom_comparison/wandb/run-20250926_101544-7fnyv1vh/files/output.log
+2025-09-26 10:17:29,708 DEBUG   HandlerThread:2169346 [handler.py:handle_request():146] handle_request: partial_history
+2025-09-26 10:17:29,708 DEBUG   SenderThread:2169346 [sender.py:send():379] send: history
+2025-09-26 10:17:29,708 DEBUG   SenderThread:2169346 [sender.py:send_request():406] send_request: summary_record
+2025-09-26 10:17:29,709 INFO    SenderThread:2169346 [sender.py:_save_file():1390] saving file wandb-summary.json with policy end
+2025-09-26 10:17:30,421 INFO    Thread-12 :2169346 [dir_watcher.py:_on_file_modified():288] file/dir modified: /mnt/data/kai/VinDr_Code/Mini_VinDr_CXR_Dataset/dicom_comparison/wandb/run-20250926_101544-7fnyv1vh/files/wandb-summary.json
+2025-09-26 10:17:30,442 DEBUG   HandlerThread:2169346 [handler.py:handle_request():146] handle_request: partial_history
+2025-09-26 10:17:30,442 DEBUG   SenderThread:2169346 [sender.py:send():379] send: history
+2025-09-26 10:17:30,442 DEBUG   SenderThread:2169346 [sender.py:send_request():406] send_request: summary_record
+2025-09-26 10:17:30,443 INFO    SenderThread:2169346 [sender.py:_save_file():1390] saving file wandb-summary.json with policy end
+2025-09-26 10:17:30,791 DEBUG   HandlerThread:2169346 [handler.py:handle_request():146] handle_request: partial_history
+2025-09-26 10:17:30,792 DEBUG   SenderThread:2169346 [sender.py:send():379] send: history
+2025-09-26 10:17:30,792 DEBUG   SenderThread:2169346 [sender.py:send_request():406] send_request: summary_record
+2025-09-26 10:17:30,792 INFO    SenderThread:2169346 [sender.py:_save_file():1390] saving file wandb-summary.json with policy end
+2025-09-26 10:17:31,422 INFO    Thread-12 :2169346 [dir_watcher.py:_on_file_modified():288] file/dir modified: /mnt/data/kai/VinDr_Code/Mini_VinDr_CXR_Dataset/dicom_comparison/wandb/run-20250926_101544-7fnyv1vh/files/wandb-summary.json
+2025-09-26 10:17:31,422 INFO    Thread-12 :2169346 [dir_watcher.py:_on_file_modified():288] file/dir modified: /mnt/data/kai/VinDr_Code/Mini_VinDr_CXR_Dataset/dicom_comparison/wandb/run-20250926_101544-7fnyv1vh/files/output.log
+2025-09-26 10:17:31,493 DEBUG   HandlerThread:2169346 [handler.py:handle_request():146] handle_request: stop_status
+2025-09-26 10:17:31,493 DEBUG   HandlerThread:2169346 [handler.py:handle_request():146] handle_request: internal_messages
+2025-09-26 10:17:31,493 DEBUG   SenderThread:2169346 [sender.py:send_request():406] send_request: stop_status
+2025-09-26 10:17:31,577 DEBUG   HandlerThread:2169346 [handler.py:handle_request():146] handle_request: partial_history
+2025-09-26 10:17:31,864 DEBUG   SenderThread:2169346 [sender.py:send():379] send: history
+2025-09-26 10:17:31,865 DEBUG   SenderThread:2169346 [sender.py:send_request():406] send_request: summary_record
+2025-09-26 10:17:31,865 DEBUG   HandlerThread:2169346 [handler.py:handle_request():146] handle_request: status_report
+2025-09-26 10:17:31,865 INFO    SenderThread:2169346 [sender.py:_save_file():1390] saving file wandb-summary.json with policy end
+2025-09-26 10:17:31,928 DEBUG   HandlerThread:2169346 [handler.py:handle_request():146] handle_request: partial_history
+2025-09-26 10:17:31,929 DEBUG   SenderThread:2169346 [sender.py:send():379] send: history
+2025-09-26 10:17:31,929 DEBUG   SenderThread:2169346 [sender.py:send_request():406] send_request: summary_record
+2025-09-26 10:17:31,930 INFO    SenderThread:2169346 [sender.py:_save_file():1390] saving file wandb-summary.json with policy end
+2025-09-26 10:17:32,422 INFO    Thread-12 :2169346 [dir_watcher.py:_on_file_modified():288] file/dir modified: /mnt/data/kai/VinDr_Code/Mini_VinDr_CXR_Dataset/dicom_comparison/wandb/run-20250926_101544-7fnyv1vh/files/wandb-summary.json
+2025-09-26 10:17:32,628 DEBUG   HandlerThread:2169346 [handler.py:handle_request():146] handle_request: partial_history
+2025-09-26 10:17:32,628 DEBUG   SenderThread:2169346 [sender.py:send():379] send: history
+2025-09-26 10:17:32,628 DEBUG   SenderThread:2169346 [sender.py:send_request():406] send_request: summary_record
+2025-09-26 10:17:32,628 INFO    SenderThread:2169346 [sender.py:_save_file():1390] saving file wandb-summary.json with policy end
+2025-09-26 10:17:33,070 DEBUG   HandlerThread:2169346 [handler.py:handle_request():146] handle_request: partial_history
+2025-09-26 10:17:33,071 DEBUG   SenderThread:2169346 [sender.py:send():379] send: history
+2025-09-26 10:17:33,071 DEBUG   SenderThread:2169346 [sender.py:send_request():406] send_request: summary_record
+2025-09-26 10:17:33,071 INFO    SenderThread:2169346 [sender.py:_save_file():1390] saving file wandb-summary.json with policy end
+2025-09-26 10:17:33,422 INFO    Thread-12 :2169346 [dir_watcher.py:_on_file_modified():288] file/dir modified: /mnt/data/kai/VinDr_Code/Mini_VinDr_CXR_Dataset/dicom_comparison/wandb/run-20250926_101544-7fnyv1vh/files/wandb-summary.json
+2025-09-26 10:17:33,422 INFO    Thread-12 :2169346 [dir_watcher.py:_on_file_modified():288] file/dir modified: /mnt/data/kai/VinDr_Code/Mini_VinDr_CXR_Dataset/dicom_comparison/wandb/run-20250926_101544-7fnyv1vh/files/output.log
+2025-09-26 10:17:33,779 DEBUG   HandlerThread:2169346 [handler.py:handle_request():146] handle_request: partial_history
+2025-09-26 10:17:33,780 DEBUG   SenderThread:2169346 [sender.py:send():379] send: history
+2025-09-26 10:17:33,780 DEBUG   SenderThread:2169346 [sender.py:send_request():406] send_request: summary_record
+2025-09-26 10:17:33,780 INFO    SenderThread:2169346 [sender.py:_save_file():1390] saving file wandb-summary.json with policy end
+2025-09-26 10:17:34,086 DEBUG   HandlerThread:2169346 [handler.py:handle_request():146] handle_request: partial_history
+2025-09-26 10:17:34,087 DEBUG   SenderThread:2169346 [sender.py:send():379] send: history
+2025-09-26 10:17:34,087 DEBUG   SenderThread:2169346 [sender.py:send_request():406] send_request: summary_record
+2025-09-26 10:17:34,088 INFO    SenderThread:2169346 [sender.py:_save_file():1390] saving file wandb-summary.json with policy end
+2025-09-26 10:17:34,422 INFO    Thread-12 :2169346 [dir_watcher.py:_on_file_modified():288] file/dir modified: /mnt/data/kai/VinDr_Code/Mini_VinDr_CXR_Dataset/dicom_comparison/wandb/run-20250926_101544-7fnyv1vh/files/wandb-summary.json
+2025-09-26 10:17:34,698 DEBUG   HandlerThread:2169346 [handler.py:handle_request():146] handle_request: partial_history
+2025-09-26 10:17:34,698 DEBUG   SenderThread:2169346 [sender.py:send():379] send: history
+2025-09-26 10:17:34,698 DEBUG   SenderThread:2169346 [sender.py:send_request():406] send_request: summary_record
+2025-09-26 10:17:34,863 INFO    SenderThread:2169346 [sender.py:_save_file():1390] saving file wandb-summary.json with policy end
+2025-09-26 10:17:34,989 DEBUG   HandlerThread:2169346 [handler.py:handle_request():146] handle_request: partial_history
+2025-09-26 10:17:34,990 DEBUG   SenderThread:2169346 [sender.py:send():379] send: history
+2025-09-26 10:17:34,990 DEBUG   SenderThread:2169346 [sender.py:send_request():406] send_request: summary_record
+2025-09-26 10:17:35,010 INFO    SenderThread:2169346 [sender.py:_save_file():1390] saving file wandb-summary.json with policy end
+2025-09-26 10:17:35,422 INFO    Thread-12 :2169346 [dir_watcher.py:_on_file_modified():288] file/dir modified: /mnt/data/kai/VinDr_Code/Mini_VinDr_CXR_Dataset/dicom_comparison/wandb/run-20250926_101544-7fnyv1vh/files/wandb-summary.json
+2025-09-26 10:17:35,423 INFO    Thread-12 :2169346 [dir_watcher.py:_on_file_modified():288] file/dir modified: /mnt/data/kai/VinDr_Code/Mini_VinDr_CXR_Dataset/dicom_comparison/wandb/run-20250926_101544-7fnyv1vh/files/output.log
+2025-09-26 10:17:35,944 DEBUG   HandlerThread:2169346 [handler.py:handle_request():146] handle_request: partial_history
+2025-09-26 10:17:35,944 DEBUG   SenderThread:2169346 [sender.py:send():379] send: history
+2025-09-26 10:17:35,944 DEBUG   SenderThread:2169346 [sender.py:send_request():406] send_request: summary_record
+2025-09-26 10:17:35,944 INFO    SenderThread:2169346 [sender.py:_save_file():1390] saving file wandb-summary.json with policy end
+2025-09-26 10:17:36,282 DEBUG   HandlerThread:2169346 [handler.py:handle_request():146] handle_request: partial_history
+2025-09-26 10:17:36,282 DEBUG   SenderThread:2169346 [sender.py:send():379] send: history
+2025-09-26 10:17:36,283 DEBUG   SenderThread:2169346 [sender.py:send_request():406] send_request: summary_record
+2025-09-26 10:17:36,283 INFO    SenderThread:2169346 [sender.py:_save_file():1390] saving file wandb-summary.json with policy end
+2025-09-26 10:17:36,423 INFO    Thread-12 :2169346 [dir_watcher.py:_on_file_modified():288] file/dir modified: /mnt/data/kai/VinDr_Code/Mini_VinDr_CXR_Dataset/dicom_comparison/wandb/run-20250926_101544-7fnyv1vh/files/wandb-summary.json
+2025-09-26 10:17:37,152 DEBUG   HandlerThread:2169346 [handler.py:handle_request():146] handle_request: partial_history
+2025-09-26 10:17:37,152 DEBUG   HandlerThread:2169346 [handler.py:handle_request():146] handle_request: status_report
+2025-09-26 10:17:37,153 DEBUG   SenderThread:2169346 [sender.py:send():379] send: history
+2025-09-26 10:17:37,153 DEBUG   SenderThread:2169346 [sender.py:send_request():406] send_request: summary_record
+2025-09-26 10:17:37,153 INFO    SenderThread:2169346 [sender.py:_save_file():1390] saving file wandb-summary.json with policy end
+2025-09-26 10:17:37,423 INFO    Thread-12 :2169346 [dir_watcher.py:_on_file_modified():288] file/dir modified: /mnt/data/kai/VinDr_Code/Mini_VinDr_CXR_Dataset/dicom_comparison/wandb/run-20250926_101544-7fnyv1vh/files/wandb-summary.json
+2025-09-26 10:17:37,423 INFO    Thread-12 :2169346 [dir_watcher.py:_on_file_modified():288] file/dir modified: /mnt/data/kai/VinDr_Code/Mini_VinDr_CXR_Dataset/dicom_comparison/wandb/run-20250926_101544-7fnyv1vh/files/output.log
+2025-09-26 10:17:37,466 DEBUG   HandlerThread:2169346 [handler.py:handle_request():146] handle_request: partial_history
+2025-09-26 10:17:37,467 DEBUG   SenderThread:2169346 [sender.py:send():379] send: history
+2025-09-26 10:17:37,467 DEBUG   SenderThread:2169346 [sender.py:send_request():406] send_request: summary_record
+2025-09-26 10:17:37,467 INFO    SenderThread:2169346 [sender.py:_save_file():1390] saving file wandb-summary.json with policy end
+2025-09-26 10:17:38,238 DEBUG   HandlerThread:2169346 [handler.py:handle_request():146] handle_request: partial_history
+2025-09-26 10:17:38,239 DEBUG   SenderThread:2169346 [sender.py:send():379] send: history
+2025-09-26 10:17:38,239 DEBUG   SenderThread:2169346 [sender.py:send_request():406] send_request: summary_record
+2025-09-26 10:17:38,239 INFO    SenderThread:2169346 [sender.py:_save_file():1390] saving file wandb-summary.json with policy end
+2025-09-26 10:17:38,423 INFO    Thread-12 :2169346 [dir_watcher.py:_on_file_modified():288] file/dir modified: /mnt/data/kai/VinDr_Code/Mini_VinDr_CXR_Dataset/dicom_comparison/wandb/run-20250926_101544-7fnyv1vh/files/wandb-summary.json
+2025-09-26 10:17:38,553 DEBUG   HandlerThread:2169346 [handler.py:handle_request():146] handle_request: partial_history
+2025-09-26 10:17:38,553 DEBUG   SenderThread:2169346 [sender.py:send():379] send: history
+2025-09-26 10:17:38,553 DEBUG   SenderThread:2169346 [sender.py:send_request():406] send_request: summary_record
+2025-09-26 10:17:38,553 INFO    SenderThread:2169346 [sender.py:_save_file():1390] saving file wandb-summary.json with policy end
+2025-09-26 10:17:39,236 DEBUG   HandlerThread:2169346 [handler.py:handle_request():146] handle_request: partial_history
+2025-09-26 10:17:39,237 DEBUG   SenderThread:2169346 [sender.py:send():379] send: history
+2025-09-26 10:17:39,237 DEBUG   SenderThread:2169346 [sender.py:send_request():406] send_request: summary_record
+2025-09-26 10:17:39,237 INFO    SenderThread:2169346 [sender.py:_save_file():1390] saving file wandb-summary.json with policy end
+2025-09-26 10:17:39,423 INFO    Thread-12 :2169346 [dir_watcher.py:_on_file_modified():288] file/dir modified: /mnt/data/kai/VinDr_Code/Mini_VinDr_CXR_Dataset/dicom_comparison/wandb/run-20250926_101544-7fnyv1vh/files/wandb-summary.json
+2025-09-26 10:17:39,423 INFO    Thread-12 :2169346 [dir_watcher.py:_on_file_modified():288] file/dir modified: /mnt/data/kai/VinDr_Code/Mini_VinDr_CXR_Dataset/dicom_comparison/wandb/run-20250926_101544-7fnyv1vh/files/output.log
+2025-09-26 10:17:39,611 DEBUG   HandlerThread:2169346 [handler.py:handle_request():146] handle_request: partial_history
+2025-09-26 10:17:39,612 DEBUG   SenderThread:2169346 [sender.py:send():379] send: history
+2025-09-26 10:17:39,612 DEBUG   SenderThread:2169346 [sender.py:send_request():406] send_request: summary_record
+2025-09-26 10:17:39,612 INFO    SenderThread:2169346 [sender.py:_save_file():1390] saving file wandb-summary.json with policy end
+2025-09-26 10:17:40,351 DEBUG   HandlerThread:2169346 [handler.py:handle_request():146] handle_request: partial_history
+2025-09-26 10:17:40,352 DEBUG   SenderThread:2169346 [sender.py:send():379] send: history
+2025-09-26 10:17:40,352 DEBUG   SenderThread:2169346 [sender.py:send_request():406] send_request: summary_record
+2025-09-26 10:17:40,352 INFO    SenderThread:2169346 [sender.py:_save_file():1390] saving file wandb-summary.json with policy end
+2025-09-26 10:17:40,423 INFO    Thread-12 :2169346 [dir_watcher.py:_on_file_modified():288] file/dir modified: /mnt/data/kai/VinDr_Code/Mini_VinDr_CXR_Dataset/dicom_comparison/wandb/run-20250926_101544-7fnyv1vh/files/wandb-summary.json
+2025-09-26 10:17:40,755 DEBUG   HandlerThread:2169346 [handler.py:handle_request():146] handle_request: partial_history
+2025-09-26 10:17:40,755 DEBUG   SenderThread:2169346 [sender.py:send():379] send: history
+2025-09-26 10:17:40,756 DEBUG   SenderThread:2169346 [sender.py:send_request():406] send_request: summary_record
+2025-09-26 10:17:40,756 INFO    SenderThread:2169346 [sender.py:_save_file():1390] saving file wandb-summary.json with policy end
+2025-09-26 10:17:41,424 INFO    Thread-12 :2169346 [dir_watcher.py:_on_file_modified():288] file/dir modified: /mnt/data/kai/VinDr_Code/Mini_VinDr_CXR_Dataset/dicom_comparison/wandb/run-20250926_101544-7fnyv1vh/files/wandb-summary.json
+2025-09-26 10:17:41,424 INFO    Thread-12 :2169346 [dir_watcher.py:_on_file_modified():288] file/dir modified: /mnt/data/kai/VinDr_Code/Mini_VinDr_CXR_Dataset/dicom_comparison/wandb/run-20250926_101544-7fnyv1vh/files/output.log
+2025-09-26 10:17:41,466 DEBUG   HandlerThread:2169346 [handler.py:handle_request():146] handle_request: partial_history
+2025-09-26 10:17:41,466 DEBUG   SenderThread:2169346 [sender.py:send():379] send: history
+2025-09-26 10:17:41,466 DEBUG   SenderThread:2169346 [sender.py:send_request():406] send_request: summary_record
+2025-09-26 10:17:41,466 INFO    SenderThread:2169346 [sender.py:_save_file():1390] saving file wandb-summary.json with policy end
+2025-09-26 10:17:41,912 DEBUG   HandlerThread:2169346 [handler.py:handle_request():146] handle_request: partial_history
+2025-09-26 10:17:41,913 DEBUG   SenderThread:2169346 [sender.py:send():379] send: history
+2025-09-26 10:17:41,913 DEBUG   SenderThread:2169346 [sender.py:send_request():406] send_request: summary_record
+2025-09-26 10:17:41,913 INFO    SenderThread:2169346 [sender.py:_save_file():1390] saving file wandb-summary.json with policy end
+2025-09-26 10:17:42,424 INFO    Thread-12 :2169346 [dir_watcher.py:_on_file_modified():288] file/dir modified: /mnt/data/kai/VinDr_Code/Mini_VinDr_CXR_Dataset/dicom_comparison/wandb/run-20250926_101544-7fnyv1vh/files/wandb-summary.json
+2025-09-26 10:17:42,596 DEBUG   HandlerThread:2169346 [handler.py:handle_request():146] handle_request: partial_history
+2025-09-26 10:17:42,596 DEBUG   HandlerThread:2169346 [handler.py:handle_request():146] handle_request: status_report
+2025-09-26 10:17:42,597 DEBUG   SenderThread:2169346 [sender.py:send():379] send: history
+2025-09-26 10:17:42,597 DEBUG   SenderThread:2169346 [sender.py:send_request():406] send_request: summary_record
+2025-09-26 10:17:42,597 INFO    SenderThread:2169346 [sender.py:_save_file():1390] saving file wandb-summary.json with policy end
+2025-09-26 10:17:43,052 DEBUG   HandlerThread:2169346 [handler.py:handle_request():146] handle_request: partial_history
+2025-09-26 10:17:43,053 DEBUG   SenderThread:2169346 [sender.py:send():379] send: history
+2025-09-26 10:17:43,053 DEBUG   SenderThread:2169346 [sender.py:send_request():406] send_request: summary_record
+2025-09-26 10:17:43,053 INFO    SenderThread:2169346 [sender.py:_save_file():1390] saving file wandb-summary.json with policy end
+2025-09-26 10:17:43,424 INFO    Thread-12 :2169346 [dir_watcher.py:_on_file_modified():288] file/dir modified: /mnt/data/kai/VinDr_Code/Mini_VinDr_CXR_Dataset/dicom_comparison/wandb/run-20250926_101544-7fnyv1vh/files/wandb-summary.json
+2025-09-26 10:17:43,424 INFO    Thread-12 :2169346 [dir_watcher.py:_on_file_modified():288] file/dir modified: /mnt/data/kai/VinDr_Code/Mini_VinDr_CXR_Dataset/dicom_comparison/wandb/run-20250926_101544-7fnyv1vh/files/output.log
+2025-09-26 10:17:43,740 DEBUG   HandlerThread:2169346 [handler.py:handle_request():146] handle_request: partial_history
+2025-09-26 10:17:43,740 DEBUG   SenderThread:2169346 [sender.py:send():379] send: history
+2025-09-26 10:17:43,740 DEBUG   SenderThread:2169346 [sender.py:send_request():406] send_request: summary_record
+2025-09-26 10:17:43,740 INFO    SenderThread:2169346 [sender.py:_save_file():1390] saving file wandb-summary.json with policy end
+2025-09-26 10:17:44,122 DEBUG   HandlerThread:2169346 [handler.py:handle_request():146] handle_request: partial_history
+2025-09-26 10:17:44,122 DEBUG   SenderThread:2169346 [sender.py:send():379] send: history
+2025-09-26 10:17:44,122 DEBUG   SenderThread:2169346 [sender.py:send_request():406] send_request: summary_record
+2025-09-26 10:17:44,122 INFO    SenderThread:2169346 [sender.py:_save_file():1390] saving file wandb-summary.json with policy end
+2025-09-26 10:17:44,424 INFO    Thread-12 :2169346 [dir_watcher.py:_on_file_modified():288] file/dir modified: /mnt/data/kai/VinDr_Code/Mini_VinDr_CXR_Dataset/dicom_comparison/wandb/run-20250926_101544-7fnyv1vh/files/wandb-summary.json
+2025-09-26 10:17:44,800 DEBUG   HandlerThread:2169346 [handler.py:handle_request():146] handle_request: partial_history
+2025-09-26 10:17:44,800 DEBUG   SenderThread:2169346 [sender.py:send():379] send: history
+2025-09-26 10:17:44,800 DEBUG   SenderThread:2169346 [sender.py:send_request():406] send_request: summary_record
+2025-09-26 10:17:44,800 INFO    SenderThread:2169346 [sender.py:_save_file():1390] saving file wandb-summary.json with policy end
+2025-09-26 10:17:45,202 DEBUG   HandlerThread:2169346 [handler.py:handle_request():146] handle_request: partial_history
+2025-09-26 10:17:45,242 DEBUG   SenderThread:2169346 [sender.py:send():379] send: history
+2025-09-26 10:17:45,242 DEBUG   SenderThread:2169346 [sender.py:send_request():406] send_request: summary_record
+2025-09-26 10:17:45,242 INFO    SenderThread:2169346 [sender.py:_save_file():1390] saving file wandb-summary.json with policy end
+2025-09-26 10:17:45,425 INFO    Thread-12 :2169346 [dir_watcher.py:_on_file_modified():288] file/dir modified: /mnt/data/kai/VinDr_Code/Mini_VinDr_CXR_Dataset/dicom_comparison/wandb/run-20250926_101544-7fnyv1vh/files/wandb-summary.json
+2025-09-26 10:17:45,425 INFO    Thread-12 :2169346 [dir_watcher.py:_on_file_modified():288] file/dir modified: /mnt/data/kai/VinDr_Code/Mini_VinDr_CXR_Dataset/dicom_comparison/wandb/run-20250926_101544-7fnyv1vh/files/output.log
+2025-09-26 10:17:45,466 DEBUG   SenderThread:2169346 [sender.py:send():379] send: stats
+2025-09-26 10:17:45,856 DEBUG   HandlerThread:2169346 [handler.py:handle_request():146] handle_request: partial_history
+2025-09-26 10:17:45,856 DEBUG   SenderThread:2169346 [sender.py:send():379] send: history
+2025-09-26 10:17:45,856 DEBUG   SenderThread:2169346 [sender.py:send_request():406] send_request: summary_record
+2025-09-26 10:17:45,857 INFO    SenderThread:2169346 [sender.py:_save_file():1390] saving file wandb-summary.json with policy end
+2025-09-26 10:17:46,246 DEBUG   HandlerThread:2169346 [handler.py:handle_request():146] handle_request: partial_history
+2025-09-26 10:17:46,246 DEBUG   SenderThread:2169346 [sender.py:send():379] send: history
+2025-09-26 10:17:46,246 DEBUG   SenderThread:2169346 [sender.py:send_request():406] send_request: summary_record
+2025-09-26 10:17:46,246 INFO    SenderThread:2169346 [sender.py:_save_file():1390] saving file wandb-summary.json with policy end
+2025-09-26 10:17:46,425 INFO    Thread-12 :2169346 [dir_watcher.py:_on_file_modified():288] file/dir modified: /mnt/data/kai/VinDr_Code/Mini_VinDr_CXR_Dataset/dicom_comparison/wandb/run-20250926_101544-7fnyv1vh/files/wandb-summary.json
+2025-09-26 10:17:46,491 DEBUG   HandlerThread:2169346 [handler.py:handle_request():146] handle_request: stop_status
+2025-09-26 10:17:46,491 DEBUG   SenderThread:2169346 [sender.py:send_request():406] send_request: stop_status
+2025-09-26 10:17:46,492 DEBUG   HandlerThread:2169346 [handler.py:handle_request():146] handle_request: internal_messages
+2025-09-26 10:17:46,999 DEBUG   HandlerThread:2169346 [handler.py:handle_request():146] handle_request: partial_history
+2025-09-26 10:17:47,000 DEBUG   SenderThread:2169346 [sender.py:send():379] send: history
+2025-09-26 10:17:47,000 DEBUG   SenderThread:2169346 [sender.py:send_request():406] send_request: summary_record
+2025-09-26 10:17:47,000 INFO    SenderThread:2169346 [sender.py:_save_file():1390] saving file wandb-summary.json with policy end
+2025-09-26 10:17:47,288 DEBUG   HandlerThread:2169346 [handler.py:handle_request():146] handle_request: partial_history
+2025-09-26 10:17:47,289 DEBUG   SenderThread:2169346 [sender.py:send():379] send: history
+2025-09-26 10:17:47,289 DEBUG   SenderThread:2169346 [sender.py:send_request():406] send_request: summary_record
+2025-09-26 10:17:47,289 INFO    SenderThread:2169346 [sender.py:_save_file():1390] saving file wandb-summary.json with policy end
+2025-09-26 10:17:47,425 INFO    Thread-12 :2169346 [dir_watcher.py:_on_file_modified():288] file/dir modified: /mnt/data/kai/VinDr_Code/Mini_VinDr_CXR_Dataset/dicom_comparison/wandb/run-20250926_101544-7fnyv1vh/files/wandb-summary.json
+2025-09-26 10:17:47,425 INFO    Thread-12 :2169346 [dir_watcher.py:_on_file_modified():288] file/dir modified: /mnt/data/kai/VinDr_Code/Mini_VinDr_CXR_Dataset/dicom_comparison/wandb/run-20250926_101544-7fnyv1vh/files/output.log
+2025-09-26 10:17:47,801 DEBUG   SenderThread:2169346 [sender.py:send():379] send: exit
+2025-09-26 10:17:47,801 INFO    SenderThread:2169346 [sender.py:send_exit():586] handling exit code: 0
+2025-09-26 10:17:47,801 INFO    SenderThread:2169346 [sender.py:send_exit():588] handling runtime: 122
+2025-09-26 10:17:47,801 INFO    SenderThread:2169346 [sender.py:_save_file():1390] saving file wandb-summary.json with policy end
+2025-09-26 10:17:47,801 INFO    SenderThread:2169346 [sender.py:send_exit():594] send defer
+2025-09-26 10:17:47,801 DEBUG   HandlerThread:2169346 [handler.py:handle_request():146] handle_request: defer
+2025-09-26 10:17:47,801 INFO    HandlerThread:2169346 [handler.py:handle_request_defer():172] handle defer: 0
+2025-09-26 10:17:47,801 DEBUG   HandlerThread:2169346 [handler.py:handle_request():146] handle_request: status_report
+2025-09-26 10:17:47,801 DEBUG   SenderThread:2169346 [sender.py:send_request():406] send_request: defer
+2025-09-26 10:17:47,801 INFO    SenderThread:2169346 [sender.py:send_request_defer():610] handle sender defer: 0
+2025-09-26 10:17:47,801 INFO    SenderThread:2169346 [sender.py:transition_state():614] send defer: 1
+2025-09-26 10:17:47,801 DEBUG   HandlerThread:2169346 [handler.py:handle_request():146] handle_request: defer
+2025-09-26 10:17:47,801 INFO    HandlerThread:2169346 [handler.py:handle_request_defer():172] handle defer: 1
+2025-09-26 10:17:47,801 DEBUG   SenderThread:2169346 [sender.py:send_request():406] send_request: defer
+2025-09-26 10:17:47,801 INFO    SenderThread:2169346 [sender.py:send_request_defer():610] handle sender defer: 1
+2025-09-26 10:17:47,801 INFO    SenderThread:2169346 [sender.py:transition_state():614] send defer: 2
+2025-09-26 10:17:47,801 DEBUG   HandlerThread:2169346 [handler.py:handle_request():146] handle_request: defer
+2025-09-26 10:17:47,802 INFO    HandlerThread:2169346 [handler.py:handle_request_defer():172] handle defer: 2
+2025-09-26 10:17:47,802 INFO    HandlerThread:2169346 [system_monitor.py:finish():203] Stopping system monitor
+2025-09-26 10:17:47,802 DEBUG   SystemMonitor:2169346 [system_monitor.py:_start():179] Finished system metrics aggregation loop
+2025-09-26 10:17:47,802 DEBUG   SystemMonitor:2169346 [system_monitor.py:_start():183] Publishing last batch of metrics
+2025-09-26 10:17:47,802 INFO    HandlerThread:2169346 [interfaces.py:finish():202] Joined cpu monitor
+2025-09-26 10:17:47,802 INFO    HandlerThread:2169346 [interfaces.py:finish():202] Joined disk monitor
+2025-09-26 10:17:47,824 INFO    HandlerThread:2169346 [interfaces.py:finish():202] Joined gpu monitor
+2025-09-26 10:17:47,824 INFO    HandlerThread:2169346 [interfaces.py:finish():202] Joined memory monitor
+2025-09-26 10:17:47,824 INFO    HandlerThread:2169346 [interfaces.py:finish():202] Joined network monitor
+2025-09-26 10:17:47,824 DEBUG   SenderThread:2169346 [sender.py:send_request():406] send_request: defer
+2025-09-26 10:17:47,824 INFO    SenderThread:2169346 [sender.py:send_request_defer():610] handle sender defer: 2
+2025-09-26 10:17:47,824 INFO    SenderThread:2169346 [sender.py:transition_state():614] send defer: 3
+2025-09-26 10:17:47,824 DEBUG   SenderThread:2169346 [sender.py:send():379] send: stats
+2025-09-26 10:17:47,825 DEBUG   HandlerThread:2169346 [handler.py:handle_request():146] handle_request: defer
+2025-09-26 10:17:47,825 INFO    HandlerThread:2169346 [handler.py:handle_request_defer():172] handle defer: 3
+2025-09-26 10:17:47,825 DEBUG   SenderThread:2169346 [sender.py:send_request():406] send_request: defer
+2025-09-26 10:17:47,825 INFO    SenderThread:2169346 [sender.py:send_request_defer():610] handle sender defer: 3
+2025-09-26 10:17:47,825 INFO    SenderThread:2169346 [sender.py:transition_state():614] send defer: 4
+2025-09-26 10:17:47,825 DEBUG   HandlerThread:2169346 [handler.py:handle_request():146] handle_request: defer
+2025-09-26 10:17:47,825 INFO    HandlerThread:2169346 [handler.py:handle_request_defer():172] handle defer: 4
+2025-09-26 10:17:47,825 DEBUG   SenderThread:2169346 [sender.py:send_request():406] send_request: defer
+2025-09-26 10:17:47,825 INFO    SenderThread:2169346 [sender.py:send_request_defer():610] handle sender defer: 4
+2025-09-26 10:17:47,825 INFO    SenderThread:2169346 [sender.py:transition_state():614] send defer: 5
+2025-09-26 10:17:47,825 DEBUG   HandlerThread:2169346 [handler.py:handle_request():146] handle_request: defer
+2025-09-26 10:17:47,825 INFO    HandlerThread:2169346 [handler.py:handle_request_defer():172] handle defer: 5
+2025-09-26 10:17:47,825 DEBUG   SenderThread:2169346 [sender.py:send():379] send: summary
+2025-09-26 10:17:47,826 INFO    SenderThread:2169346 [sender.py:_save_file():1390] saving file wandb-summary.json with policy end
+2025-09-26 10:17:47,826 DEBUG   SenderThread:2169346 [sender.py:send_request():406] send_request: defer
+2025-09-26 10:17:47,826 INFO    SenderThread:2169346 [sender.py:send_request_defer():610] handle sender defer: 5
+2025-09-26 10:17:47,826 INFO    SenderThread:2169346 [sender.py:transition_state():614] send defer: 6
+2025-09-26 10:17:47,826 DEBUG   HandlerThread:2169346 [handler.py:handle_request():146] handle_request: defer
+2025-09-26 10:17:47,826 INFO    HandlerThread:2169346 [handler.py:handle_request_defer():172] handle defer: 6
+2025-09-26 10:17:47,826 DEBUG   SenderThread:2169346 [sender.py:send_request():406] send_request: defer
+2025-09-26 10:17:47,826 INFO    SenderThread:2169346 [sender.py:send_request_defer():610] handle sender defer: 6
+2025-09-26 10:17:47,826 INFO    SenderThread:2169346 [sender.py:transition_state():614] send defer: 7
+2025-09-26 10:17:47,826 DEBUG   HandlerThread:2169346 [handler.py:handle_request():146] handle_request: status_report
+2025-09-26 10:17:47,826 DEBUG   HandlerThread:2169346 [handler.py:handle_request():146] handle_request: defer
+2025-09-26 10:17:47,826 INFO    HandlerThread:2169346 [handler.py:handle_request_defer():172] handle defer: 7
+2025-09-26 10:17:47,826 DEBUG   SenderThread:2169346 [sender.py:send_request():406] send_request: defer
+2025-09-26 10:17:47,826 INFO    SenderThread:2169346 [sender.py:send_request_defer():610] handle sender defer: 7
+2025-09-26 10:17:48,425 INFO    Thread-12 :2169346 [dir_watcher.py:_on_file_modified():288] file/dir modified: /mnt/data/kai/VinDr_Code/Mini_VinDr_CXR_Dataset/dicom_comparison/wandb/run-20250926_101544-7fnyv1vh/files/wandb-summary.json
+2025-09-26 10:17:48,801 DEBUG   HandlerThread:2169346 [handler.py:handle_request():146] handle_request: poll_exit
+2025-09-26 10:17:48,987 INFO    SenderThread:2169346 [sender.py:transition_state():614] send defer: 8
+2025-09-26 10:17:48,987 DEBUG   SenderThread:2169346 [sender.py:send_request():406] send_request: poll_exit
+2025-09-26 10:17:48,987 DEBUG   HandlerThread:2169346 [handler.py:handle_request():146] handle_request: defer
+2025-09-26 10:17:48,987 INFO    HandlerThread:2169346 [handler.py:handle_request_defer():172] handle defer: 8
+2025-09-26 10:17:48,987 DEBUG   SenderThread:2169346 [sender.py:send_request():406] send_request: defer
+2025-09-26 10:17:48,987 INFO    SenderThread:2169346 [sender.py:send_request_defer():610] handle sender defer: 8
+2025-09-26 10:17:48,987 INFO    SenderThread:2169346 [job_builder.py:build():318] Attempting to build job artifact
+2025-09-26 10:17:48,987 INFO    SenderThread:2169346 [job_builder.py:_get_source_type():455] is repo sourced job
+2025-09-26 10:17:49,002 INFO    SenderThread:2169346 [job_builder.py:build():431] adding wandb-job metadata file
+2025-09-26 10:17:49,004 INFO    SenderThread:2169346 [sender.py:transition_state():614] send defer: 9
+2025-09-26 10:17:49,004 DEBUG   HandlerThread:2169346 [handler.py:handle_request():146] handle_request: defer
+2025-09-26 10:17:49,004 DEBUG   SenderThread:2169346 [sender.py:send():379] send: artifact
+2025-09-26 10:17:49,004 INFO    HandlerThread:2169346 [handler.py:handle_request_defer():172] handle defer: 9
+2025-09-26 10:17:49,425 INFO    Thread-12 :2169346 [dir_watcher.py:_on_file_modified():288] file/dir modified: /mnt/data/kai/VinDr_Code/Mini_VinDr_CXR_Dataset/dicom_comparison/wandb/run-20250926_101544-7fnyv1vh/files/output.log
+2025-09-26 10:17:49,801 DEBUG   HandlerThread:2169346 [handler.py:handle_request():146] handle_request: poll_exit
+2025-09-26 10:17:50,515 INFO    SenderThread:2169346 [sender.py:send_artifact():1468] sent artifact job-git_github.com_kaichenchai_Mini_VinDr_CXR_Dataset.git_dicom_comparison_training_script.py - {'id': 'QXJ0aWZhY3Q6MjA4MTQ3MjcxNg==', 'state': 'COMMITTED', 'artifactSequence': {'id': 'QXJ0aWZhY3RDb2xsZWN0aW9uOjc0NjU0ODM0Mw==', 'latestArtifact': {'id': 'QXJ0aWZhY3Q6MjA4MTQ3MjcxNg==', 'versionIndex': 3}}}
+2025-09-26 10:17:50,515 DEBUG   SenderThread:2169346 [sender.py:send_request():406] send_request: defer
+2025-09-26 10:17:50,515 INFO    SenderThread:2169346 [sender.py:send_request_defer():610] handle sender defer: 9
+2025-09-26 10:17:50,515 INFO    SenderThread:2169346 [dir_watcher.py:finish():358] shutting down directory watcher
+2025-09-26 10:17:51,426 INFO    SenderThread:2169346 [dir_watcher.py:finish():388] scan: /mnt/data/kai/VinDr_Code/Mini_VinDr_CXR_Dataset/dicom_comparison/wandb/run-20250926_101544-7fnyv1vh/files
+2025-09-26 10:17:51,426 INFO    SenderThread:2169346 [dir_watcher.py:finish():402] scan save: /mnt/data/kai/VinDr_Code/Mini_VinDr_CXR_Dataset/dicom_comparison/wandb/run-20250926_101544-7fnyv1vh/files/output.log output.log
+2025-09-26 10:17:51,426 INFO    SenderThread:2169346 [dir_watcher.py:finish():402] scan save: /mnt/data/kai/VinDr_Code/Mini_VinDr_CXR_Dataset/dicom_comparison/wandb/run-20250926_101544-7fnyv1vh/files/conda-environment.yaml conda-environment.yaml
+2025-09-26 10:17:51,426 INFO    SenderThread:2169346 [dir_watcher.py:finish():402] scan save: /mnt/data/kai/VinDr_Code/Mini_VinDr_CXR_Dataset/dicom_comparison/wandb/run-20250926_101544-7fnyv1vh/files/config.yaml config.yaml
+2025-09-26 10:17:51,427 INFO    SenderThread:2169346 [dir_watcher.py:finish():402] scan save: /mnt/data/kai/VinDr_Code/Mini_VinDr_CXR_Dataset/dicom_comparison/wandb/run-20250926_101544-7fnyv1vh/files/wandb-metadata.json wandb-metadata.json
+2025-09-26 10:17:51,427 INFO    SenderThread:2169346 [dir_watcher.py:finish():402] scan save: /mnt/data/kai/VinDr_Code/Mini_VinDr_CXR_Dataset/dicom_comparison/wandb/run-20250926_101544-7fnyv1vh/files/requirements.txt requirements.txt
+2025-09-26 10:17:51,429 INFO    SenderThread:2169346 [dir_watcher.py:finish():402] scan save: /mnt/data/kai/VinDr_Code/Mini_VinDr_CXR_Dataset/dicom_comparison/wandb/run-20250926_101544-7fnyv1vh/files/wandb-summary.json wandb-summary.json
+2025-09-26 10:17:51,429 INFO    SenderThread:2169346 [sender.py:transition_state():614] send defer: 10
+2025-09-26 10:17:51,429 DEBUG   SenderThread:2169346 [sender.py:send_request():406] send_request: poll_exit
+2025-09-26 10:17:51,429 DEBUG   HandlerThread:2169346 [handler.py:handle_request():146] handle_request: defer
+2025-09-26 10:17:51,429 INFO    HandlerThread:2169346 [handler.py:handle_request_defer():172] handle defer: 10
+2025-09-26 10:17:51,431 DEBUG   SenderThread:2169346 [sender.py:send_request():406] send_request: defer
+2025-09-26 10:17:51,431 INFO    SenderThread:2169346 [sender.py:send_request_defer():610] handle sender defer: 10
+2025-09-26 10:17:51,431 INFO    SenderThread:2169346 [file_pusher.py:finish():172] shutting down file pusher
+2025-09-26 10:17:51,802 DEBUG   HandlerThread:2169346 [handler.py:handle_request():146] handle_request: poll_exit
+2025-09-26 10:17:51,802 DEBUG   SenderThread:2169346 [sender.py:send_request():406] send_request: poll_exit
+2025-09-26 10:17:52,127 INFO    wandb-upload_0:2169346 [upload_job.py:push():131] Uploaded file /mnt/data/kai/VinDr_Code/Mini_VinDr_CXR_Dataset/dicom_comparison/wandb/run-20250926_101544-7fnyv1vh/files/output.log
+2025-09-26 10:17:52,264 INFO    wandb-upload_1:2169346 [upload_job.py:push():131] Uploaded file /mnt/data/kai/VinDr_Code/Mini_VinDr_CXR_Dataset/dicom_comparison/wandb/run-20250926_101544-7fnyv1vh/files/conda-environment.yaml
+2025-09-26 10:17:52,309 INFO    wandb-upload_2:2169346 [upload_job.py:push():131] Uploaded file /mnt/data/kai/VinDr_Code/Mini_VinDr_CXR_Dataset/dicom_comparison/wandb/run-20250926_101544-7fnyv1vh/files/config.yaml
+2025-09-26 10:17:52,314 INFO    wandb-upload_3:2169346 [upload_job.py:push():131] Uploaded file /mnt/data/kai/VinDr_Code/Mini_VinDr_CXR_Dataset/dicom_comparison/wandb/run-20250926_101544-7fnyv1vh/files/requirements.txt
+2025-09-26 10:17:52,357 INFO    wandb-upload_4:2169346 [upload_job.py:push():131] Uploaded file /mnt/data/kai/VinDr_Code/Mini_VinDr_CXR_Dataset/dicom_comparison/wandb/run-20250926_101544-7fnyv1vh/files/wandb-summary.json
+2025-09-26 10:17:52,557 INFO    Thread-11 (_thread_body):2169346 [sender.py:transition_state():614] send defer: 11
+2025-09-26 10:17:52,557 DEBUG   HandlerThread:2169346 [handler.py:handle_request():146] handle_request: defer
+2025-09-26 10:17:52,557 INFO    HandlerThread:2169346 [handler.py:handle_request_defer():172] handle defer: 11
+2025-09-26 10:17:52,557 DEBUG   SenderThread:2169346 [sender.py:send_request():406] send_request: defer
+2025-09-26 10:17:52,558 INFO    SenderThread:2169346 [sender.py:send_request_defer():610] handle sender defer: 11
+2025-09-26 10:17:52,558 INFO    SenderThread:2169346 [file_pusher.py:join():178] waiting for file pusher
+2025-09-26 10:17:52,558 INFO    SenderThread:2169346 [sender.py:transition_state():614] send defer: 12
+2025-09-26 10:17:52,558 DEBUG   HandlerThread:2169346 [handler.py:handle_request():146] handle_request: defer
+2025-09-26 10:17:52,558 INFO    HandlerThread:2169346 [handler.py:handle_request_defer():172] handle defer: 12
+2025-09-26 10:17:52,558 DEBUG   SenderThread:2169346 [sender.py:send_request():406] send_request: defer
+2025-09-26 10:17:52,558 INFO    SenderThread:2169346 [sender.py:send_request_defer():610] handle sender defer: 12
+2025-09-26 10:17:52,558 INFO    SenderThread:2169346 [file_stream.py:finish():614] file stream finish called
+2025-09-26 10:17:52,802 DEBUG   HandlerThread:2169346 [handler.py:handle_request():146] handle_request: poll_exit
+2025-09-26 10:17:53,606 INFO    SenderThread:2169346 [file_stream.py:finish():618] file stream finish is done
+2025-09-26 10:17:53,607 INFO    SenderThread:2169346 [sender.py:transition_state():614] send defer: 13
+2025-09-26 10:17:53,607 DEBUG   SenderThread:2169346 [sender.py:send_request():406] send_request: poll_exit
+2025-09-26 10:17:53,607 DEBUG   HandlerThread:2169346 [handler.py:handle_request():146] handle_request: defer
+2025-09-26 10:17:53,607 INFO    HandlerThread:2169346 [handler.py:handle_request_defer():172] handle defer: 13
+2025-09-26 10:17:53,607 DEBUG   HandlerThread:2169346 [handler.py:handle_request():146] handle_request: status_report
+2025-09-26 10:17:53,607 DEBUG   SenderThread:2169346 [sender.py:send_request():406] send_request: defer
+2025-09-26 10:17:53,607 INFO    SenderThread:2169346 [sender.py:send_request_defer():610] handle sender defer: 13
+2025-09-26 10:17:53,607 INFO    SenderThread:2169346 [sender.py:transition_state():614] send defer: 14
+2025-09-26 10:17:53,607 DEBUG   HandlerThread:2169346 [handler.py:handle_request():146] handle_request: defer
+2025-09-26 10:17:53,607 INFO    HandlerThread:2169346 [handler.py:handle_request_defer():172] handle defer: 14
+2025-09-26 10:17:53,607 DEBUG   SenderThread:2169346 [sender.py:send():379] send: final
+2025-09-26 10:17:53,607 DEBUG   SenderThread:2169346 [sender.py:send():379] send: footer
+2025-09-26 10:17:53,607 DEBUG   SenderThread:2169346 [sender.py:send_request():406] send_request: defer
+2025-09-26 10:17:53,607 INFO    SenderThread:2169346 [sender.py:send_request_defer():610] handle sender defer: 14
+2025-09-26 10:17:53,607 DEBUG   HandlerThread:2169346 [handler.py:handle_request():146] handle_request: poll_exit
+2025-09-26 10:17:53,607 DEBUG   SenderThread:2169346 [sender.py:send_request():406] send_request: poll_exit
+2025-09-26 10:17:53,607 DEBUG   HandlerThread:2169346 [handler.py:handle_request():146] handle_request: poll_exit
+2025-09-26 10:17:53,607 DEBUG   SenderThread:2169346 [sender.py:send_request():406] send_request: poll_exit
+2025-09-26 10:17:53,608 DEBUG   HandlerThread:2169346 [handler.py:handle_request():146] handle_request: server_info
+2025-09-26 10:17:53,608 DEBUG   SenderThread:2169346 [sender.py:send_request():406] send_request: server_info
+2025-09-26 10:17:53,608 DEBUG   HandlerThread:2169346 [handler.py:handle_request():146] handle_request: get_summary
+2025-09-26 10:17:53,608 DEBUG   HandlerThread:2169346 [handler.py:handle_request():146] handle_request: sampled_history
+2025-09-26 10:17:53,609 DEBUG   HandlerThread:2169346 [handler.py:handle_request():146] handle_request: internal_messages
+2025-09-26 10:17:53,880 INFO    MainThread:2169346 [wandb_run.py:_footer_history_summary_info():3920] rendering history
+2025-09-26 10:17:53,881 INFO    MainThread:2169346 [wandb_run.py:_footer_history_summary_info():3952] rendering summary
+2025-09-26 10:17:53,881 INFO    MainThread:2169346 [wandb_run.py:_footer_sync_info():3879] logging synced files
+2025-09-26 10:17:53,881 DEBUG   HandlerThread:2169346 [handler.py:handle_request():146] handle_request: shutdown
+2025-09-26 10:17:53,881 INFO    HandlerThread:2169346 [handler.py:finish():866] shutting down handler
+2025-09-26 10:17:54,608 INFO    WriterThread:2169346 [datastore.py:close():296] close: /mnt/data/kai/VinDr_Code/Mini_VinDr_CXR_Dataset/dicom_comparison/wandb/run-20250926_101544-7fnyv1vh/run-7fnyv1vh.wandb
+2025-09-26 10:17:54,885 INFO    SenderThread:2169346 [sender.py:finish():1546] shutting down sender
+2025-09-26 10:17:54,885 INFO    SenderThread:2169346 [file_pusher.py:finish():172] shutting down file pusher
+2025-09-26 10:17:54,885 INFO    SenderThread:2169346 [file_pusher.py:join():178] waiting for file pusher

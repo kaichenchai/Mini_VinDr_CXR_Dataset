@@ -78,6 +78,29 @@ if __name__ == "__main__":
                 ext = ".dicom" )
     """
 
+    copy_images_timm_format("/home/kai/mnt/VinDr_Subsets/pneumothorax_subsets/2_bit_png_norm/val",
+                            "/home/kai/mnt/VinDr_Subsets/pneumothorax_subsets/timm_format/2_bit_png_norm/val",
+                            val,
+                            "pneumothorax_flag",
+                            ".png")
+    copy_images_timm_format("/home/kai/mnt/VinDr_Subsets/pneumothorax_subsets/2_bit_png_norm/train",
+                            "/home/kai/mnt/VinDr_Subsets/pneumothorax_subsets/timm_format/2_bit_png_norm/train",
+                            train,
+                            "pneumothorax_flag",
+                            ".png")
+
+    """
+    copy_images_timm_format("/home/kai/mnt/VinDr_Subsets/pneumothorax_subsets/4_bit_png_norm/val",
+                            "/home/kai/mnt/VinDr_Subsets/pneumothorax_subsets/timm_format/4_bit_png_norm/val",
+                            val,
+                            "pneumothorax_flag",
+                            ".png")
+    copy_images_timm_format("/home/kai/mnt/VinDr_Subsets/pneumothorax_subsets/4_bit_png_norm/train",
+                            "/home/kai/mnt/VinDr_Subsets/pneumothorax_subsets/timm_format/4_bit_png_norm/train",
+                            train,
+                            "pneumothorax_flag",
+                            ".png")
+
     copy_images_timm_format("/home/kai/mnt/VinDr_Subsets/pneumothorax_subsets/8_bit_png_norm/val",
                             "/home/kai/mnt/VinDr_Subsets/pneumothorax_subsets/timm_format/8_bit_png_norm/val",
                             val,
@@ -98,4 +121,4 @@ if __name__ == "__main__":
                             "/home/kai/mnt/VinDr_Subsets/pneumothorax_subsets/timm_format/16_bit_png_norm/train",
                             train,
                             "pneumothorax_flag",
-                            ".png")
+                            ".png")"""

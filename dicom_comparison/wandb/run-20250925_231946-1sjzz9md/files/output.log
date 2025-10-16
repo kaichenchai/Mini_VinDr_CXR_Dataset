@@ -1,0 +1,43 @@
+
+Starting epoch 1
+/home/kai/.conda/envs/vindr/lib/python3.12/site-packages/torch/nn/modules/conv.py:456: UserWarning: Applied workaround for CuDNN issue, install nvrtc.so (Triggered internally at /opt/conda/conda-bld/pytorch_1712609048481/work/aten/src/ATen/native/cudnn/Conv_v8.cpp:84.)
+  return F.conv2d(input, weight, bias, self.stride,
+train_loss_epoch: 0.7379948496818542
+Starting eval epoch
+eval_loss_epoch: 0.7179712057113647
+accuracy: 0.5
+Starting epoch 2
+train_loss_epoch: 0.838792085647583
+Starting eval epoch
+eval_loss_epoch: 0.9639050960540771
+accuracy: 0.5
+No improvement above threshold observed, incrementing counter.
+Early stopping counter: 1/50
+Starting epoch 3
+train_loss_epoch: 0.7506524920463562
+Starting eval epoch
+eval_loss_epoch: 0.7511240243911743
+accuracy: 0.5199999809265137
+No improvement above threshold observed, incrementing counter.
+Early stopping counter: 2/50
+Starting epoch 4
+train_loss_epoch: 0.6677826642990112
+Starting eval epoch
+eval_loss_epoch: 8.351131439208984
+accuracy: 0.5
+No improvement above threshold observed, incrementing counter.
+Early stopping counter: 3/50
+Starting epoch 5
+train_loss_epoch: 0.6884181499481201
+Starting eval epoch
+eval_loss_epoch: 2.572314739227295
+accuracy: 0.5
+No improvement above threshold observed, incrementing counter.
+Early stopping counter: 4/50
+Starting epoch 6
+train_loss_epoch: 0.7164387106895447
+Starting eval epoch
+eval_loss_epoch: 0.7358471751213074
+accuracy: 0.47999998927116394
+No improvement above threshold observed, incrementing counter.
+Early stopping counter: 5/50

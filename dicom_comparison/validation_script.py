@@ -9,7 +9,7 @@ from torchmetrics.classification import Accuracy, ConfusionMatrix
 import wandb
 import matplotlib.pyplot as plt
 import seaborn as sns
-
+from tqdm import tqdm
 
 def create_transforms(greyscale, num_channels, pretrained):
     tfms = [transforms.Resize((224, 224))]
@@ -43,7 +43,7 @@ def evaluate(model, dataloader, device, class_names=None):
     accuracy = Accuracy(task="binary").to(device)
     confmat = ConfusionMatrix(task="binary", num_classes=2).to(device)
 
-    for images, labels in dataloader:
+    for images, labels in tqdm(dataloader):
         images = images.to(device)
         labels = labels.to(device)
 
@@ -91,7 +91,11 @@ def main(
         num_classes=num_classes,
         in_chans=num_channels,
     )
-    model.load_state_dict(torch.load(model_checkpoint, map_location=device))
+    
+    checkpoint = torch.load(model_checkpoint, map_location=device)
+    state_dict = checkpoint["model_state_dict"]
+    
+    model.load_state_dict(state_dict)
     model.to(device)
 
     # Setup transforms and dataset

@@ -1,0 +1,29 @@
+2025-09-26 10:27:55,574 INFO    MainThread:2205824 [wandb_setup.py:_flush():76] Current SDK version is 0.16.5
+2025-09-26 10:27:55,574 INFO    MainThread:2205824 [wandb_setup.py:_flush():76] Configure stats pid to 2205824
+2025-09-26 10:27:55,574 INFO    MainThread:2205824 [wandb_setup.py:_flush():76] Loading settings from /home/kai/.config/wandb/settings
+2025-09-26 10:27:55,574 INFO    MainThread:2205824 [wandb_setup.py:_flush():76] Loading settings from /mnt/data/kai/VinDr_Code/Mini_VinDr_CXR_Dataset/dicom_comparison/wandb/settings
+2025-09-26 10:27:55,574 INFO    MainThread:2205824 [wandb_setup.py:_flush():76] Loading settings from environment variables: {}
+2025-09-26 10:27:55,574 INFO    MainThread:2205824 [wandb_setup.py:_flush():76] Applying setup settings: {'_disable_service': False}
+2025-09-26 10:27:55,574 INFO    MainThread:2205824 [wandb_setup.py:_flush():76] Inferring run settings from compute environment: {'program_relpath': 'dicom_comparison/training_script.py', 'program_abspath': '/mnt/data/kai/VinDr_Code/Mini_VinDr_CXR_Dataset/dicom_comparison/training_script.py', 'program': '/mnt/data/kai/VinDr_Code/Mini_VinDr_CXR_Dataset/dicom_comparison/training_script.py'}
+2025-09-26 10:27:55,574 INFO    MainThread:2205824 [wandb_setup.py:_flush():76] Applying login settings: {}
+2025-09-26 10:27:55,575 INFO    MainThread:2205824 [wandb_init.py:_log_setup():527] Logging user logs to /mnt/data/kai/VinDr_Code/Mini_VinDr_CXR_Dataset/dicom_comparison/wandb/run-20250926_102755-9h9nv9mc/logs/debug.log
+2025-09-26 10:27:55,575 INFO    MainThread:2205824 [wandb_init.py:_log_setup():528] Logging internal logs to /mnt/data/kai/VinDr_Code/Mini_VinDr_CXR_Dataset/dicom_comparison/wandb/run-20250926_102755-9h9nv9mc/logs/debug-internal.log
+2025-09-26 10:27:55,575 INFO    MainThread:2205824 [wandb_init.py:init():567] calling init triggers
+2025-09-26 10:27:55,575 INFO    MainThread:2205824 [wandb_init.py:init():574] wandb.init called with sweep_config: {}
+config: {'num_epochs': 200, 'train_per_device_batch_size': 8, 'train_dl_kwargs': {'shuffle': True, 'pin_memory': True, 'batch_size': 8, 'num_workers': 24, 'worker_init_fn': <function worker_init_fn at 0x7f584b6fe520>}, 'eval_per_device_batch_size': 8, 'eval_dl_kwargs': {'shuffle': False, 'pin_memory': True, 'batch_size': 8, 'num_workers': 24, 'worker_init_fn': <function worker_init_fn at 0x7f584b6fe520>}, 'gradient_accumulation_steps': 1, 'gradient_clip_value': None, 'train_total_batch_size': 8, 'eval_total_batch_size': 8, 'num_update_steps_per_epoch': 18, 'num_local_update_steps_per_epoch': 18, 'max_num_train_steps': 3601, 'is_local_process_zero': True, 'is_world_process_zero': True, 'is_distributed': False, 'mixed_precision': 'no', 'num_processes': 1}
+2025-09-26 10:27:55,575 INFO    MainThread:2205824 [wandb_init.py:init():617] starting backend
+2025-09-26 10:27:55,575 INFO    MainThread:2205824 [wandb_init.py:init():621] setting up manager
+2025-09-26 10:27:55,575 INFO    MainThread:2205824 [backend.py:_multiprocessing_setup():105] multiprocessing start_methods=fork,spawn,forkserver, using: spawn
+2025-09-26 10:27:55,576 INFO    MainThread:2205824 [wandb_init.py:init():629] backend started and connected
+2025-09-26 10:27:55,576 INFO    MainThread:2205824 [wandb_init.py:init():721] updated telemetry
+2025-09-26 10:27:55,579 INFO    MainThread:2205824 [wandb_init.py:init():754] communicating run to backend with 90.0 second timeout
+2025-09-26 10:27:56,341 INFO    MainThread:2205824 [wandb_run.py:_on_init():2344] communicating current version
+2025-09-26 10:27:56,366 INFO    MainThread:2205824 [wandb_run.py:_on_init():2353] got version response upgrade_message: "wandb version 0.22.0 is available!  To upgrade, please run:\n $ pip install wandb --upgrade"
+
+2025-09-26 10:27:56,366 INFO    MainThread:2205824 [wandb_init.py:init():805] starting run threads in backend
+2025-09-26 10:27:57,423 INFO    MainThread:2205824 [wandb_run.py:_console_start():2323] atexit reg
+2025-09-26 10:27:57,423 INFO    MainThread:2205824 [wandb_run.py:_redirect():2178] redirect: wrap_raw
+2025-09-26 10:27:57,423 INFO    MainThread:2205824 [wandb_run.py:_redirect():2243] Wrapping output streams.
+2025-09-26 10:27:57,423 INFO    MainThread:2205824 [wandb_run.py:_redirect():2268] Redirects installed.
+2025-09-26 10:27:57,423 INFO    MainThread:2205824 [wandb_init.py:init():848] run started, returning control to user process
+2025-09-26 10:30:08,300 WARNING MsgRouterThr:2205824 [router.py:message_loop():77] message_loop has been closed

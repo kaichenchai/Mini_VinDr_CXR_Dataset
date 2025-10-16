@@ -1,0 +1,7 @@
+  0%|                                                                                                                                                           | 0/2 [00:00<?, ?it/s]/home/kai/.conda/envs/vindr/lib/python3.12/site-packages/torch/nn/modules/conv.py:456: UserWarning: Applied workaround for CuDNN issue, install nvrtc.so (Triggered internally at /opt/conda/conda-bld/pytorch_1712609048481/work/aten/src/ATen/native/cudnn/Conv_v8.cpp:84.)
+  return F.conv2d(input, weight, bias, self.stride,
+100%|███████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████| 2/2 [00:00<00:00,  3.85it/s]
+Validation Accuracy: 0.5000
+Confusion Matrix:
+[[25  0]
+ [25  0]]
