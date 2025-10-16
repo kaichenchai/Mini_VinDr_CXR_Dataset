@@ -65,7 +65,7 @@ class AccuracyCallback(TrainerCallback):
         self.accuracy.reset()
 
 
-def create_transforms(greyscale, num_channels, pretrained, training=True):
+def create_transforms(greyscale, num_channels, pretrained, model_name, training=True):
     if training:
         tfms = [transforms.RandomResizedCrop(224, scale=(0.8, 1.0))]
 
@@ -84,12 +84,20 @@ def create_transforms(greyscale, num_channels, pretrained, training=True):
         tfms.append(transforms.ToTensor())
 
     if num_channels == 3 and pretrained:
-        tfms.append(
-            transforms.Normalize(
-                torch.tensor([0.4850, 0.4560, 0.4060]),
-                torch.tensor([0.2290, 0.2240, 0.2250]),
+        if model_name == "vit_base_patch16_224":
+            tfms.append(
+                transforms.Normalize(
+                    torch.tensor([0.5, 0.5, 0.5]),
+                    torch.tensor([0.5, 0.5, 0.5]),
+                )
             )
-        )
+        else:
+            tfms.append(
+                transforms.Normalize(
+                    torch.tensor([0.4850, 0.4560, 0.4060]),
+                    torch.tensor([0.2290, 0.2240, 0.2250]),
+                )
+            )
     elif num_channels == 1 and pretrained:
         tfms.append(
             transforms.Normalize(
@@ -165,10 +173,10 @@ def main(
     )
 
     train_transforms = create_transforms(
-        greyscale, num_channels, pretrained, training=True
+        greyscale, num_channels, pretrained, selected_model, training=True
     )
     eval_transforms = create_transforms(
-        greyscale, num_channels, pretrained, training=False
+        greyscale, num_channels, pretrained, selected_model, training=False
     )
 
     # Create datasets
