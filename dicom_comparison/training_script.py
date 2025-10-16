@@ -138,6 +138,7 @@ def create_scheduler():
 
 def main(
     data_dir,
+    model_name,
     num_epochs,
     frozen_lr,
     batch_size,
@@ -153,9 +154,11 @@ def main(
 
     num_classes = 2
 
+    selected_model = model_name if model_name else "resnetrs50"
+
     # Create model (from timm)
     model = create_model(
-        "resnetrs50",
+        model_name=selected_model,
         pretrained=pretrained,
         num_classes=num_classes,
         in_chans=num_channels,
@@ -242,6 +245,11 @@ if __name__ == "__main__":
     parser = argparse.ArgumentParser()
     parser.add_argument("--data_dir", required=True, help="The data folder on disk.")
     parser.add_argument(
+        "--model_name",
+        required=False,
+        type=str,
+        default="resnetrs50")
+    parser.add_argument(
         "--epochs", required=True, help="The number of epochs to train for", type=int
     )
     parser.add_argument(
@@ -277,6 +285,7 @@ if __name__ == "__main__":
     print(args.data_dir)
     main(
         args.data_dir,
+        args.model_name,
         args.epochs,
         args.lr,
         args.batch_size,
