@@ -1,0 +1,198 @@
+2025-10-16 15:27:43,885 INFO    StreamThr :1427468 [internal.py:wandb_internal():86] W&B internal server running at pid: 1427468, started at: 2025-10-16 15:27:43.884789
+2025-10-16 15:27:43,888 DEBUG   HandlerThread:1427468 [handler.py:handle_request():146] handle_request: status
+2025-10-16 15:27:43,891 INFO    WriterThread:1427468 [datastore.py:open_for_write():87] open: /mnt/data/kai/Mini_VinDr_CXR_Dataset/dicom_comparison/wandb/run-20251016_152743-c9eg6fdd/run-c9eg6fdd.wandb
+2025-10-16 15:27:43,893 DEBUG   SenderThread:1427468 [sender.py:send():379] send: header
+2025-10-16 15:27:43,893 DEBUG   SenderThread:1427468 [sender.py:send():379] send: run
+2025-10-16 15:27:44,706 INFO    SenderThread:1427468 [dir_watcher.py:__init__():211] watching files in: /mnt/data/kai/Mini_VinDr_CXR_Dataset/dicom_comparison/wandb/run-20251016_152743-c9eg6fdd/files
+2025-10-16 15:27:44,707 INFO    SenderThread:1427468 [sender.py:_start_run_threads():1124] run started: c9eg6fdd with start time 1760599663.883601
+2025-10-16 15:27:44,713 DEBUG   HandlerThread:1427468 [handler.py:handle_request():146] handle_request: check_version
+2025-10-16 15:27:44,713 DEBUG   SenderThread:1427468 [sender.py:send_request():406] send_request: check_version
+2025-10-16 15:27:44,759 DEBUG   HandlerThread:1427468 [handler.py:handle_request():146] handle_request: run_start
+2025-10-16 15:27:44,773 DEBUG   HandlerThread:1427468 [system_info.py:__init__():26] System info init
+2025-10-16 15:27:44,773 DEBUG   HandlerThread:1427468 [system_info.py:__init__():41] System info init done
+2025-10-16 15:27:44,774 INFO    HandlerThread:1427468 [system_monitor.py:start():194] Starting system monitor
+2025-10-16 15:27:44,774 INFO    SystemMonitor:1427468 [system_monitor.py:_start():158] Starting system asset monitoring threads
+2025-10-16 15:27:44,774 INFO    HandlerThread:1427468 [system_monitor.py:probe():214] Collecting system info
+2025-10-16 15:27:44,775 INFO    SystemMonitor:1427468 [interfaces.py:start():190] Started cpu monitoring
+2025-10-16 15:27:44,776 INFO    SystemMonitor:1427468 [interfaces.py:start():190] Started disk monitoring
+2025-10-16 15:27:44,777 INFO    SystemMonitor:1427468 [interfaces.py:start():190] Started gpu monitoring
+2025-10-16 15:27:44,778 INFO    SystemMonitor:1427468 [interfaces.py:start():190] Started memory monitoring
+2025-10-16 15:27:44,778 INFO    SystemMonitor:1427468 [interfaces.py:start():190] Started network monitoring
+2025-10-16 15:27:44,788 DEBUG   HandlerThread:1427468 [system_info.py:probe():150] Probing system
+2025-10-16 15:27:44,790 DEBUG   HandlerThread:1427468 [system_info.py:_probe_git():135] Probing git
+2025-10-16 15:27:44,798 DEBUG   HandlerThread:1427468 [system_info.py:_probe_git():143] Probing git done
+2025-10-16 15:27:44,798 DEBUG   HandlerThread:1427468 [system_info.py:probe():198] Probing system done
+2025-10-16 15:27:44,798 DEBUG   HandlerThread:1427468 [system_monitor.py:probe():223] {'os': 'Linux-6.5.0-28-generic-x86_64-with-glibc2.35', 'python': '3.12.3', 'heartbeatAt': '2025-10-16T07:27:44.788900', 'startedAt': '2025-10-16T07:27:43.879606', 'docker': None, 'cuda': None, 'args': ('--data_dir', '/home/kai/mnt/VinDr_datasets/pneumothorax/4_bit_png_norm', '--model_name', 'vit_base_patch16_224', '--epochs', '200', '--lr', '0.001', '--num_chans', '3', '--greyscale', 't', '--batch_size', '8', '--pretrained', 't', '--run_name', 'pneumothorax_4_norm_200e_pretrained_vit', '--early_stop', '50'), 'state': 'running', 'program': '/mnt/data/kai/Mini_VinDr_CXR_Dataset/dicom_comparison/training_script.py', 'codePathLocal': 'training_script.py', 'codePath': 'dicom_comparison/training_script.py', 'git': {'remote': 'https://github.com/kaichenchai/Mini_VinDr_CXR_Dataset.git', 'commit': '7bfcdc22479d7ac827d81bdb73f0da7862da70eb'}, 'email': 'englishorc65@gmail.com', 'root': '/mnt/data/kai/Mini_VinDr_CXR_Dataset', 'host': 'thermaltake', 'username': 'kai', 'executable': '/home/kai/miniconda3/envs/vindr/bin/python3', 'cpu_count': 10, 'cpu_count_logical': 20, 'cpu_freq': {'current': 1658.4539, 'min': 1200.0, 'max': 4120.0}, 'cpu_freq_per_core': [{'current': 1200.193, 'min': 1200.0, 'max': 4100.0}, {'current': 1200.0, 'min': 1200.0, 'max': 4100.0}, {'current': 1200.0, 'min': 1200.0, 'max': 4100.0}, {'current': 1200.0, 'min': 1200.0, 'max': 4200.0}, {'current': 2999.853, 'min': 1200.0, 'max': 4100.0}, {'current': 1200.0, 'min': 1200.0, 'max': 4100.0}, {'current': 1700.122, 'min': 1200.0, 'max': 4100.0}, {'current': 1200.0, 'min': 1200.0, 'max': 4100.0}, {'current': 1200.0, 'min': 1200.0, 'max': 4100.0}, {'current': 1200.375, 'min': 1200.0, 'max': 4200.0}, {'current': 1201.729, 'min': 1200.0, 'max': 4100.0}, {'current': 3999.996, 'min': 1200.0, 'max': 4100.0}, {'current': 1200.0, 'min': 1200.0, 'max': 4100.0}, {'current': 1200.0, 'min': 1200.0, 'max': 4200.0}, {'current': 1200.0, 'min': 1200.0, 'max': 4100.0}, {'current': 2400.001, 'min': 1200.0, 'max': 4100.0}, {'current': 1200.0, 'min': 1200.0, 'max': 4100.0}, {'current': 2400.233, 'min': 1200.0, 'max': 4100.0}, {'current': 3000.626, 'min': 1200.0, 'max': 4100.0}, {'current': 1200.0, 'min': 1200.0, 'max': 4200.0}], 'disk': {'/': {'total': 3753.976058959961, 'used': 563.4379501342773}}, 'gpu': 'NVIDIA GeForce RTX 2080 Ti', 'gpu_count': 2, 'gpu_devices': [{'name': 'NVIDIA GeForce RTX 2080 Ti', 'memory_total': 11811160064}, {'name': 'NVIDIA GeForce RTX 2080 Ti', 'memory_total': 11811160064}], 'memory': {'total': 62.469051361083984}}
+2025-10-16 15:27:44,798 INFO    HandlerThread:1427468 [system_monitor.py:probe():224] Finished collecting system info
+2025-10-16 15:27:44,798 INFO    HandlerThread:1427468 [system_monitor.py:probe():227] Publishing system info
+2025-10-16 15:27:44,798 DEBUG   HandlerThread:1427468 [system_info.py:_save_conda():207] Saving list of conda packages installed into the current environment
+2025-10-16 15:27:45,709 INFO    Thread-12 :1427468 [dir_watcher.py:_on_file_created():271] file/dir created: /mnt/data/kai/Mini_VinDr_CXR_Dataset/dicom_comparison/wandb/run-20251016_152743-c9eg6fdd/files/conda-environment.yaml
+2025-10-16 15:27:46,568 DEBUG   HandlerThread:1427468 [system_info.py:_save_conda():222] Saving conda packages done
+2025-10-16 15:27:46,569 INFO    HandlerThread:1427468 [system_monitor.py:probe():229] Finished publishing system info
+2025-10-16 15:27:46,571 DEBUG   SenderThread:1427468 [sender.py:send():379] send: files
+2025-10-16 15:27:46,572 INFO    SenderThread:1427468 [sender.py:_save_file():1390] saving file wandb-metadata.json with policy now
+2025-10-16 15:27:46,619 DEBUG   HandlerThread:1427468 [handler.py:handle_request():146] handle_request: python_packages
+2025-10-16 15:27:46,619 DEBUG   SenderThread:1427468 [sender.py:send_request():406] send_request: python_packages
+2025-10-16 15:27:46,621 DEBUG   SenderThread:1427468 [sender.py:send():379] send: telemetry
+2025-10-16 15:27:46,622 DEBUG   HandlerThread:1427468 [handler.py:handle_request():146] handle_request: stop_status
+2025-10-16 15:27:46,622 DEBUG   HandlerThread:1427468 [handler.py:handle_request():146] handle_request: internal_messages
+2025-10-16 15:27:46,623 DEBUG   SenderThread:1427468 [sender.py:send_request():406] send_request: stop_status
+2025-10-16 15:27:46,707 INFO    Thread-12 :1427468 [dir_watcher.py:_on_file_modified():288] file/dir modified: /mnt/data/kai/Mini_VinDr_CXR_Dataset/dicom_comparison/wandb/run-20251016_152743-c9eg6fdd/files/conda-environment.yaml
+2025-10-16 15:27:46,707 INFO    Thread-12 :1427468 [dir_watcher.py:_on_file_created():271] file/dir created: /mnt/data/kai/Mini_VinDr_CXR_Dataset/dicom_comparison/wandb/run-20251016_152743-c9eg6fdd/files/wandb-metadata.json
+2025-10-16 15:27:46,707 INFO    Thread-12 :1427468 [dir_watcher.py:_on_file_created():271] file/dir created: /mnt/data/kai/Mini_VinDr_CXR_Dataset/dicom_comparison/wandb/run-20251016_152743-c9eg6fdd/files/requirements.txt
+2025-10-16 15:27:46,707 INFO    Thread-12 :1427468 [dir_watcher.py:_on_file_created():271] file/dir created: /mnt/data/kai/Mini_VinDr_CXR_Dataset/dicom_comparison/wandb/run-20251016_152743-c9eg6fdd/files/output.log
+2025-10-16 15:27:47,640 INFO    wandb-upload_0:1427468 [upload_job.py:push():131] Uploaded file /tmp/tmpctqsqt72wandb/oevyhex5-wandb-metadata.json
+2025-10-16 15:27:48,708 INFO    Thread-12 :1427468 [dir_watcher.py:_on_file_modified():288] file/dir modified: /mnt/data/kai/Mini_VinDr_CXR_Dataset/dicom_comparison/wandb/run-20251016_152743-c9eg6fdd/files/output.log
+2025-10-16 15:27:48,957 DEBUG   HandlerThread:1427468 [handler.py:handle_request():146] handle_request: status_report
+2025-10-16 15:27:48,999 DEBUG   HandlerThread:1427468 [handler.py:handle_request():146] handle_request: partial_history
+2025-10-16 15:27:49,001 DEBUG   SenderThread:1427468 [sender.py:send():379] send: history
+2025-10-16 15:27:49,001 DEBUG   SenderThread:1427468 [sender.py:send_request():406] send_request: summary_record
+2025-10-16 15:27:49,002 INFO    SenderThread:1427468 [sender.py:_save_file():1390] saving file wandb-summary.json with policy end
+2025-10-16 15:27:49,436 DEBUG   HandlerThread:1427468 [handler.py:handle_request():146] handle_request: partial_history
+2025-10-16 15:27:49,437 DEBUG   SenderThread:1427468 [sender.py:send():379] send: history
+2025-10-16 15:27:49,437 DEBUG   SenderThread:1427468 [sender.py:send_request():406] send_request: summary_record
+2025-10-16 15:27:49,437 INFO    SenderThread:1427468 [sender.py:_save_file():1390] saving file wandb-summary.json with policy end
+2025-10-16 15:27:49,481 DEBUG   SenderThread:1427468 [sender.py:send():379] send: exit
+2025-10-16 15:27:49,481 INFO    SenderThread:1427468 [sender.py:send_exit():586] handling exit code: 1
+2025-10-16 15:27:49,481 INFO    SenderThread:1427468 [sender.py:send_exit():588] handling runtime: 4
+2025-10-16 15:27:49,482 INFO    SenderThread:1427468 [sender.py:_save_file():1390] saving file wandb-summary.json with policy end
+2025-10-16 15:27:49,482 INFO    SenderThread:1427468 [sender.py:send_exit():594] send defer
+2025-10-16 15:27:49,482 DEBUG   HandlerThread:1427468 [handler.py:handle_request():146] handle_request: defer
+2025-10-16 15:27:49,483 INFO    HandlerThread:1427468 [handler.py:handle_request_defer():172] handle defer: 0
+2025-10-16 15:27:49,483 DEBUG   SenderThread:1427468 [sender.py:send_request():406] send_request: defer
+2025-10-16 15:27:49,483 INFO    SenderThread:1427468 [sender.py:send_request_defer():610] handle sender defer: 0
+2025-10-16 15:27:49,483 INFO    SenderThread:1427468 [sender.py:transition_state():614] send defer: 1
+2025-10-16 15:27:49,483 DEBUG   HandlerThread:1427468 [handler.py:handle_request():146] handle_request: defer
+2025-10-16 15:27:49,483 INFO    HandlerThread:1427468 [handler.py:handle_request_defer():172] handle defer: 1
+2025-10-16 15:27:49,484 DEBUG   SenderThread:1427468 [sender.py:send_request():406] send_request: defer
+2025-10-16 15:27:49,484 INFO    SenderThread:1427468 [sender.py:send_request_defer():610] handle sender defer: 1
+2025-10-16 15:27:49,484 INFO    SenderThread:1427468 [sender.py:transition_state():614] send defer: 2
+2025-10-16 15:27:49,484 DEBUG   HandlerThread:1427468 [handler.py:handle_request():146] handle_request: defer
+2025-10-16 15:27:49,484 INFO    HandlerThread:1427468 [handler.py:handle_request_defer():172] handle defer: 2
+2025-10-16 15:27:49,484 INFO    HandlerThread:1427468 [system_monitor.py:finish():203] Stopping system monitor
+2025-10-16 15:27:49,484 DEBUG   SystemMonitor:1427468 [system_monitor.py:_start():172] Starting system metrics aggregation loop
+2025-10-16 15:27:49,485 DEBUG   SystemMonitor:1427468 [system_monitor.py:_start():179] Finished system metrics aggregation loop
+2025-10-16 15:27:49,485 INFO    HandlerThread:1427468 [interfaces.py:finish():202] Joined cpu monitor
+2025-10-16 15:27:49,485 DEBUG   SystemMonitor:1427468 [system_monitor.py:_start():183] Publishing last batch of metrics
+2025-10-16 15:27:49,485 INFO    HandlerThread:1427468 [interfaces.py:finish():202] Joined disk monitor
+2025-10-16 15:27:49,596 INFO    HandlerThread:1427468 [interfaces.py:finish():202] Joined gpu monitor
+2025-10-16 15:27:49,596 INFO    HandlerThread:1427468 [interfaces.py:finish():202] Joined memory monitor
+2025-10-16 15:27:49,596 INFO    HandlerThread:1427468 [interfaces.py:finish():202] Joined network monitor
+2025-10-16 15:27:49,597 DEBUG   SenderThread:1427468 [sender.py:send_request():406] send_request: defer
+2025-10-16 15:27:49,597 INFO    SenderThread:1427468 [sender.py:send_request_defer():610] handle sender defer: 2
+2025-10-16 15:27:49,597 INFO    SenderThread:1427468 [sender.py:transition_state():614] send defer: 3
+2025-10-16 15:27:49,597 DEBUG   SenderThread:1427468 [sender.py:send():379] send: stats
+2025-10-16 15:27:49,597 DEBUG   HandlerThread:1427468 [handler.py:handle_request():146] handle_request: defer
+2025-10-16 15:27:49,598 INFO    HandlerThread:1427468 [handler.py:handle_request_defer():172] handle defer: 3
+2025-10-16 15:27:49,598 DEBUG   SenderThread:1427468 [sender.py:send_request():406] send_request: defer
+2025-10-16 15:27:49,598 INFO    SenderThread:1427468 [sender.py:send_request_defer():610] handle sender defer: 3
+2025-10-16 15:27:49,598 INFO    SenderThread:1427468 [sender.py:transition_state():614] send defer: 4
+2025-10-16 15:27:49,599 DEBUG   HandlerThread:1427468 [handler.py:handle_request():146] handle_request: defer
+2025-10-16 15:27:49,599 INFO    HandlerThread:1427468 [handler.py:handle_request_defer():172] handle defer: 4
+2025-10-16 15:27:49,599 DEBUG   SenderThread:1427468 [sender.py:send_request():406] send_request: defer
+2025-10-16 15:27:49,599 INFO    SenderThread:1427468 [sender.py:send_request_defer():610] handle sender defer: 4
+2025-10-16 15:27:49,599 INFO    SenderThread:1427468 [sender.py:transition_state():614] send defer: 5
+2025-10-16 15:27:49,599 DEBUG   HandlerThread:1427468 [handler.py:handle_request():146] handle_request: defer
+2025-10-16 15:27:49,599 INFO    HandlerThread:1427468 [handler.py:handle_request_defer():172] handle defer: 5
+2025-10-16 15:27:49,600 DEBUG   SenderThread:1427468 [sender.py:send():379] send: summary
+2025-10-16 15:27:49,600 INFO    SenderThread:1427468 [sender.py:_save_file():1390] saving file wandb-summary.json with policy end
+2025-10-16 15:27:49,600 DEBUG   SenderThread:1427468 [sender.py:send_request():406] send_request: defer
+2025-10-16 15:27:49,600 INFO    SenderThread:1427468 [sender.py:send_request_defer():610] handle sender defer: 5
+2025-10-16 15:27:49,600 INFO    SenderThread:1427468 [sender.py:transition_state():614] send defer: 6
+2025-10-16 15:27:49,600 DEBUG   HandlerThread:1427468 [handler.py:handle_request():146] handle_request: defer
+2025-10-16 15:27:49,600 INFO    HandlerThread:1427468 [handler.py:handle_request_defer():172] handle defer: 6
+2025-10-16 15:27:49,600 DEBUG   SenderThread:1427468 [sender.py:send_request():406] send_request: defer
+2025-10-16 15:27:49,600 INFO    SenderThread:1427468 [sender.py:send_request_defer():610] handle sender defer: 6
+2025-10-16 15:27:49,602 DEBUG   HandlerThread:1427468 [handler.py:handle_request():146] handle_request: status_report
+2025-10-16 15:27:49,708 INFO    Thread-12 :1427468 [dir_watcher.py:_on_file_created():271] file/dir created: /mnt/data/kai/Mini_VinDr_CXR_Dataset/dicom_comparison/wandb/run-20251016_152743-c9eg6fdd/files/wandb-summary.json
+2025-10-16 15:27:49,901 INFO    SenderThread:1427468 [sender.py:transition_state():614] send defer: 7
+2025-10-16 15:27:49,901 DEBUG   HandlerThread:1427468 [handler.py:handle_request():146] handle_request: defer
+2025-10-16 15:27:49,901 INFO    HandlerThread:1427468 [handler.py:handle_request_defer():172] handle defer: 7
+2025-10-16 15:27:49,901 DEBUG   SenderThread:1427468 [sender.py:send_request():406] send_request: defer
+2025-10-16 15:27:49,901 INFO    SenderThread:1427468 [sender.py:send_request_defer():610] handle sender defer: 7
+2025-10-16 15:27:50,481 DEBUG   HandlerThread:1427468 [handler.py:handle_request():146] handle_request: poll_exit
+2025-10-16 15:27:50,709 INFO    Thread-12 :1427468 [dir_watcher.py:_on_file_modified():288] file/dir modified: /mnt/data/kai/Mini_VinDr_CXR_Dataset/dicom_comparison/wandb/run-20251016_152743-c9eg6fdd/files/config.yaml
+2025-10-16 15:27:50,709 INFO    Thread-12 :1427468 [dir_watcher.py:_on_file_modified():288] file/dir modified: /mnt/data/kai/Mini_VinDr_CXR_Dataset/dicom_comparison/wandb/run-20251016_152743-c9eg6fdd/files/output.log
+2025-10-16 15:27:51,484 INFO    SenderThread:1427468 [sender.py:transition_state():614] send defer: 8
+2025-10-16 15:27:51,484 DEBUG   SenderThread:1427468 [sender.py:send_request():406] send_request: poll_exit
+2025-10-16 15:27:51,484 DEBUG   HandlerThread:1427468 [handler.py:handle_request():146] handle_request: defer
+2025-10-16 15:27:51,485 INFO    HandlerThread:1427468 [handler.py:handle_request_defer():172] handle defer: 8
+2025-10-16 15:27:51,485 DEBUG   SenderThread:1427468 [sender.py:send_request():406] send_request: defer
+2025-10-16 15:27:51,485 INFO    SenderThread:1427468 [sender.py:send_request_defer():610] handle sender defer: 8
+2025-10-16 15:27:51,485 INFO    SenderThread:1427468 [job_builder.py:build():318] Attempting to build job artifact
+2025-10-16 15:27:51,485 INFO    SenderThread:1427468 [job_builder.py:_get_source_type():455] is repo sourced job
+2025-10-16 15:27:51,510 INFO    SenderThread:1427468 [job_builder.py:build():431] adding wandb-job metadata file
+2025-10-16 15:27:51,515 INFO    SenderThread:1427468 [sender.py:transition_state():614] send defer: 9
+2025-10-16 15:27:51,516 DEBUG   HandlerThread:1427468 [handler.py:handle_request():146] handle_request: defer
+2025-10-16 15:27:51,516 INFO    HandlerThread:1427468 [handler.py:handle_request_defer():172] handle defer: 9
+2025-10-16 15:27:51,516 DEBUG   SenderThread:1427468 [sender.py:send():379] send: artifact
+2025-10-16 15:27:51,709 INFO    Thread-12 :1427468 [dir_watcher.py:_on_file_modified():288] file/dir modified: /mnt/data/kai/Mini_VinDr_CXR_Dataset/dicom_comparison/wandb/run-20251016_152743-c9eg6fdd/files/output.log
+2025-10-16 15:27:52,484 DEBUG   HandlerThread:1427468 [handler.py:handle_request():146] handle_request: poll_exit
+2025-10-16 15:27:52,970 INFO    SenderThread:1427468 [sender.py:send_artifact():1468] sent artifact job-https___github.com_kaichenchai_Mini_VinDr_CXR_Dataset.git_dicom_comparison_training_script.py - {'id': 'QXJ0aWZhY3Q6MjE0MDgzOTg3Mw==', 'state': 'COMMITTED', 'artifactSequence': {'id': 'QXJ0aWZhY3RDb2xsZWN0aW9uOjc2OTY2MjM5MA==', 'latestArtifact': {'id': 'QXJ0aWZhY3Q6MjE0MDgzOTg3Mw==', 'versionIndex': 0}}}
+2025-10-16 15:27:52,970 DEBUG   SenderThread:1427468 [sender.py:send_request():406] send_request: defer
+2025-10-16 15:27:52,970 INFO    SenderThread:1427468 [sender.py:send_request_defer():610] handle sender defer: 9
+2025-10-16 15:27:52,970 INFO    SenderThread:1427468 [dir_watcher.py:finish():358] shutting down directory watcher
+2025-10-16 15:27:53,711 INFO    SenderThread:1427468 [dir_watcher.py:finish():388] scan: /mnt/data/kai/Mini_VinDr_CXR_Dataset/dicom_comparison/wandb/run-20251016_152743-c9eg6fdd/files
+2025-10-16 15:27:53,711 INFO    SenderThread:1427468 [dir_watcher.py:finish():402] scan save: /mnt/data/kai/Mini_VinDr_CXR_Dataset/dicom_comparison/wandb/run-20251016_152743-c9eg6fdd/files/requirements.txt requirements.txt
+2025-10-16 15:27:53,711 INFO    SenderThread:1427468 [dir_watcher.py:finish():402] scan save: /mnt/data/kai/Mini_VinDr_CXR_Dataset/dicom_comparison/wandb/run-20251016_152743-c9eg6fdd/files/wandb-summary.json wandb-summary.json
+2025-10-16 15:27:53,712 INFO    SenderThread:1427468 [dir_watcher.py:finish():402] scan save: /mnt/data/kai/Mini_VinDr_CXR_Dataset/dicom_comparison/wandb/run-20251016_152743-c9eg6fdd/files/config.yaml config.yaml
+2025-10-16 15:27:53,718 INFO    SenderThread:1427468 [dir_watcher.py:finish():402] scan save: /mnt/data/kai/Mini_VinDr_CXR_Dataset/dicom_comparison/wandb/run-20251016_152743-c9eg6fdd/files/conda-environment.yaml conda-environment.yaml
+2025-10-16 15:27:53,719 INFO    SenderThread:1427468 [dir_watcher.py:finish():402] scan save: /mnt/data/kai/Mini_VinDr_CXR_Dataset/dicom_comparison/wandb/run-20251016_152743-c9eg6fdd/files/wandb-metadata.json wandb-metadata.json
+2025-10-16 15:27:53,719 INFO    SenderThread:1427468 [dir_watcher.py:finish():402] scan save: /mnt/data/kai/Mini_VinDr_CXR_Dataset/dicom_comparison/wandb/run-20251016_152743-c9eg6fdd/files/output.log output.log
+2025-10-16 15:27:53,721 INFO    SenderThread:1427468 [sender.py:transition_state():614] send defer: 10
+2025-10-16 15:27:53,722 DEBUG   SenderThread:1427468 [sender.py:send_request():406] send_request: poll_exit
+2025-10-16 15:27:53,722 DEBUG   HandlerThread:1427468 [handler.py:handle_request():146] handle_request: defer
+2025-10-16 15:27:53,723 INFO    HandlerThread:1427468 [handler.py:handle_request_defer():172] handle defer: 10
+2025-10-16 15:27:53,729 DEBUG   SenderThread:1427468 [sender.py:send_request():406] send_request: defer
+2025-10-16 15:27:53,729 INFO    SenderThread:1427468 [sender.py:send_request_defer():610] handle sender defer: 10
+2025-10-16 15:27:53,729 INFO    SenderThread:1427468 [file_pusher.py:finish():172] shutting down file pusher
+2025-10-16 15:27:54,307 INFO    wandb-upload_0:1427468 [upload_job.py:push():131] Uploaded file /mnt/data/kai/Mini_VinDr_CXR_Dataset/dicom_comparison/wandb/run-20251016_152743-c9eg6fdd/files/requirements.txt
+2025-10-16 15:27:54,487 DEBUG   HandlerThread:1427468 [handler.py:handle_request():146] handle_request: poll_exit
+2025-10-16 15:27:54,487 DEBUG   SenderThread:1427468 [sender.py:send_request():406] send_request: poll_exit
+2025-10-16 15:27:54,508 INFO    wandb-upload_1:1427468 [upload_job.py:push():131] Uploaded file /mnt/data/kai/Mini_VinDr_CXR_Dataset/dicom_comparison/wandb/run-20251016_152743-c9eg6fdd/files/wandb-summary.json
+2025-10-16 15:27:54,644 INFO    wandb-upload_4:1427468 [upload_job.py:push():131] Uploaded file /mnt/data/kai/Mini_VinDr_CXR_Dataset/dicom_comparison/wandb/run-20251016_152743-c9eg6fdd/files/output.log
+2025-10-16 15:27:54,675 INFO    wandb-upload_3:1427468 [upload_job.py:push():131] Uploaded file /mnt/data/kai/Mini_VinDr_CXR_Dataset/dicom_comparison/wandb/run-20251016_152743-c9eg6fdd/files/conda-environment.yaml
+2025-10-16 15:27:54,676 INFO    wandb-upload_2:1427468 [upload_job.py:push():131] Uploaded file /mnt/data/kai/Mini_VinDr_CXR_Dataset/dicom_comparison/wandb/run-20251016_152743-c9eg6fdd/files/config.yaml
+2025-10-16 15:27:54,877 INFO    Thread-11 (_thread_body):1427468 [sender.py:transition_state():614] send defer: 11
+2025-10-16 15:27:54,877 DEBUG   HandlerThread:1427468 [handler.py:handle_request():146] handle_request: defer
+2025-10-16 15:27:54,878 INFO    HandlerThread:1427468 [handler.py:handle_request_defer():172] handle defer: 11
+2025-10-16 15:27:54,878 DEBUG   SenderThread:1427468 [sender.py:send_request():406] send_request: defer
+2025-10-16 15:27:54,878 INFO    SenderThread:1427468 [sender.py:send_request_defer():610] handle sender defer: 11
+2025-10-16 15:27:54,879 INFO    SenderThread:1427468 [file_pusher.py:join():178] waiting for file pusher
+2025-10-16 15:27:54,879 INFO    SenderThread:1427468 [sender.py:transition_state():614] send defer: 12
+2025-10-16 15:27:54,879 DEBUG   HandlerThread:1427468 [handler.py:handle_request():146] handle_request: defer
+2025-10-16 15:27:54,879 INFO    HandlerThread:1427468 [handler.py:handle_request_defer():172] handle defer: 12
+2025-10-16 15:27:54,880 DEBUG   SenderThread:1427468 [sender.py:send_request():406] send_request: defer
+2025-10-16 15:27:54,880 INFO    SenderThread:1427468 [sender.py:send_request_defer():610] handle sender defer: 12
+2025-10-16 15:27:54,880 INFO    SenderThread:1427468 [file_stream.py:finish():614] file stream finish called
+2025-10-16 15:27:55,166 INFO    SenderThread:1427468 [file_stream.py:finish():618] file stream finish is done
+2025-10-16 15:27:55,167 INFO    SenderThread:1427468 [sender.py:transition_state():614] send defer: 13
+2025-10-16 15:27:55,167 DEBUG   HandlerThread:1427468 [handler.py:handle_request():146] handle_request: defer
+2025-10-16 15:27:55,167 INFO    HandlerThread:1427468 [handler.py:handle_request_defer():172] handle defer: 13
+2025-10-16 15:27:55,168 DEBUG   SenderThread:1427468 [sender.py:send_request():406] send_request: defer
+2025-10-16 15:27:55,168 INFO    SenderThread:1427468 [sender.py:send_request_defer():610] handle sender defer: 13
+2025-10-16 15:27:55,168 INFO    SenderThread:1427468 [sender.py:transition_state():614] send defer: 14
+2025-10-16 15:27:55,169 DEBUG   HandlerThread:1427468 [handler.py:handle_request():146] handle_request: defer
+2025-10-16 15:27:55,169 DEBUG   SenderThread:1427468 [sender.py:send():379] send: final
+2025-10-16 15:27:55,169 INFO    HandlerThread:1427468 [handler.py:handle_request_defer():172] handle defer: 14
+2025-10-16 15:27:55,169 DEBUG   SenderThread:1427468 [sender.py:send():379] send: footer
+2025-10-16 15:27:55,169 DEBUG   SenderThread:1427468 [sender.py:send_request():406] send_request: defer
+2025-10-16 15:27:55,170 INFO    SenderThread:1427468 [sender.py:send_request_defer():610] handle sender defer: 14
+2025-10-16 15:27:55,170 DEBUG   HandlerThread:1427468 [handler.py:handle_request():146] handle_request: poll_exit
+2025-10-16 15:27:55,171 DEBUG   HandlerThread:1427468 [handler.py:handle_request():146] handle_request: poll_exit
+2025-10-16 15:27:55,171 DEBUG   SenderThread:1427468 [sender.py:send_request():406] send_request: poll_exit
+2025-10-16 15:27:55,171 DEBUG   SenderThread:1427468 [sender.py:send_request():406] send_request: poll_exit
+2025-10-16 15:27:55,172 DEBUG   HandlerThread:1427468 [handler.py:handle_request():146] handle_request: server_info
+2025-10-16 15:27:55,173 DEBUG   SenderThread:1427468 [sender.py:send_request():406] send_request: server_info
+2025-10-16 15:27:55,175 DEBUG   HandlerThread:1427468 [handler.py:handle_request():146] handle_request: get_summary
+2025-10-16 15:27:55,176 DEBUG   HandlerThread:1427468 [handler.py:handle_request():146] handle_request: sampled_history
+2025-10-16 15:27:55,177 DEBUG   HandlerThread:1427468 [handler.py:handle_request():146] handle_request: internal_messages
+2025-10-16 15:27:55,446 INFO    MainThread:1427468 [wandb_run.py:_footer_history_summary_info():3920] rendering history
+2025-10-16 15:27:55,447 INFO    MainThread:1427468 [wandb_run.py:_footer_history_summary_info():3952] rendering summary
+2025-10-16 15:27:55,447 INFO    MainThread:1427468 [wandb_run.py:_footer_sync_info():3879] logging synced files
+2025-10-16 15:27:55,448 DEBUG   HandlerThread:1427468 [handler.py:handle_request():146] handle_request: shutdown
+2025-10-16 15:27:55,448 INFO    HandlerThread:1427468 [handler.py:finish():866] shutting down handler
+2025-10-16 15:27:56,173 INFO    WriterThread:1427468 [datastore.py:close():296] close: /mnt/data/kai/Mini_VinDr_CXR_Dataset/dicom_comparison/wandb/run-20251016_152743-c9eg6fdd/run-c9eg6fdd.wandb
+2025-10-16 15:27:56,446 INFO    SenderThread:1427468 [sender.py:finish():1546] shutting down sender
+2025-10-16 15:27:56,446 INFO    SenderThread:1427468 [file_pusher.py:finish():172] shutting down file pusher
+2025-10-16 15:27:56,446 INFO    SenderThread:1427468 [file_pusher.py:join():178] waiting for file pusher

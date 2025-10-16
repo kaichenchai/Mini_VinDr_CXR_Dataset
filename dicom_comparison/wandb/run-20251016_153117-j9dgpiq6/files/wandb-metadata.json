@@ -1,0 +1,173 @@
+{
+    "os": "Linux-6.5.0-28-generic-x86_64-with-glibc2.35",
+    "python": "3.12.3",
+    "heartbeatAt": "2025-10-16T07:31:18.553049",
+    "startedAt": "2025-10-16T07:31:17.692995",
+    "docker": null,
+    "cuda": null,
+    "args": [
+        "--data_dir",
+        "/home/kai/mnt/VinDr_datasets/pneumothorax/4_bit_png_norm",
+        "--model_name",
+        "vit_base_patch16_224",
+        "--epochs",
+        "200",
+        "--lr",
+        "0.001",
+        "--num_chans",
+        "3",
+        "--greyscale",
+        "t",
+        "--batch_size",
+        "8",
+        "--pretrained",
+        "t",
+        "--run_name",
+        "pneumothorax_4_norm_200e_pretrained_vit",
+        "--early_stop",
+        "50"
+    ],
+    "state": "running",
+    "program": "/mnt/data/kai/Mini_VinDr_CXR_Dataset/dicom_comparison/training_script.py",
+    "codePathLocal": "training_script.py",
+    "codePath": "dicom_comparison/training_script.py",
+    "git": {
+        "remote": "https://github.com/kaichenchai/Mini_VinDr_CXR_Dataset.git",
+        "commit": "7bfcdc22479d7ac827d81bdb73f0da7862da70eb"
+    },
+    "email": "englishorc65@gmail.com",
+    "root": "/mnt/data/kai/Mini_VinDr_CXR_Dataset",
+    "host": "thermaltake",
+    "username": "kai",
+    "executable": "/home/kai/miniconda3/envs/vindr/bin/python3",
+    "cpu_count": 10,
+    "cpu_count_logical": 20,
+    "cpu_freq": {
+        "current": 1647.4671000000003,
+        "min": 1200.0,
+        "max": 4120.0
+    },
+    "cpu_freq_per_core": [
+        {
+            "current": 3000.026,
+            "min": 1200.0,
+            "max": 4100.0
+        },
+        {
+            "current": 1200.0,
+            "min": 1200.0,
+            "max": 4100.0
+        },
+        {
+            "current": 3312.955,
+            "min": 1200.0,
+            "max": 4100.0
+        },
+        {
+            "current": 1600.638,
+            "min": 1200.0,
+            "max": 4200.0
+        },
+        {
+            "current": 1200.0,
+            "min": 1200.0,
+            "max": 4100.0
+        },
+        {
+            "current": 1200.0,
+            "min": 1200.0,
+            "max": 4100.0
+        },
+        {
+            "current": 1200.0,
+            "min": 1200.0,
+            "max": 4100.0
+        },
+        {
+            "current": 1200.424,
+            "min": 1200.0,
+            "max": 4100.0
+        },
+        {
+            "current": 1200.0,
+            "min": 1200.0,
+            "max": 4100.0
+        },
+        {
+            "current": 1200.0,
+            "min": 1200.0,
+            "max": 4200.0
+        },
+        {
+            "current": 1200.0,
+            "min": 1200.0,
+            "max": 4100.0
+        },
+        {
+            "current": 1200.0,
+            "min": 1200.0,
+            "max": 4100.0
+        },
+        {
+            "current": 1200.0,
+            "min": 1200.0,
+            "max": 4100.0
+        },
+        {
+            "current": 1200.0,
+            "min": 1200.0,
+            "max": 4200.0
+        },
+        {
+            "current": 1200.0,
+            "min": 1200.0,
+            "max": 4100.0
+        },
+        {
+            "current": 1300.0,
+            "min": 1200.0,
+            "max": 4100.0
+        },
+        {
+            "current": 3000.665,
+            "min": 1200.0,
+            "max": 4100.0
+        },
+        {
+            "current": 1200.145,
+            "min": 1200.0,
+            "max": 4100.0
+        },
+        {
+            "current": 1200.0,
+            "min": 1200.0,
+            "max": 4100.0
+        },
+        {
+            "current": 3999.978,
+            "min": 1200.0,
+            "max": 4200.0
+        }
+    ],
+    "disk": {
+        "/": {
+            "total": 3753.976058959961,
+            "used": 563.4379577636719
+        }
+    },
+    "gpu": "NVIDIA GeForce RTX 2080 Ti",
+    "gpu_count": 2,
+    "gpu_devices": [
+        {
+            "name": "NVIDIA GeForce RTX 2080 Ti",
+            "memory_total": 11811160064
+        },
+        {
+            "name": "NVIDIA GeForce RTX 2080 Ti",
+            "memory_total": 11811160064
+        }
+    ],
+    "memory": {
+        "total": 62.469051361083984
+    }
+}

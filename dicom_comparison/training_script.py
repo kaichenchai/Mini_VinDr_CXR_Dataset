@@ -45,7 +45,7 @@ def load_dataset(dataset_path, train_transforms, eval_transforms):
 
 class AccuracyCallback(TrainerCallback):
     def __init__(self, num_classes):
-        self.accuracy = torchmetrics.Accuracy(task="binary", num_classes=num_classes)
+        self.accuracy = torchmetrics.Accuracy(task="binary")
 
     def _move_to_device(self, trainer):
         self.accuracy.to(trainer.device)

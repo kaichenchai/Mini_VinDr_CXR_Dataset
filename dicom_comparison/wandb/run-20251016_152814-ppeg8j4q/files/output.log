@@ -1,0 +1,387 @@
+
+Starting epoch 1
+train_loss_epoch: 2.941664934158325
+Starting eval epoch
+accuracy: 0.5
+eval_loss_epoch: 0.7150990962982178
+Starting epoch 2
+train_loss_epoch: 1.0807819366455078
+Starting eval epoch
+accuracy: 0.5
+eval_loss_epoch: 0.7852744460105896
+No improvement above threshold observed, incrementing counter.
+Early stopping counter: 1/50
+Starting epoch 3
+train_loss_epoch: 0.9690131545066833
+Starting eval epoch
+accuracy: 0.5
+eval_loss_epoch: 1.1450977325439453
+No improvement above threshold observed, incrementing counter.
+Early stopping counter: 2/50
+Starting epoch 4
+train_loss_epoch: 0.8206852674484253
+Starting eval epoch
+accuracy: 0.5
+eval_loss_epoch: 0.8206648826599121
+No improvement above threshold observed, incrementing counter.
+Early stopping counter: 3/50
+Starting epoch 5
+train_loss_epoch: 0.7836285829544067
+Starting eval epoch
+accuracy: 0.5
+eval_loss_epoch: 0.6979575157165527
+Improvement of 0.01714158058166504 observed, resetting counter.
+Early stopping counter: 0/50
+Starting epoch 6
+train_loss_epoch: 0.7540988326072693
+Starting eval epoch
+accuracy: 0.5
+eval_loss_epoch: 0.7260376811027527
+No improvement above threshold observed, incrementing counter.
+Early stopping counter: 1/50
+Starting epoch 7
+train_loss_epoch: 0.7128133773803711
+Starting eval epoch
+accuracy: 0.5
+eval_loss_epoch: 0.7609147429466248
+No improvement above threshold observed, incrementing counter.
+Early stopping counter: 2/50
+Starting epoch 8
+train_loss_epoch: 0.7230188846588135
+Starting eval epoch
+accuracy: 0.5
+eval_loss_epoch: 0.7008631825447083
+No improvement above threshold observed, incrementing counter.
+Early stopping counter: 3/50
+Starting epoch 9
+train_loss_epoch: 0.7422700524330139
+Starting eval epoch
+accuracy: 0.5
+eval_loss_epoch: 0.784893810749054
+No improvement above threshold observed, incrementing counter.
+Early stopping counter: 4/50
+Starting epoch 10
+train_loss_epoch: 0.7425966858863831
+Starting eval epoch
+accuracy: 0.5
+eval_loss_epoch: 0.7268396019935608
+No improvement above threshold observed, incrementing counter.
+Early stopping counter: 5/50
+Starting epoch 11
+train_loss_epoch: 0.7052131295204163
+Starting eval epoch
+accuracy: 0.5
+eval_loss_epoch: 0.6935279369354248
+No improvement above threshold observed, incrementing counter.
+Early stopping counter: 6/50
+Starting epoch 12
+train_loss_epoch: 0.7002615332603455
+Starting eval epoch
+accuracy: 0.5
+eval_loss_epoch: 0.7740495800971985
+No improvement above threshold observed, incrementing counter.
+Early stopping counter: 7/50
+Starting epoch 13
+train_loss_epoch: 0.7237202525138855
+Starting eval epoch
+accuracy: 0.5
+eval_loss_epoch: 0.7046693563461304
+No improvement above threshold observed, incrementing counter.
+Early stopping counter: 8/50
+Starting epoch 14
+train_loss_epoch: 0.7019050717353821
+Starting eval epoch
+accuracy: 0.5
+eval_loss_epoch: 0.6932757496833801
+No improvement above threshold observed, incrementing counter.
+Early stopping counter: 9/50
+Starting epoch 15
+train_loss_epoch: 0.7264260053634644
+Starting eval epoch
+accuracy: 0.5
+eval_loss_epoch: 0.6950008869171143
+No improvement above threshold observed, incrementing counter.
+Early stopping counter: 10/50
+Starting epoch 16
+train_loss_epoch: 0.7092944383621216
+Starting eval epoch
+accuracy: 0.5
+eval_loss_epoch: 0.7059834003448486
+No improvement above threshold observed, incrementing counter.
+Early stopping counter: 11/50
+Starting epoch 17
+train_loss_epoch: 0.6993544101715088
+Starting eval epoch
+accuracy: 0.5
+eval_loss_epoch: 0.7143049836158752
+No improvement above threshold observed, incrementing counter.
+Early stopping counter: 12/50
+Starting epoch 18
+train_loss_epoch: 0.7092601656913757
+Starting eval epoch
+accuracy: 0.5
+eval_loss_epoch: 0.6934179663658142
+No improvement above threshold observed, incrementing counter.
+Early stopping counter: 13/50
+Starting epoch 19
+train_loss_epoch: 0.7102285623550415
+Starting eval epoch
+accuracy: 0.5
+eval_loss_epoch: 0.7327306270599365
+No improvement above threshold observed, incrementing counter.
+Early stopping counter: 14/50
+Starting epoch 20
+train_loss_epoch: 0.7202443480491638
+Starting eval epoch
+accuracy: 0.5
+eval_loss_epoch: 0.6963715553283691
+No improvement above threshold observed, incrementing counter.
+Early stopping counter: 15/50
+Starting epoch 21
+train_loss_epoch: 0.7077416181564331
+Starting eval epoch
+accuracy: 0.5
+eval_loss_epoch: 0.7045378684997559
+No improvement above threshold observed, incrementing counter.
+Early stopping counter: 16/50
+Starting epoch 22
+train_loss_epoch: 0.703255832195282
+Starting eval epoch
+accuracy: 0.5
+eval_loss_epoch: 0.6938601732254028
+No improvement above threshold observed, incrementing counter.
+Early stopping counter: 17/50
+Starting epoch 23
+train_loss_epoch: 0.7162724733352661
+Starting eval epoch
+accuracy: 0.5
+eval_loss_epoch: 0.7271861433982849
+No improvement above threshold observed, incrementing counter.
+Early stopping counter: 18/50
+Starting epoch 24
+train_loss_epoch: 0.7147856950759888
+Starting eval epoch
+accuracy: 0.5
+eval_loss_epoch: 0.6933556199073792
+No improvement above threshold observed, incrementing counter.
+Early stopping counter: 19/50
+Starting epoch 25
+train_loss_epoch: 0.6989604830741882
+Starting eval epoch
+accuracy: 0.5
+eval_loss_epoch: 0.6939778327941895
+No improvement above threshold observed, incrementing counter.
+Early stopping counter: 20/50
+Starting epoch 26
+train_loss_epoch: 0.6961687207221985
+Starting eval epoch
+accuracy: 0.5
+eval_loss_epoch: 0.6935119032859802
+No improvement above threshold observed, incrementing counter.
+Early stopping counter: 21/50
+Starting epoch 27
+train_loss_epoch: 0.6946215033531189
+Starting eval epoch
+accuracy: 0.5
+eval_loss_epoch: 0.6932991743087769
+No improvement above threshold observed, incrementing counter.
+Early stopping counter: 22/50
+Starting epoch 28
+train_loss_epoch: 0.6965945959091187
+Starting eval epoch
+accuracy: 0.5
+eval_loss_epoch: 0.693561315536499
+No improvement above threshold observed, incrementing counter.
+Early stopping counter: 23/50
+Starting epoch 29
+train_loss_epoch: 0.6970689296722412
+Starting eval epoch
+accuracy: 0.5
+eval_loss_epoch: 0.6941505670547485
+No improvement above threshold observed, incrementing counter.
+Early stopping counter: 24/50
+Starting epoch 30
+train_loss_epoch: 0.6960048675537109
+Starting eval epoch
+accuracy: 0.5
+eval_loss_epoch: 0.6931612491607666
+No improvement above threshold observed, incrementing counter.
+Early stopping counter: 25/50
+Starting epoch 31
+train_loss_epoch: 0.6968742609024048
+Starting eval epoch
+accuracy: 0.5
+eval_loss_epoch: 0.6933334469795227
+No improvement above threshold observed, incrementing counter.
+Early stopping counter: 26/50
+Starting epoch 32
+train_loss_epoch: 0.6951837539672852
+Starting eval epoch
+accuracy: 0.5
+eval_loss_epoch: 0.6933498978614807
+No improvement above threshold observed, incrementing counter.
+Early stopping counter: 27/50
+Starting epoch 33
+train_loss_epoch: 0.696154773235321
+Starting eval epoch
+accuracy: 0.5
+eval_loss_epoch: 0.6931878924369812
+No improvement above threshold observed, incrementing counter.
+Early stopping counter: 28/50
+Starting epoch 34
+train_loss_epoch: 0.6941880583763123
+Starting eval epoch
+accuracy: 0.5
+eval_loss_epoch: 0.6934198141098022
+No improvement above threshold observed, incrementing counter.
+Early stopping counter: 29/50
+Starting epoch 35
+train_loss_epoch: 0.6976547837257385
+Starting eval epoch
+accuracy: 0.5
+eval_loss_epoch: 0.6931760907173157
+No improvement above threshold observed, incrementing counter.
+Early stopping counter: 30/50
+Starting epoch 36
+train_loss_epoch: 0.6971308588981628
+Starting eval epoch
+accuracy: 0.5
+eval_loss_epoch: 0.6932247877120972
+No improvement above threshold observed, incrementing counter.
+Early stopping counter: 31/50
+Starting epoch 37
+train_loss_epoch: 0.6947395205497742
+Starting eval epoch
+accuracy: 0.5
+eval_loss_epoch: 0.69361412525177
+No improvement above threshold observed, incrementing counter.
+Early stopping counter: 32/50
+Starting epoch 38
+train_loss_epoch: 0.6951399445533752
+Starting eval epoch
+accuracy: 0.5
+eval_loss_epoch: 0.6934630870819092
+No improvement above threshold observed, incrementing counter.
+Early stopping counter: 33/50
+Starting epoch 39
+train_loss_epoch: 0.694264829158783
+Starting eval epoch
+accuracy: 0.5
+eval_loss_epoch: 0.6935997009277344
+No improvement above threshold observed, incrementing counter.
+Early stopping counter: 34/50
+Starting epoch 40
+train_loss_epoch: 0.698564350605011
+Starting eval epoch
+accuracy: 0.5
+eval_loss_epoch: 0.6933744549751282
+No improvement above threshold observed, incrementing counter.
+Early stopping counter: 35/50
+Starting epoch 41
+train_loss_epoch: 0.6976591944694519
+Starting eval epoch
+accuracy: 0.5
+eval_loss_epoch: 0.6942689418792725
+No improvement above threshold observed, incrementing counter.
+Early stopping counter: 36/50
+Starting epoch 42
+train_loss_epoch: 0.6965800523757935
+Starting eval epoch
+accuracy: 0.5
+eval_loss_epoch: 0.6935184597969055
+No improvement above threshold observed, incrementing counter.
+Early stopping counter: 37/50
+Starting epoch 43
+train_loss_epoch: 0.6964372396469116
+Starting eval epoch
+accuracy: 0.5
+eval_loss_epoch: 0.6935627460479736
+No improvement above threshold observed, incrementing counter.
+Early stopping counter: 38/50
+Starting epoch 44
+train_loss_epoch: 0.6955814957618713
+Starting eval epoch
+accuracy: 0.5
+eval_loss_epoch: 0.6932249665260315
+No improvement above threshold observed, incrementing counter.
+Early stopping counter: 39/50
+Starting epoch 45
+train_loss_epoch: 0.6986538171768188
+Starting eval epoch
+accuracy: 0.5
+eval_loss_epoch: 0.6932873725891113
+No improvement above threshold observed, incrementing counter.
+Early stopping counter: 40/50
+Starting epoch 46
+train_loss_epoch: 0.6962986588478088
+Starting eval epoch
+accuracy: 0.5
+eval_loss_epoch: 0.693238377571106
+No improvement above threshold observed, incrementing counter.
+Early stopping counter: 41/50
+Starting epoch 47
+train_loss_epoch: 0.696255087852478
+Starting eval epoch
+accuracy: 0.5
+eval_loss_epoch: 0.6931838989257812
+No improvement above threshold observed, incrementing counter.
+Early stopping counter: 42/50
+Starting epoch 48
+train_loss_epoch: 0.694190502166748
+Starting eval epoch
+accuracy: 0.5
+eval_loss_epoch: 0.6931466460227966
+No improvement above threshold observed, incrementing counter.
+Early stopping counter: 43/50
+Starting epoch 49
+train_loss_epoch: 0.6955307722091675
+Starting eval epoch
+accuracy: 0.5
+eval_loss_epoch: 0.6933304667472839
+No improvement above threshold observed, incrementing counter.
+Early stopping counter: 44/50
+Starting epoch 50
+train_loss_epoch: 0.6942007541656494
+Starting eval epoch
+accuracy: 0.5
+eval_loss_epoch: 0.6931750774383545
+No improvement above threshold observed, incrementing counter.
+Early stopping counter: 45/50
+Starting epoch 51
+train_loss_epoch: 0.6935322880744934
+Starting eval epoch
+accuracy: 0.5
+eval_loss_epoch: 0.6931779980659485
+No improvement above threshold observed, incrementing counter.
+Early stopping counter: 46/50
+Starting epoch 52
+train_loss_epoch: 0.6933769583702087
+Starting eval epoch
+accuracy: 0.5
+eval_loss_epoch: 0.6931885480880737
+No improvement above threshold observed, incrementing counter.
+Early stopping counter: 47/50
+Starting epoch 53
+train_loss_epoch: 0.693634569644928
+Starting eval epoch
+accuracy: 0.5
+eval_loss_epoch: 0.6931712627410889
+No improvement above threshold observed, incrementing counter.
+Early stopping counter: 48/50
+Starting epoch 54
+train_loss_epoch: 0.6939924955368042
+Starting eval epoch
+accuracy: 0.5
+eval_loss_epoch: 0.6931688785552979
+No improvement above threshold observed, incrementing counter.
+Early stopping counter: 49/50
+Starting epoch 55
+train_loss_epoch: 0.6936994194984436
+Starting eval epoch
+accuracy: 0.5
+eval_loss_epoch: 0.6932392716407776
+No improvement above threshold observed, incrementing counter.
+Early stopping counter: 50/50
+Stopping training due to no improvement after 50 epochs
+Finishing training run
+Loading checkpoint with eval_loss_epoch: 0.6931466460227966 from epoch 48
